@@ -27,10 +27,23 @@ import frTaskReview from './locales/fr/taskReview.json';
 import frTerminal from './locales/fr/terminal.json';
 import frErrors from './locales/fr/errors.json';
 
+// Import Turkish translation resources
+import trCommon from './locales/tr/common.json';
+import trNavigation from './locales/tr/navigation.json';
+import trSettings from './locales/tr/settings.json';
+import trTasks from './locales/tr/tasks.json';
+import trWelcome from './locales/tr/welcome.json';
+import trOnboarding from './locales/tr/onboarding.json';
+import trDialogs from './locales/tr/dialogs.json';
+import trGitlab from './locales/tr/gitlab.json';
+import trTaskReview from './locales/tr/taskReview.json';
+import trTerminal from './locales/tr/terminal.json';
+import trErrors from './locales/tr/errors.json';
+
 export const defaultNS = 'common';
 
 export const resources = {
-  en: {
+  "en": {
     common: enCommon,
     navigation: enNavigation,
     settings: enSettings,
@@ -43,7 +56,7 @@ export const resources = {
     terminal: enTerminal,
     errors: enErrors
   },
-  fr: {
+  "fr": {
     common: frCommon,
     navigation: frNavigation,
     settings: frSettings,
@@ -55,6 +68,19 @@ export const resources = {
     taskReview: frTaskReview,
     terminal: frTerminal,
     errors: frErrors
+  },
+  "tr": {
+    common: trCommon,
+    navigation: trNavigation,
+    settings: trSettings,
+    tasks: trTasks,
+    welcome: trWelcome,
+    onboarding: trOnboarding,
+    dialogs: trDialogs,
+    gitlab: trGitlab,
+    taskReview: trTaskReview,
+    terminal: trTerminal,
+    errors: trErrors
   }
 } as const;
 
