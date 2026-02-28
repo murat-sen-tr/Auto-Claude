@@ -1,0 +1,905 @@
+{
+  "title": "Ayarlar",
+  "tabs": {
+    "app": "Uygulama Ayarları",
+    "project": "Proje Ayarları"
+  },
+  "sections": {
+    "appearance": {
+      "title": "Görünüm",
+      "description": "Auto Claude'un nasıl göründüğünü özelleştirin"
+    },
+    "display": {
+      "title": "Ekran",
+      "description": "Arayüz öğelerinin boyutunu ayarlayın"
+    },
+    "language": {
+      "title": "Dil",
+      "description": "Tercih ettiğiniz dili seçin"
+    },
+    "devtools": {
+      "title": "Geliştirici Araçları",
+      "description": "IDE ve terminal tercihleri"
+    },
+    "agent": {
+      "title": "Agent Ayarları",
+      "description": "Varsayılan model ve framework"
+    },
+    "paths": {
+      "title": "Yollar",
+      "description": "CLI araçları ve framework yolları"
+    },
+    "accounts": {
+      "title": "Hesaplar",
+      "description": "Claude hesapları ve API uç noktaları"
+    },
+    "updates": {
+      "title": "Güncellemeler",
+      "description": "Auto Claude güncellemeleri"
+    },
+    "notifications": {
+      "title": "Bildirimler",
+      "description": "Uyarı tercihleri"
+    },
+    "debug": {
+      "title": "Hata Ayıklama ve Günlükler",
+      "description": "Sorun giderme araçları"
+    },
+    "terminal-fonts": {
+      "title": "Terminal Yazı Tipleri",
+      "description": "Terminal yazı tipi görünümünü özelleştirin"
+    }
+  },
+  "apiProfiles": {
+    "title": "API Profilleri",
+    "description": "Özel Anthropic uyumlu API uç noktalarını yapılandırın",
+    "addButton": "Profil Ekle",
+    "presets": {
+      "anthropic": "Anthropic",
+      "openrouter": "OpenRouter",
+      "groq": "Groq",
+      "zaiGlobal": "z.AI (Global)",
+      "zaiChina": "z.AI (Çin)"
+    },
+    "fields": {
+      "name": "İsim",
+      "preset": "Ön Ayar",
+      "baseUrl": "Temel URL",
+      "apiKey": "API Anahtarı"
+    },
+    "placeholders": {
+      "name": "Özel API'm",
+      "preset": "Bir sağlayıcı ön ayarı seçin",
+      "baseUrl": "https://api.anthropic.com",
+      "apiKey": "sk-ant-..."
+    },
+    "hints": {
+      "preset": "Ön ayarlar temel URL'yi doldurur; yine de API anahtarınızı yapıştırmanız gerekir.",
+      "baseUrl": "Örnek: https://api.anthropic.com veya http://localhost:8080"
+    },
+    "validation": {
+      "nameRequired": "İsim gereklidir",
+      "baseUrlRequired": "Temel URL gereklidir",
+      "baseUrlInvalid": "Geçersiz URL formatı (http:// veya https:// olmalıdır)",
+      "apiKeyRequired": "API Anahtarı gereklidir",
+      "apiKeyInvalid": "Geçersiz API Anahtarı formatı"
+    },
+    "actions": {
+      "save": "Profili Kaydet",
+      "saving": "Kaydediliyor...",
+      "cancel": "İptal",
+      "changeKey": "Değiştir",
+      "cancelKeyChange": "İptal"
+    },
+    "testConnection": {
+      "label": "Bağlantıyı Test Et",
+      "testing": "Test Ediliyor...",
+      "success": "Bağlantı Başarılı",
+      "failure": "Bağlantı Başarısız"
+    },
+    "models": {
+      "title": "İsteğe Bağlı: Model İsim Eşlemeleri",
+      "description": "API sağlayıcınızdan modelleri seçin. Varsayılanları kullanmak için boş bırakın.",
+      "defaultLabel": "Varsayılan Model (İsteğe Bağlı)",
+      "haikuLabel": "Haiku Modeli (İsteğe Bağlı)",
+      "sonnetLabel": "Sonnet Modeli (İsteğe Bağlı)",
+      "opusLabel": "Opus Modeli (İsteğe Bağlı)",
+      "defaultPlaceholder": "örn., claude-sonnet-4-5-20250929",
+      "haikuPlaceholder": "örn., claude-haiku-4-5-20251001",
+      "sonnetPlaceholder": "örn., claude-sonnet-4-5-20250929",
+      "opusPlaceholder": "örn., claude-opus-4-6",
+      "opus1mPlaceholder": "örn., claude-opus-4-6 (1M bağlam)"
+    },
+    "empty": {
+      "title": "Yapılandırılmış API profili yok",
+      "description": "Derlemeleriniz için özel API uç noktalarını yapılandırmak üzere bir profil oluşturun.",
+      "action": "İlk Profili Oluştur"
+    },
+    "switchToOauth": {
+      "label": "OAuth'a Geç",
+      "loading": "Geçiş Yapılıyor..."
+    },
+    "activeBadge": "Aktif",
+    "customModels": "Özel modeller: {{models}}",
+    "setActive": {
+      "label": "Aktif Yap",
+      "loading": "Ayarlanıyor..."
+    },
+    "tooltips": {
+      "edit": "Profili düzenle",
+      "deleteActive": "Silmeden önce OAuth'a geçin",
+      "deleteInactive": "Profili sil"
+    },
+    "deleteAriaLabel": "{{name}} profilini sil",
+    "toast": {
+      "create": {
+        "title": "Profil oluşturuldu",
+        "description": "\"{{name}}\" başarıyla eklendi."
+      },
+      "update": {
+        "title": "Profil güncellendi",
+        "description": "\"{{name}}\" başarıyla güncellendi."
+      },
+      "delete": {
+        "title": "Profil silindi",
+        "description": "\"{{name}}\" kaldırıldı.",
+        "errorTitle": "Profil silinemedi",
+        "errorFallback": "Profil silinirken bir hata oluştu."
+      },
+      "switch": {
+        "oauthTitle": "OAuth'a geçildi",
+        "oauthDescription": "Artık OAuth kimlik doğrulaması kullanılıyor",
+        "profileTitle": "Profil etkinleştirildi",
+        "profileDescription": "Artık {{name}} kullanılıyor",
+        "errorTitle": "Kimlik doğrulama değiştirilemedi",
+        "errorFallback": "Kimlik doğrulama yöntemi değiştirilirken bir hata oluştu."
+      }
+    },
+    "dialog": {
+      "createTitle": "API Profili Ekle",
+      "editTitle": "Profili Düzenle",
+      "description": "Derlemeleriniz için özel bir Anthropic uyumlu API uç noktası yapılandırın.",
+      "deleteTitle": "Profil Silinsin mi?",
+      "deleteDescription": "\"{{name}}\" profilini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+      "cancel": "İptal",
+      "delete": "Sil",
+      "deleting": "Siliniyor..."
+    }
+  },
+  "modelSelect": {
+    "placeholder": "Bir model seçin veya manuel olarak yazın",
+    "placeholderManual": "Model adını girin (örn., claude-sonnet-4-5-20250929)",
+    "searchPlaceholder": "Modelleri ara...",
+    "noResults": "Aramanızla eşleşen model yok",
+    "discoveryNotAvailable": "Model keşfi mevcut değil. Model adını manuel olarak girin."
+  },
+  "language": {
+    "label": "Arayüz Dili",
+    "description": "Uygulama arayüzü için dili seçin"
+  },
+  "scale": {
+    "presets": "Ölçek Ön Ayarları",
+    "presetsDescription": "Yaygın tercihler için hızlı ölçek seçenekleri",
+    "fineTune": "Ölçeği İnce Ayarla",
+    "fineTuneDescription": "%75'ten %200'e %5'lik artışlarla ayarlayın",
+    "default": "Varsayılan",
+    "comfortable": "Rahat",
+    "large": "Büyük"
+  },
+  "logOrder": {
+    "label": "Günlük Sırası",
+    "description": "Görev detay görünümünde günlüklerin nasıl görüntüleneceğini seçin",
+    "chronological": "Kronolojik (en eskiden en yeniye)",
+    "reverseChronological": "Ters kronolojik (en yeniden en eskiye)"
+  },
+  "gpuAcceleration": {
+    "label": "GPU Hızlandırma",
+    "description": "Terminal render için WebGL kullan (deneysel, çok sayıda terminal ile daha hızlı)",
+    "auto": "Otomatik (desteklendiğinde WebGL kullan)",
+    "on": "Her zaman açık",
+    "off": "Kapalı (varsayılan)",
+    "helperText": "Değişiklikler yalnızca yeni terminallere uygulanır"
+  },
+  "general": {
+    "otherAgentSettings": "Diğer Agent Ayarları",
+    "otherAgentSettingsDescription": "Ek agent yapılandırma seçenekleri",
+    "agentFramework": "Agent Framework",
+    "agentFrameworkDescription": "Otonom görevler için kullanılan kodlama framework'ü",
+    "agentFrameworkAutoClaude": "Auto Claude",
+    "aiTerminalNaming": "AI Terminal İsimlendirme",
+    "aiTerminalNamingDescription": "Terminalleri komutlara göre otomatik olarak adlandır (Haiku kullanır)",
+    "featureModelSettings": "Özellik Model Ayarları",
+    "featureModelSettingsDescription": "Insights, Ideation ve Roadmap için model ve düşünme seviyesi",
+    "model": "Model",
+    "thinkingLevel": "Düşünme Seviyesi",
+    "paths": "Yollar",
+    "pathsDescription": "Yürütülebilir ve framework yollarını yapılandırın",
+    "pythonPath": "Python Yolu",
+    "pythonPathDescription": "Python yürütülebilir dosyasının yolu (otomatik algılama için boş bırakın)",
+    "pythonPathPlaceholder": "python3 (varsayılan)",
+    "gitPath": "Git Yolu",
+    "gitPathDescription": "Git yürütülebilir dosyasının yolu (otomatik algılama için boş bırakın)",
+    "gitPathPlaceholder": "git (varsayılan)",
+    "githubCLIPath": "GitHub CLI Yolu",
+    "githubCLIPathDescription": "GitHub CLI (gh) yürütülebilir dosyasının yolu (otomatik algılama için boş bırakın)",
+    "githubCLIPathPlaceholder": "gh (varsayılan)",
+    "gitlabCLIPath": "GitLab CLI Yolu",
+    "gitlabCLIPathDescription": "GitLab CLI (glab) yürütülebilir dosyasının yolu (otomatik algılama için boş bırakın)",
+    "gitlabCLIPathPlaceholder": "glab (varsayılan)",
+    "claudePath": "Claude CLI Yolu",
+    "claudePathDescription": "Claude CLI yürütülebilir dosyasının yolu (otomatik algılama için boş bırakın)",
+    "claudePathPlaceholder": "claude (varsayılan)",
+    "detectedPath": "Otomatik algılandı",
+    "detectedVersion": "Sürüm",
+    "detectedSource": "Kaynak",
+    "sourceUserConfig": "Kullanıcı Yapılandırması",
+    "sourceVenv": "Sanal Ortam",
+    "sourceHomebrew": "Homebrew",
+    "sourceNvm": "NVM",
+    "sourceSystemPath": "Sistem PATH",
+    "sourceBundled": "Paketlenmiş",
+    "sourceFallback": "Yedek",
+    "notDetected": "Algılanmadı",
+    "autoClaudePath": "Auto Claude Yolu",
+    "autoClaudePathDescription": "Projelerde auto-claude dizinine göreli yol",
+    "autoClaudePathPlaceholder": "auto-claude (varsayılan)",
+    "autoNameTerminals": "Terminalleri otomatik olarak adlandır",
+    "autoNameTerminalsDescription": "Terminal sekmelerini etkinliklerine göre açıklayıcı isimler oluşturmak için AI kullan"
+  },
+  "theme": {
+    "title": "Görünüm",
+    "description": "Auto Claude'un nasıl göründüğünü özelleştirin",
+    "mode": "Mod",
+    "modeDescription": "Açık ve koyu temalar arasında seçim yapın",
+    "light": "Açık",
+    "dark": "Koyu",
+    "system": "Sistem",
+    "colorTheme": "Renk Teması",
+    "colorThemeDescription": "Tercih ettiğiniz renk paletini seçin"
+  },
+  "devtools": {
+    "title": "Geliştirici Araçları",
+    "description": "Tercih ettiğiniz IDE, terminal ve terminal yazı tipi ayarlarını yapılandırın",
+    "detecting": "Yüklü araçlar algılanıyor...",
+    "detectAgain": "Tekrar Algıla",
+    "tabTools": "Araçlar",
+    "tabTerminalFonts": "Terminal Yazı Tipleri",
+    "ide": {
+      "label": "Tercih Edilen IDE",
+      "description": "Auto Claude worktree'leri bu editörde açacak",
+      "placeholder": "IDE seçin...",
+      "customPath": "Özel IDE Yolu",
+      "customPathPlaceholder": "/yol/ide/adresiniz"
+    },
+    "terminal": {
+      "label": "Tercih Edilen Terminal",
+      "description": "Auto Claude terminal oturumlarını burada açacak",
+      "placeholder": "Terminal seçin...",
+      "customPath": "Özel Terminal Yolu",
+      "customPathPlaceholder": "/yol/terminal/adresiniz"
+    },
+    "detected": "Algılandı",
+    "notInstalled": "Yüklü değil",
+    "detectedSummary": "Sisteminizde algılanan:",
+    "noToolsDetected": "Ek araç algılanmadı (VS Code ve sistem terminali kullanılacak)",
+    "autoNameClaude": {
+      "label": "Claude terminallerini otomatik adlandır",
+      "description": "Claude terminalleri için ilk mesajınıza göre açıklayıcı bir isim oluşturmak için AI kullan"
+    },
+    "yoloMode": {
+      "label": "YOLO Modu",
+      "description": "Claude'u --dangerously-skip-permissions bayrağıyla başlat, tüm güvenlik istemlerini atla. Son derece dikkatli kullanın.",
+      "warning": "Bu mod Claude'un izin sistemini atlar. Yalnızca çalıştırılan koda tamamen güveniyorsanız etkinleştirin."
+    }
+  },
+  "updates": {
+    "title": "Güncellemeler",
+    "description": "Auto Claude güncellemelerini yönetin",
+    "appUpdateReady": "Uygulama Güncellemesi Hazır",
+    "newVersion": "Yeni Sürüm",
+    "released": "Yayınlandı",
+    "downloading": "İndiriliyor...",
+    "updateDownloaded": "Güncelleme indirildi! Yeniden başlatmak ve güncellemeyi uygulamak için Yükle'ye tıklayın.",
+    "installAndRestart": "Yükle ve Yeniden Başlat",
+    "downloadUpdate": "Güncellemeyi İndir",
+    "version": "Sürüm",
+    "loading": "Yükleniyor...",
+    "checkingForUpdates": "Güncellemeler kontrol ediliyor...",
+    "newVersionAvailable": "Yeni sürüm mevcut:",
+    "latestVersion": "En son sürümü kullanıyorsunuz.",
+    "viewRelease": "GitHub'da tam sürümü görüntüle",
+    "unableToCheck": "Güncellemeler kontrol edilemiyor",
+    "checkForUpdates": "Güncellemeleri Kontrol Et",
+    "autoUpdateProjects": "Projeleri Otomatik Güncelle",
+    "autoUpdateProjectsDescription": "Yeni bir sürüm mevcut olduğunda projelerdeki Auto Claude'u otomatik olarak güncelle",
+    "betaUpdates": "Beta Güncellemeleri",
+    "betaUpdatesDescription": "Yeni özelliklerle birlikte ön sürüm beta sürümlerini al (daha az kararlı olabilir)",
+    "stableDowngradeAvailable": "Kararlı Sürüm Mevcut",
+    "stableDowngradeDescription": "Şu anda bir beta sürümündesiniz. Beta güncellemelerini devre dışı bıraktığınız için, en son kararlı sürüme geçebilirsiniz.",
+    "stableVersion": "Kararlı Sürüm",
+    "downloadStableVersion": "Kararlı Sürümü İndir",
+    "readOnlyVolumeTitle": "Disk İmajından Yüklenemez",
+    "readOnlyVolumeDescription": "Auto Claude salt okunur bir disk imajından (DMG) çalışıyor. Güncellemeleri yüklemek için lütfen uygulamayı Uygulamalar klasörünüze sürükleyin ve oradan yeniden başlatın.",
+    "downloadError": "Güncelleme indirilemedi"
+  },
+  "notifications": {
+    "title": "Bildirimler",
+    "description": "Varsayılan bildirim tercihlerini yapılandırın",
+    "onTaskComplete": "Görev Tamamlandığında",
+    "onTaskCompleteDescription": "Bir görev başarıyla tamamlandığında bildir",
+    "onTaskFailed": "Görev Başarısız Olduğunda",
+    "onTaskFailedDescription": "Bir görev hatayla karşılaştığında bildir",
+    "onReviewNeeded": "İnceleme Gerektiğinde",
+    "onReviewNeededDescription": "QA incelemenizi gerektirdiğinde bildir",
+    "sound": "Ses",
+    "soundDescription": "Bildirimlerle birlikte ses çal"
+  },
+  "actions": {
+    "save": "Ayarları Kaydet",
+    "rerunWizard": "Sihirbazı Yeniden Çalıştır",
+    "rerunWizardDescription": "Kurulum sihirbazını tekrar başlat"
+  },
+  "projectSections": {
+    "general": {
+      "title": "Genel",
+      "description": "Otomatik Derleme ve agent yapılandırması",
+      "useClaudeMd": "CLAUDE.md Kullan",
+      "useClaudeMdDescription": "CLAUDE.md talimatlarını agent bağlamına dahil et"
+    },
+    "claude": {
+      "title": "Claude Kimlik Doğrulaması",
+      "description": "Claude kimlik doğrulaması"
+    },
+    "linear": {
+      "title": "Linear",
+      "description": "Linear entegrasyonu",
+      "integrationTitle": "Linear Entegrasyonu",
+      "integrationDescription": "Sorun takibi ve görev içe aktarma için Linear'a bağlanın",
+      "syncDescription": "Sorun takibi için Linear ile senkronize edin"
+    },
+    "github": {
+      "title": "GitHub",
+      "description": "GitHub sorunları senkronizasyonu",
+      "integrationTitle": "GitHub Entegrasyonu",
+      "integrationDescription": "Sorun takibi için GitHub'a bağlanın",
+      "syncDescription": "GitHub Issues ile senkronize edin",
+      "defaultBranch": {
+        "label": "Varsayılan Dal",
+        "description": "Görev worktree'leri oluşturmak için temel dal",
+        "autoDetect": "Otomatik algıla (main/master)",
+        "searchPlaceholder": "Dalları ara...",
+        "noBranchesFound": "Dal bulunamadı",
+        "selectedBranchHelp": "Tüm yeni görevler {{branch}} dalından oluşturulacak"
+      }
+    },
+    "gitlab": {
+      "title": "GitLab",
+      "description": "GitLab sorunları senkronizasyonu",
+      "integrationTitle": "GitLab Entegrasyonu",
+      "integrationDescription": "Sorun takibi için GitLab'a bağlanın",
+      "syncDescription": "GitLab Issues ile senkronize edin"
+    },
+    "memory": {
+      "title": "Bellek",
+      "description": "Graphiti bellek arka ucu",
+      "integrationTitle": "Bellek",
+      "integrationDescription": "Agentlar için kalıcı oturumlar arası belleği yapılandırın",
+      "syncDescription": "Kalıcı belleği yapılandırın"
+    }
+  },
+  "agentProfile": {
+    "label": "Agent Profili",
+    "title": "Varsayılan Agent Profili",
+    "sectionDescription": "Model ve düşünme seviyesi için önceden ayarlanmış bir yapılandırma seçin",
+    "profilesInfo": "Agent profilleri, Claude modeli ve düşünme seviyesi için önceden ayarlanmış yapılandırmalar sağlar. Yeni bir görev oluşturduğunuzda, bu ayarlar varsayılan olarak kullanılacaktır. Görev oluşturma sihirbazında bunları her zaman geçersiz kılabilirsiniz.",
+    "custom": "Özel",
+    "customConfiguration": "Özel Yapılandırma",
+    "customDescription": "Model ve düşünme seviyesini seçin",
+    "phaseConfiguration": "Faz Yapılandırması",
+    "phaseConfigurationDescription": "Her faz için model ve düşünme seviyesini özelleştirin",
+    "clickToCustomize": "Özelleştirmek için tıklayın",
+    "model": "Model",
+    "thinking": "Düşünme",
+    "thinkingLevel": "Düşünme Seviyesi",
+    "selectModel": "Model seçin",
+    "selectThinkingLevel": "Düşünme seviyesi seçin",
+    "perPhaseOptimization": "(faz bazında optimizasyon)",
+    "resetToDefaults": "Varsayılanlara sıfırla",
+    "resetToProfileDefaults": "{{profile}} varsayılanlarına sıfırla",
+    "customized": "Özelleştirilmiş",
+    "phaseConfigNote": "Bu ayarlar, bu profille yeni görevler oluştururken varsayılan olarak kullanılacaktır. Görev oluşturma sihirbazında bunları görev başına geçersiz kılabilirsiniz.",
+    "adaptiveThinking": {
+      "badge": "Uyarlanabilir",
+      "tooltip": "Opus uyarlanabilir düşünme kullanır — düşünme seviyesinin belirlediği bütçe limiti içinde ne kadar düşüneceğine dinamik olarak karar verir."
+    },
+    "phases": {
+      "spec": {
+        "label": "Özellik Oluşturma",
+        "description": "Keşif, gereksinimler, bağlam toplama"
+      },
+      "planning": {
+        "label": "Planlama",
+        "description": "Uygulama planlaması ve mimari"
+      },
+      "coding": {
+        "label": "Kodlama",
+        "description": "Gerçek kod uygulaması"
+      },
+      "qa": {
+        "label": "QA İncelemesi",
+        "description": "Kalite güvencesi ve doğrulama"
+      }
+    }
+  },
+  "workspace": {
+    "roles": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "mobile": "Mobil",
+      "shared": "Paylaşımlı",
+      "apiGateway": "API Gateway",
+      "worker": "Worker",
+      "other": "Diğer"
+    }
+  },
+  "integrations": {
+    "title": "Entegrasyonlar",
+    "description": "Claude hesaplarını ve API anahtarlarını yönetin",
+    "claudeAccounts": "Claude Hesapları",
+    "claudeAccountsDescription": "Oran limitine ulaştığınızda aralarında otomatik olarak geçiş yapmak için birden fazla Claude aboneliği ekleyin.",
+    "claudeAccountsWarning": "Kimlik doğrularken, tarayıcınızda doğru Claude hesabına giriş yaptığınızdan emin olun. Her profil farklı bir abonelik kullanmalıdır.",
+    "noAccountsYet": "Henüz yapılandırılmış hesap yok",
+    "default": "Varsayılan",
+    "active": "Aktif",
+    "authenticated": "Kimliği Doğrulanmış",
+    "needsAuth": "Kimlik Doğrulama Gerekiyor",
+    "authenticate": "Kimlik Doğrula",
+    "authenticating": "Kimlik Doğrulanıyor...",
+    "setActive": "Aktif Yap",
+    "manualTokenEntry": "Manuel Token Girişi",
+    "runSetupToken": "claude'u çalıştırın ve kimlik doğrulamak için /login yazın",
+    "tokenPlaceholder": "sk-ant-oat01-...",
+    "emailPlaceholder": "E-posta (isteğe bağlı, görüntüleme için)",
+    "saveToken": "Token'ı Kaydet",
+    "accountNamePlaceholder": "Hesap adı (örn., İş, Kişisel)",
+    "autoSwitching": "Otomatik Hesap Değiştirme",
+    "autoSwitchingDescription": "Kesintileri önlemek için Claude hesapları arasında otomatik olarak geçiş yapın. Limitlere ulaşmadan önce geçiş yapmak için proaktif izlemeyi yapılandırın.",
+    "enableAutoSwitching": "Otomatik geçişi etkinleştir",
+    "masterSwitch": "Tüm otomatik değişim özellikleri için ana anahtar",
+    "proactiveMonitoring": "Proaktif İzleme",
+    "proactiveDescription": "Kullanımı düzenli olarak kontrol et ve limitlere ulaşmadan önce değiştir",
+    "checkUsageEvery": "Kullanımı kontrol et her",
+    "seconds15": "15 saniye",
+    "seconds30": "30 saniye (önerilen)",
+    "minute1": "1 dakika",
+    "disabled": "Devre Dışı",
+    "sessionThreshold": "Oturum kullanım eşiği",
+    "sessionThresholdDescription": "Oturum kullanımı bu seviyeye ulaştığında değiştir (önerilen: %95)",
+    "weeklyThreshold": "Haftalık kullanım eşiği",
+    "weeklyThresholdDescription": "Haftalık kullanım bu seviyeye ulaştığında değiştir (önerilen: %99)",
+    "reactiveRecovery": "Reaktif Kurtarma",
+    "reactiveDescription": "Beklenmeyen oran limitine ulaşıldığında otomatik değiştir",
+    "autoSwitchOnAuthFailure": "Kimlik doğrulama başarısız olduğunda otomatik değiştir",
+    "autoSwitchOnAuthFailureDescription": "Kimlik doğrulama başarısız olduğunda otomatik olarak kimliği doğrulanmış başka bir hesaba geç",
+    "apiKeys": "API Anahtarları",
+    "apiKeysInfo": "Burada ayarlanan anahtarlar varsayılan olarak kullanılır. Bireysel projeler bunları kendi ayarlarında geçersiz kılabilir.",
+    "openaiKey": "OpenAI API Anahtarı",
+    "openaiKeyDescription": "Graphiti bellek arka ucu için gerekli (gömülmeler)",
+    "toast": {
+      "authSuccess": "Profil Kimliği Doğrulandı",
+      "authSuccessWithEmail": "{{email}} olarak bağlandı",
+      "authSuccessGeneric": "Kimlik doğrulama tamamlandı. Artık bu profili kullanabilirsiniz.",
+      "authStartFailed": "Kimlik Doğrulama Başarısız",
+      "addProfileFailed": "Profil Eklenemedi",
+      "loadProfilesFailed": "Profiller Yüklenemedi",
+      "deleteProfileFailed": "Profil Silinemedi",
+      "renameProfileFailed": "Profil Yeniden Adlandırılamadı",
+      "setActiveProfileFailed": "Aktif Profil Ayarlanamadı",
+      "profileCreatedAuthFailed": "Profil Oluşturuldu - Kimlik Doğrulama Gerekiyor",
+      "profileCreatedAuthFailedDescription": "Profil eklendi ancak kimlik doğrulama başlatılamadı. Kimlik doğrulamak için giriş düğmesine tıklayın.",
+      "tokenSaved": "Token Kaydedildi",
+      "tokenSavedDescription": "Token'ınız başarıyla kaydedildi.",
+      "tokenSaveFailed": "Token Kaydedilemedi",
+      "settingsUpdateFailed": "Ayarlar Güncellenemedi",
+      "tryAgain": "Lütfen tekrar deneyin.",
+      "terminalCreationFailed": "Kimlik doğrulama terminali oluşturulamadı",
+      "terminalCreationFailedDescription": "Kimlik doğrulama işlemi başlatılamadı. {{error}}",
+      "maxTerminalsReached": "Maksimum terminal sayısına ulaşıldı",
+      "maxTerminalsReachedDescription": "Lütfen bazı terminalleri kapatın ve tekrar deneyin. En fazla 12 terminal açık olabilir.",
+      "terminalError": "Terminal Hatası",
+      "terminalErrorDescription": "Terminal oluşturulamadı: {{error}}",
+      "authProcessFailed": "Kimlik doğrulama işlemi başlatılamadı",
+      "authProcessFailedDescription": "Kimlik doğrulama terminali oluşturulamadı. Lütfen tekrar deneyin veya daha fazla ayrıntı için günlükleri kontrol edin."
+    },
+    "alerts": {
+      "profileCreatedAuthFailed": "Profil oluşturuldu ancak kimlik doğrulama hazırlığı başarısız oldu: {{error}}",
+      "authPrepareFailed": "Kimlik doğrulama hazırlığı başarısız oldu: {{error}}",
+      "authStartFailedMessage": "Kimlik doğrulama başlatılamadı. Lütfen tekrar deneyin."
+    }
+  },
+  "accounts": {
+    "title": "Hesaplar",
+    "description": "Claude hesaplarını ve API uç noktalarını yönetin",
+    "tabs": {
+      "claudeCode": "Claude Code",
+      "customEndpoints": "Özel Uç Noktalar"
+    },
+    "claudeCode": {
+      "description": "Oran limitine ulaştığınızda aralarında otomatik olarak geçiş yapmak için birden fazla Claude aboneliği ekleyin.",
+      "noAccountsYet": "Henüz yapılandırılmış hesap yok",
+      "default": "Varsayılan",
+      "active": "Aktif",
+      "authenticated": "Kimliği Doğrulanmış",
+      "needsAuth": "Kimlik Doğrulama Gerekiyor",
+      "authenticate": "Kimlik Doğrula",
+      "authenticating": "Kimlik Doğrulanıyor...",
+      "setActive": "Aktif Yap",
+      "manualTokenEntry": "Manuel Token Girişi",
+      "runSetupToken": "claude'u çalıştırın ve kimlik doğrulamak için /login yazın",
+      "tokenPlaceholder": "sk-ant-oat01-...",
+      "emailPlaceholder": "E-posta (isteğe bağlı, görüntüleme için)",
+      "saveToken": "Token'ı Kaydet",
+      "accountNamePlaceholder": "Hesap adı (örn., İş, Kişisel)"
+    },
+    "customEndpoints": {
+      "description": "Özel Anthropic uyumlu API uç noktalarını yapılandırın",
+      "addButton": "Profil Ekle",
+      "activeBadge": "Aktif",
+      "customModels": "Özel modeller: {{models}}",
+      "setActive": {
+        "label": "Aktif Yap",
+        "loading": "Ayarlanıyor..."
+      },
+      "switchToOauth": {
+        "label": "Claude Code Kullan",
+        "loading": "Geçiş Yapılıyor..."
+      },
+      "tooltips": {
+        "edit": "Profili düzenle",
+        "deleteActive": "Aktif profil silinemez",
+        "deleteInactive": "Profili sil"
+      },
+      "empty": {
+        "title": "Özel Uç Nokta Yok",
+        "description": "Alternatif sağlayıcıları kullanmak için özel Anthropic uyumlu API uç noktalarını yapılandırın.",
+        "action": "Profil Ekle"
+      },
+      "dialog": {
+        "deleteTitle": "Profili Sil",
+        "deleteDescription": "\"{{name}}\" profilini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+        "cancel": "İptal",
+        "delete": "Sil",
+        "deleting": "Siliniyor..."
+      }
+    },
+    "autoSwitching": {
+      "title": "Otomatik Hesap Değiştirme",
+      "description": "Kesintileri önlemek için hesaplar arasında otomatik olarak geçiş yapın. Limitlere ulaşmadan önce geçiş yapmak için proaktif izlemeyi yapılandırın.",
+      "enableAutoSwitching": "Otomatik geçişi etkinleştir",
+      "masterSwitch": "Tüm otomatik değişim özellikleri için ana anahtar",
+      "proactiveMonitoring": "Proaktif İzleme",
+      "proactiveDescription": "Kullanımı düzenli olarak kontrol et ve limitlere ulaşmadan önce değiştir",
+      "sessionThreshold": "Oturum kullanım eşiği",
+      "sessionThresholdDescription": "Oturum kullanımı bu seviyeye ulaştığında değiştir (önerilen: %95)",
+      "weeklyThreshold": "Haftalık kullanım eşiği",
+      "weeklyThresholdDescription": "Haftalık kullanım bu seviyeye ulaştığında değiştir (önerilen: %99)",
+      "reactiveRecovery": "Reaktif Kurtarma",
+      "reactiveDescription": "Beklenmeyen oran limitine ulaşıldığında otomatik değiştir",
+      "autoSwitchOnAuthFailure": "Kimlik doğrulama başarısız olduğunda otomatik değiştir",
+      "autoSwitchOnAuthFailureDescription": "Kimlik doğrulama başarısız olduğunda otomatik olarak kimliği doğrulanmış başka bir hesaba geç"
+    },
+    "priority": {
+      "title": "Hesap Öncelik Sırası",
+      "description": "Yeniden sıralamak için sürükleyin. Sistem sırayla bir sonraki kullanılabilir hesaba geçecektir.",
+      "noAccounts": "Yapılandırılmış hesap yok. Öncelik belirlemek için yukarıdan hesap ekleyin.",
+      "noEmail": "E-posta yok",
+      "active": "Aktif",
+      "inUse": "Kullanımda",
+      "next": "Sonraki",
+      "unlimited": "Sınırsız",
+      "unavailable": "Kullanılamaz",
+      "typeOAuth": "OAuth",
+      "typeAPI": "API",
+      "payPerUse": "Kullandıkça öde",
+      "needsAuth": "Kimlik doğrulanmamış",
+      "duplicateUsage": "Yinelenen kullanım tespit edildi",
+      "duplicateUsageHint": "Bu profilin kullanımı başka bir profille aynı, bu da aynı Anthropic hesabında kimlik doğrulanmış olabileceklerini gösteriyor. Düzeltmek için farklı bir hesapla yeniden kimlik doğrulayın.",
+      "needsReauth": "Yeniden kimlik doğrulama gerekiyor",
+      "needsReauthHint": "Bu profilin yenileme belirteci geçersiz. Yeniden kimlik doğrulamak için tıklayın.",
+      "sessionUsage": "Oturum kullanımı (5 saatlik pencere)",
+      "weeklyUsage": "Haftalık kullanım (7 günlük pencere)",
+      "oauthSection": "Claude Hesapları (önce bunlar arasında geçiş yap)",
+      "apiSection": "Yedek Uç Noktalar (tüm hesaplar tükendiğinde)",
+      "tipTitle": "Öncelik nasıl çalışır",
+      "tipDescription": "Claude hesapları aboneliğinize dahildir ve önce bunlar arasında geçiş yapılır. API uç noktaları istek başına ücretlendirilir ve tüm Claude hesapları limitine ulaştığında yedek olarak kullanılır.",
+      "status": {
+        "healthy": "Sağlıklı",
+        "moderate": "Orta",
+        "highUsage": "Yüksek kullanım",
+        "nearLimit": "Limite yakın",
+        "rateLimited": "Oran sınırlı"
+      }
+    },
+    "toast": {
+      "loadProfilesFailed": "Profiller Yüklenemedi",
+      "addProfileFailed": "Profil Eklenemedi",
+      "deleteProfileFailed": "Profil Silinemedi",
+      "renameProfileFailed": "Profil Yeniden Adlandırılamadı",
+      "setActiveProfileFailed": "Aktif Profil Ayarlanamadı",
+      "tokenSaved": "Token Kaydedildi",
+      "tokenSavedDescription": "Token'ınız başarıyla kaydedildi.",
+      "tokenSaveFailed": "Token Kaydedilemedi",
+      "settingsUpdateFailed": "Ayarlar Güncellenemedi",
+      "tryAgain": "Lütfen tekrar deneyin."
+    },
+    "alerts": {
+      "profileCreatedAuthFailed": "Profil oluşturuldu ancak kimlik doğrulama hazırlığı başarısız oldu: {{error}}",
+      "authPrepareFailed": "Kimlik doğrulama hazırlığı başarısız oldu: {{error}}",
+      "authStartFailedMessage": "Kimlik doğrulama başlatılamadı. Lütfen tekrar deneyin."
+    }
+  },
+  "debug": {
+    "title": "Hata Ayıklama ve Günlükler",
+    "description": "Sorun giderme için günlüklere ve hata ayıklama bilgilerine erişin",
+    "errorReporting": {
+      "label": "Anonim Hata Raporlama",
+      "description": "Auto Claude'u geliştirmeye yardımcı olmak için çökme raporları gönderin. Hiçbir kişisel veri veya kod toplanmaz."
+    },
+    "openLogsFolder": "Günlükler Klasörünü Aç",
+    "copyDebugInfo": "Hata Ayıklama Bilgisini Kopyala",
+    "copied": "Kopyalandı!",
+    "loadInfo": "Hata Ayıklama Bilgisini Yükle",
+    "systemInfo": "Sistem Bilgisi",
+    "logsLocation": "Günlükler Konumu",
+    "recentErrors": "Son Hatalar",
+    "noRecentErrors": "Son hata yok",
+    "helpTitle": "Sorun Bildirme",
+    "helpText": "Hata bildirirken, sorunu teşhis etmemize yardımcı olan sistem bilgilerini ve son hataları almak için \"Hata Ayıklama Bilgisini Kopyala\"ya tıklayın."
+  },
+  "projectSettings": {
+    "noProjectSelected": {
+      "title": "Proje Seçilmedi",
+      "description": "Ayarlarını yapılandırmak için kenar çubuğundan bir proje seçin."
+    }
+  },
+  "mcp": {
+    "title": "MCP Sunucu Genel Bakışı",
+    "titleWithProject": "{{projectName}} için MCP Sunucu Genel Bakışı",
+    "description": "Bu projedeki agentlar için hangi MCP sunucularının kullanılabilir olduğunu yapılandırın",
+    "descriptionNoProject": "MCP sunucularını yapılandırmak için bir proje seçin",
+    "serversEnabled": "{{count}} sunucu etkin",
+    "configuration": "MCP Sunucu Yapılandırması",
+    "configurationHint": "Devre dışı bırakılan sunucular bağlam kullanımını ve başlatma süresini azaltır",
+    "noProjectSelected": "Proje Seçilmedi",
+    "noProjectSelectedDescription": "MCP sunucularını görüntülemek ve yapılandırmak için açılır menüden bir proje seçin.",
+    "projectNotInitialized": "Proje Başlatılmadı",
+    "projectNotInitializedDescription": "MCP sunucularını yapılandırmak için bu proje için Auto Claude'u başlatın.",
+    "browserAutomation": "Tarayıcı Otomasyonu (yalnızca QA agentları)",
+    "alwaysEnabled": "her zaman etkin",
+    "addServer": "Sunucu Ekle",
+    "addMcpTo": "{{agent}} için MCP Sunucusu Ekle",
+    "addMcpDescription": "Bu agenta eklemek için bir MCP sunucusu seçin",
+    "allMcpsAdded": "Mevcut tüm MCP sunucuları zaten eklendi",
+    "added": "eklendi",
+    "removed": "kaldırıldı",
+    "remove": "Kaldır",
+    "restore": "Geri Yükle",
+    "noMcpServers": "MCP sunucusu yok",
+    "cannotRemove": "Kaldırılamaz (gerekli)",
+    "servers": {
+      "context7": {
+        "name": "Context7",
+        "description": "Kütüphaneler için dokümantasyon araması"
+      },
+      "graphiti": {
+        "name": "Graphiti Bellek",
+        "description": "Oturumlar arası bağlam için bilgi grafiği",
+        "notConfigured": "Bellek yapılandırması gerektirir (Bellek ayarlarına bakın)"
+      },
+      "linear": {
+        "name": "Linear",
+        "description": "Proje yönetimi entegrasyonu",
+        "notConfigured": "Linear entegrasyonu gerektirir (Linear ayarlarına bakın)"
+      },
+      "electron": {
+        "name": "Electron",
+        "description": "Chrome DevTools aracılığıyla masaüstü uygulama otomasyonu"
+      },
+      "puppeteer": {
+        "name": "Puppeteer",
+        "description": "Test için web tarayıcı otomasyonu"
+      },
+      "autoClaude": {
+        "name": "Auto-Claude Araçları",
+        "description": "Derleme ilerleme takibi"
+      }
+    },
+    "customServers": "Özel Sunucular",
+    "addCustomServer": "Özel Sunucu Ekle",
+    "editCustomServer": "Özel Sunucuyu Düzenle",
+    "customServerDescription": "Komut tabanlı veya HTTP tabanlı bir MCP sunucusu ekleyin",
+    "serverType": "Sunucu Türü",
+    "typeCommand": "Komut (npx/npm)",
+    "typeHttp": "HTTP",
+    "serverName": "İsim",
+    "serverNamePlaceholder": "MCP Sunucum",
+    "serverDescription": "Açıklama",
+    "serverDescriptionPlaceholder": "Bu sunucunun ne yaptığı",
+    "command": "Komut",
+    "args": "Argümanlar",
+    "argsHint": "Boşlukla ayrılmış argümanlar",
+    "url": "URL",
+    "headers": "Başlıklar",
+    "headerName": "Başlık Adı",
+    "headerValue": "Başlık Değeri",
+    "noCustomServers": "Özel sunucu yapılandırılmadı. Agentlarınızla kullanmak için bir tane ekleyin.",
+    "errorNameRequired": "Sunucu adı gereklidir",
+    "errorIdExists": "Bu ID'ye sahip bir sunucu zaten mevcut",
+    "errorCommandRequired": "Komut tabanlı sunucular için komut gereklidir",
+    "errorUrlRequired": "HTTP tabanlı sunucular için URL gereklidir",
+    "testConnection": "Test Et",
+    "testing": "Test Ediliyor...",
+    "authToken": "Kimlik Doğrulama Token'ı",
+    "authTokenPlaceholder": "API token'ınızı veya PAT'ınızı buraya yapıştırın",
+    "authTokenHint": "Authorization başlığında Bearer token olarak kullanılır",
+    "advancedHeaders": "Ek Başlıklar",
+    "status": {
+      "healthy": "Sunucu yanıt veriyor",
+      "unhealthy": "Sunucu yanıt vermiyor",
+      "needsAuth": "Kimlik doğrulama gerekli",
+      "checking": "Kontrol ediliyor...",
+      "unknown": "Durum bilinmiyor"
+    },
+    "hints": {
+      "github": "Bu bir GitHub MCP sunucusu gibi görünüyor. Uygun kapsamlara sahip bir Kişisel Erişim Token'ına ihtiyacınız olacak.",
+      "createGithubPat": "GitHub PAT Oluştur",
+      "google": "Bu bir Google API'si gibi görünüyor. Bir OAuth token'ı veya API anahtarına ihtiyacınız olacak.",
+      "createGoogleToken": "Google Kimlik Bilgileri Oluştur",
+      "anthropic": "Bu bir Anthropic API'si gibi görünüyor. Bir API anahtarına ihtiyacınız olacak.",
+      "createAnthropicKey": "Anthropic API Anahtarı Oluştur",
+      "openai": "Bu bir OpenAI API'si gibi görünüyor. Bir API anahtarına ihtiyacınız olacak.",
+      "createOpenaiKey": "OpenAI API Anahtarı Oluştur"
+    }
+  },
+  "terminalFonts": {
+    "title": "Terminal Yazı Tipleri",
+    "description": "Terminal yazı tipi görünümünü ve davranışını özelleştirin",
+    "configActions": "Yapılandırma:",
+    "export": "JSON Dışa Aktar",
+    "import": "JSON İçe Aktar",
+    "copy": "Panoya Kopyala",
+    "fontConfig": {
+      "title": "Yazı Tipi Yapılandırması",
+      "description": "Yazı tipi ailesini, boyutunu, ağırlığını, satır yüksekliğini ve harf aralığını özelleştirin",
+      "fontFamily": "Yazı Tipi Ailesi",
+      "fontFamilyDescription": "Terminal metni için birincil eşaralıklı yazı tipi",
+      "selectFont": "Bir yazı tipi seçin...",
+      "searchFont": "Yazı tiplerini ara...",
+      "noFonts": "Yazı tipi bulunamadı",
+      "fontChain": "Yazı tipi zinciri:",
+      "fontSize": "Yazı Tipi Boyutu",
+      "fontSizeDescription": "Piksel cinsinden temel yazı tipi boyutu (10-24px)",
+      "decreaseFontSize": "Yazı tipi boyutunu {{step}}px azalt",
+      "increaseFontSize": "Yazı tipi boyutunu {{step}}px artır",
+      "pixels": "piksel",
+      "fontWeight": "Yazı Tipi Ağırlığı",
+      "fontWeightDescription": "100 (ince)'den 900 (kalın)'a, 100'lük adımlarla yazı tipi ağırlığı",
+      "commonWeights": "Yaygın: 400 (normal), 600 (yarı kalın), 700 (kalın)",
+      "decreaseFontWeight": "Yazı tipi ağırlığını {{step}} azalt",
+      "increaseFontWeight": "Yazı tipi ağırlığını {{step}} artır",
+      "lineHeight": "Satır Yüksekliği",
+      "lineHeightDescription": "Yazı tipi boyutunun katı olarak satır yüksekliği (1.0-2.0)",
+      "letterSpacing": "Harf Aralığı",
+      "letterSpacingDescription": "Karakterler arasındaki yatay boşluk (-2 ila 5px)"
+    },
+    "cursorConfig": {
+      "title": "İmleç Yapılandırması",
+      "description": "İmleç stilini, yanıp sönme davranışını ve vurgu rengini özelleştirin",
+      "cursorStyle": "İmleç Stili",
+      "cursorStyleDescription": "Terminal imlecinin görünümünü seçin",
+      "selectStyle": "İmleç stilini seçin...",
+      "currentStyle": "Mevcut:",
+      "styleBlock": "Blok",
+      "styleBlockDescription": "Tam blok imleç",
+      "styleUnderline": "Alt Çizgi",
+      "styleUnderlineDescription": "Alt çizgi imleç",
+      "styleBar": "Çubuk",
+      "styleBarDescription": "Dikey çubuk imleç",
+      "cursorBlink": "İmleç Yanıp Sönme",
+      "cursorBlinkDescription": "İmleç yanıp sönme animasyonunu etkinleştirin veya devre dışı bırakın",
+      "blinkStatus": "Durum:",
+      "enabled": "Etkin",
+      "disabled": "Devre Dışı",
+      "cursorAccentColor": "İmleç Vurgu Rengi",
+      "cursorAccentColorDescription": "Terminal imlecinin rengini seçin",
+      "cursorColorLabel": "İmleç vurgu rengi",
+      "cursorColorDescription": "Mevcut renk: {{color}}",
+      "pickColor": "Renk seçmek için tıklayın",
+      "resetColor": "Siyaha sıfırla",
+      "reset": "Sıfırla",
+      "preview": "Önizleme:"
+    },
+    "performanceConfig": {
+      "title": "Performans Ayarları",
+      "description": "Kaydırma geçmişi limitini ve diğer performansla ilgili ayarları düzenleyin",
+      "presets": "Hızlı Ön Ayarlar",
+      "presetsDescription": "Farklı kullanım durumları için yaygın kaydırma geçmişi limitleri",
+      "scrollback": "Kaydırma Geçmişi Limiti",
+      "scrollbackDescription": "Terminal geçmişinde tutulacak maksimum satır sayısı",
+      "scrollbackPresets": "Hızlı Ön Ayarlar",
+      "presetMinimal": "Minimal",
+      "presetMinimalDescription": "Minimal geçmiş (1K satır)",
+      "presetStandard": "Standart",
+      "presetStandardDescription": "Standart geçmiş (10K satır)",
+      "presetExtended": "Genişletilmiş",
+      "presetExtendedDescription": "Genişletilmiş geçmiş (50K satır)",
+      "presetMaximum": "Maksimum",
+      "presetMaximumDescription": "Maksimum geçmiş (100K satır)",
+      "decreaseScrollback": "Kaydırma geçmişini {{step}} azalt",
+      "increaseScrollback": "Kaydırma geçmişini {{step}} artır",
+      "lines": "satır",
+      "kValue": "{{value}}K",
+      "scrollbackValue": "{{value}} satır"
+    },
+    "presets": {
+      "title": "Hızlı Ön Ayarlar",
+      "description": "Önceden yapılandırılmış terminal yazı tipi ayarlarını uygulayın veya kendinizinkini kaydedin",
+      "builtin": "Yerleşik Ön Ayarlar",
+      "builtinDescription": "Önceden yapılandırılmış bir ön ayarı uygulamak için tıklayın",
+      "vscode": "Consolas 14px, blok imleç",
+      "vscodeName": "VS Code",
+      "intellij": "JetBrains Mono 13px, blok imleç",
+      "intellijName": "IntelliJ IDEA",
+      "macos": "SF Mono 13px, blok imleç",
+      "macosName": "macOS Terminal",
+      "ubuntu": "Ubuntu Mono 13px, blok imleç",
+      "ubuntuName": "Ubuntu Terminal",
+      "reset": "Varsayılanlara Sıfırla",
+      "resetDescription": "İşletim sisteminiz için varsayılan ayarları geri yükleyin",
+      "resetToOS": "{{os}} varsayılanlarına sıfırla",
+      "resetButton": "İşletim Sistemi Varsayılanına Sıfırla",
+      "custom": "Özel Ön Ayarlar",
+      "customDescription": "Mevcut yapılandırmanızı özel bir ön ayar olarak kaydedin",
+      "presetNamePlaceholder": "Ön ayar adı...",
+      "savePreset": "Mevcut yapılandırmayı ön ayar olarak kaydet",
+      "applyPreset": "Bu ön ayarı uygula",
+      "deletePreset": "Bu ön ayarı sil",
+      "noCustomPresets": "Henüz özel ön ayar yok. Başlamak için mevcut yapılandırmanızı kaydedin.",
+      "duplicateName": "Bu adda bir ön ayar zaten mevcut",
+      "saved": "Ön ayar \"{{name}}\" kaydedildi",
+      "deleted": "Ön ayar \"{{name}}\" silindi",
+      "unknownFont": "Bilinmeyen",
+      "applyFailed": "Ön ayar \"{{name}}\" uygulanamadı",
+      "presetNameLabel": "Ön ayar adı",
+      "summary": "{{font}}, {{size}}px, {{cursor}} imleç"
+    },
+    "preview": {
+      "title": "Canlı Önizleme",
+      "description": "Terminal ayarlarınızı gerçek zamanlı olarak önizleyin (300ms içinde güncellenir)",
+      "ariaLabel": "Terminal yazı tipi önizlemesi",
+      "infoText": "Bu önizleme, ayarlarınızın gerçek terminallerde nasıl görüneceğini göstermek için herhangi bir değişiklikten sonra 300ms içinde güncellenir."
+    },
+    "importExport": {
+      "exportSuccess": "Ayarlar başarıyla dışa aktarıldı",
+      "exportFailed": "Ayarlar dışa aktarılamadı",
+      "importSuccess": "Ayarlar başarıyla içe aktarıldı",
+      "importFailed": "Ayarlar içe aktarılamadı: Geçersiz JSON formatı",
+      "importFailedRange": "Ayarlar içe aktarılamadı: Değerler geçerli aralığın dışında",
+      "copySuccess": "Ayarlar panoya kopyalandı",
+      "copyFailed": "Panoya kopyalanamadı",
+      "fileTooLarge": "İçe aktarma dosyası çok büyük (maks. 10KB)",
+      "readError": "Dosya okunamadı"
+    },
+    "slider": {
+      "decrease": "{{label}} değerini {{step}} azalt",
+      "increase": "{{label}} değerini {{step}} artır",
+      "currentValue": "Mevcut değer: {{value}}"
+    }
+  },
+  "agents": {
+    "pr_template_filler": {
+      "label": "PR Şablon Doldurucu",
+      "description": "Kod değişikliklerinden GitHub PR şablonlarını AI ile doldurur"
+    }
+  }
+}

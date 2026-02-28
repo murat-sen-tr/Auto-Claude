@@ -1,0 +1,253 @@
+{
+  "wizard": {
+    "title": "Kurulum Sihirbazı",
+    "description": "Auto Claude ortamınızı birkaç basit adımda yapılandırın",
+    "helpText": "Bu sihirbaz, ortamınızı birkaç adımda kurmanıza yardımcı olacak. Claude OAuth token'ınızı yapılandırabilir, bellek özelliklerini ayarlayabilir ve ilk görevinizi oluşturabilirsiniz."
+  },
+  "welcome": {
+    "title": "Auto Claude'a Hoş Geldiniz",
+    "subtitle": "Yapay zeka destekli ajanlarla özerk olarak yazılım geliştirin",
+    "getStarted": "Başlayın",
+    "skip": "Kurulumu Atla",
+    "features": {
+      "aiPowered": {
+        "title": "Yapay Zeka Destekli Geliştirme",
+        "description": "Claude Code ajanlarını kullanarak kod oluşturun ve özellikler geliştirin"
+      },
+      "specDriven": {
+        "title": "Şartname Odaklı İş Akışı",
+        "description": "Görevleri net şartnamelerle tanımlayın ve uygulamayı Auto Claude'a bırakın"
+      },
+      "memory": {
+        "title": "Bellek ve Bağlam",
+        "description": "Graphiti ile oturumlar arası kalıcı bellek"
+      },
+      "parallel": {
+        "title": "Paralel Yürütme",
+        "description": "Daha hızlı geliştirme döngüleri için birden fazla ajanı paralel olarak çalıştırın"
+      }
+    }
+  },
+  "oauth": {
+    "title": "Claude Kimlik Doğrulama",
+    "description": "Yapay zeka özelliklerini etkinleştirmek için Claude hesabınızı bağlayın",
+    "configureTitle": "Claude Kimlik Doğrulamasını Yapılandır",
+    "addAccountsDesc": "Yapay zeka özelliklerini etkinleştirmek için Claude hesaplarınızı ekleyin",
+    "multiAccountInfo": "Hız limitine ulaştığınızda otomatik olarak aralarında geçiş yapmak için birden fazla Claude aboneliği ekleyin.",
+    "noAccountsYet": "Henüz yapılandırılmış hesap yok",
+    "badges": {
+      "default": "Varsayılan",
+      "active": "Aktif",
+      "authenticated": "Kimlik Doğrulandı",
+      "needsAuth": "Kimlik Doğrulama Gerekli"
+    },
+    "buttons": {
+      "authenticate": "Kimlik Doğrula",
+      "setActive": "Aktif Olarak Ayarla",
+      "rename": "Yeniden Adlandır",
+      "delete": "Sil",
+      "add": "Ekle",
+      "adding": "Ekleniyor...",
+      "showToken": "Token'ı Göster",
+      "hideToken": "Token'ı Gizle",
+      "copyToken": "Token'ı Kopyala",
+      "back": "Geri",
+      "continue": "Devam Et",
+      "skip": "Atla"
+    },
+    "labels": {
+      "accountName": "Hesap adı",
+      "namePlaceholder": "Profil adı (örn., İş, Kişisel)",
+      "tokenLabel": "OAuth Token",
+      "tokenPlaceholder": "Token'ı buraya girin",
+      "tokenHint": "OAuth girişini tamamladıktan sonra terminalinizde gösterilen token'ı yapıştırın."
+    },
+    "keychainTitle": "Güvenli Depolama",
+    "keychainDescription": "Token'larınız sistem anahtarlığınız kullanılarak şifrelenir. macOS'tan bir şifre istemi görebilirsiniz — tekrar görmemek için \"Her Zaman İzin Ver\"e tıklayın.",
+    "toast": {
+      "authSuccess": "Profil başarıyla doğrulandı",
+      "authSuccessWithEmail": "Hesap: {{email}}",
+      "authSuccessGeneric": "Kimlik doğrulama tamamlandı. Artık bu profili kullanabilirsiniz.",
+      "authStartFailed": "Kimlik doğrulama başlatılamadı",
+      "addProfileFailed": "Profil eklenemedi",
+      "tokenSaved": "Token kaydedildi",
+      "tokenSavedDescription": "Token'ınız başarıyla kaydedildi.",
+      "tokenSaveFailed": "Token kaydedilemedi",
+      "tryAgain": "Lütfen tekrar deneyin."
+    },
+    "alerts": {
+      "profileCreatedAuthFailed": "Profil oluşturuldu ancak kimlik doğrulama hazırlanamadı: {{error}}",
+      "authPrepareFailed": "Kimlik doğrulama hazırlanamadı: {{error}}",
+      "authStartFailedMessage": "Kimlik doğrulama başlatılamadı. Lütfen tekrar deneyin."
+    }
+  },
+  "memory": {
+    "title": "Bellek",
+    "description": "Ajanlar için kalıcı oturumlar arası belleği yapılandırın",
+    "contextDescription": "Auto Claude Bellek, kodlama oturumlarınız boyunca bağlamı hatırlamaya yardımcı olur",
+    "enableMemory": "Belleği Etkinleştir",
+    "enableMemoryDescription": "LadybugDB (gömülü veritabanı) kullanarak kalıcı oturumlar arası bellek",
+    "memoryDisabledInfo": "Bellek devre dışı. Oturum içgörüleri yalnızca yerel dosyalarda saklanacak. Anlamsal arama ile kalıcı oturumlar arası bağlam için Belleği etkinleştirin.",
+    "enableAgentAccess": "Ajan Bellek Erişimini Etkinleştir",
+    "enableAgentAccessDescription": "Ajanların MCP aracılığıyla bilgi grafiğinde arama yapmasına ve ekleme yapmasına izin ver",
+    "mcpServerUrl": "Graphiti MCP Sunucu URL'si",
+    "mcpServerUrlDescription": "Ajan bellek erişimi için Graphiti MCP sunucusunun URL'si",
+    "embeddingProvider": "Embedding Sağlayıcı",
+    "embeddingProviderDescription": "Anlamsal arama için sağlayıcı (isteğe bağlı - anahtar kelime araması olmadan çalışır)",
+    "selectEmbeddingModel": "Embedding Modeli Seçin",
+    "openaiApiKey": "OpenAI API Anahtarı",
+    "openaiApiKeyDescription": "OpenAI embedding'leri için gerekli",
+    "openaiGetKey": "Anahtarınızı şuradan alın",
+    "voyageApiKey": "Voyage AI API Anahtarı",
+    "voyageApiKeyDescription": "Voyage AI embedding'leri için gerekli",
+    "voyageEmbeddingModel": "Embedding Modeli",
+    "googleApiKey": "Google AI API Anahtarı",
+    "googleApiKeyDescription": "Google AI embedding'leri için gerekli",
+    "azureConfig": "Azure OpenAI Yapılandırması",
+    "azureApiKey": "API Anahtarı",
+    "azureBaseUrl": "Temel URL",
+    "azureEmbeddingDeployment": "Embedding Dağıtım Adı",
+    "memoryInfo": "Bellek, kod tabanınız hakkındaki keşifleri, kalıpları ve içgörüleri saklar, böylece gelecekteki oturumlar bağlam zaten yüklenmiş olarak başlar. Docker gerekmez - gömülü veritabanı kullanır.",
+    "learnMore": "Bellek hakkında daha fazla bilgi edinin",
+    "back": "Geri",
+    "skip": "Atla",
+    "saving": "Kaydediliyor...",
+    "saveAndContinue": "Kaydet ve Devam Et",
+    "providers": {
+      "ollama": "Ollama (Yerel - Ücretsiz)",
+      "openai": "OpenAI",
+      "voyage": "Voyage AI",
+      "google": "Google AI",
+      "azure": "Azure OpenAI"
+    },
+    "ollamaConfig": "Ollama Yapılandırması",
+    "checking": "Kontrol ediliyor...",
+    "connected": "Bağlandı",
+    "notRunning": "Çalışmıyor",
+    "baseUrl": "Temel URL",
+    "embeddingModel": "Embedding Modeli",
+    "embeddingDim": "Embedding Boyutu",
+    "embeddingDimDescription": "Ollama embedding'leri için gerekli (örn., nomic-embed-text için 768)",
+    "modelRecommendation": "Önerilen: qwen3-embedding:4b (dengeli), :8b (kalite), :0.6b (hızlı)"
+  },
+  "completion": {
+    "title": "Her Şey Hazır!",
+    "subtitle": "Auto Claude muhteşem yazılımlar geliştirmenize yardımcı olmaya hazır",
+    "setupComplete": "Kurulum Tamamlandı",
+    "setupCompleteDescription": "Ortamınız yapılandırıldı ve hazır. Hemen görev oluşturmaya başlayabilir veya uygulamayı kendi hızınızda keşfedebilirsiniz.",
+    "whatsNext": "Sırada Ne Var?",
+    "createTask": {
+      "title": "Görev Oluştur",
+      "description": "Auto Claude'u çalışırken görmek için ilk görevinizi oluşturarak başlayın.",
+      "action": "Görev Oluşturucuyu Aç"
+    },
+    "customizeSettings": {
+      "title": "Ayarları Özelleştir",
+      "description": "Tercihlerinizi ince ayarlayın, entegrasyonları yapılandırın veya bu sihirbazı yeniden çalıştırın.",
+      "action": "Ayarları Aç"
+    },
+    "exploreDocs": {
+      "title": "Belgeleri Keşfedin",
+      "description": "Gelişmiş özellikler, en iyi uygulamalar ve sorun giderme hakkında daha fazla bilgi edinin."
+    },
+    "finish": "Bitir ve Geliştirmeye Başla",
+    "rerunHint": "Bu sihirbazı istediğiniz zaman Ayarlar → Uygulama'dan yeniden çalıştırabilirsiniz"
+  },
+  "steps": {
+    "welcome": "Hoş Geldiniz",
+    "authChoice": "Kimlik Doğrulama Yöntemi",
+    "auth": "Kimlik Doğrulama",
+    "claudeCode": "CLI",
+    "devtools": "Geliştirici Araçları",
+    "privacy": "Gizlilik",
+    "memory": "Bellek",
+    "done": "Tamamlandı"
+  },
+  "privacy": {
+    "title": "Auto Claude'u İyileştirmeye Yardımcı Olun",
+    "subtitle": "Anonim hata raporlama, hataları daha hızlı düzeltmemize yardımcı olur",
+    "whatWeCollect": {
+      "title": "Topladıklarımız",
+      "crashReports": "Çökme raporları ve hata yığın izleri",
+      "errorMessages": "Hata mesajları (dosya yolları anonimleştirilmiş)",
+      "appVersion": "Uygulama sürümü ve platform bilgisi"
+    },
+    "whatWeNeverCollect": {
+      "title": "Asla toplamadıklarımız",
+      "code": "Kodunuz veya proje dosyalarınız",
+      "filenames": "Tam dosya yolları (kullanıcı adları maskelenmiş)",
+      "apiKeys": "API anahtarları veya token'lar",
+      "personalData": "Kişisel bilgiler veya kullanım verileri"
+    },
+    "toggle": {
+      "label": "Anonim hata raporları gönder",
+      "description": "Sorunları belirlememize ve düzeltmemize yardımcı olun"
+    }
+  },
+  "claudeCode": {
+    "title": "Claude Code CLI",
+    "description": "Yapay zeka destekli özellikleri etkinleştirmek için Claude Code CLI'sini yükleyin veya güncelleyin",
+    "detecting": "Claude Code kurulumu kontrol ediliyor...",
+    "info": {
+      "title": "Claude Code Nedir?",
+      "description": "Claude Code, Auto Claude'un yapay zeka özelliklerini güçlendiren Anthropic'in resmi CLI'sidir. Güvenli kimlik doğrulama ve Claude modellerine doğrudan erişim sağlar."
+    },
+    "status": {
+      "installed": "Yüklü",
+      "outdated": "Güncelleme Mevcut",
+      "notFound": "Yüklü Değil"
+    },
+    "version": {
+      "current": "Mevcut Sürüm",
+      "latest": "En Son Sürüm"
+    },
+    "install": {
+      "button": "Claude Code'u Yükle",
+      "updating": "Claude Code'u Güncelle",
+      "inProgress": "Yükleniyor...",
+      "success": "Kurulum komutu terminale gönderildi. Lütfen kurulumu orada tamamlayın.",
+      "instructions": "Yükleyici terminalinizde açılacak. Kurulumu tamamlamak için talimatları izleyin."
+    },
+    "learnMore": "Claude Code hakkında daha fazla bilgi edinin"
+  },
+  "devtools": {
+    "title": "Geliştirici Araçları",
+    "description": "Auto Claude çalışma ağaçlarıyla çalışmak için tercih ettiğiniz IDE ve terminali seçin",
+    "detecting": "Yüklü araçlar algılanıyor...",
+    "detectAgain": "Tekrar Algıla",
+    "whyConfigure": "Bunları neden yapılandırmalısınız?",
+    "whyConfigureDescription": "Auto Claude özellikleri yalıtılmış çalışma ağaçlarında geliştirdiğinde, değişiklikleri test etmek ve gözden geçirmek için bunları doğrudan tercih ettiğiniz IDE veya terminalde açabilirsiniz.",
+    "ide": {
+      "label": "Tercih Edilen IDE",
+      "description": "Auto Claude çalışma ağaçlarını bu düzenleyicide açacak",
+      "customPath": "Özel IDE Yolu"
+    },
+    "terminal": {
+      "label": "Tercih Edilen Terminal",
+      "description": "Auto Claude terminal oturumlarını burada açacak",
+      "customPath": "Özel Terminal Yolu"
+    },
+    "detectedSummary": "Sisteminizde algılanan:",
+    "noToolsDetected": "Ek araç algılanmadı (VS Code ve sistem terminali kullanılacak)",
+    "custom": "Özel...",
+    "saveAndContinue": "Kaydet ve Devam Et"
+  },
+  "ollama": {
+    "notInstalled": {
+      "title": "Ollama yüklü değil",
+      "description": "Ollama, anlamsal arama için ücretsiz, yerel embedding modelleri sağlar. Bu özelliği etkinleştirmek için tek tıkla yükleyin.",
+      "installSuccess": "Kurulum terminalinizde başlatıldı. Kurulumu orada tamamlayın, ardından Tekrar Dene'ye tıklayın.",
+      "installButton": "Ollama'yı Yükle",
+      "installing": "Yükleniyor...",
+      "retry": "Tekrar Dene",
+      "learnMore": "Daha fazla bilgi edinin",
+      "fallbackNote": "Bellek, Ollama olmadan bile anahtar kelime aramasıyla çalışmaya devam edecek."
+    },
+    "notRunning": {
+      "title": "Ollama çalışmıyor",
+      "description": "Ollama yüklü ancak çalışmıyor. Yerel embedding modellerini kullanmak için Ollama'yı başlatın.",
+      "retry": "Tekrar Dene",
+      "fallbackNote": "Bellek, embedding'ler olmadan bile anahtar kelime aramasıyla çalışmaya devam edecek."
+    }
+  }
+}
