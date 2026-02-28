@@ -1,0 +1,353 @@
+{
+  "refreshTasks": "Görevleri Yenile",
+  "status": {
+    "backlog": "Bekleyen",
+    "queue": "Kuyruk",
+    "todo": "Yapılacak",
+    "in_progress": "Devam Ediyor",
+    "review": "İnceleme",
+    "prCreated": "PR Oluşturuldu",
+    "complete": "Tamamlandı",
+    "archived": "Arşivlendi"
+  },
+  "actions": {
+    "start": "Başlat",
+    "stop": "Durdur",
+    "recover": "Kurtar",
+    "resume": "Devam Et",
+    "archive": "Arşivle",
+    "delete": "Sil",
+    "view": "Detayları Görüntüle",
+    "viewPR": "PR'ı Görüntüle",
+    "moveTo": "Taşı",
+    "taskActions": "Görev işlemleri",
+    "selectTask": "Görevi seç: {{title}}"
+  },
+  "labels": {
+    "running": "Çalışıyor",
+    "aiReview": "AI İncelemesi",
+    "needsReview": "İnceleme Gerekli",
+    "pending": "Beklemede",
+    "stuck": "Takıldı",
+    "incomplete": "Tamamlanmamış",
+    "recovering": "Kurtarılıyor...",
+    "needsRecovery": "Kurtarma Gerekli",
+    "needsResume": "Devam Gerekli"
+  },
+  "reviewReason": {
+    "completed": "Tamamlandı",
+    "hasErrors": "Hatalar Var",
+    "qaIssues": "QA Sorunları",
+    "approvePlan": "Planı Onayla",
+    "stopped": "Durduruldu"
+  },
+  "tooltips": {
+    "archiveTask": "Görevi arşivle",
+    "archiveAllDone": "Tüm tamamlanan görevleri arşivle",
+    "viewPR": "Pull request'i tarayıcıda aç"
+  },
+  "creation": {
+    "title": "Yeni Görev Oluştur",
+    "description": "Ne yapmak istediğinizi açıklayın",
+    "placeholder": "Görevinizi açıklayın..."
+  },
+  "empty": {
+    "title": "Henüz görev yok",
+    "description": "Başlamak için ilk görevinizi oluşturun"
+  },
+  "columns": {
+    "backlog": "Planlama",
+    "queue": "Kuyruk",
+    "in_progress": "Devam Ediyor",
+    "ai_review": "AI İncelemesi",
+    "human_review": "İnsan İncelemesi",
+    "done": "Tamamlandı",
+    "pr_created": "PR Oluşturuldu",
+    "error": "Hata"
+  },
+  "kanban": {
+    "emptyBacklog": "Planlanmış görev yok",
+    "emptyBacklogHint": "Başlamak için bir görev ekleyin",
+    "emptyQueue": "Kuyruk boş",
+    "emptyQueueHint": "Paralel görev sınırına ulaşıldığında görevler burada bekleyecek",
+    "emptyInProgress": "Çalışan bir şey yok",
+    "emptyInProgressHint": "Planlama'dan bir görev başlatın",
+    "emptyAiReview": "İncelemede görev yok",
+    "emptyAiReviewHint": "AI tamamlanan görevleri inceleyecek",
+    "emptyHumanReview": "İncelenecek bir şey yok",
+    "emptyHumanReviewHint": "Görevler onayınızı burada bekler",
+    "emptyDone": "Tamamlanmış görev yok",
+    "emptyDoneHint": "Onaylanan görevler burada görünür",
+    "emptyDefault": "Görev yok",
+    "dropHere": "Buraya bırak",
+    "showArchived": "Arşivlenenleri göster",
+    "addTaskAriaLabel": "Bekleyen görevlere yeni görev ekle",
+    "queueAllAriaLabel": "Tüm görevleri kuyruğa taşı",
+    "closeTaskDetailsAriaLabel": "Görev detaylarını kapat",
+    "editTask": "Görevi düzenle",
+    "cannotEditWhileRunning": "Görev çalışırken düzenlenemez",
+    "worktreeCleanupTitle": "Worktree Temizliği",
+    "worktreeCleanupStaged": "Bu görev aşamalandırıldı ve bir worktree'ye sahip. Worktree'yi temizlemek ister misiniz?",
+    "worktreeCleanupNotStaged": "Bu görevin birleştirilmemiş değişiklikler içeren bir worktree'si var. Tamamlandı olarak işaretlemek için worktree'yi silin veya önce değişiklikleri incelemek için iptal edin.",
+    "keepWorktree": "Worktree'yi Koru",
+    "deleteWorktree": "Worktree'yi Sil ve Tamamlandı Olarak İşaretle",
+    "refreshTasks": "Görevleri Yenile",
+    "queueSettings": "Kuyruk Ayarları",
+    "orderSaveFailedTitle": "Yeniden sıralama kaydedilmedi",
+    "orderSaveFailedDescription": "Görev sırası değişikliğiniz uygulandı ancak depolamaya kaydedilemedi. Yenileme sonrası kaybolacak.",
+    "selectAll": "Tümünü seç",
+    "deselectAll": "Tümünün seçimini kaldır",
+    "selectedCount": "{{count}} seçildi",
+    "selectedCountOne": "{{count}} görev seçildi",
+    "selectedCountOther": "{{count}} görev seçildi",
+    "createPRs": "PR'lar Oluştur",
+    "deleteSelected": "Sil",
+    "deleteConfirmTitle": "Seçili Görevleri Sil",
+    "deleteConfirmDescription": "Bu görevleri kalıcı olarak silmek istediğinizden emin misiniz?",
+    "deleteWarning": "Bu işlem geri alınamaz. Spec, uygulama planı ve oluşturulan kod dahil tüm görev dosyaları projeden kalıcı olarak silinecek.",
+    "tasksToDelete": "Silinecek görevler",
+    "deleteConfirmButton": "{{count}} Görevi Sil",
+    "deleteSuccess": "{{count}} görev başarıyla silindi",
+    "deleteError": "Bazı görevler silinemedi",
+    "clearSelection": "Seçimi Temizle",
+    "collapseColumn": "Sütunu daralt",
+    "expandColumn": "Sütunu genişlet",
+    "resizeColumn": "Sütunu yeniden boyutlandır",
+    "lockColumn": "Sütun genişliğini kilitle",
+    "unlockColumn": "Sütun genişliğinin kilidini aç",
+    "columnLocked": "Sütun genişliği kilitli",
+    "expandAll": "Tüm sütunları genişlet"
+  },
+  "queue": {
+    "limitReached": "Paralel görev sınırına ulaşıldı ({{current}}/{{max}}). Görev kuyruğa taşındı.",
+    "movedToQueue": "Görev kuyruğa taşındı.",
+    "autoPromoted": "Görev kuyruktan Devam Ediyor'a otomatik yükseltildi.",
+    "capacityAvailable": "Devam Ediyor'da {{count}} slot mevcut.",
+    "queueAll": "Tümünü Kuyruğa Ekle",
+    "queueAllSuccess": "{{count}} görev kuyruğa taşındı.",
+    "settings": {
+      "title": "Kuyruk Ayarları",
+      "description": "\"Devam Ediyor\" panosunda paralel olarak çalışabilecek maksimum görev sayısını yapılandırın",
+      "maxParallelLabel": "Maksimum Paralel Görev",
+      "minValueError": "En az 1 olmalı",
+      "maxValueError": "10'u aşamaz",
+      "hint": "Bu sınıra ulaşıldığında, yeni görevler \"Devam Ediyor\"a geçmeden önce kuyrukta bekleyecek",
+      "saved": "Kuyruk ayarları kaydedildi",
+      "saveFailed": "Kuyruk ayarları kaydedilemedi",
+      "retry": "Lütfen tekrar deneyin"
+    }
+  },
+  "execution": {
+    "phases": {
+      "idle": "Boşta",
+      "planning": "Planlıyor",
+      "coding": "Kodluyor",
+      "rate_limit_paused": "Hız Sınırı",
+      "auth_failure_paused": "Kimlik Doğrulama Gerekli",
+      "reviewing": "İnceliyor",
+      "fixing": "Düzeltiyor",
+      "complete": "Tamamlandı",
+      "failed": "Başarısız"
+    },
+    "labels": {
+      "interrupted": "Kesildi",
+      "progress": "İlerleme",
+      "entry": "girdi",
+      "entries": "girdi"
+    },
+    "shortPhases": {
+      "plan": "Plan",
+      "code": "Kod",
+      "qa": "QA"
+    }
+  },
+  "files": {
+    "title": "Dosyalar",
+    "tab": "Dosyalar",
+    "noSpecPath": "Spec dosyası mevcut değil",
+    "noFiles": "Dosya bulunamadı",
+    "loading": "Dosyalar yükleniyor...",
+    "loadingContent": "İçerik yükleniyor...",
+    "errorLoading": "Dosyalar yüklenemedi",
+    "errorLoadingContent": "Dosya içeriği yüklenemedi",
+    "retry": "Tekrar Dene",
+    "selectFile": "İçeriğini görüntülemek için bir dosya seçin",
+    "openInIDE": "IDE'de Aç"
+  },
+  "metadata": {
+    "fastMode": "Hızlı",
+    "severity": "önem",
+    "pullRequest": "Pull Request",
+    "showMore": "Daha fazla göster",
+    "showLess": "Daha az göster"
+  },
+  "images": {
+    "removeImageAriaLabel": "{{filename}} resmini kaldır",
+    "pasteHint": "İpucu: Referans görselleri eklemek için ekran görüntülerini doğrudan {{shortcut}} ile yapıştırın."
+  },
+  "imagePreview": {
+    "close": "Önizlemeyi kapat",
+    "unavailable": "Görsel kullanılamıyor",
+    "description": "{{filename}} önizlemesi",
+    "doubleClickHint": "Büyütmek için çift tıklayın",
+    "lowResolution": "Düşük çözünürlüklü önizleme"
+  },
+  "notifications": {
+    "backgroundTaskTitle": "Görev arka planda devam ediyor",
+    "backgroundTaskDescription": "Görev hala çalışıyor. İlerlemeyi izlemek için bu diyalogu yeniden açabilirsiniz."
+  },
+  "wizard": {
+    "createTitle": "Yeni Görev Oluştur",
+    "createDescription": "Ne yapmak istediğinizi açıklayın. AI isteğinizi analiz edecek ve detaylı bir spesifikasyon oluşturacak.",
+    "descriptionPlaceholder": "Uygulamak istediğiniz özelliği, hata düzeltmesini veya iyileştirmeyi açıklayın. Gereksinimler, kısıtlamalar ve beklenen davranış hakkında mümkün olduğunca spesifik olun. Dosyalara referans vermek için @ yazın.",
+    "draftRestored": "Taslak geri yüklendi",
+    "startFresh": "Yeni Başla",
+    "hideFiles": "Dosyaları Gizle",
+    "browseFiles": "Dosyalara Göz At",
+    "creating": "Oluşturuluyor...",
+    "createTask": "Görev Oluştur",
+    "worktreeNotice": {
+      "title": "İzole Çalışma Alanı",
+      "description": "Bu görev izole bir git worktree'de çalışır. Ana dalınız birleştirmeyi seçene kadar güvende kalır."
+    },
+    "gitOptions": {
+      "title": "Git Seçenekleri (isteğe bağlı)",
+      "baseBranchLabel": "Ana Dal (isteğe bağlı)",
+      "useProjectDefault": "Proje varsayılanını kullan",
+      "useProjectDefaultWithBranch": "Proje varsayılanını kullan ({{branch}})",
+      "searchBranches": "Dalları ara...",
+      "noBranchesFound": "Dal bulunamadı",
+      "helpText": "Bu görevin worktree'sinin oluşturulacağı dalı geçersiz kılın. Projenin yapılandırılmış varsayılan dalını kullanmak için boş bırakın.",
+      "useWorktreeLabel": "İzole çalışma alanı kullan (önerilen)",
+      "useWorktreeDescription": "Birleştirmeden önce güvenli inceleme için ayrı bir git worktree'de değişiklikler oluşturur. Doğrudan projenizde oluşturmak için devre dışı bırakın (daha hızlı ama riskli)."
+    },
+    "errors": {
+      "createFailed": "Görev oluşturulamadı. Lütfen tekrar deneyin.",
+      "startFailed": "Görev başlatılamadı"
+    }
+  },
+  "feedback": {
+    "dragDropHint": "Görselleri sürükleyip bırakın veya ekran görüntülerini yapıştırın",
+    "imageAdded": "Görsel başarıyla eklendi",
+    "maxImagesError": "Maksimum {{count}} görsel izin verilir",
+    "invalidTypeError": "Geçersiz görsel türü. İzin verilenler: {{types}}",
+    "removeImage": "Görseli kaldır",
+    "processingError": "Görsel işlenemedi"
+  },
+  "review": {
+    "mergeTooltip": "Görevin worktree dalındaki değişiklikleri ana dalınıza birleştirir. AI çakışmaları çözecek. Ardından worktree'yi korumayı veya kaldırmayı seçebilirsiniz."
+  },
+  "edit": {
+    "title": "Görevi Düzenle",
+    "description": "Başlık, açıklama, sınıflandırma, görseller ve ayarlar dahil görev detaylarını güncelleyin. Değişiklikler spec dosyalarına kaydedilecek.",
+    "saveChanges": "Değişiklikleri Kaydet",
+    "errors": {
+      "updateFailed": "Görev güncellenemedi. Lütfen tekrar deneyin."
+    }
+  },
+  "form": {
+    "description": "Açıklama",
+    "descriptionPlaceholder": "Uygulamak istediğiniz özelliği, hata düzeltmesini veya iyileştirmeyi açıklayın. Gereksinimler, kısıtlamalar ve beklenen davranış hakkında mümkün olduğunca spesifik olun.",
+    "imageAddedSuccess": "Görsel başarıyla eklendi!",
+    "taskTitle": "Görev Başlığı",
+    "titlePlaceholder": "Açıklamadan otomatik oluşturması için boş bırakın",
+    "titleHelpText": "Boş bırakılırsa kısa, açıklayıcı bir başlık otomatik olarak oluşturulacak.",
+    "classificationOptional": "Sınıflandırma (isteğe bağlı)",
+    "requireReviewLabel": "Kodlamadan önce insan incelemesi gerektir",
+    "requireReviewDescription": "Etkinleştirildiğinde, kodlama aşaması başlamadan önce spec ve uygulama planını incelemeniz istenecek. Bu, onaylamanıza, değişiklik talep etmenize veya geri bildirim sağlamanıza olanak tanır.",
+    "fastModeLabel": "Hızlı Mod",
+    "fastModeDescription": "Aynı Opus 4.6 modeli daha hızlı çıktı ile. Token başına daha yüksek maliyet.",
+    "fastModeNotice": "Claude aboneliğinizde \"ekstra kullanım\" etkinleştirilmesini gerektirir.",
+    "errors": {
+      "descriptionRequired": "Lütfen bir açıklama girin",
+      "maxImagesReached": "Maksimum 5 görsel izin verilir",
+      "invalidImageType": "Geçersiz görsel türü. İzin verilenler: PNG, JPEG, GIF, WebP",
+      "processPasteFailed": "Yapıştırılan görsel işlenemedi",
+      "processDropFailed": "Bırakılan görsel işlenemedi"
+    },
+    "classification": {
+      "category": "Kategori",
+      "selectCategory": "Kategori seçin",
+      "priority": "Öncelik",
+      "selectPriority": "Öncelik seçin",
+      "complexity": "Karmaşıklık",
+      "selectComplexity": "Karmaşıklık seçin",
+      "impact": "Etki",
+      "selectImpact": "Etki seçin",
+      "helpText": "Bu etiketler görevleri organize etmeye ve önceliklendirmeye yardımcı olur. İsteğe bağlıdır ancak filtreleme için kullanışlıdır.",
+      "values": {
+        "category": {
+          "feature": "Özellik",
+          "bug_fix": "Hata Düzeltme",
+          "refactoring": "Yeniden Yapılandırma",
+          "documentation": "Dokümantasyon",
+          "security": "Güvenlik"
+        },
+        "priority": {
+          "low": "Düşük",
+          "medium": "Orta",
+          "high": "Yüksek",
+          "urgent": "Acil"
+        },
+        "complexity": {
+          "trivial": "Çok Basit",
+          "small": "Küçük",
+          "medium": "Orta",
+          "large": "Büyük",
+          "complex": "Karmaşık"
+        },
+        "impact": {
+          "low": "Düşük Etki",
+          "medium": "Orta Etki",
+          "high": "Yüksek Etki",
+          "critical": "Kritik Etki"
+        }
+      }
+    }
+  },
+  "subtasks": {
+    "untitled": "Başlıksız alt görev"
+  },
+  "bulkPR": {
+    "selectAllInColumn": "Sütundaki tüm görevleri seç",
+    "deselectAllInColumn": "Tüm görevlerin seçimini kaldır",
+    "selectionMode": "Seçim modu aktif",
+    "exitSelectionMode": "Seçim modundan çık",
+    "noTasksToSelect": "Seçilecek görev yok",
+    "confirmBulkAction": "{{count}} görev için toplu işlemi onayla",
+    "processingTasks": "Seçili görevler işleniyor..."
+  },
+  "screenshot": {
+    "title": "Ekran Görüntüsü Al",
+    "description": "Referans görsel olarak yakalamak için bir ekran veya pencere seçin",
+    "capture": "Yakala",
+    "capturing": "Yakalanıyor...",
+    "noSources": "Ekran veya pencere bulunamadı",
+    "errors": {
+      "getSources": "Ekran görüntüsü kaynakları alınamadı",
+      "fetchSources": "Ekran görüntüsü kaynakları getirilemedi",
+      "capture": "Ekran görüntüsü yakalanamadı",
+      "captureFailed": "Ekran görüntüsü yakalanamadı"
+    },
+    "devMode": {
+      "title": "Ekran görüntüsü alma kullanılamıyor",
+      "description": "Sistem izin kısıtlamaları nedeniyle geliştirme modunda ekran yakalama mevcut değil.",
+      "hint": "Harici bir ekran görüntüsü aracı kullanın ve {{shortcut}} ile doğrudan görev açıklamasına yapıştırın."
+    }
+  },
+  "deleteDialog": {
+    "title": "Görevi Sil",
+    "confirmMessage": "Silmek istediğinizden emin misiniz",
+    "destructiveWarning": "Bu işlem geri alınamaz. Spec, uygulama planı ve oluşturulan kod dahil tüm görev dosyaları projeden kalıcı olarak silinecek.",
+    "checkingChanges": "Commit edilmemiş değişiklikler kontrol ediliyor...",
+    "uncommittedChanges": "Bu görevin worktree'sinde {{count}} commit edilmemiş dosya var",
+    "uncommittedChangesHint": "Bu değişiklikler commit edilmedi veya birleştirilmedi. Bu görevi silmek, worktree'deki tüm commit edilmemiş çalışmaları kalıcı olarak iptal edecek.",
+    "cancel": "İptal",
+    "deletePermanently": "Kalıcı Olarak Sil",
+    "deleting": "Siliniyor..."
+  },
+  "referenceImages": {
+    "title": "Referans Görseller (isteğe bağlı)",
+    "description": "AI'nın gereksinimlerinizi anlamasına yardımcı olmak için ekran görüntüleri veya tasarımlar gibi görsel referanslar ekleyin."
+  }
+}
