@@ -98,6 +98,7 @@ export interface ChangelogGenerationRequest {
   audience: ChangelogAudience;
   emojiLevel?: ChangelogEmojiLevel; // Optional emoji usage level
   customInstructions?: string;
+  language?: string; // Language for AI-generated content (e.g., 'en', 'fr', 'tr')
 }
 
 export interface ChangelogGenerationResult {

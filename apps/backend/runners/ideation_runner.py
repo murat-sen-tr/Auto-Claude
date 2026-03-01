@@ -127,6 +127,12 @@ def main():
         action="store_true",
         help="Enable Fast Mode for faster Opus 4.6 output",
     )
+    parser.add_argument(
+        "--language",
+        type=str,
+        default="en",
+        help="Language for AI-generated content (e.g., 'en', 'fr', 'tr')",
+    )
 
     args = parser.parse_args()
 
@@ -161,6 +167,7 @@ def main():
         refresh=args.refresh,
         append=args.append,
         fast_mode=args.fast_mode,
+        language=args.language,
     )
 
     try:

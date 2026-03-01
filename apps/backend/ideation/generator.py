@@ -65,6 +65,7 @@ class IdeationGenerator:
         thinking_level: str = "medium",
         max_ideas_per_type: int = 5,
         fast_mode: bool = False,
+        language: str = "en",
     ):
         self.project_dir = Path(project_dir)
         self.output_dir = Path(output_dir)
@@ -73,6 +74,7 @@ class IdeationGenerator:
         self.thinking_budget = get_thinking_budget(thinking_level)
         self.max_ideas_per_type = max_ideas_per_type
         self.fast_mode = fast_mode
+        self.language = language
         self.prompts_dir = Path(__file__).parent.parent / "prompts"
 
     async def run_agent(
@@ -88,6 +90,16 @@ class IdeationGenerator:
 
         # Load prompt
         prompt = prompt_path.read_text(encoding="utf-8")
+
+        # Add language instruction if not English
+        if self.language and self.language != "en":
+            language_names = {
+                "fr": "French (Français)",
+                "tr": "Turkish (Türkçe)",
+            }
+            language_name = language_names.get(self.language, self.language)
+            language_instruction = f"\n\nIMPORTANT - LANGUAGE REQUIREMENT: You MUST write all idea titles, descriptions, rationale, and other text content in {language_name}. The user has selected {language_name} as their preferred language. This is a critical requirement - all generated content must be in {language_name}, not English.\n\n"
+            prompt = language_instruction + prompt
 
         # Add context
         prompt += f"\n\n---\n\n**Output Directory**: {self.output_dir}\n"
