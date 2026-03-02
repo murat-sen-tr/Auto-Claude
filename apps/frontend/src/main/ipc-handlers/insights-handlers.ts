@@ -427,6 +427,19 @@ export function registerInsightsHandlers(getMainWindow: () => BrowserWindow | nu
     }
   );
 
+  ipcMain.handle(
+    IPC_CHANNELS.INSIGHTS_RESPOND_PERMISSION,
+    async (_, projectId: string, requestId: string, allowed: boolean): Promise<IPCResult> => {
+      try {
+        insightsService.respondToPermission(projectId, requestId, allowed);
+        return { success: true };
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : String(error);
+        return { success: false, error: errorMessage };
+      }
+    }
+  );
+
   // ============================================
   // Insights Event Forwarding (Service -> Renderer)
   // ============================================
@@ -454,5 +467,10 @@ export function registerInsightsHandlers(getMainWindow: () => BrowserWindow | nu
   // Forward session-updated events to renderer for real-time UI updates
   insightsService.on("session-updated", (projectId: string, session: unknown) => {
     safeSendToRenderer(getMainWindow, IPC_CHANNELS.INSIGHTS_SESSION_UPDATED, projectId, session);
+  });
+
+  // Forward permission requests to renderer
+  insightsService.on("permission-request", (projectId: string, request: unknown) => {
+    safeSendToRenderer(getMainWindow, IPC_CHANNELS.INSIGHTS_PERMISSION_REQUEST, projectId, request);
   });
 }
