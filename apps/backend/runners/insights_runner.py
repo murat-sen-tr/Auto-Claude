@@ -10,6 +10,7 @@ import argparse
 import asyncio
 import base64
 import json
+import select
 import sys
 import tempfile
 from pathlib import Path
@@ -240,6 +241,78 @@ Be conversational and helpful. Focus on providing actionable insights and clear 
 Keep responses concise but informative."""
 
 
+PERMISSION_TIMEOUT = 300  # 5 minutes
+
+# Tools that require explicit user permission when --allow-edits is enabled
+PERMISSION_GATED_TOOLS = frozenset(["Write", "Edit", "Bash"])
+
+
+def _request_permission(tool_name: str, tool_input: dict) -> bool:
+    """Request permission from the frontend via stdout/stdin protocol.
+
+    Prints a __PERMISSION_REQUEST__ marker to stdout and waits for a
+    __PERMISSION_RESPONSE__ on stdin. Returns True if approved, False otherwise.
+    Times out after PERMISSION_TIMEOUT seconds to prevent indefinite hanging.
+    """
+    request = {
+        "tool": tool_name,
+        "input": tool_input,
+    }
+    print(f"__PERMISSION_REQUEST__:{json.dumps(request)}", flush=True)
+
+    # Wait for response with timeout
+    try:
+        ready, _, _ = select.select([sys.stdin], [], [], PERMISSION_TIMEOUT)
+        if not ready:
+            debug_error(
+                "insights_runner",
+                f"Permission request timed out after {PERMISSION_TIMEOUT}s",
+            )
+            return False
+
+        line = sys.stdin.readline().strip()
+        if line.startswith("__PERMISSION_RESPONSE__:"):
+            response_json = line[len("__PERMISSION_RESPONSE__:"):]
+            response = json.loads(response_json)
+            return response.get("approved", False)
+        else:
+            debug_error(
+                "insights_runner",
+                f"Unexpected stdin response: {line[:100]}",
+            )
+            return False
+    except Exception as e:
+        debug_error("insights_runner", f"Permission request failed: {e}")
+        return False
+
+
+async def _permission_hook(input_data: dict) -> dict:
+    """PreToolUse hook that intercepts permission-gated tools.
+
+    When --allow-edits is enabled, Write/Edit/Bash tools are in allowed_tools
+    but still need explicit user approval before each invocation.
+    """
+    tool_name = input_data.get("tool_name", "")
+    if tool_name not in PERMISSION_GATED_TOOLS:
+        return {}
+
+    tool_input = input_data.get("tool_input", {})
+    approved = _request_permission(tool_name, tool_input)
+
+    if approved:
+        debug("insights_runner", "Permission granted", tool=tool_name)
+        return {}
+    else:
+        debug("insights_runner", "Permission denied", tool=tool_name)
+        return {
+            "hookSpecificOutput": {
+                "hookEventName": "PreToolUse",
+                "permissionDecision": "deny",
+                "permissionDecisionReason": f"User denied permission for {tool_name} tool",
+            }
+        }
+
+
 async def run_with_sdk(
     project_dir: str,
     message: str,
@@ -247,6 +320,7 @@ async def run_with_sdk(
     model: str = "sonnet",  # Shorthand - resolved via API Profile if configured
     thinking_level: str = "medium",
     images: list[dict] | None = None,
+    allow_edits: bool = False,
 ) -> None:
     """Run the chat using Claude SDK with streaming."""
     if not SDK_AVAILABLE:
@@ -294,15 +368,27 @@ Current question: {message}"""
     )
 
     try:
+        # Base read-only tools for codebase exploration
+        allowed_tools = ["Read", "Glob", "Grep"]
+
+        # When --allow-edits is enabled, add write tools (permission-gated via hook)
+        if allow_edits:
+            allowed_tools.extend(["Write", "Edit", "Bash"])
+            debug("insights_runner", "Edit mode enabled", tools=allowed_tools)
+
         options_kwargs = {
             "model": resolve_model_id(model),  # Resolve via API Profile if configured
             "system_prompt": system_prompt,
-            "allowed_tools": ["Read", "Glob", "Grep"],
+            "allowed_tools": allowed_tools,
             "max_turns": 30,  # Allow sufficient turns for codebase exploration
             "cwd": str(project_path),
         }
 
         options_kwargs["max_thinking_tokens"] = max_thinking_tokens
+
+        # Add permission hook for write tools when edits are allowed
+        if allow_edits:
+            options_kwargs["pre_tool_use_hook"] = _permission_hook
 
         # Create Claude SDK client with appropriate settings for insights
         client = ClaudeSDKClient(options=ClaudeAgentOptions(**options_kwargs))
@@ -487,6 +573,12 @@ def main():
         "--images-file",
         help="Path to JSON manifest file listing image file paths and MIME types",
     )
+    parser.add_argument(
+        "--allow-edits",
+        action="store_true",
+        default=False,
+        help="Enable file editing tools (Write, Edit, Bash) with permission prompts",
+    )
     args = parser.parse_args()
 
     # Validate and sanitize thinking level (handles legacy values like 'ultrathink')
@@ -547,7 +639,15 @@ def main():
     # Run the async SDK function
     debug("insights_runner", "Running SDK query")
     asyncio.run(
-        run_with_sdk(project_dir, user_message, history, model, thinking_level, images)
+        run_with_sdk(
+            project_dir,
+            user_message,
+            history,
+            model,
+            thinking_level,
+            images,
+            allow_edits=args.allow_edits,
+        )
     )
     debug_success("insights_runner", "Query completed")
 
