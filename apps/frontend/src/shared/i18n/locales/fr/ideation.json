@@ -1,0 +1,91 @@
+{
+  "header": {
+    "title": "Idéation",
+    "subtitle": "Idées de fonctionnalités générées par l'IA pour votre projet",
+    "ideasCount": "{{count}} idées"
+  },
+  "emptyState": {
+    "title": "Pas encore d'idées",
+    "description": "Générez des idées de fonctionnalités alimentées par l'IA basées sur le contexte de votre projet, les modèles existants et le public cible.",
+    "enabledTypes": "Types d'idéation activés",
+    "generateButton": "Générer des idées",
+    "tokenWarning": "Jeton Claude non configuré. Vous serez invité à le saisir lors de la génération."
+  },
+  "generation": {
+    "title": "Génération d'idées",
+    "complete": "terminé",
+    "showLogs": "Afficher",
+    "hideLogs": "Masquer",
+    "logs": "Journaux",
+    "stop": "Arrêter",
+    "stopping": "Arrêt en cours...",
+    "stopTooltip": "Arrêter la génération",
+    "ideas": "idées",
+    "waitingToStart": "En attente de démarrage...",
+    "failedToGenerate": "Échec de la génération d'idées pour cette catégorie",
+    "noIdeasGenerated": "Aucune idée générée pour cette catégorie"
+  },
+  "filters": {
+    "all": "Tout",
+    "code": "Code",
+    "uiUx": "UI/UX",
+    "docs": "Documentation",
+    "security": "Sécurité",
+    "performance": "Performance"
+  },
+  "config": {
+    "title": "Configuration de l'idéation",
+    "description": "Configurez les types d'idées à générer",
+    "ideationTypes": "Types d'idéation",
+    "contextSources": "Sources de contexte",
+    "includeRoadmapContext": "Inclure le contexte de la feuille de route",
+    "includeKanbanContext": "Inclure le contexte Kanban",
+    "close": "Fermer"
+  },
+  "addMore": {
+    "title": "Ajouter plus d'idées",
+    "description": "Sélectionnez des types d'idéation supplémentaires à générer. Vos idées existantes seront préservées.",
+    "allTypesGenerated": "Vous avez déjà généré tous les types d'idéation !",
+    "regenerateSuggestion": "Utilisez \"Régénérer\" pour actualiser les idées existantes.",
+    "selected": "{{count}} sélectionné",
+    "cancel": "Annuler",
+    "generate": "Générer {{count}} types",
+    "generateIdeas": "Générer des idées"
+  },
+  "details": {
+    "effort": "Effort",
+    "files": "Fichiers",
+    "buildsUpon": "S'appuie sur",
+    "implementationApproach": "Approche d'implémentation",
+    "affectedFiles": "Fichiers affectés",
+    "patternsToFollow": "Modèles à suivre",
+    "severity": "Gravité",
+    "category": "Catégorie",
+    "breakingChange": "Changement cassant",
+    "breakingChangeWarning": "Cette refactorisation peut casser le code ou les tests existants.",
+    "currentState": "État actuel",
+    "proposedChange": "Changement proposé",
+    "codeExample": "Exemple de code",
+    "metrics": "Métriques",
+    "lines": "Lignes",
+    "complexity": "Complexité",
+    "duplicateLines": "Lignes dupliquées",
+    "testCoverage": "Couverture des tests",
+    "bestPractice": "Bonne pratique",
+    "prerequisites": "Prérequis",
+    "targetAudience": "Public cible",
+    "currentDocumentation": "Documentation actuelle",
+    "proposedContent": "Contenu proposé",
+    "affectedAreas": "Zones affectées",
+    "priority": "Priorité",
+    "impact": "Impact",
+    "expectedImprovement": "Amélioration attendue",
+    "implementation": "Implémentation",
+    "tradeoffs": "Compromis",
+    "vulnerability": "Vulnérabilité",
+    "currentRisk": "Risque actuel",
+    "remediation": "Remédiation",
+    "references": "Références",
+    "compliance": "Conformité"
+  }
+}

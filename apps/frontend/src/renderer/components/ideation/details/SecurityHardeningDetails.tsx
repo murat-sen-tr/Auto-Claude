@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import {
   Shield,
   AlertTriangle,
@@ -19,6 +20,7 @@ interface SecurityHardeningDetailsProps {
 }
 
 export function SecurityHardeningDetails({ idea }: SecurityHardeningDetailsProps) {
+  const { t } = useTranslation('ideation');
   return (
     <>
       {/* Metrics */}
@@ -27,13 +29,13 @@ export function SecurityHardeningDetails({ idea }: SecurityHardeningDetailsProps
           <div className={`text-lg font-semibold ${SECURITY_SEVERITY_COLORS[idea.severity]}`}>
             {idea.severity}
           </div>
-          <div className="text-xs text-muted-foreground">Severity</div>
+          <div className="text-xs text-muted-foreground">{t('details.severity')}</div>
         </Card>
         <Card className="p-3 text-center">
           <div className="text-lg font-semibold">
             {idea.affectedFiles?.length ?? 0}
           </div>
-          <div className="text-xs text-muted-foreground">Files</div>
+          <div className="text-xs text-muted-foreground">{t('details.files')}</div>
         </Card>
       </div>
 
@@ -41,7 +43,7 @@ export function SecurityHardeningDetails({ idea }: SecurityHardeningDetailsProps
       <div>
         <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
           <Shield className="h-4 w-4" />
-          Category
+          {t('details.category')}
         </h3>
         <Badge variant="outline">
           {SECURITY_CATEGORY_LABELS[idea.category]}
@@ -53,7 +55,7 @@ export function SecurityHardeningDetails({ idea }: SecurityHardeningDetailsProps
         <div>
           <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
             <AlertTriangle className="h-4 w-4 text-warning" />
-            Vulnerability
+            {t('details.vulnerability')}
           </h3>
           <p className="text-sm font-mono text-muted-foreground">{idea.vulnerability}</p>
         </div>
@@ -63,7 +65,7 @@ export function SecurityHardeningDetails({ idea }: SecurityHardeningDetailsProps
       <div>
         <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
           <AlertCircle className="h-4 w-4" />
-          Current Risk
+          {t('details.currentRisk')}
         </h3>
         <p className="text-sm text-muted-foreground">{idea.currentRisk}</p>
       </div>
@@ -72,7 +74,7 @@ export function SecurityHardeningDetails({ idea }: SecurityHardeningDetailsProps
       <div>
         <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
           <Wrench className="h-4 w-4" />
-          Remediation
+          {t('details.remediation')}
         </h3>
         <p className="text-sm text-muted-foreground">{idea.remediation}</p>
       </div>
@@ -82,7 +84,7 @@ export function SecurityHardeningDetails({ idea }: SecurityHardeningDetailsProps
         <div>
           <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
             <FileCode className="h-4 w-4" />
-            Affected Files
+            {t('details.affectedFiles')}
           </h3>
           <ul className="space-y-1">
             {idea.affectedFiles.map((file, i) => (
@@ -99,7 +101,7 @@ export function SecurityHardeningDetails({ idea }: SecurityHardeningDetailsProps
         <div>
           <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
             <ExternalLink className="h-4 w-4" />
-            References
+            {t('details.references')}
           </h3>
           <ul className="space-y-1">
             {idea.references.map((ref, i) => (
@@ -114,7 +116,7 @@ export function SecurityHardeningDetails({ idea }: SecurityHardeningDetailsProps
       {/* Compliance */}
       {idea.compliance && idea.compliance.length > 0 && (
         <div>
-          <h3 className="text-sm font-medium mb-2">Compliance</h3>
+          <h3 className="text-sm font-medium mb-2">{t('details.compliance')}</h3>
           <div className="flex flex-wrap gap-1">
             {idea.compliance.map((comp, i) => (
               <Badge key={i} variant="outline" className="text-xs">
