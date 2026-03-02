@@ -511,6 +511,8 @@ export const IPC_CHANNELS = {
   INSIGHTS_STATUS: 'insights:status',
   INSIGHTS_ERROR: 'insights:error',
   INSIGHTS_SESSION_UPDATED: 'insights:sessionUpdated',  // Event: session updated (main -> renderer)
+  INSIGHTS_PERMISSION_REQUEST: 'insights:permissionRequest',  // Event: permission request (main -> renderer)
+  INSIGHTS_RESPOND_PERMISSION: 'insights:respondPermission',  // Renderer -> Main: respond to permission request
 
   // File explorer operations
   FILE_EXPLORER_LIST: 'fileExplorer:list',
