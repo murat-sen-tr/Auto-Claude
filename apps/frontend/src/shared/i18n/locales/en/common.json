@@ -489,6 +489,11 @@
       "analysisUnsupported": "Note: Image analysis is not yet supported. Images are stored for reference but cannot be analyzed by the model.",
       "screenshotTooLarge": "Screenshot is too large ({{size}}MB). Maximum size is {{max}}MB. Consider capturing a smaller area.",
       "notAnalyzed": "Images were stored for reference but not analyzed by the model."
+    },
+    "permissions": {
+      "approvalRequired": "Permission Required",
+      "approve": "Allow",
+      "deny": "Deny"
     }
   },
   "ideation": {

@@ -16,7 +16,8 @@ import {
   PanelLeftClose,
   PanelLeft,
   Camera,
-  X
+  X,
+  ShieldAlert
 } from 'lucide-react';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -107,6 +108,8 @@ export function Insights({ projectId }: InsightsProps) {
   const streamingContent = useInsightsStore((state) => state.streamingContent);
   const currentTool = useInsightsStore((state) => state.currentTool);
   const isLoadingSessions = useInsightsStore((state) => state.isLoadingSessions);
+  const pendingPermission = useInsightsStore((state) => state.pendingPermission);
+  const respondToPermission = useInsightsStore((state) => state.respondToPermission);
 
   // Create markdown components with translated accessibility text
   const markdownComponents = useMemo(() => ({
@@ -502,7 +505,7 @@ export function Insights({ projectId }: InsightsProps) {
             ))}
 
             {/* Streaming message */}
-            {(streamingContent || currentTool) && (
+            {(streamingContent || currentTool || pendingPermission) && (
               <div className="flex gap-3">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10">
                   <Bot className="h-4 w-4 text-primary" />
@@ -521,6 +524,17 @@ export function Insights({ projectId }: InsightsProps) {
                   {/* Tool usage indicator */}
                   {currentTool && (
                     <ToolIndicator name={currentTool.name} input={currentTool.input} />
+                  )}
+                  {/* Permission approval card */}
+                  {pendingPermission && (
+                    <PermissionApprovalCard
+                      tool={pendingPermission.tool}
+                      description={pendingPermission.description}
+                      input={pendingPermission.input}
+                      requestId={pendingPermission.id}
+                      onRespond={respondToPermission}
+                      t={t}
+                    />
                   )}
                 </div>
               </div>
@@ -569,7 +583,7 @@ export function Insights({ projectId }: InsightsProps) {
                 'min-h-[80px] resize-none',
                 isDragOver && 'border-primary ring-2 ring-primary/20'
               )}
-              disabled={isLoading}
+              disabled={isLoading || !!pendingPermission}
             />
             {/* Drag-over overlay */}
             {isDragOver && (
@@ -905,6 +919,59 @@ function ToolUsageHistory({ tools }: ToolUsageHistoryProps) {
           })}
         </div>
       )}
+    </div>
+  );
+}
+
+// Permission approval card for file agent mode
+interface PermissionApprovalCardProps {
+  tool: string;
+  description: string;
+  input: string;
+  requestId: string;
+  onRespond: (requestId: string, allowed: boolean) => void;
+  t: (key: string, options?: Record<string, unknown>) => string;
+}
+
+function PermissionApprovalCard({ tool, description, input, requestId, onRespond, t }: PermissionApprovalCardProps) {
+  return (
+    <div className="mt-3 rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+      <div className="flex items-start gap-3">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-500/10">
+          <ShieldAlert className="h-4 w-4 text-amber-500" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="mb-1 text-sm font-medium text-amber-600 dark:text-amber-400">
+            {t('insights.permissions.approvalRequired')}
+          </div>
+          <div className="mb-1 text-sm text-foreground">
+            <span className="font-semibold">{tool}</span>
+            {' — '}
+            {description}
+          </div>
+          {input && (
+            <div className="mb-3 truncate text-xs text-muted-foreground font-mono max-w-[400px]" title={input}>
+              {input}
+            </div>
+          )}
+          <div className="flex items-center gap-2">
+            <Button
+              size="sm"
+              onClick={() => onRespond(requestId, true)}
+            >
+              {t('insights.permissions.approve')}
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-destructive/50 text-destructive hover:bg-destructive/10"
+              onClick={() => onRespond(requestId, false)}
+            >
+              {t('insights.permissions.deny')}
+            </Button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

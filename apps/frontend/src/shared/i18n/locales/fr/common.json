@@ -489,6 +489,11 @@
       "analysisUnsupported": "Note : L'analyse d'images n'est pas encore prise en charge. Les images sont stockées pour référence mais ne peuvent pas être analysées par le modèle.",
       "screenshotTooLarge": "La capture d'écran est trop volumineuse ({{size}}Mo). La taille maximale est de {{max}}Mo. Essayez de capturer une zone plus petite.",
       "notAnalyzed": "Les images ont été stockées pour référence mais n'ont pas été analysées par le modèle."
+    },
+    "permissions": {
+      "approvalRequired": "Autorisation requise",
+      "approve": "Autoriser",
+      "deny": "Refuser"
     }
   },
   "ideation": {
