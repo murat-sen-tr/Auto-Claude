@@ -115,6 +115,20 @@ ELECTRON_TOOLS = [
 # =============================================================================
 
 
+def get_insights_tools(allow_edits: bool = False) -> list[str]:
+    """
+    Get the tool list for the insights agent.
+
+    By default, insights operates in read-only mode with BASE_READ_TOOLS + WEB_TOOLS.
+    When allow_edits is True (file agent mode), BASE_WRITE_TOOLS are also included
+    to enable code modifications from the insights chat.
+    """
+    tools = BASE_READ_TOOLS + WEB_TOOLS
+    if allow_edits:
+        tools = tools + BASE_WRITE_TOOLS
+    return tools
+
+
 def is_electron_mcp_enabled() -> bool:
     """
     Check if Electron MCP server integration is enabled.
