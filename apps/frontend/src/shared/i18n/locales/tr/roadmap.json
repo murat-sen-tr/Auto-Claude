@@ -1,0 +1,87 @@
+{
+  "header": {
+    "targetAudience": "Target:",
+    "morePersonas": "+{{count}} more personas",
+    "secondaryPersonas": "Secondary Personas:",
+    "stats": {
+      "features": "{{count}} features",
+      "phases": "{{count}} phases"
+    },
+    "actions": {
+      "addFeature": "Add Feature",
+      "addFeatureTooltip": "Add a new feature to the roadmap",
+      "regenerate": "Regenerate Roadmap",
+      "regenerateTooltip": "Regenerate Roadmap"
+    },
+    "competitorAnalysis": {
+      "badge": "Competitor Analysis",
+      "tooltipTitle": "Click to view detailed analysis",
+      "tooltipDescription": "Analyzed {{count}} competitors with {{painPoints}} pain points identified"
+    }
+  },
+  "tabs": {
+    "kanban": "Kanban",
+    "phases": "Phases",
+    "allFeatures": "All Features",
+    "byPriority": "By Priority"
+  },
+  "kanban": {
+    "columns": {
+      "backlog": "Backlog",
+      "planned": "Planned",
+      "inProgress": "In Progress",
+      "done": "Done"
+    },
+    "empty": {
+      "noFeatures": "No features",
+      "dragHere": "Drag features here",
+      "dropHere": "Drop here"
+    }
+  },
+  "feature": {
+    "badges": {
+      "competitorInsight": "Competitor Insight",
+      "competitorInsightTooltip": "This feature addresses competitor pain points",
+      "insight": "Insight"
+    },
+    "impact": "{{impact}} impact"
+  },
+  "featureDetail": {
+    "sections": {
+      "description": "Description",
+      "rationale": "Rationale",
+      "userStories": "User Stories",
+      "acceptanceCriteria": "Acceptance Criteria",
+      "dependencies": "Dependencies",
+      "competitorInsights": "Addresses Competitor Pain Points"
+    },
+    "metrics": {
+      "complexity": "Complexity",
+      "impact": "Impact",
+      "dependencies": "Dependencies"
+    },
+    "competitorInsight": {
+      "severity": "{{severity}} severity"
+    },
+    "delete": {
+      "confirmTitle": "Delete Feature?",
+      "confirmDescription": "This will permanently remove \"{{title}}\" from your roadmap.",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    }
+  },
+  "phase": {
+    "progress": "Progress",
+    "progressDetail": "{{completed}}/{{total}} features",
+    "milestones": "Milestones",
+    "features": "Features ({{count}})"
+  },
+  "priority": {
+    "features": "{{count}} features"
+  },
+  "empty": {
+    "title": "No Roadmap Yet",
+    "description": "Generate an AI-powered roadmap that understands your project's target audience and creates a strategic feature plan.",
+    "action": "Generate Roadmap"
+  }
+}

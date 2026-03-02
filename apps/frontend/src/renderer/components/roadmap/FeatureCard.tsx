@@ -21,7 +21,7 @@ export function FeatureCard({
   onArchive,
   hasCompetitorInsight = false,
 }: FeatureCardProps) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation(['roadmap', 'common']);
 
   return (
     <Card className="p-4 hover:bg-muted/50 cursor-pointer transition-colors" onClick={onClick}>
@@ -41,17 +41,17 @@ export function FeatureCard({
               variant="outline"
               className={`text-xs ${ROADMAP_IMPACT_COLORS[feature.impact]}`}
             >
-              {feature.impact} impact
+              {t('roadmap:feature.impact', { impact: feature.impact })}
             </Badge>
             {hasCompetitorInsight && (
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Badge variant="outline" className="text-xs text-primary border-primary/50">
                     <TrendingUp className="h-3 w-3 mr-1" />
-                    Competitor Insight
+                    {t('roadmap:feature.badges.competitorInsight')}
                   </Badge>
                 </TooltipTrigger>
-                <TooltipContent>This feature addresses competitor pain points</TooltipContent>
+                <TooltipContent>{t('roadmap:feature.badges.competitorInsightTooltip')}</TooltipContent>
               </Tooltip>
             )}
           </div>
@@ -73,7 +73,7 @@ export function FeatureCard({
               }}
             >
               <ExternalLink className="h-3 w-3 mr-1" />
-              {t('roadmap.goToTask')}
+              {t('common:roadmap.goToTask')}
             </Button>
           ) : (
             feature.status !== 'done' && (
@@ -86,7 +86,7 @@ export function FeatureCard({
                 }}
               >
                 <Play className="h-3 w-3 mr-1" />
-                {t('roadmap.build')}
+                {t('common:roadmap.build')}
               </Button>
             )
           )}
@@ -94,8 +94,8 @@ export function FeatureCard({
             <Button
               variant="ghost"
               size="sm"
-              title={t('roadmap.archiveFeature')}
-              aria-label={t('accessibility.archiveFeatureAriaLabel')}
+              title={t('common:roadmap.archiveFeature')}
+              aria-label={t('common:accessibility.archiveFeatureAriaLabel')}
               onClick={(e) => {
                 e.stopPropagation();
                 onArchive(feature.id);

@@ -17,6 +17,9 @@ import enErrors from './locales/en/errors.json';
 import enChangelog from './locales/en/changelog.json';
 import enIdeation from './locales/en/ideation.json';
 import enProjectSettings from './locales/en/projectSettings.json';
+import enWorktrees from './locales/en/worktrees.json';
+import enContext from './locales/en/context.json';
+import enRoadmap from './locales/en/roadmap.json';
 
 // Import French translation resources
 import frCommon from './locales/fr/common.json';
@@ -34,6 +37,9 @@ import frErrors from './locales/fr/errors.json';
 import frChangelog from './locales/fr/changelog.json';
 import frIdeation from './locales/fr/ideation.json';
 import frProjectSettings from './locales/fr/projectSettings.json';
+import frWorktrees from './locales/fr/worktrees.json';
+import frContext from './locales/fr/context.json';
+import frRoadmap from './locales/fr/roadmap.json';
 
 // Import Turkish translation resources
 import trCommon from './locales/tr/common.json';
@@ -51,6 +57,9 @@ import trErrors from './locales/tr/errors.json';
 import trChangelog from './locales/tr/changelog.json';
 import trIdeation from './locales/tr/ideation.json';
 import trProjectSettings from './locales/tr/projectSettings.json';
+import trWorktrees from './locales/tr/worktrees.json';
+import trContext from './locales/tr/context.json';
+import trRoadmap from './locales/tr/roadmap.json';
 
 export const defaultNS = 'common';
 
@@ -70,7 +79,10 @@ export const resources = {
     errors: enErrors,
     changelog: enChangelog,
     ideation: enIdeation,
-    projectSettings: enProjectSettings
+    projectSettings: enProjectSettings,
+    worktrees: enWorktrees,
+    context: enContext,
+    roadmap: enRoadmap
   },
   "fr": {
     common: frCommon,
@@ -87,7 +99,10 @@ export const resources = {
     errors: frErrors,
     changelog: frChangelog,
     ideation: frIdeation,
-    projectSettings: frProjectSettings
+    projectSettings: frProjectSettings,
+    worktrees: frWorktrees,
+    context: frContext,
+    roadmap: frRoadmap
   },
   "tr": {
     common: trCommon,
@@ -104,7 +119,10 @@ export const resources = {
     errors: trErrors,
     changelog: trChangelog,
     ideation: trIdeation,
-    projectSettings: trProjectSettings
+    projectSettings: trProjectSettings,
+    worktrees: trWorktrees,
+    context: trContext,
+    roadmap: trRoadmap
   }
 } as const;
 
@@ -115,7 +133,7 @@ i18n
     lng: 'en', // Default language (will be overridden by settings)
     fallbackLng: 'en',
     defaultNS,
-    ns: ['common', 'navigation', 'settings', 'tasks', 'welcome', 'onboarding', 'dialogs', 'gitlab', 'github', 'taskReview', 'terminal', 'errors', 'changelog', 'ideation', 'projectSettings'],
+    ns: ['common', 'navigation', 'settings', 'tasks', 'welcome', 'onboarding', 'dialogs', 'gitlab', 'github', 'taskReview', 'terminal', 'errors', 'changelog', 'ideation', 'projectSettings', 'worktrees', 'context', 'roadmap'],
     interpolation: {
       escapeValue: false // React already escapes values
     },
