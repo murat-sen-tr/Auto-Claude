@@ -110,7 +110,8 @@ export class InsightsExecutor extends EventEmitter {
     message: string,
     conversationHistory: Array<{ role: string; content: string }>,
     modelConfig?: InsightsModelConfig,
-    images?: ImageAttachment[]
+    images?: ImageAttachment[],
+    allowEdits?: boolean
   ): Promise<ProcessorResult> {
     // Cancel any existing session
     this.cancelSession(projectId);
@@ -222,6 +223,11 @@ export class InsightsExecutor extends EventEmitter {
     // Add images manifest file if images were provided
     if (imagesManifestFile) {
       args.push('--images-file', imagesManifestFile);
+    }
+
+    // Add allow-edits flag if enabled
+    if (allowEdits) {
+      args.push('--allow-edits');
     }
 
     // Add model config if provided

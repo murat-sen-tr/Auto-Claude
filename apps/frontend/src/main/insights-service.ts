@@ -53,6 +53,9 @@ export class InsightsService extends EventEmitter {
     this.executor.on('sdk-rate-limit', (info) => {
       this.emit('sdk-rate-limit', info);
     });
+    this.executor.on('permission-request', (projectId, request) => {
+      this.emit('permission-request', projectId, request);
+    });
   }
 
   /**
@@ -140,6 +143,13 @@ export class InsightsService extends EventEmitter {
   }
 
   /**
+   * Respond to a permission request
+   */
+  respondToPermission(projectId: string, requestId: string, allowed: boolean): void {
+    this.executor.respondToPermission(projectId, requestId, allowed);
+  }
+
+  /**
    * Send a message and get AI response
    */
   async sendMessage(
@@ -147,7 +157,8 @@ export class InsightsService extends EventEmitter {
     projectPath: string,
     message: string,
     modelConfig?: InsightsModelConfig,
-    images?: ImageAttachment[]
+    images?: ImageAttachment[],
+    allowEdits?: boolean
   ): Promise<void> {
     // Cancel any existing session
     this.executor.cancelSession(projectId);
@@ -220,7 +231,8 @@ export class InsightsService extends EventEmitter {
         message,
         conversationHistory,
         configToUse,
-        images
+        images,
+        allowEdits
       );
 
       // Add assistant message to session
