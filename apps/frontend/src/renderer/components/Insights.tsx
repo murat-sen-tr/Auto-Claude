@@ -227,7 +227,7 @@ export function Insights({ projectId }: InsightsProps) {
     if ((!message && !hasImages) || isLoading) return;
 
     setInputValue('');
-    sendMessage(projectId, message, session?.modelConfig, hasImages ? pendingImages : undefined);
+    sendMessage(projectId, message, session?.modelConfig, hasImages ? pendingImages : undefined, true /* allowEdits - TODO: add UI toggle */);
     setPendingImages([]);
     setImageError(null);
     setIsUserAtBottom(true); // Resume auto-scroll when user sends a message

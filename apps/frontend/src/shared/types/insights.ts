@@ -221,6 +221,7 @@ export interface InsightsPermissionRequest {
   tool: string;
   input: string;        // Summary of what the tool will do
   description: string;  // Human-readable explanation
+  projectId?: string;   // Project ID for response routing (set by frontend listeners)
 }
 
 export interface InsightsChatStatus {

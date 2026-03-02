@@ -225,8 +225,10 @@ export const useInsightsStore = create<InsightsState>((set, get) => ({
   setPendingPermission: (request) => set({ pendingPermission: request }),
 
   respondToPermission: (requestId, allowed) => {
+    const permission = get().pendingPermission;
+    const projectId = permission?.projectId ?? get().session?.projectId ?? '';
     window.electronAPI.respondToInsightsPermission(
-      get().session?.projectId ?? '',
+      projectId,
       requestId,
       allowed
     );
@@ -463,7 +465,7 @@ export function setupInsightsListeners(): () => void {
           break;
         case 'permission_request':
           if (chunk.permissionRequest) {
-            store().setPendingPermission(chunk.permissionRequest);
+            store().setPendingPermission({ ...chunk.permissionRequest, projectId: _projectId });
           }
           break;
         case 'done':
@@ -495,7 +497,7 @@ export function setupInsightsListeners(): () => void {
   // Listen for permission requests
   const unsubPermission = window.electronAPI.onInsightsPermissionRequest(
     (_projectId, request) => {
-      store().setPendingPermission(request);
+      store().setPendingPermission({ ...request, projectId: _projectId });
     }
   );
 

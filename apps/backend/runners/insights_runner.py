@@ -10,9 +10,10 @@ import argparse
 import asyncio
 import base64
 import json
-import select
 import sys
 import tempfile
+import threading
+import uuid
 from pathlib import Path
 
 # Add auto-claude to path
@@ -247,6 +248,26 @@ PERMISSION_TIMEOUT = 300  # 5 minutes
 PERMISSION_GATED_TOOLS = frozenset(["Write", "Edit", "Bash"])
 
 
+def _read_stdin_with_timeout(timeout: float) -> str | None:
+    """Read a line from stdin with a timeout using threading.
+
+    Uses a daemon thread to avoid blocking indefinitely. This is cross-platform
+    safe (works on Windows where select.select() only supports sockets).
+    """
+    result: list[str | None] = [None]
+
+    def reader() -> None:
+        try:
+            result[0] = sys.stdin.readline().strip()
+        except Exception:
+            pass
+
+    t = threading.Thread(target=reader, daemon=True)
+    t.start()
+    t.join(timeout)
+    return result[0]
+
+
 def _request_permission(tool_name: str, tool_input: dict) -> bool:
     """Request permission from the frontend via stdout/stdin protocol.
 
@@ -255,26 +276,27 @@ def _request_permission(tool_name: str, tool_input: dict) -> bool:
     Times out after PERMISSION_TIMEOUT seconds to prevent indefinite hanging.
     """
     request = {
+        "id": str(uuid.uuid4()),
         "tool": tool_name,
-        "input": tool_input,
+        "input": json.dumps(tool_input) if isinstance(tool_input, dict) else str(tool_input),
+        "description": f"The agent wants to use {tool_name}",
     }
     print(f"__PERMISSION_REQUEST__:{json.dumps(request)}", flush=True)
 
-    # Wait for response with timeout
+    # Wait for response with timeout (cross-platform safe)
     try:
-        ready, _, _ = select.select([sys.stdin], [], [], PERMISSION_TIMEOUT)
-        if not ready:
+        line = _read_stdin_with_timeout(PERMISSION_TIMEOUT)
+        if line is None:
             debug_error(
                 "insights_runner",
                 f"Permission request timed out after {PERMISSION_TIMEOUT}s",
             )
             return False
 
-        line = sys.stdin.readline().strip()
         if line.startswith("__PERMISSION_RESPONSE__:"):
             response_json = line[len("__PERMISSION_RESPONSE__:"):]
             response = json.loads(response_json)
-            return response.get("approved", False)
+            return response.get("allowed", False)
         else:
             debug_error(
                 "insights_runner",
@@ -297,7 +319,8 @@ async def _permission_hook(input_data: dict) -> dict:
         return {}
 
     tool_input = input_data.get("tool_input", {})
-    approved = _request_permission(tool_name, tool_input)
+    loop = asyncio.get_event_loop()
+    approved = await loop.run_in_executor(None, _request_permission, tool_name, tool_input)
 
     if approved:
         debug("insights_runner", "Permission granted", tool=tool_name)
