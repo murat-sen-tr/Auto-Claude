@@ -215,6 +215,14 @@ export interface InsightsSessionSummary {
   archivedAt?: Date;
 }
 
+// Permission request from agent mode tools
+export interface InsightsPermissionRequest {
+  id: string;
+  tool: string;
+  input: string;        // Summary of what the tool will do
+  description: string;  // Human-readable explanation
+}
+
 export interface InsightsChatStatus {
   phase: 'idle' | 'thinking' | 'streaming' | 'complete' | 'error';
   message?: string;
@@ -222,7 +230,7 @@ export interface InsightsChatStatus {
 }
 
 export interface InsightsStreamChunk {
-  type: 'text' | 'task_suggestion' | 'tool_start' | 'tool_end' | 'done' | 'error';
+  type: 'text' | 'task_suggestion' | 'tool_start' | 'tool_end' | 'permission_request' | 'done' | 'error';
   content?: string;
   suggestedTasks?: Array<{
     title: string;
@@ -233,5 +241,6 @@ export interface InsightsStreamChunk {
     name: string;
     input?: string;  // Brief description of what's being searched/read
   };
+  permissionRequest?: InsightsPermissionRequest;
   error?: string;
 }
