@@ -29,21 +29,27 @@
       "requiredDescription": "OpenAI embedding'leri için gereklidir",
       "placeholder": "sk-xxxxxxxx",
       "overridePlaceholder": "Global anahtarı geçersiz kılmak için girin...",
-      "getKeyLink": "OpenAI"
+      "getKeyLink": "OpenAI",
+      "showKey": "OpenAI API anahtarını göster",
+      "hideKey": "OpenAI API anahtarını gizle"
     },
     "voyage": {
       "apiKey": "Voyage AI API Anahtarı",
       "requiredDescription": "Voyage AI embedding'leri için gereklidir",
       "placeholder": "pa-xxxxxxxx",
-      "embeddingModel": "Embedding Modeli",
+      "embeddingModel": "Embedding Modeli (isteğe bağlı)",
       "embeddingModelPlaceholder": "voyage-3",
-      "getKeyLink": "Voyage AI"
+      "getKeyLink": "Voyage AI",
+      "showKey": "Voyage AI API anahtarını göster",
+      "hideKey": "Voyage AI API anahtarını gizle"
     },
     "google": {
       "apiKey": "Google AI API Anahtarı",
       "requiredDescription": "Google AI embedding'leri için gereklidir",
       "placeholder": "AIzaSy...",
-      "getKeyLink": "Google AI Studio"
+      "getKeyLink": "Google AI Studio",
+      "showKey": "Google AI API anahtarını göster",
+      "hideKey": "Google AI API anahtarını gizle"
     },
     "azure": {
       "configuration": "Azure OpenAI Yapılandırması",
@@ -52,7 +58,9 @@
       "baseUrl": "Temel URL",
       "baseUrlPlaceholder": "https://your-resource.openai.azure.com",
       "embeddingDeployment": "Embedding Dağıtım Adı",
-      "embeddingDeploymentPlaceholder": "text-embedding-ada-002"
+      "embeddingDeploymentPlaceholder": "text-embedding-ada-002",
+      "showKey": "Azure API anahtarını göster",
+      "hideKey": "Azure API anahtarını gizle"
     },
     "ollama": {
       "configuration": "Ollama Yapılandırması",
@@ -89,6 +97,50 @@
     "sound": "Ses"
   },
   "github": {
+    "enableGitHub": "GitHub Issues'ı Etkinleştir",
+    "enableGitHubDescription": "Görevleri GitHub issue'ları ile senkronize et",
+    "authMethod": "Kimlik Doğrulama Yöntemi",
+    "useManualToken": "Manuel Token Kullan",
+    "useOAuthInstead": "Bunun Yerine OAuth Kullan",
+    "manualToken": {
+      "title": "GitHub Token",
+      "description": "Repo kapsamına sahip kişisel erişim token'ı oluşturun",
+      "placeholder": "ghp_xxxxxxxxxxxx",
+      "getTokenLink": "GitHub Ayarları",
+      "showToken": "GitHub token'ını göster",
+      "hideToken": "GitHub token'ını gizle"
+    },
+    "repository": {
+      "title": "Depo",
+      "description": "Senkronize edilecek GitHub deposu",
+      "placeholder": "sahip/depo",
+      "format": "Format: sahip/depo (örn., facebook/react)",
+      "loading": "Depolar yükleniyor...",
+      "searchPlaceholder": "Depoları ara...",
+      "noResults": "Depo bulunamadı",
+      "autoDetect": "Git remote'tan otomatik algıla"
+    },
+    "defaultBranch": {
+      "title": "Varsayılan Dal",
+      "description": "Görevleri oluşturmak için kullanılacak dal (varsayılan: main veya master)",
+      "placeholder": "main",
+      "autoDetect": "Otomatik algıla",
+      "loading": "Dallar yükleniyor...",
+      "loadError": "Dallar yüklenemedi",
+      "localBranches": "Yerel Dallar",
+      "remoteBranches": "Uzak Dallar",
+      "currentBranch": "(mevcut)"
+    },
+    "connection": {
+      "title": "Bağlantı Durumu",
+      "checking": "Kontrol ediliyor...",
+      "connected": "{{repoName}} bağlandı",
+      "connectedDefault": "Bağlandı",
+      "notConnected": "Bağlı değil",
+      "error": "Bağlantı hatası",
+      "issuesAvailable": "{{count}}+ issue içe aktarılabilir",
+      "issuesAvailableOne": "1 issue içe aktarılabilir"
+    },
     "oauth": {
       "cliRequired": "GitHub CLI Gerekli",
       "cliRequiredDescription": "OAuth kimlik doğrulaması için GitHub CLI (gh) gereklidir. Bu, manuel olarak token oluşturmadan güvenli bir şekilde kimlik doğrulaması yapmanızı sağlar.",
@@ -124,6 +176,46 @@
       "deviceCodeReminder": "İstendiğinde, bu kodu girin:",
       "retry": "Tekrar Dene",
       "cancel": "İptal"
+    }
+  },
+  "linear": {
+    "enableLinear": "Linear Senkronizasyonunu Etkinleştir",
+    "enableLinearDescription": "Linear issue'larını otomatik olarak oluştur ve güncelle",
+    "apiKey": {
+      "title": "API Anahtarı",
+      "description": "API anahtarınızı buradan alın",
+      "linkText": "Linear Ayarları",
+      "placeholder": "lin_api_xxxxxxxx",
+      "showKey": "Linear API anahtarını göster",
+      "hideKey": "Linear API anahtarını gizle"
+    },
+    "connection": {
+      "title": "Bağlantı Durumu",
+      "checking": "Kontrol ediliyor...",
+      "connected": "{{teamName}} bağlandı",
+      "connectedDefault": "Bağlandı",
+      "notConnected": "Bağlı değil",
+      "issuesAvailable": "{{count}}+ görev içe aktarılabilir"
+    },
+    "import": {
+      "title": "Mevcut Görevleri İçe Aktar",
+      "description": "AutoBuild'e görev olarak içe aktarılacak Linear issue'larını seçin.",
+      "button": "Linear'dan Görevleri İçe Aktar"
+    },
+    "realtimeSync": {
+      "title": "Gerçek Zamanlı Senkronizasyon",
+      "description": "Linear'da oluşturulan yeni görevleri otomatik olarak içe aktar",
+      "warning": "Gerçek zamanlı senkronizasyon bir webhook endpoint'i gerektirir. Linear ayarlarında yapılandırın."
+    },
+    "teamId": {
+      "title": "Takım ID'si (İsteğe Bağlı)",
+      "description": "Issue'ları filtrelemek için Linear takım ID'si",
+      "placeholder": "team_xxx"
+    },
+    "projectId": {
+      "title": "Proje ID'si (İsteğe Bağlı)",
+      "description": "Issue'ları filtrelemek için Linear proje ID'si",
+      "placeholder": "project_xxx"
     }
   },
   "common": {

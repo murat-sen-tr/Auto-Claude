@@ -29,21 +29,27 @@
       "requiredDescription": "Requis pour les embeddings OpenAI",
       "placeholder": "sk-xxxxxxxx",
       "overridePlaceholder": "Entrer pour remplacer la clé globale...",
-      "getKeyLink": "OpenAI"
+      "getKeyLink": "OpenAI",
+      "showKey": "Afficher la clé API OpenAI",
+      "hideKey": "Masquer la clé API OpenAI"
     },
     "voyage": {
       "apiKey": "Clé API Voyage AI",
       "requiredDescription": "Requis pour les embeddings Voyage AI",
       "placeholder": "pa-xxxxxxxx",
-      "embeddingModel": "Modèle d'embedding",
+      "embeddingModel": "Modèle d'embedding (optionnel)",
       "embeddingModelPlaceholder": "voyage-3",
-      "getKeyLink": "Voyage AI"
+      "getKeyLink": "Voyage AI",
+      "showKey": "Afficher la clé API Voyage AI",
+      "hideKey": "Masquer la clé API Voyage AI"
     },
     "google": {
       "apiKey": "Clé API Google AI",
       "requiredDescription": "Requis pour les embeddings Google AI",
       "placeholder": "AIzaSy...",
-      "getKeyLink": "Google AI Studio"
+      "getKeyLink": "Google AI Studio",
+      "showKey": "Afficher la clé API Google AI",
+      "hideKey": "Masquer la clé API Google AI"
     },
     "azure": {
       "configuration": "Configuration Azure OpenAI",
@@ -52,7 +58,9 @@
       "baseUrl": "URL de base",
       "baseUrlPlaceholder": "https://your-resource.openai.azure.com",
       "embeddingDeployment": "Nom du déploiement d'embedding",
-      "embeddingDeploymentPlaceholder": "text-embedding-ada-002"
+      "embeddingDeploymentPlaceholder": "text-embedding-ada-002",
+      "showKey": "Afficher la clé API Azure",
+      "hideKey": "Masquer la clé API Azure"
     },
     "ollama": {
       "configuration": "Configuration Ollama",
@@ -89,6 +97,50 @@
     "sound": "Son"
   },
   "github": {
+    "enableGitHub": "Activer les issues GitHub",
+    "enableGitHubDescription": "Synchroniser les tâches avec les issues GitHub",
+    "authMethod": "Méthode d'authentification",
+    "useManualToken": "Utiliser un token manuel",
+    "useOAuthInstead": "Utiliser OAuth à la place",
+    "manualToken": {
+      "title": "Token GitHub",
+      "description": "Créez un token d'accès personnel avec le scope repo",
+      "placeholder": "ghp_xxxxxxxxxxxx",
+      "getTokenLink": "Paramètres GitHub",
+      "showToken": "Afficher le token GitHub",
+      "hideToken": "Masquer le token GitHub"
+    },
+    "repository": {
+      "title": "Dépôt",
+      "description": "Dépôt GitHub à synchroniser",
+      "placeholder": "propriétaire/dépôt",
+      "format": "Format : propriétaire/dépôt (ex. : facebook/react)",
+      "loading": "Chargement des dépôts...",
+      "searchPlaceholder": "Rechercher des dépôts...",
+      "noResults": "Aucun dépôt trouvé",
+      "autoDetect": "Détecter automatiquement depuis git remote"
+    },
+    "defaultBranch": {
+      "title": "Branche par défaut",
+      "description": "Branche à utiliser pour créer des tâches (par défaut : main ou master)",
+      "placeholder": "main",
+      "autoDetect": "Détection automatique",
+      "loading": "Chargement des branches...",
+      "loadError": "Échec du chargement des branches",
+      "localBranches": "Branches locales",
+      "remoteBranches": "Branches distantes",
+      "currentBranch": "(actuelle)"
+    },
+    "connection": {
+      "title": "État de la connexion",
+      "checking": "Vérification...",
+      "connected": "Connecté à {{repoName}}",
+      "connectedDefault": "Connecté",
+      "notConnected": "Non connecté",
+      "error": "Erreur de connexion",
+      "issuesAvailable": "{{count}}+ issues disponibles à importer",
+      "issuesAvailableOne": "1 issue disponible à importer"
+    },
     "oauth": {
       "cliRequired": "CLI GitHub requis",
       "cliRequiredDescription": "Le CLI GitHub (gh) est requis pour l'authentification OAuth. Cela fournit un moyen sécurisé de s'authentifier sans créer manuellement de jetons.",
@@ -124,6 +176,46 @@
       "deviceCodeReminder": "Lorsque demandé, entrez ce code :",
       "retry": "Réessayer",
       "cancel": "Annuler"
+    }
+  },
+  "linear": {
+    "enableLinear": "Activer la synchronisation Linear",
+    "enableLinearDescription": "Créer et mettre à jour les issues Linear automatiquement",
+    "apiKey": {
+      "title": "Clé API",
+      "description": "Obtenez votre clé API depuis",
+      "linkText": "Paramètres Linear",
+      "placeholder": "lin_api_xxxxxxxx",
+      "showKey": "Afficher la clé API Linear",
+      "hideKey": "Masquer la clé API Linear"
+    },
+    "connection": {
+      "title": "État de la connexion",
+      "checking": "Vérification...",
+      "connected": "Connecté à {{teamName}}",
+      "connectedDefault": "Connecté",
+      "notConnected": "Non connecté",
+      "issuesAvailable": "{{count}}+ tâches disponibles à importer"
+    },
+    "import": {
+      "title": "Importer des tâches existantes",
+      "description": "Sélectionnez quelles issues Linear importer dans AutoBuild en tant que tâches.",
+      "button": "Importer des tâches depuis Linear"
+    },
+    "realtimeSync": {
+      "title": "Synchronisation en temps réel",
+      "description": "Importer automatiquement les nouvelles tâches créées dans Linear",
+      "warning": "La synchronisation en temps réel nécessite un endpoint webhook. Configurez dans les paramètres Linear."
+    },
+    "teamId": {
+      "title": "ID d'équipe (Optionnel)",
+      "description": "ID d'équipe Linear pour filtrer les issues",
+      "placeholder": "team_xxx"
+    },
+    "projectId": {
+      "title": "ID de projet (Optionnel)",
+      "description": "ID de projet Linear pour filtrer les issues",
+      "placeholder": "project_xxx"
     }
   },
   "common": {

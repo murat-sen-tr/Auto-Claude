@@ -29,21 +29,27 @@
       "requiredDescription": "Required for OpenAI embeddings",
       "placeholder": "sk-xxxxxxxx",
       "overridePlaceholder": "Enter to override global key...",
-      "getKeyLink": "OpenAI"
+      "getKeyLink": "OpenAI",
+      "showKey": "Show OpenAI API key",
+      "hideKey": "Hide OpenAI API key"
     },
     "voyage": {
       "apiKey": "Voyage AI API Key",
       "requiredDescription": "Required for Voyage AI embeddings",
       "placeholder": "pa-xxxxxxxx",
-      "embeddingModel": "Embedding Model",
+      "embeddingModel": "Embedding Model (optional)",
       "embeddingModelPlaceholder": "voyage-3",
-      "getKeyLink": "Voyage AI"
+      "getKeyLink": "Voyage AI",
+      "showKey": "Show Voyage AI API key",
+      "hideKey": "Hide Voyage AI API key"
     },
     "google": {
       "apiKey": "Google AI API Key",
       "requiredDescription": "Required for Google AI embeddings",
       "placeholder": "AIzaSy...",
-      "getKeyLink": "Google AI Studio"
+      "getKeyLink": "Google AI Studio",
+      "showKey": "Show Google AI API key",
+      "hideKey": "Hide Google AI API key"
     },
     "azure": {
       "configuration": "Azure OpenAI Configuration",
@@ -52,7 +58,9 @@
       "baseUrl": "Base URL",
       "baseUrlPlaceholder": "https://your-resource.openai.azure.com",
       "embeddingDeployment": "Embedding Deployment Name",
-      "embeddingDeploymentPlaceholder": "text-embedding-ada-002"
+      "embeddingDeploymentPlaceholder": "text-embedding-ada-002",
+      "showKey": "Show Azure API key",
+      "hideKey": "Hide Azure API key"
     },
     "ollama": {
       "configuration": "Ollama Configuration",
@@ -89,6 +97,50 @@
     "sound": "Sound"
   },
   "github": {
+    "enableGitHub": "Enable GitHub Issues",
+    "enableGitHubDescription": "Sync tasks with GitHub issues",
+    "authMethod": "Authentication Method",
+    "useManualToken": "Use Manual Token",
+    "useOAuthInstead": "Use OAuth Instead",
+    "manualToken": {
+      "title": "GitHub Token",
+      "description": "Create a personal access token with repo scope",
+      "placeholder": "ghp_xxxxxxxxxxxx",
+      "getTokenLink": "GitHub Settings",
+      "showToken": "Show GitHub token",
+      "hideToken": "Hide GitHub token"
+    },
+    "repository": {
+      "title": "Repository",
+      "description": "GitHub repository to sync with",
+      "placeholder": "owner/repository",
+      "format": "Format: owner/repository (e.g., facebook/react)",
+      "loading": "Loading repositories...",
+      "searchPlaceholder": "Search repositories...",
+      "noResults": "No repositories found",
+      "autoDetect": "Auto-detect from git remote"
+    },
+    "defaultBranch": {
+      "title": "Default Branch",
+      "description": "Branch to use for creating tasks (default: main or master)",
+      "placeholder": "main",
+      "autoDetect": "Auto-detect",
+      "loading": "Loading branches...",
+      "loadError": "Failed to load branches",
+      "localBranches": "Local Branches",
+      "remoteBranches": "Remote Branches",
+      "currentBranch": "(current)"
+    },
+    "connection": {
+      "title": "Connection Status",
+      "checking": "Checking...",
+      "connected": "Connected to {{repoName}}",
+      "connectedDefault": "Connected",
+      "notConnected": "Not connected",
+      "error": "Connection error",
+      "issuesAvailable": "{{count}}+ issues available to import",
+      "issuesAvailableOne": "1 issue available to import"
+    },
     "oauth": {
       "cliRequired": "GitHub CLI Required",
       "cliRequiredDescription": "The GitHub CLI (gh) is required for OAuth authentication. This provides a secure way to authenticate without manually creating tokens.",
@@ -124,6 +176,46 @@
       "deviceCodeReminder": "When prompted, enter this code:",
       "retry": "Retry",
       "cancel": "Cancel"
+    }
+  },
+  "linear": {
+    "enableLinear": "Enable Linear Sync",
+    "enableLinearDescription": "Create and update Linear issues automatically",
+    "apiKey": {
+      "title": "API Key",
+      "description": "Get your API key from",
+      "linkText": "Linear Settings",
+      "placeholder": "lin_api_xxxxxxxx",
+      "showKey": "Show Linear API key",
+      "hideKey": "Hide Linear API key"
+    },
+    "connection": {
+      "title": "Connection Status",
+      "checking": "Checking...",
+      "connected": "Connected to {{teamName}}",
+      "connectedDefault": "Connected",
+      "notConnected": "Not connected",
+      "issuesAvailable": "{{count}}+ tasks available to import"
+    },
+    "import": {
+      "title": "Import Existing Tasks",
+      "description": "Select which Linear issues to import into AutoBuild as tasks.",
+      "button": "Import Tasks from Linear"
+    },
+    "realtimeSync": {
+      "title": "Real-time Sync",
+      "description": "Automatically import new tasks created in Linear",
+      "warning": "Real-time sync requires a webhook endpoint. Configure in Linear settings."
+    },
+    "teamId": {
+      "title": "Team ID (Optional)",
+      "description": "Linear team ID for filtering issues",
+      "placeholder": "team_xxx"
+    },
+    "projectId": {
+      "title": "Project ID (Optional)",
+      "description": "Linear project ID for filtering issues",
+      "placeholder": "project_xxx"
     }
   },
   "common": {
