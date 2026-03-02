@@ -491,9 +491,15 @@
       "notAnalyzed": "Images were stored for reference but not analyzed by the model."
     },
     "permissions": {
+      "title": "Permission Required",
       "approvalRequired": "Permission Required",
-      "approve": "Allow",
-      "deny": "Deny"
+      "toolLabel": "Tool: {{tool}}",
+      "description": "{{description}}",
+      "approve": "Approve",
+      "deny": "Deny",
+      "timeout": "Request timed out",
+      "denied": "Permission denied",
+      "approved": "Permission granted"
     }
   },
   "ideation": {

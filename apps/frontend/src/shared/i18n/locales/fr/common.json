@@ -491,9 +491,15 @@
       "notAnalyzed": "Les images ont été stockées pour référence mais n'ont pas été analysées par le modèle."
     },
     "permissions": {
+      "title": "Permission requise",
       "approvalRequired": "Autorisation requise",
-      "approve": "Autoriser",
-      "deny": "Refuser"
+      "toolLabel": "Outil : {{tool}}",
+      "description": "{{description}}",
+      "approve": "Approuver",
+      "deny": "Refuser",
+      "timeout": "Demande expirée",
+      "denied": "Permission refusée",
+      "approved": "Permission accordée"
     }
   },
   "ideation": {
