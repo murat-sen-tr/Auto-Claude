@@ -901,5 +901,27 @@
       "label": "PR Şablon Doldurucu",
       "description": "Kod değişikliklerinden GitHub PR şablonlarını AI ile doldurur"
     }
+  },
+  "theme": {
+    "appearanceMode": "Görünüm Modu",
+    "appearanceModeDescription": "Açık, koyu veya sistem tercihini seçin",
+    "colorTheme": "Renk Teması",
+    "colorThemeDescription": "Arayüz için bir renk paleti seçin",
+    "modes": {
+      "system": "Sistem",
+      "light": "Açık",
+      "dark": "Koyu"
+    }
+  },
+  "projectSelector": {
+    "placeholder": "Bir proje seçin...",
+    "noProjects": "Henüz proje yok",
+    "addProject": "Proje Ekle..."
+  },
+  "emptyState": {
+    "message": "Ayarlarını görüntülemek ve düzenlemek için bir proje seçin"
+  },
+  "initializationGuard": {
+    "message": "{{feature}} yapılandırmak için önce Auto-Build'i başlatın"
   }
 }

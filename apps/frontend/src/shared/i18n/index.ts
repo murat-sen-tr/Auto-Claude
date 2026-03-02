@@ -15,6 +15,7 @@ import enTerminal from './locales/en/terminal.json';
 import enErrors from './locales/en/errors.json';
 import enChangelog from './locales/en/changelog.json';
 import enIdeation from './locales/en/ideation.json';
+import enProjectSettings from './locales/en/projectSettings.json';
 
 // Import French translation resources
 import frCommon from './locales/fr/common.json';
@@ -30,6 +31,7 @@ import frTerminal from './locales/fr/terminal.json';
 import frErrors from './locales/fr/errors.json';
 import frChangelog from './locales/fr/changelog.json';
 import frIdeation from './locales/fr/ideation.json';
+import frProjectSettings from './locales/fr/projectSettings.json';
 
 // Import Turkish translation resources
 import trCommon from './locales/tr/common.json';
@@ -45,6 +47,7 @@ import trTerminal from './locales/tr/terminal.json';
 import trErrors from './locales/tr/errors.json';
 import trChangelog from './locales/tr/changelog.json';
 import trIdeation from './locales/tr/ideation.json';
+import trProjectSettings from './locales/tr/projectSettings.json';
 
 export const defaultNS = 'common';
 
@@ -62,7 +65,8 @@ export const resources = {
     terminal: enTerminal,
     errors: enErrors,
     changelog: enChangelog,
-    ideation: enIdeation
+    ideation: enIdeation,
+    projectSettings: enProjectSettings
   },
   "fr": {
     common: frCommon,
@@ -77,7 +81,8 @@ export const resources = {
     terminal: frTerminal,
     errors: frErrors,
     changelog: frChangelog,
-    ideation: frIdeation
+    ideation: frIdeation,
+    projectSettings: frProjectSettings
   },
   "tr": {
     common: trCommon,
@@ -92,7 +97,8 @@ export const resources = {
     terminal: trTerminal,
     errors: trErrors,
     changelog: trChangelog,
-    ideation: trIdeation
+    ideation: trIdeation,
+    projectSettings: trProjectSettings
   }
 } as const;
 
@@ -103,7 +109,7 @@ i18n
     lng: 'en', // Default language (will be overridden by settings)
     fallbackLng: 'en',
     defaultNS,
-    ns: ['common', 'navigation', 'settings', 'tasks', 'welcome', 'onboarding', 'dialogs', 'gitlab', 'taskReview', 'terminal', 'errors', 'changelog', 'ideation'],
+    ns: ['common', 'navigation', 'settings', 'tasks', 'welcome', 'onboarding', 'dialogs', 'gitlab', 'taskReview', 'terminal', 'errors', 'changelog', 'ideation', 'projectSettings'],
     interpolation: {
       escapeValue: false // React already escapes values
     },

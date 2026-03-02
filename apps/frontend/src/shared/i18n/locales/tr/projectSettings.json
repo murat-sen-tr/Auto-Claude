@@ -1,0 +1,140 @@
+{
+  "memory": {
+    "title": "Hafıza",
+    "enabled": "Etkin",
+    "disabled": "Devre Dışı",
+    "enableMemory": "Hafızayı Etkinleştir",
+    "enableMemoryDescription": "Gömülü grafik veritabanı kullanarak kalıcı oturumlar arası hafıza",
+    "fileBasedInfo": "Dosya tabanlı hafıza kullanılıyor. Oturum içgörüleri yerel olarak JSON dosyalarında saklanıyor. Anlamsal arama ile kalıcı oturumlar arası bağlam için Hafızayı etkinleştirin.",
+    "agentMemoryAccess": "Agent Hafıza Erişimini Etkinleştir",
+    "agentMemoryAccessDescription": "Agent'ların MCP aracılığıyla bilgi grafiğinde arama yapmasına ve ekleme yapmasına izin ver",
+    "mcpServerUrl": "Graphiti MCP Sunucu URL'si",
+    "mcpServerUrlDescription": "Graphiti MCP sunucusunun URL'si",
+    "mcpServerUrlPlaceholder": "http://localhost:8000/mcp/",
+    "embeddingProvider": "Embedding Sağlayıcısı",
+    "embeddingProviderDescription": "Anlamsal arama için sağlayıcı (isteğe bağlı - anahtar kelime araması onsuz çalışır)",
+    "embeddingProviderPlaceholder": "Embedding sağlayıcısı seçin",
+    "providers": {
+      "ollama": "Ollama (Yerel - Ücretsiz)",
+      "openai": "OpenAI",
+      "voyage": "Voyage AI",
+      "google": "Google AI",
+      "azureOpenai": "Azure OpenAI"
+    },
+    "openai": {
+      "apiKey": "OpenAI API Anahtarı",
+      "apiKeyOverride": "OpenAI API Anahtarı (Geçersiz Kılma)",
+      "usingGlobalKey": "Global anahtar kullanılıyor",
+      "globalKeyDescription": "Uygulama Ayarlarından anahtar kullanılıyor. Geçersiz kılmak için aşağıya projeye özgü bir anahtar girin.",
+      "requiredDescription": "OpenAI embedding'leri için gereklidir",
+      "placeholder": "sk-xxxxxxxx",
+      "overridePlaceholder": "Global anahtarı geçersiz kılmak için girin...",
+      "getKeyLink": "OpenAI"
+    },
+    "voyage": {
+      "apiKey": "Voyage AI API Anahtarı",
+      "requiredDescription": "Voyage AI embedding'leri için gereklidir",
+      "placeholder": "pa-xxxxxxxx",
+      "embeddingModel": "Embedding Modeli",
+      "embeddingModelPlaceholder": "voyage-3",
+      "getKeyLink": "Voyage AI"
+    },
+    "google": {
+      "apiKey": "Google AI API Anahtarı",
+      "requiredDescription": "Google AI embedding'leri için gereklidir",
+      "placeholder": "AIzaSy...",
+      "getKeyLink": "Google AI Studio"
+    },
+    "azure": {
+      "configuration": "Azure OpenAI Yapılandırması",
+      "apiKey": "API Anahtarı",
+      "apiKeyPlaceholder": "Azure API Anahtarı",
+      "baseUrl": "Temel URL",
+      "baseUrlPlaceholder": "https://your-resource.openai.azure.com",
+      "embeddingDeployment": "Embedding Dağıtım Adı",
+      "embeddingDeploymentPlaceholder": "text-embedding-ada-002"
+    },
+    "ollama": {
+      "configuration": "Ollama Yapılandırması",
+      "checking": "Kontrol ediliyor...",
+      "connected": "Bağlandı",
+      "notRunning": "Çalışmıyor",
+      "baseUrl": "Temel URL",
+      "baseUrlPlaceholder": "http://localhost:11434",
+      "embeddingModel": "Embedding Modeli",
+      "selectModel": "Embedding modeli seçin",
+      "selectEmbeddingModel": "Embedding Modeli Seçin",
+      "modelPlaceholder": "nomic-embed-text",
+      "recommendedModels": "Önerilen: qwen3-embedding:4b (dengeli), :8b (kaliteli), :0.6b (hızlı)",
+      "embeddingDimension": "Embedding Boyutu",
+      "embeddingDimensionPlaceholder": "768",
+      "embeddingDimensionDescription": "Ollama embedding'leri için gereklidir (örn., nomic-embed-text için 768)"
+    },
+    "database": {
+      "name": "Veritabanı Adı",
+      "nameDescription": "Hafıza veritabanı için ad (~/.auto-claude/memories/ içinde saklanır)",
+      "nameDescriptionShort": "~/.auto-claude/memories/ içinde saklanır",
+      "namePlaceholder": "auto_claude_memory",
+      "path": "Veritabanı Yolu (İsteğe Bağlı)",
+      "pathDescription": "Özel depolama konumu. Varsayılan: ~/.auto-claude/memories/",
+      "pathPlaceholder": "~/.auto-claude/memories"
+    },
+    "getKeyFrom": "Anahtarınızı buradan alın"
+  },
+  "notifications": {
+    "title": "Bildirimler",
+    "onTaskComplete": "Görev Tamamlandığında",
+    "onTaskFailed": "Görev Başarısız Olduğunda",
+    "onReviewNeeded": "İnceleme Gerektiğinde",
+    "sound": "Ses"
+  },
+  "github": {
+    "oauth": {
+      "cliRequired": "GitHub CLI Gerekli",
+      "cliRequiredDescription": "OAuth kimlik doğrulaması için GitHub CLI (gh) gereklidir. Bu, manuel olarak token oluşturmadan güvenli bir şekilde kimlik doğrulaması yapmanızı sağlar.",
+      "installCli": "GitHub CLI'yı Yükle",
+      "installedIt": "Yükledim",
+      "installInstructions": "Yükleme talimatları:",
+      "installMacOS": "macOS:",
+      "installWindows": "Windows:",
+      "installLinux": "Linux: Ziyaret edin",
+      "connectToGitHub": "GitHub'a Bağlan",
+      "connectDescription": "GitHub ile kimlik doğrulaması yapmak için aşağıdaki düğmeye tıklayın. Bu, uygulamayı yetkilendirebileceğiniz tarayıcınızı açacaktır.",
+      "usingCliVersion": "GitHub CLI {{version}} kullanılıyor",
+      "authenticateButton": "GitHub ile Kimlik Doğrula",
+      "authenticating": "Kimlik doğrulanıyor...",
+      "waitingForBrowser": "Lütfen tarayıcınızda kimlik doğrulamasını tamamlayın. Bu pencere otomatik olarak güncellenecektir.",
+      "waitingForFlow": "Kimlik doğrulama akışının başlaması bekleniyor...",
+      "deviceCode": "Tek kullanımlık kodunuz",
+      "copyCode": "Kopyala",
+      "codeCopied": "Kopyalandı",
+      "enterCodeInBrowser": "Kimlik doğrulamasını tamamlamak için bu kodu tarayıcınıza girin.",
+      "copyThenOpenLink": "Bu kodu kopyalayın, ardından kimlik doğrulaması yapmak için aşağıdaki bağlantıyı açın.",
+      "openUrl": "{{url}} Aç",
+      "successTitle": "Başarıyla Bağlandı",
+      "successDescription": "{{username}} olarak bağlandı",
+      "successDescriptionDefault": "GitHub hesabınız artık bağlı",
+      "errorTitle": "Kimlik Doğrulama Başarısız",
+      "errorTitleTimeout": "Kimlik Doğrulama Zaman Aşımına Uğradı",
+      "completeManually": "Kimlik Doğrulamayı Manuel Olarak Tamamla",
+      "completeManuallyDescription": "Tarayıcı otomatik olarak açılamadı. Kimlik doğrulamasını tamamlamak için lütfen aşağıdaki URL'yi ziyaret edin:",
+      "copyUrl": "Kopyala",
+      "urlCopied": "Kopyalandı",
+      "openUrlInBrowser": "URL'yi Tarayıcıda Aç",
+      "deviceCodeReminder": "İstendiğinde, bu kodu girin:",
+      "retry": "Tekrar Dene",
+      "cancel": "İptal"
+    }
+  },
+  "common": {
+    "enabled": "Etkin",
+    "disabled": "Devre Dışı",
+    "optional": "İsteğe Bağlı",
+    "required": "Gerekli",
+    "checking": "Kontrol ediliyor...",
+    "connected": "Bağlandı",
+    "notConnected": "Bağlı değil",
+    "getKeyFrom": "Anahtarınızı buradan alın",
+    "embeddingModelOptional": "Embedding Modeli (isteğe bağlı)"
+  }
+}

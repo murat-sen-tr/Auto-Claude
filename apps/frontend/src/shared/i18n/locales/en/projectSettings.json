@@ -1,0 +1,140 @@
+{
+  "memory": {
+    "title": "Memory",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "enableMemory": "Enable Memory",
+    "enableMemoryDescription": "Persistent cross-session memory using embedded graph database",
+    "fileBasedInfo": "Using file-based memory. Session insights are stored locally in JSON files. Enable Memory for persistent cross-session context with semantic search.",
+    "agentMemoryAccess": "Enable Agent Memory Access",
+    "agentMemoryAccessDescription": "Allow agents to search and add to the knowledge graph via MCP",
+    "mcpServerUrl": "Graphiti MCP Server URL",
+    "mcpServerUrlDescription": "URL of the Graphiti MCP server",
+    "mcpServerUrlPlaceholder": "http://localhost:8000/mcp/",
+    "embeddingProvider": "Embedding Provider",
+    "embeddingProviderDescription": "Provider for semantic search (optional - keyword search works without)",
+    "embeddingProviderPlaceholder": "Select embedding provider",
+    "providers": {
+      "ollama": "Ollama (Local - Free)",
+      "openai": "OpenAI",
+      "voyage": "Voyage AI",
+      "google": "Google AI",
+      "azureOpenai": "Azure OpenAI"
+    },
+    "openai": {
+      "apiKey": "OpenAI API Key",
+      "apiKeyOverride": "OpenAI API Key (Override)",
+      "usingGlobalKey": "Using global key",
+      "globalKeyDescription": "Using key from App Settings. Enter a project-specific key below to override.",
+      "requiredDescription": "Required for OpenAI embeddings",
+      "placeholder": "sk-xxxxxxxx",
+      "overridePlaceholder": "Enter to override global key...",
+      "getKeyLink": "OpenAI"
+    },
+    "voyage": {
+      "apiKey": "Voyage AI API Key",
+      "requiredDescription": "Required for Voyage AI embeddings",
+      "placeholder": "pa-xxxxxxxx",
+      "embeddingModel": "Embedding Model",
+      "embeddingModelPlaceholder": "voyage-3",
+      "getKeyLink": "Voyage AI"
+    },
+    "google": {
+      "apiKey": "Google AI API Key",
+      "requiredDescription": "Required for Google AI embeddings",
+      "placeholder": "AIzaSy...",
+      "getKeyLink": "Google AI Studio"
+    },
+    "azure": {
+      "configuration": "Azure OpenAI Configuration",
+      "apiKey": "API Key",
+      "apiKeyPlaceholder": "Azure API Key",
+      "baseUrl": "Base URL",
+      "baseUrlPlaceholder": "https://your-resource.openai.azure.com",
+      "embeddingDeployment": "Embedding Deployment Name",
+      "embeddingDeploymentPlaceholder": "text-embedding-ada-002"
+    },
+    "ollama": {
+      "configuration": "Ollama Configuration",
+      "checking": "Checking...",
+      "connected": "Connected",
+      "notRunning": "Not running",
+      "baseUrl": "Base URL",
+      "baseUrlPlaceholder": "http://localhost:11434",
+      "embeddingModel": "Embedding Model",
+      "selectModel": "Select embedding model",
+      "selectEmbeddingModel": "Select Embedding Model",
+      "modelPlaceholder": "nomic-embed-text",
+      "recommendedModels": "Recommended: qwen3-embedding:4b (balanced), :8b (quality), :0.6b (fast)",
+      "embeddingDimension": "Embedding Dimension",
+      "embeddingDimensionPlaceholder": "768",
+      "embeddingDimensionDescription": "Required for Ollama embeddings (e.g., 768 for nomic-embed-text)"
+    },
+    "database": {
+      "name": "Database Name",
+      "nameDescription": "Name for the memory database (stored in ~/.auto-claude/memories/)",
+      "nameDescriptionShort": "Stored in ~/.auto-claude/memories/",
+      "namePlaceholder": "auto_claude_memory",
+      "path": "Database Path (Optional)",
+      "pathDescription": "Custom storage location. Default: ~/.auto-claude/memories/",
+      "pathPlaceholder": "~/.auto-claude/memories"
+    },
+    "getKeyFrom": "Get your key from"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "onTaskComplete": "On Task Complete",
+    "onTaskFailed": "On Task Failed",
+    "onReviewNeeded": "On Review Needed",
+    "sound": "Sound"
+  },
+  "github": {
+    "oauth": {
+      "cliRequired": "GitHub CLI Required",
+      "cliRequiredDescription": "The GitHub CLI (gh) is required for OAuth authentication. This provides a secure way to authenticate without manually creating tokens.",
+      "installCli": "Install GitHub CLI",
+      "installedIt": "I've Installed It",
+      "installInstructions": "Installation instructions:",
+      "installMacOS": "macOS:",
+      "installWindows": "Windows:",
+      "installLinux": "Linux: Visit",
+      "connectToGitHub": "Connect to GitHub",
+      "connectDescription": "Click the button below to authenticate with GitHub. This will open your browser where you can authorize the application.",
+      "usingCliVersion": "Using GitHub CLI {{version}}",
+      "authenticateButton": "Authenticate with GitHub",
+      "authenticating": "Authenticating...",
+      "waitingForBrowser": "Please complete the authentication in your browser. This window will update automatically.",
+      "waitingForFlow": "Waiting for authentication flow to start...",
+      "deviceCode": "Your one-time code",
+      "copyCode": "Copy",
+      "codeCopied": "Copied",
+      "enterCodeInBrowser": "Enter this code in your browser to complete authentication.",
+      "copyThenOpenLink": "Copy this code, then open the link below to authenticate.",
+      "openUrl": "Open {{url}}",
+      "successTitle": "Successfully Connected",
+      "successDescription": "Connected as {{username}}",
+      "successDescriptionDefault": "Your GitHub account is now connected",
+      "errorTitle": "Authentication Failed",
+      "errorTitleTimeout": "Authentication Timed Out",
+      "completeManually": "Complete Authentication Manually",
+      "completeManuallyDescription": "The browser couldn't be opened automatically. Please visit the URL below to complete authentication:",
+      "copyUrl": "Copy",
+      "urlCopied": "Copied",
+      "openUrlInBrowser": "Open URL in Browser",
+      "deviceCodeReminder": "When prompted, enter this code:",
+      "retry": "Retry",
+      "cancel": "Cancel"
+    }
+  },
+  "common": {
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "optional": "Optional",
+    "required": "Required",
+    "checking": "Checking...",
+    "connected": "Connected",
+    "notConnected": "Not connected",
+    "getKeyFrom": "Get your key from",
+    "embeddingModelOptional": "Embedding Model (optional)"
+  }
+}

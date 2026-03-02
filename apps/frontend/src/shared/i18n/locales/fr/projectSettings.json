@@ -1,0 +1,140 @@
+{
+  "memory": {
+    "title": "Mémoire",
+    "enabled": "Activé",
+    "disabled": "Désactivé",
+    "enableMemory": "Activer la mémoire",
+    "enableMemoryDescription": "Mémoire inter-sessions persistante utilisant une base de données graphique intégrée",
+    "fileBasedInfo": "Utilisation de la mémoire basée sur fichiers. Les informations de session sont stockées localement dans des fichiers JSON. Activez la mémoire pour un contexte inter-sessions persistant avec recherche sémantique.",
+    "agentMemoryAccess": "Activer l'accès mémoire des agents",
+    "agentMemoryAccessDescription": "Permettre aux agents de rechercher et d'ajouter au graphe de connaissances via MCP",
+    "mcpServerUrl": "URL du serveur Graphiti MCP",
+    "mcpServerUrlDescription": "URL du serveur Graphiti MCP",
+    "mcpServerUrlPlaceholder": "http://localhost:8000/mcp/",
+    "embeddingProvider": "Fournisseur d'embeddings",
+    "embeddingProviderDescription": "Fournisseur pour la recherche sémantique (optionnel - la recherche par mots-clés fonctionne sans)",
+    "embeddingProviderPlaceholder": "Sélectionner un fournisseur d'embeddings",
+    "providers": {
+      "ollama": "Ollama (Local - Gratuit)",
+      "openai": "OpenAI",
+      "voyage": "Voyage AI",
+      "google": "Google AI",
+      "azureOpenai": "Azure OpenAI"
+    },
+    "openai": {
+      "apiKey": "Clé API OpenAI",
+      "apiKeyOverride": "Clé API OpenAI (Remplacement)",
+      "usingGlobalKey": "Utilisation de la clé globale",
+      "globalKeyDescription": "Utilisation de la clé des paramètres de l'application. Entrez une clé spécifique au projet ci-dessous pour remplacer.",
+      "requiredDescription": "Requis pour les embeddings OpenAI",
+      "placeholder": "sk-xxxxxxxx",
+      "overridePlaceholder": "Entrer pour remplacer la clé globale...",
+      "getKeyLink": "OpenAI"
+    },
+    "voyage": {
+      "apiKey": "Clé API Voyage AI",
+      "requiredDescription": "Requis pour les embeddings Voyage AI",
+      "placeholder": "pa-xxxxxxxx",
+      "embeddingModel": "Modèle d'embedding",
+      "embeddingModelPlaceholder": "voyage-3",
+      "getKeyLink": "Voyage AI"
+    },
+    "google": {
+      "apiKey": "Clé API Google AI",
+      "requiredDescription": "Requis pour les embeddings Google AI",
+      "placeholder": "AIzaSy...",
+      "getKeyLink": "Google AI Studio"
+    },
+    "azure": {
+      "configuration": "Configuration Azure OpenAI",
+      "apiKey": "Clé API",
+      "apiKeyPlaceholder": "Clé API Azure",
+      "baseUrl": "URL de base",
+      "baseUrlPlaceholder": "https://your-resource.openai.azure.com",
+      "embeddingDeployment": "Nom du déploiement d'embedding",
+      "embeddingDeploymentPlaceholder": "text-embedding-ada-002"
+    },
+    "ollama": {
+      "configuration": "Configuration Ollama",
+      "checking": "Vérification...",
+      "connected": "Connecté",
+      "notRunning": "Non actif",
+      "baseUrl": "URL de base",
+      "baseUrlPlaceholder": "http://localhost:11434",
+      "embeddingModel": "Modèle d'embedding",
+      "selectModel": "Sélectionner un modèle d'embedding",
+      "selectEmbeddingModel": "Sélectionner un modèle d'embedding",
+      "modelPlaceholder": "nomic-embed-text",
+      "recommendedModels": "Recommandé : qwen3-embedding:4b (équilibré), :8b (qualité), :0.6b (rapide)",
+      "embeddingDimension": "Dimension d'embedding",
+      "embeddingDimensionPlaceholder": "768",
+      "embeddingDimensionDescription": "Requis pour les embeddings Ollama (ex : 768 pour nomic-embed-text)"
+    },
+    "database": {
+      "name": "Nom de la base de données",
+      "nameDescription": "Nom de la base de données mémoire (stockée dans ~/.auto-claude/memories/)",
+      "nameDescriptionShort": "Stocké dans ~/.auto-claude/memories/",
+      "namePlaceholder": "auto_claude_memory",
+      "path": "Chemin de la base de données (optionnel)",
+      "pathDescription": "Emplacement de stockage personnalisé. Par défaut : ~/.auto-claude/memories/",
+      "pathPlaceholder": "~/.auto-claude/memories"
+    },
+    "getKeyFrom": "Obtenez votre clé depuis"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "onTaskComplete": "À la fin de tâche",
+    "onTaskFailed": "En cas d'échec de tâche",
+    "onReviewNeeded": "Révision nécessaire",
+    "sound": "Son"
+  },
+  "github": {
+    "oauth": {
+      "cliRequired": "CLI GitHub requis",
+      "cliRequiredDescription": "Le CLI GitHub (gh) est requis pour l'authentification OAuth. Cela fournit un moyen sécurisé de s'authentifier sans créer manuellement de jetons.",
+      "installCli": "Installer le CLI GitHub",
+      "installedIt": "Je l'ai installé",
+      "installInstructions": "Instructions d'installation :",
+      "installMacOS": "macOS :",
+      "installWindows": "Windows :",
+      "installLinux": "Linux : Visitez",
+      "connectToGitHub": "Se connecter à GitHub",
+      "connectDescription": "Cliquez sur le bouton ci-dessous pour vous authentifier avec GitHub. Cela ouvrira votre navigateur où vous pourrez autoriser l'application.",
+      "usingCliVersion": "Utilisation du CLI GitHub {{version}}",
+      "authenticateButton": "S'authentifier avec GitHub",
+      "authenticating": "Authentification...",
+      "waitingForBrowser": "Veuillez compléter l'authentification dans votre navigateur. Cette fenêtre se mettra à jour automatiquement.",
+      "waitingForFlow": "En attente du début du processus d'authentification...",
+      "deviceCode": "Votre code à usage unique",
+      "copyCode": "Copier",
+      "codeCopied": "Copié",
+      "enterCodeInBrowser": "Entrez ce code dans votre navigateur pour terminer l'authentification.",
+      "copyThenOpenLink": "Copiez ce code, puis ouvrez le lien ci-dessous pour vous authentifier.",
+      "openUrl": "Ouvrir {{url}}",
+      "successTitle": "Connexion réussie",
+      "successDescription": "Connecté en tant que {{username}}",
+      "successDescriptionDefault": "Votre compte GitHub est maintenant connecté",
+      "errorTitle": "Échec de l'authentification",
+      "errorTitleTimeout": "Délai d'authentification dépassé",
+      "completeManually": "Terminer l'authentification manuellement",
+      "completeManuallyDescription": "Le navigateur n'a pas pu être ouvert automatiquement. Veuillez visiter l'URL ci-dessous pour terminer l'authentification :",
+      "copyUrl": "Copier",
+      "urlCopied": "Copié",
+      "openUrlInBrowser": "Ouvrir l'URL dans le navigateur",
+      "deviceCodeReminder": "Lorsque demandé, entrez ce code :",
+      "retry": "Réessayer",
+      "cancel": "Annuler"
+    }
+  },
+  "common": {
+    "enabled": "Activé",
+    "disabled": "Désactivé",
+    "optional": "Optionnel",
+    "required": "Requis",
+    "checking": "Vérification...",
+    "connected": "Connecté",
+    "notConnected": "Non connecté",
+    "getKeyFrom": "Obtenez votre clé depuis",
+    "embeddingModelOptional": "Modèle d'embedding (optionnel)"
+  }
+}

@@ -901,5 +901,27 @@
       "label": "Remplisseur de modèle PR",
       "description": "Remplit intelligemment les modèles de PR GitHub à partir des changements de code"
     }
+  },
+  "theme": {
+    "appearanceMode": "Mode d'apparence",
+    "appearanceModeDescription": "Choisissez clair, sombre ou préférence système",
+    "colorTheme": "Thème de couleur",
+    "colorThemeDescription": "Sélectionnez une palette de couleurs pour l'interface",
+    "modes": {
+      "system": "Système",
+      "light": "Clair",
+      "dark": "Sombre"
+    }
+  },
+  "projectSelector": {
+    "placeholder": "Sélectionner un projet...",
+    "noProjects": "Aucun projet encore",
+    "addProject": "Ajouter un projet..."
+  },
+  "emptyState": {
+    "message": "Sélectionnez un projet pour voir et modifier ses paramètres"
+  },
+  "initializationGuard": {
+    "message": "Initialisez d'abord Auto-Build pour configurer {{feature}}"
   }
 }

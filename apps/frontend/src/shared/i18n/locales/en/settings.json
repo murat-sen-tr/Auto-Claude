@@ -901,5 +901,27 @@
       "label": "PR Template Filler",
       "description": "AI-fills GitHub PR templates from code changes"
     }
+  },
+  "theme": {
+    "appearanceMode": "Appearance Mode",
+    "appearanceModeDescription": "Choose light, dark, or system preference",
+    "colorTheme": "Color Theme",
+    "colorThemeDescription": "Select a color palette for the interface",
+    "modes": {
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    }
+  },
+  "projectSelector": {
+    "placeholder": "Select a project...",
+    "noProjects": "No projects yet",
+    "addProject": "Add Project..."
+  },
+  "emptyState": {
+    "message": "Select a project to view and edit its settings"
+  },
+  "initializationGuard": {
+    "message": "Initialize Auto-Build first to configure {{feature}}"
   }
 }
