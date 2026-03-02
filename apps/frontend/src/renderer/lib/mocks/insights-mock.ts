@@ -127,8 +127,11 @@ export const insightsMock = {
     }
   }),
 
+  respondToInsightsPermission: async () => ({ success: true }),
+
   onInsightsStreamChunk: () => () => {},
   onInsightsStatus: () => () => {},
   onInsightsError: () => () => {},
-  onInsightsSessionUpdated: () => () => {}
+  onInsightsSessionUpdated: () => () => {},
+  onInsightsPermissionRequest: () => () => {}
 };

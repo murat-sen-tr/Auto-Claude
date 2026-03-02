@@ -105,7 +105,8 @@ import type {
   InsightsSessionSummary,
   InsightsChatStatus,
   InsightsStreamChunk,
-  InsightsModelConfig
+  InsightsModelConfig,
+  InsightsPermissionRequest
 } from './insights';
 import type {
   CompetitorAnalysis,
@@ -777,7 +778,7 @@ export interface ElectronAPI {
 
   // Insights operations
   getInsightsSession: (projectId: string) => Promise<IPCResult<InsightsSession | null>>;
-  sendInsightsMessage: (projectId: string, message: string, modelConfig?: InsightsModelConfig, images?: ImageAttachment[]) => void;
+  sendInsightsMessage: (projectId: string, message: string, modelConfig?: InsightsModelConfig, images?: ImageAttachment[], allowEdits?: boolean) => void;
   clearInsightsSession: (projectId: string) => Promise<IPCResult>;
   createTaskFromInsights: (
     projectId: string,
@@ -795,6 +796,7 @@ export interface ElectronAPI {
   unarchiveInsightsSession: (projectId: string, sessionId: string) => Promise<IPCResult>;
   renameInsightsSession: (projectId: string, sessionId: string, newTitle: string) => Promise<IPCResult>;
   updateInsightsModelConfig: (projectId: string, sessionId: string, modelConfig: InsightsModelConfig) => Promise<IPCResult>;
+  respondToInsightsPermission: (projectId: string, requestId: string, allowed: boolean) => Promise<IPCResult>;
 
   // Insights event listeners
   onInsightsStreamChunk: (
@@ -808,6 +810,9 @@ export interface ElectronAPI {
   ) => () => void;
   onInsightsSessionUpdated: (
     callback: (projectId: string, session: InsightsSession) => void
+  ) => () => void;
+  onInsightsPermissionRequest: (
+    callback: (projectId: string, request: InsightsPermissionRequest) => void
   ) => () => void;
 
   // Task logs operations
