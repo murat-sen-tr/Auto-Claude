@@ -40,9 +40,13 @@ interface ProcessorResult {
  * Python process executor for insights
  * Handles spawning and managing the Python insights runner process
  */
+/** Default timeout for permission requests (5 minutes) */
+const PERMISSION_TIMEOUT_MS = 5 * 60 * 1000;
+
 export class InsightsExecutor extends EventEmitter {
   private config: InsightsConfig;
   private activeSessions: Map<string, ChildProcess> = new Map();
+  private permissionTimeouts: Map<string, NodeJS.Timeout> = new Map();
 
   constructor(config: InsightsConfig) {
     super();
@@ -65,7 +69,36 @@ export class InsightsExecutor extends EventEmitter {
 
     existingProcess.kill();
     this.activeSessions.delete(projectId);
+
+    // Clean up any pending permission timeouts for this project
+    for (const [key, timeout] of this.permissionTimeouts) {
+      if (key.startsWith(`${projectId}:`)) {
+        clearTimeout(timeout);
+        this.permissionTimeouts.delete(key);
+      }
+    }
+
     return true;
+  }
+
+  /**
+   * Respond to a permission request by writing to the process stdin
+   */
+  respondToPermission(projectId: string, requestId: string, allowed: boolean): void {
+    const timeoutKey = `${projectId}:${requestId}`;
+    const existingTimeout = this.permissionTimeouts.get(timeoutKey);
+    if (existingTimeout) {
+      clearTimeout(existingTimeout);
+      this.permissionTimeouts.delete(timeoutKey);
+    }
+
+    const proc = this.activeSessions.get(projectId);
+    if (!proc || proc.killed || !proc.stdin?.writable) {
+      return;
+    }
+
+    const response = JSON.stringify({ id: requestId, allowed });
+    proc.stdin.write(`__PERMISSION_RESPONSE__:${response}\n`);
   }
 
   /**
@@ -248,6 +281,8 @@ export class InsightsExecutor extends EventEmitter {
                 suggestedTasks.push(task);
               }
             });
+          } else if (line.startsWith('__PERMISSION_REQUEST__:')) {
+            this.handlePermissionRequest(projectId, line);
           } else if (line.startsWith('__TOOL_START__:')) {
             this.handleToolStart(projectId, line, toolsUsed);
           } else if (line.startsWith('__TOOL_END__:')) {
@@ -337,6 +372,33 @@ export class InsightsExecutor extends EventEmitter {
       } as InsightsStreamChunk);
     } catch {
       // Not valid JSON, treat as normal text (should not emit here as it's already handled)
+    }
+  }
+
+  /**
+   * Handle permission request from output
+   */
+  private handlePermissionRequest(projectId: string, line: string): void {
+    try {
+      const json = line.substring('__PERMISSION_REQUEST__:'.length);
+      const data = JSON.parse(json) as { id: string; tool: string; input: unknown; description: string };
+
+      this.emit('permission-request', projectId, {
+        id: data.id,
+        tool: data.tool,
+        input: data.input,
+        description: data.description
+      });
+
+      // Start auto-deny timeout
+      const timeoutKey = `${projectId}:${data.id}`;
+      const timeout = setTimeout(() => {
+        this.permissionTimeouts.delete(timeoutKey);
+        this.respondToPermission(projectId, data.id, false);
+      }, PERMISSION_TIMEOUT_MS);
+      this.permissionTimeouts.set(timeoutKey, timeout);
+    } catch {
+      // Ignore parse errors for permission request markers
     }
   }
 
