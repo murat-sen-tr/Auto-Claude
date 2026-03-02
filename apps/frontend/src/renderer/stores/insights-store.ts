@@ -7,6 +7,7 @@ import type {
   InsightsStreamChunk,
   InsightsToolUsage,
   InsightsModelConfig,
+  InsightsPermissionRequest,
   TaskMetadata,
   Task,
   ImageAttachment
@@ -30,6 +31,7 @@ interface InsightsState {
   isLoadingSessions: boolean;
   showArchived: boolean; // Whether to include archived sessions in listings
   pendingImages: ImageAttachment[]; // Images pending attachment to next message
+  pendingPermission: InsightsPermissionRequest | null; // Permission request awaiting user response
 
   // Actions
   setSession: (session: InsightsSession | null) => void;
@@ -49,6 +51,8 @@ interface InsightsState {
   setLoadingSessions: (loading: boolean) => void;
   setShowArchived: (showArchived: boolean) => void;
   setPendingImages: (images: ImageAttachment[]) => void;
+  setPendingPermission: (request: InsightsPermissionRequest | null) => void;
+  respondToPermission: (requestId: string, allowed: boolean) => void;
 }
 
 const initialStatus: InsightsChatStatus = {
@@ -56,7 +60,7 @@ const initialStatus: InsightsChatStatus = {
   message: ''
 };
 
-export const useInsightsStore = create<InsightsState>((set, _get) => ({
+export const useInsightsStore = create<InsightsState>((set, get) => ({
   // Initial state
   session: null,
   sessions: [],
@@ -69,6 +73,7 @@ export const useInsightsStore = create<InsightsState>((set, _get) => ({
   isLoadingSessions: false,
   showArchived: false,
   pendingImages: [],
+  pendingPermission: null,
 
   // Actions
   setSession: (session) => set({ session }),
@@ -211,10 +216,22 @@ export const useInsightsStore = create<InsightsState>((set, _get) => ({
       streamingTasks: [],
       currentTool: null,
       toolsUsed: [],
-      pendingImages: []
+      pendingImages: [],
+      pendingPermission: null
     }),
 
-  setPendingImages: (images) => set({ pendingImages: images })
+  setPendingImages: (images) => set({ pendingImages: images }),
+
+  setPendingPermission: (request) => set({ pendingPermission: request }),
+
+  respondToPermission: (requestId, allowed) => {
+    window.electronAPI.respondToInsightsPermission(
+      get().session?.projectId ?? '',
+      requestId,
+      allowed
+    );
+    set({ pendingPermission: null });
+  }
 }));
 
 // Helper functions
@@ -270,6 +287,7 @@ export function sendMessage(projectId: string, message: string, modelConfig?: In
   // Clear pending and set status
   store.setPendingMessage('');
   store.setPendingImages([]);
+  store.setPendingPermission(null);
   store.clearStreamingContent();
   store.clearToolsUsed(); // Clear tools from previous response
   store.setStatus({
@@ -443,6 +461,11 @@ export function setupInsightsListeners(): () => void {
             store().addStreamingTasks(chunk.suggestedTasks);
           }
           break;
+        case 'permission_request':
+          if (chunk.permissionRequest) {
+            store().setPendingPermission(chunk.permissionRequest);
+          }
+          break;
         case 'done':
           // Finalize any remaining content
           store().setCurrentTool(null);
@@ -454,6 +477,7 @@ export function setupInsightsListeners(): () => void {
           break;
         case 'error':
           store().setCurrentTool(null);
+          store().setPendingPermission(null);
           store().setStatus({
             phase: 'error',
             error: chunk.error
@@ -467,6 +491,13 @@ export function setupInsightsListeners(): () => void {
   const unsubStatus = window.electronAPI.onInsightsStatus((_projectId, status) => {
     store().setStatus(status);
   });
+
+  // Listen for permission requests
+  const unsubPermission = window.electronAPI.onInsightsPermissionRequest(
+    (_projectId, request) => {
+      store().setPendingPermission(request);
+    }
+  );
 
   // Listen for errors
   const unsubError = window.electronAPI.onInsightsError((_projectId, error) => {
@@ -495,6 +526,7 @@ export function setupInsightsListeners(): () => void {
   return () => {
     unsubStreamChunk();
     unsubStatus();
+    unsubPermission();
     unsubError();
     unsubSessionUpdated();
   };
