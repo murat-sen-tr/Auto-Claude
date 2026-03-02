@@ -308,6 +308,60 @@
   "subtasks": {
     "untitled": "Untitled subtask"
   },
+  "detail": {
+    "recoverTask": "Recover Task",
+    "resumeTask": "Resume Task",
+    "stopTask": "Stop Task",
+    "startTask": "Start Task",
+    "deleteTask": "Delete Task",
+    "taskCompleted": "Task completed successfully",
+    "subtasksCompleted": "{{completed}}/{{total}} subtasks completed",
+    "noSubtasksYet": "No subtasks yet",
+    "noSubtasksDefined": "No subtasks defined",
+    "subtasksAfterPlanning": "Implementation subtasks will appear here after planning"
+  },
+  "logs": {
+    "title": "Logs",
+    "noLogsYet": "No logs yet",
+    "logsWhenRuns": "Logs will appear here when the task runs",
+    "planning": "Planning",
+    "coding": "Coding",
+    "validation": "Validation",
+    "running": "Running",
+    "complete": "Complete",
+    "failed": "Failed",
+    "pending": "Pending",
+    "interrupted": "Interrupted",
+    "entries": "entries",
+    "showOutput": "Show output",
+    "hideOutput": "Hide output",
+    "less": "Less",
+    "more": "More",
+    "reading": "Reading",
+    "searchingFiles": "Searching files",
+    "searchingCode": "Searching code",
+    "editing": "Editing",
+    "writing": "Writing",
+    "running": "Running",
+    "done": "Done",
+    "location": "Location",
+    "reason": "Reason",
+    "strategy": "Strategy"
+  },
+  "subtaskList": {
+    "noSubtasks": "No subtasks defined",
+    "subtasksAfterPlanning": "Implementation subtasks will appear here after planning",
+    "completedOf": "{{completed}} of {{total}} completed"
+  },
+  "warnings": {
+    "taskStuck": "Task Appears Stuck",
+    "taskStuckDescription": "This task is marked as running but no active process was found. This can happen if the app crashed or the process was terminated unexpectedly.",
+    "recoverRestart": "Recover & Restart Task",
+    "recovering": "Recovering...",
+    "taskIncomplete": "Task Incomplete",
+    "taskIncompleteDescription": "This task has a spec and implementation plan but never completed any subtasks ({{completed}}/{{total}}). The process likely crashed during spec creation. Click Resume to continue implementation.",
+    "resumeTask": "Resume Task"
+  },
   "bulkPR": {
     "selectAllInColumn": "Select all tasks in column",
     "deselectAllInColumn": "Deselect all tasks",

@@ -5,6 +5,18 @@
     "openExternal": "Harici Terminalde Aç"
   },
   "merge": {
+    "branchDiverged": "Dal Ayrıldı - Yapay Zeka Çözecek",
+    "noConflictsDetected": "Çakışma Algılanmadı",
+    "conflictsFound": "{{count}} Çakışma{{plural}} Bulundu",
+    "viewDetails": "Ayrıntıları Görüntüle",
+    "branchHasDiverged": "Dal ayrıldı - Yapay zeka çözecek",
+    "filesToMerge": "Birleştirilecek dosyalar:",
+    "autoMergeable": "Otomatik birleştirilebilir:",
+    "aiResolved": "Yapay zeka çözüldü:",
+    "manualReview": "Manuel inceleme:",
+    "aiWillResolveConflicts": "Yapay zeka çakışmaları çözecek",
+    "readyToMerge": "Birleştirmeye hazır",
+    "aiWillMergeWhenStaging": "Değişiklikleri Aşamala'ya tıkladığınızda yapay zeka bu çakışmaları otomatik olarak birleştirecek.",
     "branchHasNewCommits": "{{branch}} dalında {{count}} yeni commit var.",
     "branchHasNewCommits_other": "{{branch}} dalında {{count}} yeni commit var.",
     "branchHasNewCommitsSinceWorktree": "Bu çalışma ağacı oluşturulduğundan beri {{branch}} dalında {{count}} yeni commit var.",
@@ -132,5 +144,83 @@
     "alreadyExisted": "zaten vardı",
     "noWorktree": "Bu görev için çalışma ağacı bulunamadı",
     "resultsDescriptionWithSkipped": "{{success}} başarılı, {{skipped}} atlandı, {{failed}} başarısız"
+  },
+  "conflicts": {
+    "title": "Birleştirme Çakışmaları Önizlemesi",
+    "description": "{{count}} olası çakışma algılandı.",
+    "description_other": "{{count}} olası çakışma algılandı.",
+    "autoMergeable": "{{count}} otomatik olarak birleştirilebilir.",
+    "noConflicts": "Çakışma algılanmadı",
+    "severity": "Önem",
+    "autoMerge": "otomatik birleştirme",
+    "location": "Konum",
+    "reason": "Sebep",
+    "strategy": "Strateji",
+    "close": "Kapat",
+    "proceedWithMerge": "Birleştirmeye Devam Et"
+  },
+  "diff": {
+    "title": "Değiştirilen Dosyalar",
+    "summary": "{{count}} dosya değiştirildi",
+    "summary_other": "{{count}} dosya değiştirildi",
+    "noChanges": "Değişiklik bulunamadı",
+    "status": {
+      "added": "eklendi",
+      "deleted": "silindi",
+      "modified": "değiştirildi",
+      "renamed": "yeniden adlandırıldı"
+    },
+    "close": "Kapat"
+  },
+  "discard": {
+    "title": "Yapıyı At",
+    "confirmMessage": "Tüm değişiklikleri atmak istediğinizden emin misiniz",
+    "warning": "Bu, izole çalışma alanını ve tüm commit edilmemiş değişiklikleri kalıcı olarak silecek. Görev Planlama durumuna geri taşınacak.",
+    "filesChanged": "Değiştirilen dosyalar",
+    "lines": "Satırlar",
+    "cancel": "İptal",
+    "discarding": "Atılıyor...",
+    "discardBuild": "Yapıyı At"
+  },
+  "staged": {
+    "title": "Değişiklikler Başarıyla Aşamalandı",
+    "description": "{{message}}",
+    "commitMessage": "AI tarafından oluşturulan commit mesajı",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı!",
+    "commitPlaceholder": "Commit mesajı...",
+    "editHint": "Gerektiği gibi düzenleyin, ardından kopyalayın ve şununla kullanın",
+    "nextSteps": "Sonraki adımlar:",
+    "step1": "Projenizi IDE veya terminalinizde açın",
+    "step2": "Aşamalanmış değişiklikleri inceleyin",
+    "step3": "Hazır olduğunuzda commit edin:"
+  },
+  "workspace": {
+    "loadingMessage": "Çalışma alanı bilgileri yükleniyor...",
+    "noWorkspace": {
+      "title": "Çalışma Alanı Bulunamadı",
+      "description": "Bu görev için izole bir çalışma alanı bulunamadı. Değişiklikler doğrudan projenizde yapılmış olabilir.",
+      "planReviewTitle": "İnsan İncelemesi Gerekli",
+      "planReviewDescription": "Kodlamadan önce insan incelemesi gerekli. Gerekli değişiklikler için spec.md dosyanızı inceleyin."
+    },
+    "markAsDone": "Tamamlandı Olarak İşaretle",
+    "proceedToCoding": "Kodlamaya Geç",
+    "updating": "Güncelleniyor...",
+    "stagedInProject": {
+      "title": "Değişiklikler Projede Aşamalandı",
+      "description": "Bu görevin değişiklikleri ana projenizde aşamalandı",
+      "descriptionWithDate": " - {{date}}",
+      "nextSteps": "Sonraki adımlar:",
+      "step1": "Aşamalanmış değişiklikleri inceleyin",
+      "step2": "Hazır olduğunuzda commit edin:",
+      "step3": "Tatmin olduğunuzda remote'a gönderin",
+      "deleteWorktreeAndMarkDone": "Çalışma Ağacını Sil ve Tamamlandı Olarak İşaretle",
+      "markDoneOnly": "Yalnızca Tamamlandı Olarak İşaretle",
+      "reviewAgain": "Tekrar İncele",
+      "cleaningUp": "Temizleniyor...",
+      "markingDone": "Tamamlandı olarak işaretleniyor...",
+      "resetting": "Sıfırlanıyor...",
+      "keepWorktreeHint": "\"Çalışma Ağacını Sil ve Tamamlandı Olarak İşaretle\" izole çalışma alanını temizler. \"Yalnızca Tamamlandı Olarak İşaretle\" referans için saklar."
+    }
   }
 }

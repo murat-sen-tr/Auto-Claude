@@ -308,6 +308,60 @@
   "subtasks": {
     "untitled": "Başlıksız alt görev"
   },
+  "detail": {
+    "recoverTask": "Görevi Kurtar",
+    "resumeTask": "Göreve Devam Et",
+    "stopTask": "Görevi Durdur",
+    "startTask": "Görevi Başlat",
+    "deleteTask": "Görevi Sil",
+    "taskCompleted": "Görev başarıyla tamamlandı",
+    "subtasksCompleted": "{{completed}}/{{total}} alt görev tamamlandı",
+    "noSubtasksYet": "Henüz alt görev yok",
+    "noSubtasksDefined": "Alt görev tanımlanmadı",
+    "subtasksAfterPlanning": "Uygulama alt görevleri planlamadan sonra burada görünecek"
+  },
+  "logs": {
+    "title": "Günlükler",
+    "noLogsYet": "Henüz günlük yok",
+    "logsWhenRuns": "Görev çalıştığında günlükler burada görünecek",
+    "planning": "Planlama",
+    "coding": "Kodlama",
+    "validation": "Doğrulama",
+    "running": "Çalışıyor",
+    "complete": "Tamamlandı",
+    "failed": "Başarısız",
+    "pending": "Beklemede",
+    "interrupted": "Kesildi",
+    "entries": "girdi",
+    "showOutput": "Çıktıyı göster",
+    "hideOutput": "Çıktıyı gizle",
+    "less": "Daha az",
+    "more": "Daha fazla",
+    "reading": "Okunuyor",
+    "searchingFiles": "Dosyalar aranıyor",
+    "searchingCode": "Kod aranıyor",
+    "editing": "Düzenleniyor",
+    "writing": "Yazılıyor",
+    "running": "Çalıştırılıyor",
+    "done": "Tamamlandı",
+    "location": "Konum",
+    "reason": "Sebep",
+    "strategy": "Strateji"
+  },
+  "subtaskList": {
+    "noSubtasks": "Alt görev tanımlanmadı",
+    "subtasksAfterPlanning": "Uygulama alt görevleri planlamadan sonra burada görünecek",
+    "completedOf": "{{total}} içinden {{completed}} tamamlandı"
+  },
+  "warnings": {
+    "taskStuck": "Görev Takılmış Görünüyor",
+    "taskStuckDescription": "Bu görev çalışıyor olarak işaretlenmiş ancak aktif bir süreç bulunamadı. Uygulama çökmüş veya süreç beklenmedik şekilde sonlandırılmışsa bu durum oluşabilir.",
+    "recoverRestart": "Kurtar ve Yeniden Başlat",
+    "recovering": "Kurtarılıyor...",
+    "taskIncomplete": "Görev Tamamlanmamış",
+    "taskIncompleteDescription": "Bu görevin bir spec'i ve uygulama planı var ancak hiçbir alt görevi tamamlamadı ({{completed}}/{{total}}). Süreç muhtemelen spec oluşturma sırasında çöktü. Uygulamaya devam etmek için Devam Et'e tıklayın.",
+    "resumeTask": "Göreve Devam Et"
+  },
   "bulkPR": {
     "selectAllInColumn": "Sütundaki tüm görevleri seç",
     "deselectAllInColumn": "Tüm görevlerin seçimini kaldır",

@@ -5,6 +5,18 @@
     "openExternal": "Open in External Terminal"
   },
   "merge": {
+    "branchDiverged": "Branch Diverged - AI Will Resolve",
+    "noConflictsDetected": "No Conflicts Detected",
+    "conflictsFound": "{{count}} Conflict{{plural}} Found",
+    "viewDetails": "View Details",
+    "branchHasDiverged": "Branch has diverged - AI will resolve",
+    "filesToMerge": "Files to merge:",
+    "autoMergeable": "Auto-mergeable:",
+    "aiResolved": "AI resolved:",
+    "manualReview": "Manual review:",
+    "aiWillResolveConflicts": "AI will resolve conflicts",
+    "readyToMerge": "Ready to merge",
+    "aiWillMergeWhenStaging": "AI will automatically merge these conflicts when you click Stage Changes.",
     "branchHasNewCommits": "{{branch}} branch has {{count}} new commit.",
     "branchHasNewCommits_other": "{{branch}} branch has {{count}} new commits.",
     "branchHasNewCommitsSinceWorktree": "The {{branch}} branch has {{count}} new commit since this worktree was created.",
@@ -132,5 +144,83 @@
     "alreadyExisted": "already existed",
     "noWorktree": "No worktree found for this task",
     "resultsDescriptionWithSkipped": "{{success}} succeeded, {{skipped}} skipped, {{failed}} failed"
+  },
+  "conflicts": {
+    "title": "Merge Conflicts Preview",
+    "description": "{{count}} potential conflict detected.",
+    "description_other": "{{count}} potential conflicts detected.",
+    "autoMergeable": "{{count}} can be auto-merged.",
+    "noConflicts": "No conflicts detected",
+    "severity": "Severity",
+    "autoMerge": "auto-merge",
+    "location": "Location",
+    "reason": "Reason",
+    "strategy": "Strategy",
+    "close": "Close",
+    "proceedWithMerge": "Proceed with Merge"
+  },
+  "diff": {
+    "title": "Changed Files",
+    "summary": "{{count}} file changed",
+    "summary_other": "{{count}} files changed",
+    "noChanges": "No changes found",
+    "status": {
+      "added": "added",
+      "deleted": "deleted",
+      "modified": "modified",
+      "renamed": "renamed"
+    },
+    "close": "Close"
+  },
+  "discard": {
+    "title": "Discard Build",
+    "confirmMessage": "Are you sure you want to discard all changes for",
+    "warning": "This will permanently delete the isolated workspace and all uncommitted changes. The task will be moved back to Planning status.",
+    "filesChanged": "Files changed",
+    "lines": "Lines",
+    "cancel": "Cancel",
+    "discarding": "Discarding...",
+    "discardBuild": "Discard Build"
+  },
+  "staged": {
+    "title": "Changes Staged Successfully",
+    "description": "{{message}}",
+    "commitMessage": "AI-generated commit message",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "commitPlaceholder": "Commit message...",
+    "editHint": "Edit as needed, then copy and use with",
+    "nextSteps": "Next steps:",
+    "step1": "Open your project in your IDE or terminal",
+    "step2": "Review the staged changes with",
+    "step3": "Commit when ready:"
+  },
+  "workspace": {
+    "loadingMessage": "Loading workspace info...",
+    "noWorkspace": {
+      "title": "No Workspace Found",
+      "description": "No isolated workspace was found for this task. The changes may have been made directly in your project.",
+      "planReviewTitle": "Human Review Required",
+      "planReviewDescription": "Human review required prior to coding. Review your spec.md for any necessary changes."
+    },
+    "markAsDone": "Mark as Done",
+    "proceedToCoding": "Proceed to Coding",
+    "updating": "Updating...",
+    "stagedInProject": {
+      "title": "Changes Staged in Project",
+      "description": "This task's changes have been staged in your main project",
+      "descriptionWithDate": " on {{date}}",
+      "nextSteps": "Next steps:",
+      "step1": "Review staged changes with",
+      "step2": "Commit when ready:",
+      "step3": "Push to remote when satisfied",
+      "deleteWorktreeAndMarkDone": "Delete Worktree & Mark Done",
+      "markDoneOnly": "Mark Done Only",
+      "reviewAgain": "Review Again",
+      "cleaningUp": "Cleaning up...",
+      "markingDone": "Marking done...",
+      "resetting": "Resetting...",
+      "keepWorktreeHint": "\"Delete Worktree & Mark Done\" cleans up the isolated workspace. \"Mark Done Only\" keeps it for reference."
+    }
   }
 }
