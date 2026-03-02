@@ -1,0 +1,124 @@
+{
+  "header": {
+    "title": "Changelog Oluşturucu",
+    "step1": "Adım 1: Dahil edilecek tamamlanmış görevleri seçin",
+    "step2": "Adım 2: Yapılandırın ve changelog oluşturun",
+    "step3": "Adım 3: Yayınlayın ve görevleri arşivleyin",
+    "refresh": "Yenile"
+  },
+  "steps": {
+    "select": "Seç",
+    "generate": "Oluştur",
+    "release": "Yayınla"
+  },
+  "filters": {
+    "sourceLabel": "Changelog Kaynağı",
+    "gitHistoryOptions": "Git Geçmişi Seçenekleri",
+    "historyType": "Geçmiş Türü",
+    "sinceVersion": "Sürümden İtibaren",
+    "recentCommits": "Son Commit'ler",
+    "sinceDate": "Tarihten İtibaren",
+    "tagRange": "Etiket Aralığı",
+    "numberOfCommits": "Commit Sayısı",
+    "dateLabel": "Tarih",
+    "fromTag": "Başlangıç Etiketi",
+    "toTag": "Bitiş Etiketi",
+    "versionLabel": "Sürüm",
+    "includeMergeCommits": "Birleştirme commit'lerini dahil et",
+    "branchComparison": "Dal Karşılaştırması",
+    "baseBranch": "Temel Dal",
+    "compareBranch": "Karşılaştırma Dalı",
+    "selectBaseBranch": "Temel dalı seçin",
+    "selectCompareBranch": "Karşılaştırma dalını seçin",
+    "loadCommits": "Commit'leri Yükle",
+    "loadingCommits": "Commit'ler Yükleniyor...",
+    "loadingGitData": "Git verileri yükleniyor..."
+  },
+  "list": {
+    "tasksSelected": "{{total}} görevden {{selected}} tanesi seçildi",
+    "selectAll": "Tümünü Seç",
+    "clear": "Temizle",
+    "noCompletedTasks": "Tamamlanmış Görev Yok",
+    "noCompletedTasksDescription": "Kanban panosunda görevleri tamamlayın ve changelog'unuza dahil etmek için \"Tamamlandı\" olarak işaretleyin.",
+    "commitsFound": "{{count}} commit bulundu",
+    "commitsFound_plural": "{{count}} commit bulundu",
+    "loadingCommits": "Commit'ler yükleniyor...",
+    "noCommitsFound": "Commit Bulunamadı",
+    "noCommitsFoundGitHistory": "Geçmiş seçeneklerini yapılandırın ve önizlemek için \"Commit'leri Yükle\"ye tıklayın.",
+    "noCommitsFoundBranchDiff": "Her iki dalı da seçin ve değişiklikleri görmek için \"Commit'leri Yükle\"ye tıklayın.",
+    "continue": "Devam Et",
+    "task": "görev",
+    "task_plural": "görev",
+    "commit": "commit",
+    "commit_plural": "commit",
+    "item": "öğe",
+    "item_plural": "öğe",
+    "filesChanged": "{{count}} dosya",
+    "filesChanged_plural": "{{count}} dosya"
+  },
+  "entry": {
+    "hasSpecs": "Özellik Belgesi Var"
+  },
+  "configuration": {
+    "backToSelection": "Seçime Dön",
+    "including": "{{count}} {{label}} dahil ediliyor",
+    "releaseInfo": "Sürüm Bilgisi",
+    "version": "Sürüm",
+    "date": "Tarih",
+    "previous": "Önceki: {{version}}",
+    "outputStyle": "Çıktı Stili",
+    "format": "Format",
+    "audience": "Hedef Kitle",
+    "emojis": "Emojiler",
+    "advancedOptions": "Gelişmiş Seçenekler",
+    "customInstructions": "Özel Talimatlar",
+    "generateChangelog": "Changelog Oluştur",
+    "generationProgress": "Oluşturma İlerlemesi",
+    "generating": "Oluşturuluyor..."
+  },
+  "preview": {
+    "title": "Önizleme",
+    "markdown": "Markdown",
+    "preview": "Önizleme",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı!",
+    "copyToClipboard": "Panoya kopyala",
+    "save": "CHANGELOG.md'ye Kaydet",
+    "saved": "Kaydedildi!",
+    "saveTooltip": "Proje kökündeki CHANGELOG.md dosyasının başına ekle",
+    "dropImageHere": "Eklemek için resmi buraya bırakın",
+    "failedToInsertImage": "Resim eklenemedi: {{error}}",
+    "noChangelogGenerated": "Henüz changelog oluşturulmadı",
+    "noChangelogDescription": "Seçilen görevlerden bir changelog oluşturmak için \"Changelog Oluştur\"a tıklayın.",
+    "loadingImage": "Resim yükleniyor...",
+    "imageNotFound": "Resim bulunamadı",
+    "cannotLoadImage": "Yerel resim yüklenemiyor: proje yolu yok"
+  },
+  "archive": {
+    "title": "Tamamlanan Görevleri Arşivle",
+    "tasksArchived": "{{count}} görev arşivlendi!",
+    "tasksArchived_plural": "{{count}} görev arşivlendi!",
+    "archiveDescription": "Kanban panonuzu temizlemek için {{count}} görevi arşivleyin. Arşivlenen görevler \"Arşivlenenler Göster\" düğmesi kullanılarak görüntülenebilir.",
+    "archiveDescription_plural": "Kanban panonuzu temizlemek için {{count}} görevi arşivleyin. Arşivlenen görevler \"Arşivlenenler Göster\" düğmesi kullanılarak görüntülenebilir.",
+    "archiving": "Arşivleniyor...",
+    "archiveButton": "{{count}} Görevi Arşivle",
+    "archiveButton_plural": "{{count}} Görevi Arşivle"
+  },
+  "github": {
+    "title": "GitHub Sürümü Oluştur",
+    "releaseCreated": "Sürüm başarıyla oluşturuldu!",
+    "viewRelease": "GitHub'da Sürümü Görüntüle",
+    "createDescription": "GitHub'da changelog'u sürüm notları olarak içeren yeni bir {{tag}} sürümü oluşturun.",
+    "creatingRelease": "Sürüm Oluşturuluyor...",
+    "createButton": "{{tag}} Sürümünü Oluştur"
+  },
+  "success": {
+    "title": "Changelog Kaydedildi!",
+    "description": "{{tag}} sürümü CHANGELOG.md dosyasına eklendi",
+    "done": "Tamam"
+  },
+  "empty": {
+    "noProjectSelected": "Proje Seçilmedi",
+    "noProjectDescription": "Changelog oluşturmak için kenar çubuğundan bir proje seçin."
+  }
+}

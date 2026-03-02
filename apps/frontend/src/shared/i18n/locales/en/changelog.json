@@ -1,0 +1,124 @@
+{
+  "header": {
+    "title": "Changelog Generator",
+    "step1": "Step 1: Select completed tasks to include",
+    "step2": "Step 2: Configure and generate changelog",
+    "step3": "Step 3: Release and archive tasks",
+    "refresh": "Refresh"
+  },
+  "steps": {
+    "select": "Select",
+    "generate": "Generate",
+    "release": "Release"
+  },
+  "filters": {
+    "sourceLabel": "Changelog Source",
+    "gitHistoryOptions": "Git History Options",
+    "historyType": "History Type",
+    "sinceVersion": "Since Version",
+    "recentCommits": "Recent Commits",
+    "sinceDate": "Since Date",
+    "tagRange": "Tag Range",
+    "numberOfCommits": "Number of Commits",
+    "dateLabel": "Date",
+    "fromTag": "From Tag",
+    "toTag": "To Tag",
+    "versionLabel": "Version",
+    "includeMergeCommits": "Include merge commits",
+    "branchComparison": "Branch Comparison",
+    "baseBranch": "Base Branch",
+    "compareBranch": "Compare Branch",
+    "selectBaseBranch": "Select base branch",
+    "selectCompareBranch": "Select compare branch",
+    "loadCommits": "Load Commits",
+    "loadingCommits": "Loading Commits...",
+    "loadingGitData": "Loading git data..."
+  },
+  "list": {
+    "tasksSelected": "{{selected}} of {{total}} tasks selected",
+    "selectAll": "Select All",
+    "clear": "Clear",
+    "noCompletedTasks": "No Completed Tasks",
+    "noCompletedTasksDescription": "Complete tasks in the Kanban board and mark them as \"Done\" to include them in your changelog.",
+    "commitsFound": "{{count}} commit found",
+    "commitsFound_plural": "{{count}} commits found",
+    "loadingCommits": "Loading commits...",
+    "noCommitsFound": "No Commits Found",
+    "noCommitsFoundGitHistory": "Configure the history options and click \"Load Commits\" to preview.",
+    "noCommitsFoundBranchDiff": "Select both branches and click \"Load Commits\" to see the changes.",
+    "continue": "Continue",
+    "task": "task",
+    "task_plural": "tasks",
+    "commit": "commit",
+    "commit_plural": "commits",
+    "item": "item",
+    "item_plural": "items",
+    "filesChanged": "{{count}} file",
+    "filesChanged_plural": "{{count}} files"
+  },
+  "entry": {
+    "hasSpecs": "Has Specs"
+  },
+  "configuration": {
+    "backToSelection": "Back to Selection",
+    "including": "Including {{count}} {{label}}",
+    "releaseInfo": "Release Info",
+    "version": "Version",
+    "date": "Date",
+    "previous": "Previous: {{version}}",
+    "outputStyle": "Output Style",
+    "format": "Format",
+    "audience": "Audience",
+    "emojis": "Emojis",
+    "advancedOptions": "Advanced Options",
+    "customInstructions": "Custom Instructions",
+    "generateChangelog": "Generate Changelog",
+    "generationProgress": "Generation Progress",
+    "generating": "Generating..."
+  },
+  "preview": {
+    "title": "Preview",
+    "markdown": "Markdown",
+    "preview": "Preview",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "copyToClipboard": "Copy to clipboard",
+    "save": "Save to CHANGELOG.md",
+    "saved": "Saved!",
+    "saveTooltip": "Prepend to CHANGELOG.md in project root",
+    "dropImageHere": "Drop image here to insert",
+    "failedToInsertImage": "Failed to insert image: {{error}}",
+    "noChangelogGenerated": "No changelog generated yet",
+    "noChangelogDescription": "Click \"Generate Changelog\" to create a changelog from selected tasks.",
+    "loadingImage": "Loading image...",
+    "imageNotFound": "Image not found",
+    "cannotLoadImage": "Cannot load local image: no project path"
+  },
+  "archive": {
+    "title": "Archive Completed Tasks",
+    "tasksArchived": "{{count}} task archived!",
+    "tasksArchived_plural": "{{count}} tasks archived!",
+    "archiveDescription": "Archive {{count}} task to clean up your Kanban board. Archived tasks can be viewed using the \"Show Archived\" toggle.",
+    "archiveDescription_plural": "Archive {{count}} tasks to clean up your Kanban board. Archived tasks can be viewed using the \"Show Archived\" toggle.",
+    "archiving": "Archiving...",
+    "archiveButton": "Archive {{count}} Task",
+    "archiveButton_plural": "Archive {{count}} Tasks"
+  },
+  "github": {
+    "title": "Create GitHub Release",
+    "releaseCreated": "Release created successfully!",
+    "viewRelease": "View Release on GitHub",
+    "createDescription": "Create a new release {{tag}} on GitHub with the changelog as release notes.",
+    "creatingRelease": "Creating Release...",
+    "createButton": "Create Release {{tag}}"
+  },
+  "success": {
+    "title": "Changelog Saved!",
+    "description": "Version {{tag}} has been added to CHANGELOG.md",
+    "done": "Done"
+  },
+  "empty": {
+    "noProjectSelected": "No Project Selected",
+    "noProjectDescription": "Select a project from the sidebar to generate changelogs."
+  }
+}
