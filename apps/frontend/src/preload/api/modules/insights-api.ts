@@ -5,6 +5,7 @@ import type {
   InsightsChatStatus,
   InsightsStreamChunk,
   InsightsModelConfig,
+  InsightsPermissionRequest,
   ImageAttachment,
   Task,
   TaskMetadata,
@@ -36,6 +37,7 @@ export interface InsightsAPI {
   unarchiveInsightsSession: (projectId: string, sessionId: string) => Promise<IPCResult>;
   renameInsightsSession: (projectId: string, sessionId: string, newTitle: string) => Promise<IPCResult>;
   updateInsightsModelConfig: (projectId: string, sessionId: string, modelConfig: InsightsModelConfig) => Promise<IPCResult>;
+  respondToInsightsPermission: (projectId: string, requestId: string, allowed: boolean) => Promise<IPCResult>;
 
   // Event Listeners
   onInsightsStreamChunk: (
@@ -49,6 +51,9 @@ export interface InsightsAPI {
   ) => IpcListenerCleanup;
   onInsightsSessionUpdated: (
     callback: (projectId: string, session: InsightsSession) => void
+  ) => IpcListenerCleanup;
+  onInsightsPermissionRequest: (
+    callback: (projectId: string, request: InsightsPermissionRequest) => void
   ) => IpcListenerCleanup;
 }
 
@@ -104,6 +109,9 @@ export const createInsightsAPI = (): InsightsAPI => ({
   updateInsightsModelConfig: (projectId: string, sessionId: string, modelConfig: InsightsModelConfig): Promise<IPCResult> =>
     invokeIpc(IPC_CHANNELS.INSIGHTS_UPDATE_MODEL_CONFIG, projectId, sessionId, modelConfig),
 
+  respondToInsightsPermission: (projectId: string, requestId: string, allowed: boolean): Promise<IPCResult> =>
+    invokeIpc(IPC_CHANNELS.INSIGHTS_RESPOND_PERMISSION, projectId, requestId, allowed),
+
   // Event Listeners
   onInsightsStreamChunk: (
     callback: (projectId: string, chunk: InsightsStreamChunk) => void
@@ -123,5 +131,10 @@ export const createInsightsAPI = (): InsightsAPI => ({
   onInsightsSessionUpdated: (
     callback: (projectId: string, session: InsightsSession) => void
   ): IpcListenerCleanup =>
-    createIpcListener(IPC_CHANNELS.INSIGHTS_SESSION_UPDATED, callback)
+    createIpcListener(IPC_CHANNELS.INSIGHTS_SESSION_UPDATED, callback),
+
+  onInsightsPermissionRequest: (
+    callback: (projectId: string, request: InsightsPermissionRequest) => void
+  ): IpcListenerCleanup =>
+    createIpcListener(IPC_CHANNELS.INSIGHTS_PERMISSION_REQUEST, callback)
 });
