@@ -10,6 +10,7 @@ import enWelcome from './locales/en/welcome.json';
 import enOnboarding from './locales/en/onboarding.json';
 import enDialogs from './locales/en/dialogs.json';
 import enGitlab from './locales/en/gitlab.json';
+import enGithub from './locales/en/github.json';
 import enTaskReview from './locales/en/taskReview.json';
 import enTerminal from './locales/en/terminal.json';
 import enErrors from './locales/en/errors.json';
@@ -26,6 +27,7 @@ import frWelcome from './locales/fr/welcome.json';
 import frOnboarding from './locales/fr/onboarding.json';
 import frDialogs from './locales/fr/dialogs.json';
 import frGitlab from './locales/fr/gitlab.json';
+import frGithub from './locales/fr/github.json';
 import frTaskReview from './locales/fr/taskReview.json';
 import frTerminal from './locales/fr/terminal.json';
 import frErrors from './locales/fr/errors.json';
@@ -42,6 +44,7 @@ import trWelcome from './locales/tr/welcome.json';
 import trOnboarding from './locales/tr/onboarding.json';
 import trDialogs from './locales/tr/dialogs.json';
 import trGitlab from './locales/tr/gitlab.json';
+import trGithub from './locales/tr/github.json';
 import trTaskReview from './locales/tr/taskReview.json';
 import trTerminal from './locales/tr/terminal.json';
 import trErrors from './locales/tr/errors.json';
@@ -61,6 +64,7 @@ export const resources = {
     onboarding: enOnboarding,
     dialogs: enDialogs,
     gitlab: enGitlab,
+    github: enGithub,
     taskReview: enTaskReview,
     terminal: enTerminal,
     errors: enErrors,
@@ -77,6 +81,7 @@ export const resources = {
     onboarding: frOnboarding,
     dialogs: frDialogs,
     gitlab: frGitlab,
+    github: frGithub,
     taskReview: frTaskReview,
     terminal: frTerminal,
     errors: frErrors,
@@ -93,6 +98,7 @@ export const resources = {
     onboarding: trOnboarding,
     dialogs: trDialogs,
     gitlab: trGitlab,
+    github: trGithub,
     taskReview: trTaskReview,
     terminal: trTerminal,
     errors: trErrors,
@@ -109,7 +115,7 @@ i18n
     lng: 'en', // Default language (will be overridden by settings)
     fallbackLng: 'en',
     defaultNS,
-    ns: ['common', 'navigation', 'settings', 'tasks', 'welcome', 'onboarding', 'dialogs', 'gitlab', 'taskReview', 'terminal', 'errors', 'changelog', 'ideation', 'projectSettings'],
+    ns: ['common', 'navigation', 'settings', 'tasks', 'welcome', 'onboarding', 'dialogs', 'gitlab', 'github', 'taskReview', 'terminal', 'errors', 'changelog', 'ideation', 'projectSettings'],
     interpolation: {
       escapeValue: false // React already escapes values
     },

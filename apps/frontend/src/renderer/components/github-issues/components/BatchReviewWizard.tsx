@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Layers,
   CheckCircle2,
@@ -58,6 +59,7 @@ export function BatchReviewWizard({
   isAnalyzing,
   isApproving,
 }: BatchReviewWizardProps) {
+  const { t } = useTranslation('github');
   // Track which batches are selected for approval
   const [selectedBatchIds, setSelectedBatchIds] = useState<Set<number>>(new Set());
   // Track which single issues are selected for approval
@@ -198,10 +200,9 @@ export function BatchReviewWizard({
         <Layers className="h-12 w-12 text-primary" />
       </div>
       <div className="text-center space-y-2">
-        <h3 className="text-lg font-semibold">Analyze & Group Issues</h3>
+        <h3 className="text-lg font-semibold">{t('batchWizard.intro.title')}</h3>
         <p className="text-sm text-muted-foreground max-w-md">
-          This will analyze up to 200 open issues, group similar ones together,
-          and let you review the proposed batches before creating any tasks.
+          {t('batchWizard.intro.description')}
         </p>
       </div>
       {analysisError && (
@@ -212,7 +213,7 @@ export function BatchReviewWizard({
       )}
       <Button onClick={onStartAnalysis} size="lg">
         <Layers className="h-4 w-4 mr-2" />
-        Start Analysis
+        {t('batchWizard.intro.startButton')}
       </Button>
     </div>
   );
@@ -221,15 +222,15 @@ export function BatchReviewWizard({
     <div className="flex flex-col items-center justify-center py-8 space-y-6">
       <Loader2 className="h-12 w-12 text-primary animate-spin" />
       <div className="text-center space-y-2">
-        <h3 className="text-lg font-semibold">Analyzing Issues...</h3>
+        <h3 className="text-lg font-semibold">{t('batchWizard.analyzing.title')}</h3>
         <p className="text-sm text-muted-foreground">
-          {analysisProgress?.message || 'Computing similarity and validating batches...'}
+          {analysisProgress?.message || t('batchWizard.analyzing.message')}
         </p>
       </div>
       <div className="w-full max-w-md">
         <Progress value={analysisProgress?.progress ?? 0} />
         <p className="text-xs text-center text-muted-foreground mt-2">
-          {analysisProgress?.progress ?? 0}% complete
+          {t('batchWizard.analyzing.complete', { progress: analysisProgress?.progress ?? 0 })}
         </p>
       </div>
     </div>
@@ -250,23 +251,23 @@ export function BatchReviewWizard({
         <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg mb-4">
           <div className="flex items-center gap-4 text-sm">
             <span>
-              <strong>{totalIssues}</strong> issues analyzed
+              {t('batchWizard.review.stats.analyzed', { count: totalIssues })}
             </span>
             <span className="text-muted-foreground">|</span>
             <span>
-              <strong>{proposedBatches.length}</strong> batches proposed
+              {t('batchWizard.review.stats.batches', { count: proposedBatches.length })}
             </span>
             <span className="text-muted-foreground">|</span>
             <span>
-              <strong>{singleIssues.length}</strong> single issues
+              {t('batchWizard.review.stats.single', { count: singleIssues.length })}
             </span>
           </div>
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="sm" onClick={selectAllBatches}>
-              Select All
+              {t('batchWizard.review.selectAll')}
             </Button>
             <Button variant="ghost" size="sm" onClick={deselectAllBatches}>
-              Deselect All
+              {t('batchWizard.review.deselectAll')}
             </Button>
           </div>
         </div>
@@ -291,7 +292,7 @@ export function BatchReviewWizard({
           {singleIssues.length > 0 && (
             <div className="mt-6">
               <h4 className="text-sm font-medium text-muted-foreground mb-2">
-                Single Issues (not grouped)
+                {t('batchWizard.review.singleIssues')}
               </h4>
               <div className="grid grid-cols-2 gap-2">
                 {singleIssues.slice(0, 10).map((issue) => (
@@ -316,7 +317,7 @@ export function BatchReviewWizard({
                 ))}
                 {singleIssues.length > 10 && (
                   <div className="p-2 text-sm text-muted-foreground">
-                    ...and {singleIssues.length - 10} more
+                    {t('batchWizard.review.andMore', { count: singleIssues.length - 10 })}
                   </div>
                 )}
               </div>
@@ -327,9 +328,9 @@ export function BatchReviewWizard({
         {/* Selection Summary */}
         <div className="flex items-center justify-between pt-4 mt-4 border-t border-border">
           <div className="text-sm text-muted-foreground">
-            {selectedCount} batch{selectedCount !== 1 ? 'es' : ''} selected ({totalIssuesInSelected} issues)
+            {t('batchWizard.review.selectedSummary', { batchCount: selectedCount, issueCount: totalIssuesInSelected, count: selectedCount })}
             {selectedSingleIssueNumbers.size > 0 && (
-              <> + {selectedSingleIssueNumbers.size} single issue{selectedSingleIssueNumbers.size !== 1 ? 's' : ''}</>
+              <> {t('batchWizard.review.withSingleIssues', { count: selectedSingleIssueNumbers.size })}</>
             )}
           </div>
         </div>
@@ -341,9 +342,9 @@ export function BatchReviewWizard({
     <div className="flex flex-col items-center justify-center py-8 space-y-6">
       <Loader2 className="h-12 w-12 text-primary animate-spin" />
       <div className="text-center space-y-2">
-        <h3 className="text-lg font-semibold">Creating Batches...</h3>
+        <h3 className="text-lg font-semibold">{t('batchWizard.approving.title')}</h3>
         <p className="text-sm text-muted-foreground">
-          Setting up the approved issue batches for processing.
+          {t('batchWizard.approving.description')}
         </p>
       </div>
     </div>
@@ -355,13 +356,13 @@ export function BatchReviewWizard({
         <CheckCircle2 className="h-12 w-12 text-green-500" />
       </div>
       <div className="text-center space-y-2">
-        <h3 className="text-lg font-semibold">Batches Created</h3>
+        <h3 className="text-lg font-semibold">{t('batchWizard.done.title')}</h3>
         <p className="text-sm text-muted-foreground">
-          Your selected issue batches are ready for processing.
+          {t('batchWizard.done.description')}
         </p>
       </div>
       <Button onClick={onClose}>
-        Close
+        {t('batchWizard.done.closeButton')}
       </Button>
     </div>
   );
@@ -372,14 +373,14 @@ export function BatchReviewWizard({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Layers className="h-5 w-5" />
-            Analyze & Group Issues
+            {t('batchWizard.title')}
           </DialogTitle>
           <DialogDescription>
-            {step === 'intro' && 'Analyze open issues and group similar ones for batch processing.'}
-            {step === 'analyzing' && 'Analyzing issues for semantic similarity...'}
-            {step === 'review' && 'Review and approve the proposed issue batches.'}
-            {step === 'approving' && 'Creating the approved batches...'}
-            {step === 'done' && 'Batches have been created successfully.'}
+            {step === 'intro' && t('batchWizard.steps.intro')}
+            {step === 'analyzing' && t('batchWizard.steps.analyzing')}
+            {step === 'review' && t('batchWizard.steps.review')}
+            {step === 'approving' && t('batchWizard.steps.approving')}
+            {step === 'done' && t('batchWizard.steps.done')}
           </DialogDescription>
         </DialogHeader>
 
@@ -394,7 +395,7 @@ export function BatchReviewWizard({
         {step === 'review' && (
           <DialogFooter>
             <Button variant="outline" onClick={onClose}>
-              Cancel
+              {t('batchWizard.footer.cancel')}
             </Button>
             <Button
               onClick={handleApprove}
@@ -403,12 +404,12 @@ export function BatchReviewWizard({
               {isApproving ? (
                 <>
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  Creating...
+                  {t('batchWizard.approving.button')}
                 </>
               ) : (
                 <>
                   <Play className="h-4 w-4 mr-2" />
-                  Approve & Create ({selectedBatchIds.size + selectedSingleIssueNumbers.size} {selectedBatchIds.size + selectedSingleIssueNumbers.size === 1 ? 'batch' : 'batches'})
+                  {t('batchWizard.footer.approve', { count: selectedBatchIds.size + selectedSingleIssueNumbers.size })}
                 </>
               )}
             </Button>
@@ -436,6 +437,7 @@ function BatchCard({
   onToggleSelect,
   onToggleExpand,
 }: BatchCardProps) {
+  const { t } = useTranslation('github');
   const confidenceColor = batch.confidence >= 0.8
     ? 'text-green-500'
     : batch.confidence >= 0.6
@@ -472,7 +474,7 @@ function BatchCard({
             <div className="flex items-center gap-2">
               <Badge variant="outline" className="text-xs">
                 <Users className="h-3 w-3 mr-1" />
-                {batch.issueCount} issues
+                {t('batchWizard.review.issues', { count: batch.issueCount })}
               </Badge>
               <Badge
                 variant={batch.validated ? 'default' : 'secondary'}
@@ -484,7 +486,7 @@ function BatchCard({
                   <AlertTriangle className="h-3 w-3 mr-1" />
                 )}
                 <span className={confidenceColor}>
-                  {Math.round(batch.confidence * 100)}%
+                  {t('batchWizard.review.similar', { percent: Math.round(batch.confidence * 100) })}
                 </span>
               </Badge>
             </div>
@@ -510,7 +512,7 @@ function BatchCard({
                     <span className="truncate">{issue.title}</span>
                   </div>
                   <span className="text-xs text-muted-foreground">
-                    {Math.round(issue.similarityToPrimary * 100)}% similar
+                    {t('batchWizard.review.similar', { percent: Math.round(issue.similarityToPrimary * 100) })}
                   </span>
                 </div>
               ))}
