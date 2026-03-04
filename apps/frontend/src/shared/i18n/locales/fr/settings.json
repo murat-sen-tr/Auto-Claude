@@ -387,6 +387,12 @@
       "syncDescription": "Configurer la mémoire persistante"
     }
   },
+  "agentProfiles": {
+    "title": "Profils d'agent",
+    "subtitle": "Sélectionnez une configuration prédéfinie pour le modèle et le niveau de réflexion",
+    "description": "Les profils d'agent fournissent des configurations prédéfinies pour le modèle Claude et le niveau de réflexion. Quand vous créez une nouvelle tâche, ces paramètres seront utilisés par défaut. Vous pouvez toujours les modifier dans l'assistant de création de tâche.",
+    "thinkingSuffix": "Réflexion"
+  },
   "agentProfile": {
     "label": "Profil d'agent",
     "title": "Profil d'agent par défaut",
@@ -901,5 +907,27 @@
       "label": "Remplisseur de modèle PR",
       "description": "Remplit intelligemment les modèles de PR GitHub à partir des changements de code"
     }
+  },
+  "theme": {
+    "appearanceMode": "Mode d'apparence",
+    "appearanceModeDescription": "Choisissez clair, sombre ou préférence système",
+    "colorTheme": "Thème de couleur",
+    "colorThemeDescription": "Sélectionnez une palette de couleurs pour l'interface",
+    "modes": {
+      "system": "Système",
+      "light": "Clair",
+      "dark": "Sombre"
+    }
+  },
+  "projectSelector": {
+    "placeholder": "Sélectionner un projet...",
+    "noProjects": "Aucun projet encore",
+    "addProject": "Ajouter un projet..."
+  },
+  "emptyState": {
+    "message": "Sélectionnez un projet pour voir et modifier ses paramètres"
+  },
+  "initializationGuard": {
+    "message": "Initialisez d'abord Auto-Build pour configurer {{feature}}"
   }
 }

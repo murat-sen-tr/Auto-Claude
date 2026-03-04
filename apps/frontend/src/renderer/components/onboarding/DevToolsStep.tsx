@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Code, Terminal, Loader2, Check, RefreshCw, Info } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Label } from '../ui/label';
@@ -31,53 +32,8 @@ interface DetectedTools {
   terminals: DetectedTool[];
 }
 
-// IDE display names - alphabetically sorted for easy scanning
-const IDE_NAMES: Partial<Record<SupportedIDE, string>> = {
-  androidstudio: 'Android Studio',
-  clion: 'CLion',
-  cursor: 'Cursor',
-  emacs: 'Emacs',
-  goland: 'GoLand',
-  intellij: 'IntelliJ IDEA',
-  neovim: 'Neovim',
-  nova: 'Nova',
-  phpstorm: 'PhpStorm',
-  pycharm: 'PyCharm',
-  rider: 'Rider',
-  rubymine: 'RubyMine',
-  sublime: 'Sublime Text',
-  vim: 'Vim',
-  vscode: 'Visual Studio Code',
-  vscodium: 'VSCodium',
-  webstorm: 'WebStorm',
-  windsurf: 'Windsurf',
-  xcode: 'Xcode',
-  zed: 'Zed',
-  custom: 'Custom...'  // Always last
-};
-
-// Terminal display names - alphabetically sorted
-const TERMINAL_NAMES: Partial<Record<SupportedTerminal, string>> = {
-  alacritty: 'Alacritty',
-  ghostty: 'Ghostty',
-  gnometerminal: 'GNOME Terminal',
-  hyper: 'Hyper',
-  iterm2: 'iTerm2',
-  kitty: 'Kitty',
-  konsole: 'Konsole',
-  powershell: 'PowerShell',
-  system: 'System Terminal',
-  tabby: 'Tabby',
-  terminal: 'Terminal.app',
-  terminator: 'Terminator',
-  tilix: 'Tilix',
-  tmux: 'tmux',
-  warp: 'Warp',
-  wezterm: 'WezTerm',
-  windowsterminal: 'Windows Terminal',
-  zellij: 'Zellij',
-  custom: 'Custom...'  // Always last
-};
+// IDE and Terminal display names - function to retrieve from i18n
+// These are helper functions that will be called inside the component where t() is available
 
 /**
  * Developer Tools configuration step for the onboarding wizard.
@@ -86,6 +42,7 @@ const TERMINAL_NAMES: Partial<Record<SupportedTerminal, string>> = {
  * their preferred tools for opening worktrees.
  */
 export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
+  const { t } = useTranslation('onboarding');
   const { settings, updateSettings } = useSettingsStore();
   const [preferredIDE, setPreferredIDE] = useState<SupportedIDE>(settings.preferredIDE || 'vscode');
   const [preferredTerminal, setPreferredTerminal] = useState<SupportedTerminal>(settings.preferredTerminal || 'system');
@@ -96,6 +53,16 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
   const [isDetecting, setIsDetecting] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Helper function to get IDE display name from translation
+  const getIDEName = (id: SupportedIDE): string => {
+    return t(`devtools.ide.names.${id}`);
+  };
+
+  // Helper function to get Terminal display name from translation
+  const getTerminalName = (id: SupportedTerminal): string => {
+    return t(`devtools.terminal.names.${id}`);
+  };
 
   // Detect installed tools on mount
   const detectTools = useCallback(async () => {
@@ -146,10 +113,10 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
         updateSettings(settingsToSave);
         onNext();
       } else {
-        setError(result?.error || 'Failed to save settings');
+        setError(result?.error || t('devtools.errors.saveSettingsFailed'));
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Unknown error occurred');
+      setError(err instanceof Error ? err.message : t('devtools.errors.unknownError'));
     } finally {
       setIsSaving(false);
     }
@@ -171,18 +138,24 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
 
   // Add remaining IDEs that weren't detected
   const detectedIDEIds = new Set(detectedTools?.ides.map(t => t.id) || []);
-  for (const [id, name] of Object.entries(IDE_NAMES)) {
-    if (id !== 'custom' && !detectedIDEIds.has(id)) {
+  const allIDEIds: SupportedIDE[] = [
+    'androidstudio', 'clion', 'cursor', 'emacs', 'goland', 'intellij', 'neovim',
+    'nova', 'phpstorm', 'pycharm', 'rider', 'rubymine', 'sublime', 'vim',
+    'vscode', 'vscodium', 'webstorm', 'windsurf', 'xcode', 'zed'
+  ];
+
+  for (const id of allIDEIds) {
+    if (!detectedIDEIds.has(id)) {
       ideOptions.push({
-        value: id as SupportedIDE,
-        label: name,
+        value: id,
+        label: getIDEName(id),
         detected: false
       });
     }
   }
 
   // Add custom option last
-  ideOptions.push({ value: 'custom', label: 'Custom...', detected: false });
+  ideOptions.push({ value: 'custom', label: getIDEName('custom'), detected: false });
 
   // Build Terminal options with detection status
   const terminalOptions: Array<{ value: SupportedTerminal; label: string; detected: boolean }> = [];
@@ -190,7 +163,7 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
   // Always add system terminal first
   terminalOptions.push({
     value: 'system',
-    label: TERMINAL_NAMES.system || 'System Terminal',
+    label: getTerminalName('system'),
     detected: true
   });
 
@@ -210,18 +183,24 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
   // Add remaining terminals that weren't detected
   const detectedTerminalIds = new Set(detectedTools?.terminals.map(t => t.id) || []);
   detectedTerminalIds.add('system');
-  for (const [id, name] of Object.entries(TERMINAL_NAMES)) {
-    if (id !== 'custom' && !detectedTerminalIds.has(id)) {
+  const allTerminalIds: SupportedTerminal[] = [
+    'alacritty', 'ghostty', 'gnometerminal', 'hyper', 'iterm2', 'kitty',
+    'konsole', 'powershell', 'tabby', 'terminal', 'terminator', 'tilix',
+    'tmux', 'warp', 'wezterm', 'windowsterminal', 'zellij'
+  ];
+
+  for (const id of allTerminalIds) {
+    if (!detectedTerminalIds.has(id)) {
       terminalOptions.push({
-        value: id as SupportedTerminal,
-        label: name,
+        value: id,
+        label: getTerminalName(id),
         detected: false
       });
     }
   }
 
   // Add custom option last
-  terminalOptions.push({ value: 'custom', label: 'Custom...', detected: false });
+  terminalOptions.push({ value: 'custom', label: getTerminalName('custom'), detected: false });
 
   return (
     <div className="flex h-full flex-col items-center justify-center px-8 py-6">
@@ -234,10 +213,10 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
             </div>
           </div>
           <h1 className="text-2xl font-bold text-foreground tracking-tight">
-            Developer Tools
+            {t('devtools.title')}
           </h1>
           <p className="mt-2 text-muted-foreground">
-            Choose your preferred IDE and terminal for working with Auto Claude worktrees
+            {t('devtools.description')}
           </p>
         </div>
 
@@ -245,7 +224,7 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
         {isDetecting && (
           <div className="flex items-center justify-center py-12">
             <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-            <span className="ml-3 text-muted-foreground">Detecting installed tools...</span>
+            <span className="ml-3 text-muted-foreground">{t('devtools.detecting')}</span>
           </div>
         )}
 
@@ -268,11 +247,10 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
                   <Info className="h-5 w-5 text-info shrink-0 mt-0.5" />
                   <div className="flex-1 space-y-3">
                     <p className="text-sm font-medium text-foreground">
-                      Why configure these?
+                      {t('devtools.whyConfigure')}
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      When Auto Claude builds features in isolated worktrees, you can open them
-                      directly in your preferred IDE or terminal to test and review changes.
+                      {t('devtools.whyConfigureDescription')}
                     </p>
                   </div>
                 </div>
@@ -288,7 +266,7 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
                 disabled={isDetecting}
               >
                 <RefreshCw className="h-4 w-4 mr-2" />
-                Detect Again
+                {t('devtools.detectAgain')}
               </Button>
             </div>
 
@@ -296,7 +274,7 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
             <div className="space-y-3">
               <Label className="text-sm font-medium text-foreground flex items-center gap-2">
                 <Code className="h-4 w-4" />
-                Preferred IDE
+                {t('devtools.ide.label')}
               </Label>
               <Select
                 value={preferredIDE}
@@ -304,7 +282,7 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
                 disabled={isSaving}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Select IDE..." />
+                  <SelectValue placeholder={t('devtools.ide.placeholder')} />
                 </SelectTrigger>
                 <SelectContent>
                   {ideOptions.map((option) => (
@@ -320,20 +298,20 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
                 </SelectContent>
               </Select>
               <p className="text-xs text-muted-foreground">
-                Auto Claude will open worktrees in this editor
+                {t('devtools.ide.description')}
               </p>
 
               {/* Custom IDE Path */}
               {preferredIDE === 'custom' && (
                 <div className="mt-3">
                   <Label htmlFor="custom-ide-path" className="text-xs text-muted-foreground">
-                    Custom IDE Path
+                    {t('devtools.ide.customPath')}
                   </Label>
                   <Input
                     id="custom-ide-path"
                     value={customIDEPath}
                     onChange={(e) => setCustomIDEPath(e.target.value)}
-                    placeholder="/path/to/your/ide"
+                    placeholder={t('devtools.customPathPlaceholder') + 'ide'}
                     className="mt-1"
                     disabled={isSaving}
                   />
@@ -345,7 +323,7 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
             <div className="space-y-3">
               <Label className="text-sm font-medium text-foreground flex items-center gap-2">
                 <Terminal className="h-4 w-4" />
-                Preferred Terminal
+                {t('devtools.terminal.label')}
               </Label>
               <Select
                 value={preferredTerminal}
@@ -353,7 +331,7 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
                 disabled={isSaving}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Select terminal..." />
+                  <SelectValue placeholder={t('devtools.terminal.placeholder')} />
                 </SelectTrigger>
                 <SelectContent>
                   {terminalOptions.map((option) => (
@@ -369,20 +347,20 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
                 </SelectContent>
               </Select>
               <p className="text-xs text-muted-foreground">
-                Auto Claude will open terminal sessions here
+                {t('devtools.terminal.description')}
               </p>
 
               {/* Custom Terminal Path */}
               {preferredTerminal === 'custom' && (
                 <div className="mt-3">
                   <Label htmlFor="custom-terminal-path" className="text-xs text-muted-foreground">
-                    Custom Terminal Path
+                    {t('devtools.terminal.customPath')}
                   </Label>
                   <Input
                     id="custom-terminal-path"
                     value={customTerminalPath}
                     onChange={(e) => setCustomTerminalPath(e.target.value)}
-                    placeholder="/path/to/your/terminal"
+                    placeholder={t('devtools.customPathPlaceholder') + 'terminal'}
                     className="mt-1"
                     disabled={isSaving}
                   />
@@ -393,7 +371,7 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
             {/* Detection Summary */}
             {detectedTools && (
               <div className="text-xs text-muted-foreground bg-muted/50 p-3 rounded-md">
-                <p className="font-medium mb-1">Detected on your system:</p>
+                <p className="font-medium mb-1">{t('devtools.detectedSummary')}</p>
                 <ul className="list-disc list-inside space-y-0.5">
                   {detectedTools.ides.map((ide) => (
                     <li key={ide.id}>{ide.name}</li>
@@ -402,7 +380,7 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
                     <li key={term.id}>{term.name}</li>
                   ))}
                   {detectedTools.ides.length === 0 && detectedTools.terminals.filter(t => t.id !== 'system').length === 0 && (
-                    <li>No additional tools detected (VS Code and system terminal will be used)</li>
+                    <li>{t('devtools.noToolsDetected')}</li>
                   )}
                 </ul>
               </div>
@@ -417,7 +395,7 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
             onClick={onBack}
             className="text-muted-foreground hover:text-foreground"
           >
-            Back
+            {t('devtools.back')}
           </Button>
           <Button
             onClick={handleSave}
@@ -426,10 +404,10 @@ export function DevToolsStep({ onNext, onBack }: DevToolsStepProps) {
             {isSaving ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin mr-2" />
-                Saving...
+                {t('devtools.saving')}
               </>
             ) : (
-              'Save & Continue'
+              t('devtools.saveAndContinue')
             )}
           </Button>
         </div>

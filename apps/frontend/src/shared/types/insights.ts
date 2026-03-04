@@ -28,6 +28,7 @@ export interface IdeationConfig {
   append?: boolean; // If true, append to existing ideas instead of replacing
   model?: string;          // Model shorthand (opus, sonnet, haiku)
   thinkingLevel?: string;  // Thinking level (low, medium, high)
+  language?: string;       // Language for AI-generated content (e.g., 'en', 'fr', 'tr')
 }
 
 export interface IdeaBase {

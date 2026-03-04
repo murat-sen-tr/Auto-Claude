@@ -1,0 +1,91 @@
+{
+  "header": {
+    "title": "Fikir Üretimi",
+    "subtitle": "Projeniz için AI tarafından oluşturulan özellik fikirleri",
+    "ideasCount": "{{count}} fikir"
+  },
+  "emptyState": {
+    "title": "Henüz Fikir Yok",
+    "description": "Projenizin bağlamına, mevcut kalıplara ve hedef kitlesine dayalı AI destekli özellik fikirleri oluşturun.",
+    "enabledTypes": "Etkin Fikir Türleri",
+    "generateButton": "Fikir Üret",
+    "tokenWarning": "Claude token yapılandırılmamış. Oluşturma sırasında girmeniz istenecektir."
+  },
+  "generation": {
+    "title": "Fikirler Üretiliyor",
+    "complete": "tamamlandı",
+    "showLogs": "Göster",
+    "hideLogs": "Gizle",
+    "logs": "Günlükler",
+    "stop": "Durdur",
+    "stopping": "Durduruluyor...",
+    "stopTooltip": "Üretimi durdur",
+    "ideas": "fikir",
+    "waitingToStart": "Başlamak için bekleniyor...",
+    "failedToGenerate": "Bu kategori için fikir üretimi başarısız oldu",
+    "noIdeasGenerated": "Bu kategori için fikir üretilmedi"
+  },
+  "filters": {
+    "all": "Tümü",
+    "code": "Kod",
+    "uiUx": "UI/UX",
+    "docs": "Dökümanlar",
+    "security": "Güvenlik",
+    "performance": "Performans"
+  },
+  "config": {
+    "title": "Fikir Üretimi Yapılandırması",
+    "description": "Hangi tür fikirlerin üretileceğini yapılandırın",
+    "ideationTypes": "Fikir Türleri",
+    "contextSources": "Bağlam Kaynakları",
+    "includeRoadmapContext": "Yol Haritası Bağlamını Dahil Et",
+    "includeKanbanContext": "Kanban Bağlamını Dahil Et",
+    "close": "Kapat"
+  },
+  "addMore": {
+    "title": "Daha Fazla Fikir Ekle",
+    "description": "Üretilecek ek fikir türlerini seçin. Mevcut fikirleriniz korunacaktır.",
+    "allTypesGenerated": "Tüm fikir türlerini zaten ürettiniz!",
+    "regenerateSuggestion": "Mevcut fikirleri yenilemek için \"Yeniden Üret\" kullanın.",
+    "selected": "{{count}} seçildi",
+    "cancel": "İptal",
+    "generate": "{{count}} Tür Üret",
+    "generateIdeas": "Fikir Üret"
+  },
+  "details": {
+    "effort": "Efor",
+    "files": "Dosyalar",
+    "buildsUpon": "Üzerine Kurulan",
+    "implementationApproach": "Uygulama Yaklaşımı",
+    "affectedFiles": "Etkilenen Dosyalar",
+    "patternsToFollow": "Takip Edilecek Kalıplar",
+    "severity": "Önem Derecesi",
+    "category": "Kategori",
+    "breakingChange": "Bozucu Değişiklik",
+    "breakingChangeWarning": "Bu yeniden yapılandırma mevcut kodu veya testleri bozabilir.",
+    "currentState": "Mevcut Durum",
+    "proposedChange": "Önerilen Değişiklik",
+    "codeExample": "Kod Örneği",
+    "metrics": "Metrikler",
+    "lines": "Satırlar",
+    "complexity": "Karmaşıklık",
+    "duplicateLines": "Yinelenen Satırlar",
+    "testCoverage": "Test Kapsamı",
+    "bestPractice": "En İyi Uygulama",
+    "prerequisites": "Ön Koşullar",
+    "targetAudience": "Hedef Kitle",
+    "currentDocumentation": "Mevcut Dokümantasyon",
+    "proposedContent": "Önerilen İçerik",
+    "affectedAreas": "Etkilenen Alanlar",
+    "priority": "Öncelik",
+    "impact": "Etki",
+    "expectedImprovement": "Beklenen İyileştirme",
+    "implementation": "Uygulama",
+    "tradeoffs": "Ödünler",
+    "vulnerability": "Güvenlik Açığı",
+    "currentRisk": "Mevcut Risk",
+    "remediation": "Çözüm",
+    "references": "Referanslar",
+    "compliance": "Uyumluluk"
+  }
+}

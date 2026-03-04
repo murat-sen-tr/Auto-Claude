@@ -1,0 +1,59 @@
+{
+  "header": {
+    "title": "Worktrees",
+    "description": "Manage isolated workspaces for your Auto Claude tasks"
+  },
+  "taskWorktrees": {
+    "title": "Task Worktrees",
+    "stats": {
+      "filesChanged": "{{count}} files changed",
+      "commitsAhead": "{{count}} commits ahead",
+      "additions": "{{count}}",
+      "deletions": "{{count}}"
+    }
+  },
+  "terminalWorktrees": {
+    "title": "Terminal Worktrees",
+    "created": "Created {{date}}"
+  },
+  "actions": {
+    "copyPath": "Copy Path",
+    "mergeTo": "Merge to {{branch}}",
+    "delete": "Delete"
+  },
+  "merge": {
+    "dialogTitle": "Merge Worktree",
+    "dialogDescription": "Merge changes from this worktree into the base branch.",
+    "sourceBranch": "Source Branch",
+    "targetBranch": "Target Branch",
+    "changes": "Changes",
+    "changesDetail": "{{commits}} commits, {{files}} files",
+    "successTitle": "Merge Successful",
+    "failTitle": "Merge Failed",
+    "conflictingFiles": "Conflicting files:",
+    "close": "Close",
+    "cancel": "Cancel",
+    "merge": "Merge",
+    "merging": "Merging..."
+  },
+  "delete": {
+    "confirmTitle": "Delete Worktree?",
+    "confirmDescription": "This will permanently delete the worktree and all uncommitted changes.",
+    "cannotUndo": "This action cannot be undone.",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "deleting": "Deleting...",
+    "terminalTitle": "Delete Terminal Worktree?",
+    "terminalDescription": "This will permanently delete the worktree and its branch. Any uncommitted changes will be lost."
+  },
+  "empty": {
+    "title": "No Worktrees",
+    "description": "Worktrees are created automatically when Auto Claude builds features. You can also create terminal worktrees from the Agent Terminals tab.",
+    "selectProject": "Select a project to view worktrees"
+  },
+  "errors": {
+    "deleteFailedGeneric": "Failed to delete worktree",
+    "deleteFailedTerminal": "Failed to delete terminal worktree",
+    "taskNotFound": "Task not found for this worktree"
+  }
+}

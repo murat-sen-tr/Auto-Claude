@@ -1,0 +1,87 @@
+{
+  "sections": {
+    "project": "Proje",
+    "tools": "Araçlar"
+  },
+  "items": {
+    "kanban": "Kanban Panosu",
+    "terminals": "Ajan Terminalleri",
+    "insights": "İçgörüler",
+    "roadmap": "Yol Haritası",
+    "ideation": "Fikir Üretme",
+    "changelog": "Değişiklik Günlüğü",
+    "context": "Bağlam",
+    "githubIssues": "GitHub Sorunları",
+    "githubPRs": "GitHub PR'ları",
+    "gitlabIssues": "GitLab Sorunları",
+    "gitlabMRs": "GitLab MR'leri",
+    "worktrees": "Çalışma Ağaçları",
+    "agentTools": "MCP Genel Bakış"
+  },
+  "actions": {
+    "settings": "Ayarlar",
+    "help": "Yardım ve Geri Bildirim",
+    "newTask": "Yeni Görev",
+    "collapseSidebar": "Kenar Çubuğunu Daralt",
+    "expandSidebar": "Kenar Çubuğunu Genişlet",
+    "sponsor": "Bizi Destekle"
+  },
+  "tooltips": {
+    "settings": "Uygulama Ayarları",
+    "help": "Yardım ve Geri Bildirim"
+  },
+  "messages": {
+    "initializeToCreateTasks": "Görev oluşturmak için Auto Claude'u başlatın"
+  },
+  "updateBanner": {
+    "title": "Güncelleme Mevcut",
+    "version": "Sürüm {{version}} hazır",
+    "updateAndRestart": "Güncelle ve Yeniden Başlat",
+    "installAndRestart": "Yükle ve Yeniden Başlat",
+    "downloading": "İndiriliyor...",
+    "dismiss": "Kapat",
+    "downloadError": "Güncelleme indirilemedi",
+    "readOnlyVolumeWarning": "Güncellemek için Uygulamalar klasörüne taşıyın"
+  },
+  "claudeCode": {
+    "checking": "Claude Code kontrol ediliyor...",
+    "upToDate": "Claude Code güncel",
+    "updateAvailable": "Claude Code güncellemesi mevcut",
+    "notInstalled": "Claude Code yüklü değil",
+    "error": "Claude Code kontrolünde hata",
+    "installed": "Yüklü",
+    "outdated": "Güncelleme mevcut",
+    "missing": "Yüklü değil",
+    "current": "Mevcut",
+    "latest": "En Son",
+    "path": "Yol",
+    "lastChecked": "Son kontrol",
+    "learnMore": "Claude Code hakkında daha fazla bilgi edinin",
+    "learnMoreAriaLabel": "Claude Code hakkında daha fazla bilgi edinin (yeni pencerede açılır)",
+    "viewChangelog": "Claude Code Değişiklik Günlüğünü Görüntüle",
+    "viewChangelogAriaLabel": "Claude Code Değişiklik Günlüğünü Görüntüle (yeni pencerede açılır)",
+    "updateWarningTitle": "Claude Code Güncellensin mi?",
+    "updateWarningDescription": "Güncelleme yapılırken çalışan tüm Claude Code oturumları kapatılacak. Bu oturumlardaki kaydedilmemiş işler kaybolabilir. Devam etmeden önce çalışmanızı kaydettiğinizden emin olun.",
+    "updateWarningTerminalNote": "Kurulum komutunu çalıştırmak için bir terminal penceresi açılacak. Devam etmeden önce kurulumun tamamlanmasını bekleyin.",
+    "updateAnyway": "Terminal Aç ve Güncelle",
+    "switchVersion": "Sürümü Değiştir",
+    "selectVersion": "Sürüm seçin",
+    "loadingVersions": "Sürümler yükleniyor...",
+    "failedToLoadVersions": "Sürümler yüklenemedi",
+    "installingVersion": "Sürüm {{version}} yükleniyor...",
+    "rollbackWarningTitle": "Sürüm {{version}}'a geçilsin mi?",
+    "rollbackWarningDescription": "Sürüm değişikliği yapılırken çalışan tüm Claude Code oturumları kapatılacak. Bu oturumlardaki kaydedilmemiş işler kaybolabilir. Devam etmeden önce çalışmanızı kaydettiğinizden emin olun.",
+    "rollbackWarningTerminalNote": "Kurulum komutunu çalıştırmak için bir terminal penceresi açılacak. Devam etmeden önce kurulumun tamamlanmasını bekleyin.",
+    "switchAnyway": "Terminal Aç ve Değiştir",
+    "currentVersion": "Mevcut",
+    "switchInstallation": "Kurulumu Değiştir",
+    "selectInstallation": "Kurulum seçin",
+    "loadingInstallations": "Kurulumlar yükleniyor...",
+    "failedToLoadInstallations": "Kurulumlar yüklenemedi",
+    "activeInstallation": "Aktif",
+    "pathChangeWarningTitle": "CLI kurulumu değiştirilsin mi?",
+    "pathChangeWarningDescription": "CLI kurulumunu değiştirmek farklı bir Claude Code binary'si kullanacak. Çalışan oturumlar yeniden başlatılana kadar önceki kurulumu kullanmaya devam edecek.",
+    "switchInstallationConfirm": "Değiştir",
+    "versionUnknown": "sürüm bilinmiyor"
+  }
+}

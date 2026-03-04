@@ -1,0 +1,226 @@
+{
+  "terminal": {
+    "openTerminal": "Terminal aç",
+    "openInbuilt": "Dahili Terminalde Aç",
+    "openExternal": "Harici Terminalde Aç"
+  },
+  "merge": {
+    "branchDiverged": "Dal Ayrıldı - Yapay Zeka Çözecek",
+    "noConflictsDetected": "Çakışma Algılanmadı",
+    "conflictsFound": "{{count}} Çakışma{{plural}} Bulundu",
+    "viewDetails": "Ayrıntıları Görüntüle",
+    "branchHasDiverged": "Dal ayrıldı - Yapay zeka çözecek",
+    "filesToMerge": "Birleştirilecek dosyalar:",
+    "autoMergeable": "Otomatik birleştirilebilir:",
+    "aiResolved": "Yapay zeka çözüldü:",
+    "manualReview": "Manuel inceleme:",
+    "aiWillResolveConflicts": "Yapay zeka çakışmaları çözecek",
+    "readyToMerge": "Birleştirmeye hazır",
+    "aiWillMergeWhenStaging": "Değişiklikleri Aşamala'ya tıkladığınızda yapay zeka bu çakışmaları otomatik olarak birleştirecek.",
+    "branchHasNewCommits": "{{branch}} dalında {{count}} yeni commit var.",
+    "branchHasNewCommits_other": "{{branch}} dalında {{count}} yeni commit var.",
+    "branchHasNewCommitsSinceWorktree": "Bu çalışma ağacı oluşturulduğundan beri {{branch}} dalında {{count}} yeni commit var.",
+    "branchHasNewCommitsSinceWorktree_other": "Bu çalışma ağacı oluşturulduğundan beri {{branch}} dalında {{count}} yeni commit var.",
+    "filesNeedMerging": "{{count}} dosyanın birleştirilmesi gerekiyor.",
+    "filesNeedMerging_other": "{{count}} dosyanın birleştirilmesi gerekiyor.",
+    "filesNeedIntelligentMerging": "{{count}} dosya akıllı birleştirme gerektirecek:",
+    "filesNeedIntelligentMerging_other": "{{count}} dosya akıllı birleştirme gerektirecek:",
+    "branchHasNewCommitsSinceBuild": "Bu yapı başladığından beri {{branch}} dalında {{count}} yeni commit var.",
+    "branchHasNewCommitsSinceBuild_other": "Bu yapı başladığından beri {{branch}} dalında {{count}} yeni commit var.",
+    "filesNeedAIMergeDueToRenames": "{{renameCount}} dosya yeniden adlandırması nedeniyle {{count}} dosya yapay zeka birleştirmesi gerektiriyor.",
+    "filesNeedAIMergeDueToRenames_other": "{{renameCount}} dosya yeniden adlandırması nedeniyle {{count}} dosya yapay zeka birleştirmesi gerektiriyor.",
+    "filesNeedAIMergeDueToRenamesPlural": "{{renameCount}} dosya yeniden adlandırması nedeniyle {{count}} dosya yapay zeka birleştirmesi gerektiriyor.",
+    "filesNeedAIMergeDueToRenamesPlural_other": "{{renameCount}} dosya yeniden adlandırması nedeniyle {{count}} dosya yapay zeka birleştirmesi gerektiriyor.",
+    "fileRenamesDetected": "{{count}} dosya yeniden adlandırması algılandı - Yapay zeka birleştirmeyi halledecek.",
+    "fileRenamesDetected_other": "{{count}} dosya yeniden adlandırması algılandı - Yapay zeka birleştirmeyi halledecek.",
+    "filesRenamedOrMoved": "Dosyalar yeniden adlandırılmış veya taşınmış olabilir - Yapay zeka birleştirmeyi halledecek.",
+    "alreadyMergedTitle": "Değişiklikler zaten dalınızda",
+    "alreadyMergedDescription": "Bu değişiklikler mevcut dalınızda zaten mevcut gibi görünüyor. Bu görevi güvenle tamamlandı olarak işaretleyebilirsiniz.",
+    "alreadyMergedTooltip": "Görevin değişiklikleri dalınızda zaten mevcut. Tamamlandı olarak işaretlemek, birleştirme yapmadan çalışma ağacını temizleyecek.",
+    "matchingFiles": "Eşleşen dosyalar",
+    "supersededTitle": "Değişiklikler geçersiz kılındı",
+    "supersededDescription": "Mevcut dalınızda bu değişikliklerin daha yeni bir sürümü var. Bu görevi atmayı veya karşılaştırmayı görüntülemeyi düşünün.",
+    "supersededCompareTooltip": "Mevcut dalın bu görevin değişikliklerinden nasıl farklı olduğunu görmek için ayrıntılı bir karşılaştırma görüntüleyin.",
+    "supersededDiscardTooltip": "Değişiklikler artık gerekli olmadığı için bu görevin çalışma ağacını kaldırın.",
+    "status": {
+      "branchDiverged": "Dal Ayrıldı",
+      "aiWillResolve": "Yapay zeka çözecek",
+      "filesRenamed": "Dosyalar Yeniden Adlandırıldı",
+      "branchBehind": "Dal Geride",
+      "readyToMerge": "Birleştirmeye hazır",
+      "files": "dosya",
+      "file": "dosya",
+      "conflict": "çakışma",
+      "conflicts": "çakışma",
+      "details": "Ayrıntılar",
+      "refresh": "Yenile",
+      "stageOnly": "Yalnızca aşamala (commit etmeden önce IDE'de inceleyin)",
+      "discardBuild": "Yapıyı at"
+    },
+    "buttons": {
+      "stageWithAIMerge": "Yapay Zeka Birleştirmesiyle Aşamala",
+      "mergeWithAI": "Yapay Zeka ile Birleştir",
+      "stageTo": "{{branch}} dalına aşamala",
+      "mergeTo": "{{branch}} dalına birleştir",
+      "resolving": "Çözümleniyor...",
+      "staging": "Aşamalanıyor...",
+      "merging": "Birleştiriliyor...",
+      "completing": "Tamamlanıyor..."
+    },
+    "actions": {
+      "markAsDone": "Tamamlandı Olarak İşaretle",
+      "discardTask": "Görevi At",
+      "viewComparison": "Karşılaştırmayı Görüntüle"
+    }
+  },
+  "pr": {
+    "title": "Pull Request Oluştur",
+    "description": "\"{{taskTitle}}\" için dalı gönder ve pull request oluştur",
+    "errors": {
+      "unknown": "Pull request oluşturulurken bilinmeyen bir hata oluştu",
+      "invalidBranchName": "Dal adı geçersiz karakterler içeriyor. Yalnızca harfler, sayılar, tire (-), alt çizgi (_) ve eğik çizgi (/) kullanın.",
+      "emptyTitle": "Pull request başlığı boş olamaz."
+    },
+    "success": {
+      "created": "Pull request başarıyla oluşturuldu!",
+      "alreadyExists": "Bu dal için zaten bir pull request var"
+    },
+    "actions": {
+      "retry": "Tekrar Dene",
+      "creating": "PR oluşturuluyor...",
+      "create": "Pull Request Oluştur"
+    },
+    "labels": {
+      "sourceBranch": "Kaynak dal",
+      "targetBranch": "Hedef dal",
+      "commits": "Commit'ler",
+      "changes": "Değişiklikler",
+      "prTitle": "PR Başlığı (isteğe bağlı)",
+      "draftPR": "Taslak PR olarak oluştur",
+      "unknown": "Bilinmiyor"
+    },
+    "hints": {
+      "targetBranch": "Varsayılan dalı kullanmak için boş bırakın",
+      "prTitle": "Görev başlığını kullanmak için boş bırakın"
+    }
+  },
+  "mergeProgress": {
+    "stages": {
+      "analyzing": "Değişiklikler analiz ediliyor",
+      "detectingConflicts": "Çakışmalar algılanıyor",
+      "resolving": "Çakışmalar çözümleniyor",
+      "validating": "Birleştirme doğrulanıyor",
+      "complete": "Birleştirme tamamlandı",
+      "error": "Birleştirme başarısız",
+      "stalled": "Birleştirme takıldı"
+    },
+    "conflictCounter": "{{found}} bulundu, {{resolved}} çözüldü",
+    "currentFile": "Mevcut dosya",
+    "viewLogs": "Günlükleri görüntüle",
+    "hideLogs": "Günlükleri gizle",
+    "logTypes": {
+      "info": "Bilgi",
+      "warning": "Uyarı",
+      "error": "Hata",
+      "conflict": "Çakışma",
+      "resolution": "Çözüm"
+    },
+    "completionMessage": "Tüm değişiklikler başarıyla birleştirildi.",
+    "errorMessage": "Birleştirme işlemi sırasında bir hata oluştu."
+  },
+  "bulkPR": {
+    "title": "Pull Request'ler Oluştur",
+    "description": "{{count}} seçili görev için pull request'ler oluştur",
+    "creating": "{{total}} PR'dan {{current}}. oluşturuluyor...",
+    "creatingPR": "{{total}} PR'dan {{current}}. oluşturuluyor",
+    "resultsDescription": "{{success}} başarılı, {{failed}} başarısız",
+    "tasksToProcess": "İşlenecek görevler",
+    "targetBranchHint": "Her görevin varsayılan dalını kullanmak için boş bırakın. Bu tüm PR'lara uygulanacak.",
+    "createAll": "{{count}} PR Oluştur",
+    "completed": "tamamlandı",
+    "succeeded": "başarılı",
+    "failed": "başarısız",
+    "skipped": "atlandı",
+    "alreadyExisted": "zaten vardı",
+    "noWorktree": "Bu görev için çalışma ağacı bulunamadı",
+    "resultsDescriptionWithSkipped": "{{success}} başarılı, {{skipped}} atlandı, {{failed}} başarısız"
+  },
+  "conflicts": {
+    "title": "Birleştirme Çakışmaları Önizlemesi",
+    "description": "{{count}} olası çakışma algılandı.",
+    "description_other": "{{count}} olası çakışma algılandı.",
+    "autoMergeable": "{{count}} otomatik olarak birleştirilebilir.",
+    "noConflicts": "Çakışma algılanmadı",
+    "severity": "Önem",
+    "autoMerge": "otomatik birleştirme",
+    "location": "Konum",
+    "reason": "Sebep",
+    "strategy": "Strateji",
+    "close": "Kapat",
+    "proceedWithMerge": "Birleştirmeye Devam Et"
+  },
+  "diff": {
+    "title": "Değiştirilen Dosyalar",
+    "summary": "{{count}} dosya değiştirildi",
+    "summary_other": "{{count}} dosya değiştirildi",
+    "noChanges": "Değişiklik bulunamadı",
+    "status": {
+      "added": "eklendi",
+      "deleted": "silindi",
+      "modified": "değiştirildi",
+      "renamed": "yeniden adlandırıldı"
+    },
+    "close": "Kapat"
+  },
+  "discard": {
+    "title": "Yapıyı At",
+    "confirmMessage": "Tüm değişiklikleri atmak istediğinizden emin misiniz",
+    "warning": "Bu, izole çalışma alanını ve tüm commit edilmemiş değişiklikleri kalıcı olarak silecek. Görev Planlama durumuna geri taşınacak.",
+    "filesChanged": "Değiştirilen dosyalar",
+    "lines": "Satırlar",
+    "cancel": "İptal",
+    "discarding": "Atılıyor...",
+    "discardBuild": "Yapıyı At"
+  },
+  "staged": {
+    "title": "Değişiklikler Başarıyla Aşamalandı",
+    "description": "{{message}}",
+    "commitMessage": "AI tarafından oluşturulan commit mesajı",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı!",
+    "commitPlaceholder": "Commit mesajı...",
+    "editHint": "Gerektiği gibi düzenleyin, ardından kopyalayın ve şununla kullanın",
+    "nextSteps": "Sonraki adımlar:",
+    "step1": "Projenizi IDE veya terminalinizde açın",
+    "step2": "Aşamalanmış değişiklikleri inceleyin",
+    "step3": "Hazır olduğunuzda commit edin:"
+  },
+  "workspace": {
+    "loadingMessage": "Çalışma alanı bilgileri yükleniyor...",
+    "noWorkspace": {
+      "title": "Çalışma Alanı Bulunamadı",
+      "description": "Bu görev için izole bir çalışma alanı bulunamadı. Değişiklikler doğrudan projenizde yapılmış olabilir.",
+      "planReviewTitle": "İnsan İncelemesi Gerekli",
+      "planReviewDescription": "Kodlamadan önce insan incelemesi gerekli. Gerekli değişiklikler için spec.md dosyanızı inceleyin."
+    },
+    "markAsDone": "Tamamlandı Olarak İşaretle",
+    "proceedToCoding": "Kodlamaya Geç",
+    "updating": "Güncelleniyor...",
+    "stagedInProject": {
+      "title": "Değişiklikler Projede Aşamalandı",
+      "description": "Bu görevin değişiklikleri ana projenizde aşamalandı",
+      "descriptionWithDate": " - {{date}}",
+      "nextSteps": "Sonraki adımlar:",
+      "step1": "Aşamalanmış değişiklikleri inceleyin",
+      "step2": "Hazır olduğunuzda commit edin:",
+      "step3": "Tatmin olduğunuzda remote'a gönderin",
+      "deleteWorktreeAndMarkDone": "Çalışma Ağacını Sil ve Tamamlandı Olarak İşaretle",
+      "markDoneOnly": "Yalnızca Tamamlandı Olarak İşaretle",
+      "reviewAgain": "Tekrar İncele",
+      "cleaningUp": "Temizleniyor...",
+      "markingDone": "Tamamlandı olarak işaretleniyor...",
+      "resetting": "Sıfırlanıyor...",
+      "keepWorktreeHint": "\"Çalışma Ağacını Sil ve Tamamlandı Olarak İşaretle\" izole çalışma alanını temizler. \"Yalnızca Tamamlandı Olarak İşaretle\" referans için saklar."
+    }
+  }
+}

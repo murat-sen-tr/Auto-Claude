@@ -1,4 +1,5 @@
 import { useEffect, useRef, useCallback, useState, useMemo, forwardRef, useImperativeHandle } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDroppable, useDndContext } from '@dnd-kit/core';
 import '@xterm/xterm/css/xterm.css';
 import { FileDown } from 'lucide-react';
@@ -64,6 +65,7 @@ export const Terminal = forwardRef<TerminalHandle, TerminalProps>(function Termi
   isExpanded,
   onToggleExpand,
 }, ref) {
+  const { t } = useTranslation('terminal');
   const isMountedRef = useRef(true);
   const isCreatedRef = useRef(false);
   // Track deliberate terminal recreation (e.g., worktree switching)
@@ -671,22 +673,21 @@ export const Terminal = forwardRef<TerminalHandle, TerminalProps>(function Termi
     // Sync to main process so title persists across hot reloads
     window.electronAPI.setTerminalTitle(id, selectedTask.title);
 
-    const contextMessage = `I'm working on: ${selectedTask.title}
-
-Description:
-${selectedTask.description}
-
-Please confirm you're ready by saying: I'm ready to work on ${selectedTask.title} - Context is loaded.`;
+    const contextMessage = t('terminal:taskContext.message', {
+      title: selectedTask.title,
+      description: selectedTask.description
+    });
 
     window.electronAPI.sendTerminalInput(id, contextMessage + '\r');
   }, [id, tasks, setAssociatedTask, updateTerminal]);
 
   const handleClearTask = useCallback(() => {
     setAssociatedTask(id, undefined);
-    updateTerminal(id, { title: 'Claude' });
+    const claudeTitle = t('terminal:claudeTitle');
+    updateTerminal(id, { title: claudeTitle });
     // Sync to main process so title persists across hot reloads
-    window.electronAPI.setTerminalTitle(id, 'Claude');
-  }, [id, setAssociatedTask, updateTerminal]);
+    window.electronAPI.setTerminalTitle(id, claudeTitle);
+  }, [id, setAssociatedTask, updateTerminal, t]);
 
   // Worktree handlers
   const handleCreateWorktree = useCallback(() => {
@@ -791,14 +792,14 @@ Please confirm you're ready by saying: I'm ready to work on ${selectedTask.title
         <div className="absolute inset-0 bg-info/10 z-10 flex items-center justify-center pointer-events-none">
           <div className="flex items-center gap-2 bg-info/90 text-info-foreground px-3 py-2 rounded-md">
             <FileDown className="h-4 w-4" />
-            <span className="text-sm font-medium">Drop to insert path</span>
+            <span className="text-sm font-medium">{t('grid.dropToInsert')}</span>
           </div>
         </div>
       )}
 
       <TerminalHeader
         terminalId={id}
-        title={terminal?.title || 'Terminal'}
+        title={terminal?.title || t('terminal:defaultTitle')}
         status={terminal?.status || 'idle'}
         isClaudeMode={terminal?.isClaudeMode || false}
         tasks={tasks}

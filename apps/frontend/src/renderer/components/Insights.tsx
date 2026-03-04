@@ -101,7 +101,8 @@ interface InsightsProps {
 }
 
 export function Insights({ projectId }: InsightsProps) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('insights');
+  const { t: tCommon } = useTranslation('common');
   const session = useInsightsStore((state) => state.session);
   const sessions = useInsightsStore((state) => state.sessions);
   const status = useInsightsStore((state) => state.status);
@@ -113,8 +114,8 @@ export function Insights({ projectId }: InsightsProps) {
 
   // Create markdown components with translated accessibility text
   const markdownComponents = useMemo(() => ({
-    a: createSafeLink(t('accessibility.opensInNewWindow')),
-  }), [t]);
+    a: createSafeLink(tCommon('accessibility.opensInNewWindow')),
+  }), [tCommon]);
 
   const [inputValue, setInputValue] = useState('');
   const [creatingTask, setCreatingTask] = useState<Set<string>>(new Set());
@@ -148,10 +149,10 @@ export function Insights({ projectId }: InsightsProps) {
     disabled: isLoading,
     onError: setImageError,
     errorMessages: {
-      maxImagesReached: t('insights.images.maxImagesReached'),
-      invalidImageType: t('insights.images.invalidType'),
-      processPasteFailed: t('insights.images.processFailed'),
-      processDropFailed: t('insights.images.processFailed')
+      maxImagesReached: t('images.maxImagesReached'),
+      invalidImageType: t('images.invalidType'),
+      processPasteFailed: t('images.processFailed'),
+      processDropFailed: t('images.processFailed')
     }
   });
 
@@ -236,7 +237,7 @@ export function Insights({ projectId }: InsightsProps) {
   const handleScreenshotCapture = useCallback(async (imageData: string) => {
     // Check image count limit before processing
     if (pendingImages.length >= MAX_IMAGES_PER_TASK) {
-      setImageError(t('insights.images.maxImagesReached'));
+      setImageError(t('images.maxImagesReached'));
       return;
     }
 
@@ -245,7 +246,7 @@ export function Insights({ projectId }: InsightsProps) {
 
     // Validate size - match the validation used for regular image uploads
     if (approximateSize > MAX_IMAGE_SIZE) {
-      setImageError(t('insights.images.screenshotTooLarge', { size: Math.round(approximateSize / 1024 / 1024), max: Math.round(MAX_IMAGE_SIZE / 1024 / 1024) }));
+      setImageError(t('images.screenshotTooLarge', { size: Math.round(approximateSize / 1024 / 1024), max: Math.round(MAX_IMAGE_SIZE / 1024 / 1024) }));
       return;
     }
 
@@ -417,7 +418,7 @@ export function Insights({ projectId }: InsightsProps) {
               size="icon"
               className="h-8 w-8"
               onClick={() => setShowSidebar(!showSidebar)}
-              title={showSidebar ? 'Hide sidebar' : 'Show sidebar'}
+              title={showSidebar ? t('header.hideSidebar') : t('header.showSidebar')}
             >
               {showSidebar ? (
                 <PanelLeftClose className="h-4 w-4" />
@@ -429,9 +430,9 @@ export function Insights({ projectId }: InsightsProps) {
               <Sparkles className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h2 className="font-semibold text-foreground">Insights</h2>
+              <h2 className="font-semibold text-foreground">{t('header.title')}</h2>
               <p className="text-sm text-muted-foreground">
-                Ask questions about your codebase
+                {t('header.subtitle')}
               </p>
             </div>
           </div>
@@ -447,7 +448,7 @@ export function Insights({ projectId }: InsightsProps) {
               onClick={handleNewSession}
             >
               <Plus className="mr-2 h-4 w-4" />
-              New Chat
+              {t('buttons.newChat')}
             </Button>
           </div>
         </div>
@@ -463,18 +464,17 @@ export function Insights({ projectId }: InsightsProps) {
               <MessageSquare className="h-8 w-8 text-muted-foreground" />
             </div>
             <h3 className="mb-2 text-lg font-medium text-foreground">
-              Start a Conversation
+              {t('emptyState.title')}
             </h3>
             <p className="max-w-md text-sm text-muted-foreground">
-              Ask questions about your codebase, get suggestions for improvements,
-              or discuss features you'd like to implement.
+              {t('emptyState.description')}
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-2">
               {[
-                'What is the architecture of this project?',
-                'Suggest improvements for code quality',
-                'What features could I add next?',
-                'Are there any security concerns?'
+                t('emptyState.suggestions.architecture'),
+                t('emptyState.suggestions.improvements'),
+                t('emptyState.suggestions.features'),
+                t('emptyState.suggestions.security')
               ].map((suggestion) => (
                 <Button
                   key={suggestion}
@@ -512,7 +512,7 @@ export function Insights({ projectId }: InsightsProps) {
                 </div>
                 <div className="flex-1">
                   <div className="mb-1 text-sm font-medium text-foreground">
-                    Assistant
+                    {t('chat.assistant')}
                   </div>
                   {streamingContent && (
                     <div className="prose prose-sm dark:prose-invert max-w-none">
@@ -548,7 +548,7 @@ export function Insights({ projectId }: InsightsProps) {
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Loader2 className="h-4 w-4 animate-spin" />
-                  Thinking...
+                  {t('chat.thinking')}
                 </div>
               </div>
             )}
@@ -578,7 +578,7 @@ export function Insights({ projectId }: InsightsProps) {
               onDragOver={handleDragOver}
               onDragLeave={handleDragLeave}
               onDrop={handleDrop}
-              placeholder="Ask about your codebase..."
+              placeholder={t('chat.placeholder')}
               className={cn(
                 'min-h-[80px] resize-none',
                 isDragOver && 'border-primary ring-2 ring-primary/20'
@@ -589,7 +589,7 @@ export function Insights({ projectId }: InsightsProps) {
             {isDragOver && (
               <div className="absolute inset-0 flex items-center justify-center rounded-md bg-primary/5 border-2 border-dashed border-primary pointer-events-none">
                 <span className="text-sm font-medium text-primary">
-                  {t('insights.images.dragOver')}
+                  {t('images.dragOver')}
                 </span>
               </div>
             )}
@@ -601,7 +601,7 @@ export function Insights({ projectId }: InsightsProps) {
               className="h-9 w-9"
               onClick={() => setScreenshotOpen(true)}
               disabled={isLoading || !canAddMore}
-              title={t('insights.images.screenshotButton')}
+              title={t('images.screenshotButton')}
             >
               <Camera className="h-4 w-4" />
             </Button>
@@ -624,7 +624,7 @@ export function Insights({ projectId }: InsightsProps) {
         {pendingImages.length > 0 && (
           <div className="mt-1 flex items-center gap-1.5 rounded-md bg-amber-500/10 px-2 py-1 text-xs text-amber-500">
             <AlertCircle className="h-3 w-3 shrink-0" />
-            <span>{t('insights.images.analysisUnsupported')}</span>
+            <span>{t('images.analysisUnsupported')}</span>
           </div>
         )}
 
@@ -650,20 +650,20 @@ export function Insights({ projectId }: InsightsProps) {
                   type="button"
                   onClick={() => removeImage(image.id)}
                   className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-destructive text-destructive-foreground opacity-0 transition-opacity group-hover:opacity-100"
-                  title={t('insights.images.removeImage')}
+                  title={t('images.removeImage')}
                 >
                   <X className="h-3 w-3" />
                 </button>
               </div>
             ))}
             <span className="text-xs text-muted-foreground">
-              {t('insights.images.imageCount', { count: pendingImages.length })}
+              {t('images.imageCount', { count: pendingImages.length })}
             </span>
           </div>
         )}
 
         <p className="mt-2 text-xs text-muted-foreground">
-          {t('insights.images.pasteHint')} · Press Enter to send, Shift+Enter for new line
+          {t('images.pasteHint')} · {t('chat.sendHint')}
         </p>
       </div>
 
@@ -693,7 +693,7 @@ function MessageBubble({
   creatingTask,
   taskCreated
 }: MessageBubbleProps) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('insights');
   const isUser = message.role === 'user';
 
   return (
@@ -712,7 +712,7 @@ function MessageBubble({
       </div>
       <div className="flex-1 space-y-2">
         <div className="text-sm font-medium text-foreground">
-          {isUser ? 'You' : 'Assistant'}
+          {isUser ? t('chat.you') : t('chat.assistant')}
         </div>
         {message.content && (
           <div className="prose prose-sm dark:prose-invert max-w-none">
@@ -737,7 +737,7 @@ function MessageBubble({
                   />
                 ))}
             </div>
-            <p className="text-xs text-muted-foreground italic">{t('insights.images.notAnalyzed')}</p>
+            <p className="text-xs text-muted-foreground italic">{t('images.notAnalyzed')}</p>
           </div>
         )}
 
@@ -760,7 +760,7 @@ function MessageBubble({
                     <div className="mb-2 flex items-center gap-2">
                       <Sparkles className="h-4 w-4 text-primary" />
                       <span className="text-sm font-medium text-primary">
-                        {t('insights.suggestedTask')}
+                        {t('tasks.suggestedTask')}
                       </span>
                     </div>
                     <h4 className="mb-2 font-medium text-foreground">
@@ -805,17 +805,17 @@ function MessageBubble({
                       {isCreating ? (
                         <>
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                          {t('insights.creating')}
+                          {t('tasks.creating')}
                         </>
                       ) : isCreated ? (
                         <>
                           <CheckCircle2 className="mr-2 h-4 w-4" />
-                          {t('insights.taskCreated')}
+                          {t('tasks.taskCreated')}
                         </>
                       ) : (
                         <>
                           <Plus className="mr-2 h-4 w-4" />
-                          {t('insights.createTask')}
+                          {t('tasks.createTask')}
                         </>
                       )}
                     </Button>
@@ -840,6 +840,7 @@ interface ToolUsageHistoryProps {
 }
 
 function ToolUsageHistory({ tools }: ToolUsageHistoryProps) {
+  const { t } = useTranslation('insights');
   const [expanded, setExpanded] = useState(false);
 
   if (tools.length === 0) return null;
@@ -894,7 +895,7 @@ function ToolUsageHistory({ tools }: ToolUsageHistoryProps) {
             );
           })}
         </span>
-        <span>{tools.length} tool{tools.length !== 1 ? 's' : ''} used</span>
+        <span>{t('tools.used', { count: tools.length })}</span>
         <span className="text-[10px]">{expanded ? '▲' : '▼'}</span>
       </button>
 
@@ -983,25 +984,26 @@ interface ToolIndicatorProps {
 }
 
 function ToolIndicator({ name, input }: ToolIndicatorProps) {
+  const { t } = useTranslation('insights');
   // Get friendly name and icon for each tool
   const getToolInfo = (toolName: string) => {
     switch (toolName) {
       case 'Read':
         return {
           icon: FileText,
-          label: 'Reading file',
+          label: t('tools.readFile'),
           color: 'text-blue-500 bg-blue-500/10'
         };
       case 'Glob':
         return {
           icon: FolderSearch,
-          label: 'Searching files',
+          label: t('tools.searchFiles'),
           color: 'text-amber-500 bg-amber-500/10'
         };
       case 'Grep':
         return {
           icon: Search,
-          label: 'Searching code',
+          label: t('tools.searchCode'),
           color: 'text-green-500 bg-green-500/10'
         };
       default:

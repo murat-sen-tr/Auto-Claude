@@ -1,0 +1,249 @@
+{
+  "title": "GitHub Issues",
+  "states": {
+    "open": "Open",
+    "closed": "Closed"
+  },
+  "header": {
+    "open": "open",
+    "searchPlaceholder": "Search issues...",
+    "analyzeGroup": "Analyze & Group Issues",
+    "analyzeGroupTooltip": "Analyze up to 200 open issues, group similar ones, and review proposed batches before creating tasks.",
+    "autoFixNew": "Auto-Fix New",
+    "autoFixTooltip": "Automatically fix new issues as they come in.",
+    "autoFixProcessing": "Processing {{count}} issue...",
+    "autoFixProcessing_other": "Processing {{count}} issues..."
+  },
+  "filters": {
+    "open": "Open",
+    "opened": "Open",
+    "closed": "Closed",
+    "merged": "Merged",
+    "all": "All"
+  },
+  "empty": {
+    "noMatch": "No issues match your search",
+    "selectIssue": "Select an issue to view details"
+  },
+  "notConnected": {
+    "title": "GitHub Not Connected",
+    "description": "Configure your GitHub token and repository in project settings to sync issues.",
+    "openSettings": "Open Settings"
+  },
+  "detail": {
+    "comments": "comments",
+    "viewTask": "View Task",
+    "createTask": "Create Task",
+    "taskLinked": "Task Linked",
+    "taskId": "Task ID",
+    "description": "Description",
+    "noDescription": "No description provided.",
+    "assignees": "Assignees",
+    "milestone": "Milestone"
+  },
+  "investigation": {
+    "title": "Create Task from Issue",
+    "issuePrefix": "Issue",
+    "description": "Create a task from this GitHub issue. The task will be added to your Kanban board in the Backlog column.",
+    "selectComments": "Select Comments to Include ({{selected}}/{{total}})",
+    "deselectAll": "Deselect All",
+    "selectAll": "Select All",
+    "willInclude": "The task will include:",
+    "includeTitle": "Issue title and description",
+    "includeLink": "Link back to the GitHub issue",
+    "includeLabels": "Labels and metadata from the issue",
+    "noComments": "No comments (this issue has no comments)",
+    "failedToLoadComments": "Failed to load comments",
+    "taskCreated": "Task created! View it in your Kanban board.",
+    "creating": "Creating...",
+    "cancel": "Cancel",
+    "done": "Done"
+  },
+  "autoFix": {
+    "button": "Auto Fix",
+    "retryButton": "Retry Auto Fix",
+    "processing": "Processing...",
+    "completed": "Spec created from issue",
+    "failed": "Auto-fix failed"
+  },
+  "batchWizard": {
+    "title": "Analyze & Group Issues",
+    "intro": {
+      "title": "Analyze & Group Issues",
+      "description": "This will analyze up to 200 open issues, group similar ones together, and let you review the proposed batches before creating any tasks.",
+      "startButton": "Start Analysis"
+    },
+    "analyzing": {
+      "title": "Analyzing Issues...",
+      "message": "Computing similarity and validating batches...",
+      "complete": "{{progress}}% complete"
+    },
+    "review": {
+      "description": "Review and approve the proposed issue batches.",
+      "stats": {
+        "analyzed": "{{count}} issues analyzed",
+        "batches": "{{count}} batches proposed",
+        "single": "{{count}} single issues"
+      },
+      "selectAll": "Select All",
+      "deselectAll": "Deselect All",
+      "singleIssues": "Single Issues (not grouped)",
+      "andMore": "...and {{count}} more",
+      "selectedSummary": "{{batchCount}} batch selected ({{issueCount}} issues)",
+      "selectedSummary_other": "{{batchCount}} batches selected ({{issueCount}} issues)",
+      "withSingleIssues": " + {{count}} single issue",
+      "withSingleIssues_other": " + {{count}} single issues",
+      "issues": "{{count}} issues",
+      "similar": "{{percent}}% similar"
+    },
+    "approving": {
+      "title": "Creating Batches...",
+      "description": "Setting up the approved issue batches for processing.",
+      "button": "Creating..."
+    },
+    "done": {
+      "title": "Batches Created",
+      "description": "Your selected issue batches are ready for processing.",
+      "closeButton": "Close"
+    },
+    "footer": {
+      "cancel": "Cancel",
+      "approve": "Approve & Create ({{count}} batch)",
+      "approve_other": "Approve & Create ({{count}} batches)"
+    },
+    "steps": {
+      "intro": "Analyze open issues and group similar ones for batch processing.",
+      "analyzing": "Analyzing issues for semantic similarity...",
+      "review": "Review and approve the proposed issue batches.",
+      "approving": "Creating the approved batches...",
+      "done": "Batches have been created successfully."
+    }
+  },
+  "prLogs": {
+    "followup": "Follow-up",
+    "live": "Live",
+    "phases": {
+      "context": "Context Gathering",
+      "analysis": "AI Analysis",
+      "synthesis": "Synthesis"
+    },
+    "entries": "{{count}} entry",
+    "entries_other": "{{count}} entries",
+    "orchestratorActivity": "Orchestrator Activity",
+    "orchestratorActivity_other": "Orchestrator Activity ({{count}} logs)",
+    "agentResults": "{{name}} Results",
+    "noLogs": "No logs available for this PR."
+  },
+  "setup": {
+    "title": "Setup GitHub Integration",
+    "steps": {
+      "githubAuth": "Authenticate with GitHub",
+      "claudeAuth": "Authenticate with Claude",
+      "repoConfirm": "Confirm Repository",
+      "repo": "Configure Repository",
+      "branch": "Select Base Branch",
+      "complete": "Setup Complete"
+    },
+    "githubAuth": {
+      "title": "Authenticate with GitHub",
+      "description": "Auto Claude needs access to your GitHub account to sync issues and manage pull requests.",
+      "useOAuth": "Authenticate with GitHub",
+      "authenticating": "Authenticating...",
+      "usePAT": "Use Personal Access Token",
+      "patPlaceholder": "ghp_...",
+      "patLabel": "Personal Access Token",
+      "patHint": "Create a token with 'repo' scope from GitHub Settings → Developer settings → Personal access tokens",
+      "continue": "Continue",
+      "skip": "Skip for now"
+    },
+    "claudeAuth": {
+      "title": "Authenticate with Claude",
+      "description": "Auto Claude uses Claude AI for code analysis and task generation.",
+      "useOAuth": "Authenticate with Claude",
+      "authenticating": "Authenticating...",
+      "skip": "Skip for now",
+      "alreadyConfigured": "Claude authentication already configured"
+    },
+    "repoDetect": {
+      "title": "Repository Detected",
+      "description": "We detected a GitHub repository configured for this project:",
+      "confirm": "Confirm & Continue",
+      "change": "Configure Different Repository"
+    },
+    "repoSetup": {
+      "title": "Configure Repository",
+      "description": "This project doesn't have a GitHub repository yet. Would you like to create one or link an existing repository?",
+      "createNew": "Create New Repository",
+      "linkExisting": "Link Existing Repository",
+      "create": {
+        "title": "Create New GitHub Repository",
+        "owner": "Owner",
+        "selectOwner": "Select owner...",
+        "personal": "Personal",
+        "organization": "Organization",
+        "repoName": "Repository Name",
+        "repoNamePlaceholder": "my-awesome-project",
+        "visibility": "Visibility",
+        "public": "Public",
+        "publicDesc": "Anyone can see this repository",
+        "private": "Private",
+        "privateDesc": "Only you and collaborators can see this repository",
+        "creating": "Creating...",
+        "create": "Create Repository"
+      },
+      "link": {
+        "title": "Link Existing Repository",
+        "repoName": "Repository Name",
+        "repoNamePlaceholder": "username/repository",
+        "format": "Format: owner/repository (e.g., octocat/Hello-World)",
+        "linking": "Linking...",
+        "link": "Link Repository"
+      }
+    },
+    "branch": {
+      "title": "Select Base Branch",
+      "description": "Choose the default branch for creating task worktrees. This is typically your main development branch.",
+      "recommended": "Recommended",
+      "branches": "Branches",
+      "selectBranch": "Select a branch...",
+      "continue": "Continue"
+    },
+    "complete": {
+      "title": "Setup Complete!",
+      "description": "Your GitHub integration is configured and ready to use.",
+      "features": {
+        "title": "You can now:",
+        "syncIssues": "Sync and manage GitHub issues",
+        "createTasks": "Create tasks from issues automatically",
+        "reviewPRs": "AI-powered PR reviews",
+        "worktrees": "Isolated worktrees for each task"
+      },
+      "finish": "Finish"
+    }
+  },
+  "mergeRequest": {
+    "create": {
+      "title": "Create Merge Request",
+      "description": "Create a new merge request in GitLab",
+      "titleLabel": "Title",
+      "titlePlaceholder": "Merge request title",
+      "sourceBranch": "Source Branch",
+      "sourcePlaceholder": "feature/my-feature",
+      "targetBranch": "Target Branch",
+      "targetPlaceholder": "main",
+      "descriptionLabel": "Description (optional)",
+      "descriptionPlaceholder": "Describe the changes in this merge request...",
+      "error": "Title, source branch, and target branch are required",
+      "failed": "Failed to create merge request",
+      "creating": "Creating...",
+      "createButton": "Create Merge Request",
+      "cancel": "Cancel"
+    },
+    "list": {
+      "title": "Merge Requests",
+      "searchPlaceholder": "Search merge requests...",
+      "noMatch": "No matching merge requests",
+      "noMRs": "No merge requests found"
+    }
+  }
+}

@@ -12,12 +12,15 @@ interface LoadingMessageProps {
 /**
  * Displays a loading indicator while workspace info is being fetched
  */
-export function LoadingMessage({ message = 'Loading workspace info...' }: LoadingMessageProps) {
+export function LoadingMessage({ message }: LoadingMessageProps) {
+  const { t } = useTranslation(['taskReview']);
+  const defaultMessage = t('taskReview:workspace.loadingMessage');
+
   return (
     <div className="rounded-xl border border-border bg-secondary/30 p-4">
       <div className="flex items-center gap-2 text-muted-foreground">
         <Loader2 className="h-4 w-4 animate-spin" />
-        <span className="text-sm">{message}</span>
+        <span className="text-sm">{message || defaultMessage}</span>
       </div>
     </div>
   );
@@ -32,7 +35,7 @@ interface NoWorkspaceMessageProps {
  * Displays message when no workspace is found for the task
  */
 export function NoWorkspaceMessage({ task, onClose }: NoWorkspaceMessageProps) {
-  const { t } = useTranslation(['tasks']);
+  const { t } = useTranslation(['tasks', 'taskReview']);
   const [isMarkingDone, setIsMarkingDone] = useState(false);
   const [isProceeding, setIsProceeding] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -82,12 +85,12 @@ export function NoWorkspaceMessage({ task, onClose }: NoWorkspaceMessageProps) {
     <div className="rounded-xl border border-border bg-secondary/30 p-4">
       <h3 className="font-medium text-sm text-foreground mb-2 flex items-center gap-2">
         <AlertCircle className="h-4 w-4 text-muted-foreground" />
-        {isPlanReview ? 'Human Review Required' : 'No Workspace Found'}
+        {isPlanReview ? t('taskReview:workspace.noWorkspace.planReviewTitle') : t('taskReview:workspace.noWorkspace.title')}
       </h3>
       <p className="text-sm text-muted-foreground mb-3">
         {isPlanReview
-          ? 'Human review required prior to coding. Review your spec.md for any necessary changes.'
-          : 'No isolated workspace was found for this task. The changes may have been made directly in your project.'}
+          ? t('taskReview:workspace.noWorkspace.planReviewDescription')
+          : t('taskReview:workspace.noWorkspace.description')}
       </p>
 
       {/* Allow marking as done */}
@@ -102,12 +105,12 @@ export function NoWorkspaceMessage({ task, onClose }: NoWorkspaceMessageProps) {
           {isProceeding ? (
             <>
               <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-              Updating...
+              {t('taskReview:workspace.updating')}
             </>
           ) : (
             <>
               <Play className="h-4 w-4 mr-2" />
-              Proceed to Coding
+              {t('taskReview:workspace.proceedToCoding')}
             </>
           )}
         </Button>
@@ -122,12 +125,12 @@ export function NoWorkspaceMessage({ task, onClose }: NoWorkspaceMessageProps) {
           {isMarkingDone ? (
             <>
               <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-              Updating...
+              {t('taskReview:workspace.updating')}
             </>
           ) : (
             <>
               <Check className="h-4 w-4 mr-2" />
-              Mark as Done
+              {t('taskReview:workspace.markAsDone')}
             </>
           )}
         </Button>
@@ -155,6 +158,7 @@ interface StagedInProjectMessageProps {
  * Displays message when changes have already been staged in the main project
  */
 export function StagedInProjectMessage({ task, projectPath, hasWorktree = false, onClose, onReviewAgain }: StagedInProjectMessageProps) {
+  const { t } = useTranslation(['taskReview']);
   const [isDeleting, setIsDeleting] = useState(false);
   const [isMarkingDone, setIsMarkingDone] = useState(false);
   const [isResetting, setIsResetting] = useState(false);
@@ -241,17 +245,17 @@ export function StagedInProjectMessage({ task, projectPath, hasWorktree = false,
     <div className="rounded-xl border border-success/30 bg-success/10 p-4">
       <h3 className="font-medium text-sm text-foreground mb-2 flex items-center gap-2">
         <GitMerge className="h-4 w-4 text-success" />
-        Changes Staged in Project
+        {t('taskReview:workspace.stagedInProject.title')}
       </h3>
       <p className="text-sm text-muted-foreground mb-3">
-        This task's changes have been staged in your main project{task.stagedAt ? ` on ${new Date(task.stagedAt).toLocaleDateString()}` : ''}.
+        {t('taskReview:workspace.stagedInProject.description')}{task.stagedAt ? t('taskReview:workspace.stagedInProject.descriptionWithDate', { date: new Date(task.stagedAt).toLocaleDateString() }) : ''}.
       </p>
       <div className="bg-background/50 rounded-lg p-3 mb-3">
-        <p className="text-xs text-muted-foreground mb-2">Next steps:</p>
+        <p className="text-xs text-muted-foreground mb-2">{t('taskReview:workspace.stagedInProject.nextSteps')}</p>
         <ol className="text-xs text-muted-foreground space-y-1 list-decimal list-inside">
-          <li>Review staged changes with <code className="bg-background px-1 rounded">git status</code> and <code className="bg-background px-1 rounded">git diff --staged</code></li>
-          <li>Commit when ready: <code className="bg-background px-1 rounded">git commit -m "your message"</code></li>
-          <li>Push to remote when satisfied</li>
+          <li>{t('taskReview:workspace.stagedInProject.step1')} <code className="bg-background px-1 rounded">git status</code> and <code className="bg-background px-1 rounded">git diff --staged</code></li>
+          <li>{t('taskReview:workspace.stagedInProject.step2')} <code className="bg-background px-1 rounded">git commit -m "your message"</code></li>
+          <li>{t('taskReview:workspace.stagedInProject.step3')}</li>
         </ol>
       </div>
 
@@ -270,12 +274,12 @@ export function StagedInProjectMessage({ task, projectPath, hasWorktree = false,
               {isDeleting ? (
                 <>
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  Cleaning up...
+                  {t('taskReview:workspace.stagedInProject.cleaningUp')}
                 </>
               ) : (
                 <>
                   <Check className="h-4 w-4 mr-2" />
-                  Delete Worktree & Mark Done
+                  {t('taskReview:workspace.stagedInProject.deleteWorktreeAndMarkDone')}
                 </>
               )}
             </Button>
@@ -290,12 +294,12 @@ export function StagedInProjectMessage({ task, projectPath, hasWorktree = false,
               {isMarkingDone ? (
                 <>
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  Marking done...
+                  {t('taskReview:workspace.stagedInProject.markingDone')}
                 </>
               ) : (
                 <>
                   <Check className="h-4 w-4 mr-2" />
-                  Mark as Done
+                  {t('taskReview:workspace.markAsDone')}
                 </>
               )}
             </Button>
@@ -316,12 +320,12 @@ export function StagedInProjectMessage({ task, projectPath, hasWorktree = false,
               {isMarkingDone ? (
                 <>
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  Marking done...
+                  {t('taskReview:workspace.stagedInProject.markingDone')}
                 </>
               ) : (
                 <>
                   <Check className="h-4 w-4 mr-2" />
-                  Mark Done Only
+                  {t('taskReview:workspace.stagedInProject.markDoneOnly')}
                 </>
               )}
             </Button>
@@ -339,12 +343,12 @@ export function StagedInProjectMessage({ task, projectPath, hasWorktree = false,
               {isResetting ? (
                 <>
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  Resetting...
+                  {t('taskReview:workspace.stagedInProject.resetting')}
                 </>
               ) : (
                 <>
                   <RotateCcw className="h-4 w-4 mr-2" />
-                  Review Again
+                  {t('taskReview:workspace.stagedInProject.reviewAgain')}
                 </>
               )}
             </Button>
@@ -357,7 +361,7 @@ export function StagedInProjectMessage({ task, projectPath, hasWorktree = false,
 
         {hasWorktree && (
           <p className="text-xs text-muted-foreground">
-            "Delete Worktree & Mark Done" cleans up the isolated workspace. "Mark Done Only" keeps it for reference.
+            {t('taskReview:workspace.stagedInProject.keepWorktreeHint')}
           </p>
         )}
       </div>

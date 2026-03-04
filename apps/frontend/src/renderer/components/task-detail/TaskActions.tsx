@@ -60,12 +60,12 @@ export function TaskActions({
             {isRecovering ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Recovering...
+                {t('tasks:detail.recovering')}
               </>
             ) : (
               <>
                 <RotateCcw className="mr-2 h-4 w-4" />
-                Recover Task
+                {t('tasks:detail.recoverTask')}
               </>
             )}
           </Button>
@@ -76,7 +76,7 @@ export function TaskActions({
             onClick={onStartStop}
           >
             <Play className="mr-2 h-4 w-4" />
-            Resume Task
+            {t('tasks:detail.resumeTask')}
           </Button>
         ) : (task.status === 'backlog' || task.status === 'in_progress') && (
           <Button
@@ -87,12 +87,12 @@ export function TaskActions({
             {isRunning ? (
               <>
                 <Square className="mr-2 h-4 w-4" />
-                Stop Task
+                {t('tasks:detail.stopTask')}
               </>
             ) : (
               <>
                 <Play className="mr-2 h-4 w-4" />
-                Start Task
+                {t('tasks:detail.startTask')}
               </>
             )}
           </Button>
@@ -100,7 +100,7 @@ export function TaskActions({
         {task.status === 'done' && (
           <div className="completion-state text-sm">
             <CheckCircle2 className="h-5 w-5" />
-            <span className="font-medium">Task completed successfully</span>
+            <span className="font-medium">{t('tasks:detail.completedSuccessfully')}</span>
           </div>
         )}
 
@@ -113,7 +113,7 @@ export function TaskActions({
           disabled={isRunning && !isStuck}
         >
           <Trash2 className="mr-2 h-4 w-4" />
-          Delete Task
+          {t('tasks:detail.deleteTask')}
         </Button>
       </div>
 

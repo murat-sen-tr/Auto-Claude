@@ -1,0 +1,92 @@
+{
+  "expand": {
+    "expand": "Terminali genişlet",
+    "collapse": "Terminali daralt"
+  },
+  "resume": {
+    "pending": "Devam Mevcut",
+    "pendingTooltip": "Önceki Claude oturumuna devam etmek için tıklayın",
+    "resumeAllSessions": "Tümüne Devam Et"
+  },
+  "auth": {
+    "terminalTitle": "Kimlik Doğrulama: {{profileName}}",
+    "maxTerminalsReached": "Kimlik doğrulama terminali açılamıyor: maksimum terminale ulaşıldı. Önce bir terminal kapatın."
+  },
+  "swap": {
+    "inProgress": "Profil değiştiriliyor...",
+    "resumingSession": "Claude oturumu devam ettiriliyor...",
+    "sessionResumed": "Oturum yeni profil altında devam etti",
+    "resumeFailed": "Oturum devam ettirilemedi. Yeni bir oturum başlatabilirsiniz.",
+    "noSession": "Profil değiştirildi. Devam ettirilecek aktif oturum yok.",
+    "migrationFailed": "Profil değiştirildi, ancak oturum taşıma başarısız oldu. Yeni terminal başlatılıyor."
+  },
+  "worktree": {
+    "create": "Worktree",
+    "createNew": "Yeni Worktree",
+    "existing": "Terminal Worktree'leri",
+    "taskWorktrees": "Görev Worktree'leri",
+    "otherWorktrees": "Diğerleri",
+    "createTitle": "Terminal Worktree Oluştur",
+    "createDescription": "Bu terminal için izole bir çalışma alanı oluşturun. Tüm çalışma worktree dizininde gerçekleşecek.",
+    "name": "Worktree Adı",
+    "namePlaceholder": "benim-ozelligim",
+    "nameRequired": "Worktree adı gerekli",
+    "nameInvalid": "Ad bir harf veya rakamla başlamalı ve bitmeli",
+    "nameHelp": "Küçük harfler, rakamlar, tire ve alt çizgi (boşluklar tire olur)",
+    "associateTask": "Göreve Bağla",
+    "selectTask": "Bir görev seçin...",
+    "noTask": "Görev yok (bağımsız worktree)",
+    "createBranch": "Git Dalı Oluştur",
+    "branchHelp": "Dal oluşturur: {{branch}}",
+    "baseBranch": "Ana Dal",
+    "selectBaseBranch": "Ana dal seçin...",
+    "searchBranch": "Dalları ara...",
+    "noBranchFound": "Dal bulunamadı",
+    "useProjectDefault": "Proje varsayılanını kullan ({{branch}})",
+    "baseBranchHelp": "Worktree'nin oluşturulacağı dal",
+    "openInIDE": "IDE'de Aç",
+    "maxReached": "Maksimum 12 terminal worktree'sine ulaşıldı",
+    "alreadyExists": "Bu adda bir worktree zaten var",
+    "searchPlaceholder": "Worktree'leri ara...",
+    "noResults": "Worktree bulunamadı",
+    "deleteTitle": "Worktree Silinsin mi?",
+    "deleteDescription": "Bu, worktree'yi ve dalını kalıcı olarak silecek. Commit edilmemiş tüm değişiklikler kaybolacak.",
+    "detached": "(ayrık)",
+    "remotePushFailed": "Uzak İzleme Ayarlanmadı",
+    "remotePushFailedDescription": "Worktree oluşturuldu ancak dal uzak depoya push edilemedi. git push -u komutunu manuel olarak çalıştırmanız gerekebilir."
+  },
+  "grid": {
+    "title": "TODO: Agent Terminals",
+    "description": "TODO: Spawn multiple terminals to run Claude agents in parallel.",
+    "keyboardHint": "TODO: Use Ctrl+T to create a new terminal.",
+    "newTerminal": "TODO: New Terminal",
+    "terminalCount": "TODO: {{count}} / 12 terminals",
+    "history": "TODO: History",
+    "restoreFrom": "TODO: Restore sessions from...",
+    "sessionCount": "TODO: {{count}} session",
+    "sessionCount_plural": "TODO: {{count}} sessions",
+    "invokeClaudeAll": "TODO: Invoke Claude All",
+    "files": "TODO: Files",
+    "dropToInsert": "TODO: Drop to insert path",
+    "terminal": "TODO: Terminal"
+  },
+  "taskSelector": {
+    "currentTask": "TODO: Current task",
+    "switchTo": "TODO: Switch to...",
+    "clearTask": "TODO: Clear task",
+    "selectTask": "TODO: Select task...",
+    "availableTasks": "TODO: Available tasks",
+    "addNewTask": "TODO: Add new task",
+    "noTasksAvailable": "TODO: No tasks available",
+    "createTasksHint": "TODO: Create tasks in the Kanban board"
+  },
+  "title": {
+    "renameTooltip": "TODO: Double-click to rename"
+  },
+  "defaultTitle": "Terminal",
+  "claudeTitle": "Claude",
+  "invokeClaude": "Claude'u Çağır",
+  "taskContext": {
+    "message": "Şu görev üzerinde çalışıyorum: {{title}}\n\nAçıklama:\n{{description}}\n\nLütfen hazır olduğunuzu şöyle söyleyerek onaylayın: {{title}} üzerinde çalışmaya hazırım - Bağlam yüklendi."
+  }
+}

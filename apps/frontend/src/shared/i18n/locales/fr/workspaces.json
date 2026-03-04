@@ -1,0 +1,36 @@
+{
+  "addWorkspaceModal": {
+    "title": "Créer un espace de travail",
+    "description": "Regroupez les projets liés pour les spécifications et la validation multi-dépôts.",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Mon espace de travail d'application",
+    "descriptionLabel": "Description (optionnelle)",
+    "descriptionPlaceholder": "Backend, frontend et applications mobiles pour Mon application",
+    "projectsLabel": "Projets",
+    "addProjectPlaceholder": "Ajouter un projet...",
+    "allProjectsAdded": "Tous les projets ont été ajoutés",
+    "noProjectsAvailable": "Aucun projet disponible",
+    "nameRequired": "Le nom de l'espace de travail est requis",
+    "apiNotAvailable": "API de l'espace de travail non disponible",
+    "createFailed": "Échec de la création de l'espace de travail",
+    "cancel": "Annuler",
+    "create": "Créer l'espace de travail",
+    "creating": "Création..."
+  },
+  "roles": {
+    "backend": "Backend",
+    "backendDescription": "Serveur API, services",
+    "frontend": "Frontend",
+    "frontendDescription": "Application web",
+    "mobile": "Mobile",
+    "mobileDescription": "Application mobile",
+    "shared": "Partagé",
+    "sharedDescription": "Types/utils partagés",
+    "api": "Passerelle API",
+    "apiDescription": "Passerelle, BFF",
+    "worker": "Worker",
+    "workerDescription": "Tâches en arrière-plan",
+    "other": "Autre",
+    "otherDescription": "Autre type de projet"
+  }
+}

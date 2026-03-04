@@ -20,7 +20,7 @@ export function PhaseCard({
   onGoToTask,
   onArchive,
 }: PhaseCardProps) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation(['roadmap', 'common']);
   const [isExpanded, setIsExpanded] = useState(false);
   const completedCount = features.filter((f) => f.status === 'done').length;
   const progress = features.length > 0 ? (completedCount / features.length) * 100 : 0;
@@ -60,9 +60,9 @@ export function PhaseCard({
       {/* Progress */}
       <div className="mb-4">
         <div className="flex items-center justify-between text-sm mb-1">
-          <span className="text-muted-foreground">Progress</span>
+          <span className="text-muted-foreground">{t('roadmap:phase.progress')}</span>
           <span>
-            {completedCount}/{features.length} features
+            {t('roadmap:phase.progressDetail', { completed: completedCount, total: features.length })}
           </span>
         </div>
         <Progress value={progress} className="h-2" />
@@ -71,7 +71,7 @@ export function PhaseCard({
       {/* Milestones */}
       {phase.milestones.length > 0 && (
         <div className="mb-4">
-          <h4 className="text-sm font-medium mb-2">Milestones</h4>
+          <h4 className="text-sm font-medium mb-2">{t('roadmap:phase.milestones')}</h4>
           <div className="space-y-2">
             {phase.milestones.map((milestone) => (
               <div key={milestone.id} className="flex items-center gap-2 text-sm">
@@ -95,7 +95,7 @@ export function PhaseCard({
 
       {/* Features */}
       <div>
-        <h4 className="text-sm font-medium mb-2">Features ({features.length})</h4>
+        <h4 className="text-sm font-medium mb-2">{t('roadmap:phase.features', { count: features.length })}</h4>
         <div className="grid gap-2">
           {visibleFeatures.map((feature) => {
             const isDone = feature.status === 'done';
@@ -104,8 +104,8 @@ export function PhaseCard({
                 variant="ghost"
                 size="sm"
                 className="h-6 px-2"
-                title={t('roadmap.archiveFeature')}
-                aria-label={t('accessibility.archiveFeatureAriaLabel')}
+                title={t('common:roadmap.archiveFeature')}
+                aria-label={t('common:accessibility.archiveFeatureAriaLabel')}
                 onClick={(e) => {
                   e.stopPropagation();
                   onArchive(feature.id);
@@ -156,7 +156,7 @@ export function PhaseCard({
                   }}
                 >
                   <ExternalLink className="h-3 w-3 mr-1" />
-                  {t('roadmap.viewTask')}
+                  {t('common:roadmap.viewTask')}
                 </Button>
               ) : (
                 <Button
@@ -169,7 +169,7 @@ export function PhaseCard({
                   }}
                 >
                   <Play className="h-3 w-3 mr-1" />
-                  {t('roadmap.build')}
+                  {t('common:roadmap.build')}
                 </Button>
               )}
             </div>
@@ -186,12 +186,12 @@ export function PhaseCard({
               {isExpanded ? (
                 <>
                   <ChevronUp className="h-4 w-4" />
-                  {t('roadmap.showLessFeatures')}
+                  {t('common:roadmap.showLessFeatures')}
                 </>
               ) : (
                 <>
                   <ChevronDown className="h-4 w-4" />
-                  {t('roadmap.showMoreFeatures', { count: hiddenCount })}
+                  {t('common:roadmap.showMoreFeatures', { count: hiddenCount })}
                 </>
               )}
             </Button>

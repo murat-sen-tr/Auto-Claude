@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   DndContext,
   DragOverlay,
@@ -76,6 +77,7 @@ function DroppableStatusColumn({
   onArchive,
   isOver
 }: DroppableStatusColumnProps) {
+  const { t } = useTranslation('roadmap');
   const { setNodeRef } = useDroppable({
     id: column.id
   });
@@ -138,16 +140,16 @@ function DroppableStatusColumn({
                       <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center mb-2">
                         <Plus className="h-4 w-4 text-primary" />
                       </div>
-                      <span className="text-sm font-medium text-primary">Drop here</span>
+                      <span className="text-sm font-medium text-primary">{t('kanban.empty.dropHere')}</span>
                     </>
                   ) : (
                     <>
                       <Inbox className="h-6 w-6 text-muted-foreground/50" />
                       <span className="mt-2 text-sm font-medium text-muted-foreground/70">
-                        No features
+                        {t('kanban.empty.noFeatures')}
                       </span>
                       <span className="mt-0.5 text-xs text-muted-foreground/50">
-                        Drag features here
+                        {t('kanban.empty.dragHere')}
                       </span>
                     </>
                   )}

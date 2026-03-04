@@ -73,12 +73,14 @@ class AgentExecutor:
         model: str,
         create_client_func,
         thinking_budget: int | None = None,
+        language: str = "en",
     ):
         self.project_dir = project_dir
         self.output_dir = output_dir
         self.model = model
         self.create_client = create_client_func
         self.thinking_budget = thinking_budget
+        self.language = language
         # Go up from roadmap/ -> runners/ -> auto-claude/prompts/
         self.prompts_dir = Path(__file__).parent.parent.parent / "prompts"
 
@@ -106,6 +108,16 @@ class AgentExecutor:
         debug_detailed(
             "roadmap_executor", "Loaded prompt file", prompt_length=len(prompt)
         )
+
+        # Add language instruction if not English
+        if self.language and self.language != "en":
+            language_names = {
+                "fr": "French (Français)",
+                "tr": "Turkish (Türkçe)",
+            }
+            language_name = language_names.get(self.language, self.language)
+            language_instruction = f"\n\nIMPORTANT - LANGUAGE REQUIREMENT: You MUST write all feature titles, descriptions, rationale, and other text content in {language_name}. The user has selected {language_name} as their preferred language. This is a critical requirement - all generated content must be in {language_name}, not English.\n\n"
+            prompt = language_instruction + prompt
 
         # Add context
         prompt += f"\n\n---\n\n**Output Directory**: {self.output_dir}\n"

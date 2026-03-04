@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "Insights",
+    "subtitle": "Ask questions about your codebase",
+    "hideSidebar": "Hide sidebar",
+    "showSidebar": "Show sidebar"
+  },
+  "buttons": {
+    "newChat": "New Chat",
+    "send": "Send message"
+  },
+  "chat": {
+    "you": "You",
+    "assistant": "Assistant",
+    "thinking": "Thinking...",
+    "placeholder": "Ask about your codebase...",
+    "sendHint": "Press Enter to send, Shift+Enter for new line"
+  },
+  "emptyState": {
+    "title": "Start a Conversation",
+    "description": "Ask questions about your codebase, get suggestions for improvements, or discuss features you'd like to implement.",
+    "suggestions": {
+      "architecture": "What is the architecture of this project?",
+      "improvements": "Suggest improvements for code quality",
+      "features": "What features could I add next?",
+      "security": "Are there any security concerns?"
+    }
+  },
+  "tools": {
+    "used": "{{count}} tool used",
+    "used_plural": "{{count}} tools used",
+    "readFile": "Reading file",
+    "searchFiles": "Searching files",
+    "searchCode": "Searching code"
+  },
+  "tasks": {
+    "suggestedTask": "Suggested Task",
+    "creating": "Creating...",
+    "taskCreated": "Task Created",
+    "createTask": "Create Task"
+  },
+  "images": {
+    "pasteHint": "Paste an image or screenshot",
+    "dropHint": "Drop image here",
+    "dragOver": "Drop image to attach",
+    "screenshotButton": "Attach screenshot",
+    "removeImage": "Remove image",
+    "imageCount": "{{count}} image attached",
+    "imageCount_plural": "{{count}} images attached",
+    "maxImagesReached": "Maximum number of images reached",
+    "invalidType": "Invalid file type. Please use PNG, JPEG, GIF, or WebP.",
+    "processFailed": "Failed to process image",
+    "analysisUnsupported": "Note: Image analysis is not yet supported. Images are stored for reference but cannot be analyzed by the model.",
+    "screenshotTooLarge": "Screenshot is too large ({{size}}MB). Maximum size is {{max}}MB. Consider capturing a smaller area.",
+    "notAnalyzed": "Images were stored for reference but not analyzed by the model."
+  },
+  "chatHistory": {
+    "title": "Chat History",
+    "archive": "Archive",
+    "unarchive": "Unarchive",
+    "archiveSelected": "Archive Selected",
+    "showArchived": "Show Archived",
+    "hideArchived": "Hide Archived",
+    "bulkDeleteTitle": "Delete Conversations",
+    "bulkDeleteDescription": "Are you sure you want to delete {{count}} conversation(s)? This action cannot be undone.",
+    "bulkDeleteConfirm": "Delete {{count}} Conversation(s)",
+    "noConversations": "No conversations",
+    "archived": "Archived",
+    "conversationsToDelete": "Conversations to delete",
+    "archiveConfirmDescription": "Are you sure you want to archive the selected conversations?",
+    "archiveConfirmTitle": "Archive Conversations",
+    "archiveConfirmButton": "Archive {{count}} Conversation(s)",
+    "deleteTitle": "Delete Conversation",
+    "deleteDescription": "Are you sure you want to delete this conversation? This action cannot be undone.",
+    "selectMode": "Select",
+    "exitSelectMode": "Done",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "daysAgo": "{{count}} days ago",
+    "messageCount": "{{count}} message",
+    "messageCount_other": "{{count}} messages"
+  },
+  "modelSelector": {
+    "modelLabel": "Model: {{model}}",
+    "agentProfile": "Agent Profile",
+    "custom": "Custom...",
+    "customDescription": "Choose model & thinking level",
+    "balanced": "Dengeli"
+  }
+}
