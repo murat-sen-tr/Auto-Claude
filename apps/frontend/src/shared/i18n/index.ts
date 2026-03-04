@@ -20,6 +20,8 @@ import enProjectSettings from './locales/en/projectSettings.json';
 import enWorktrees from './locales/en/worktrees.json';
 import enContext from './locales/en/context.json';
 import enRoadmap from './locales/en/roadmap.json';
+import enInsights from './locales/en/insights.json';
+import enWorkspaces from './locales/en/workspaces.json';
 
 // Import French translation resources
 import frCommon from './locales/fr/common.json';
@@ -40,6 +42,8 @@ import frProjectSettings from './locales/fr/projectSettings.json';
 import frWorktrees from './locales/fr/worktrees.json';
 import frContext from './locales/fr/context.json';
 import frRoadmap from './locales/fr/roadmap.json';
+import frInsights from './locales/fr/insights.json';
+import frWorkspaces from './locales/fr/workspaces.json';
 
 // Import Turkish translation resources
 import trCommon from './locales/tr/common.json';
@@ -60,6 +64,8 @@ import trProjectSettings from './locales/tr/projectSettings.json';
 import trWorktrees from './locales/tr/worktrees.json';
 import trContext from './locales/tr/context.json';
 import trRoadmap from './locales/tr/roadmap.json';
+import trInsights from './locales/tr/insights.json';
+import trWorkspaces from './locales/tr/workspaces.json';
 
 export const defaultNS = 'common';
 
@@ -82,7 +88,9 @@ export const resources = {
     projectSettings: enProjectSettings,
     worktrees: enWorktrees,
     context: enContext,
-    roadmap: enRoadmap
+    roadmap: enRoadmap,
+    insights: enInsights,
+    workspaces: enWorkspaces
   },
   "fr": {
     common: frCommon,
@@ -102,7 +110,9 @@ export const resources = {
     projectSettings: frProjectSettings,
     worktrees: frWorktrees,
     context: frContext,
-    roadmap: frRoadmap
+    roadmap: frRoadmap,
+    insights: frInsights,
+    workspaces: frWorkspaces
   },
   "tr": {
     common: trCommon,
@@ -122,7 +132,9 @@ export const resources = {
     projectSettings: trProjectSettings,
     worktrees: trWorktrees,
     context: trContext,
-    roadmap: trRoadmap
+    roadmap: trRoadmap,
+    insights: trInsights,
+    workspaces: trWorkspaces
   }
 } as const;
 
@@ -133,7 +145,7 @@ i18n
     lng: 'en', // Default language (will be overridden by settings)
     fallbackLng: 'en',
     defaultNS,
-    ns: ['common', 'navigation', 'settings', 'tasks', 'welcome', 'onboarding', 'dialogs', 'gitlab', 'github', 'taskReview', 'terminal', 'errors', 'changelog', 'ideation', 'projectSettings', 'worktrees', 'context', 'roadmap'],
+    ns: ['common', 'navigation', 'settings', 'tasks', 'welcome', 'onboarding', 'dialogs', 'gitlab', 'github', 'taskReview', 'terminal', 'errors', 'changelog', 'ideation', 'projectSettings', 'worktrees', 'context', 'roadmap', 'insights', 'workspaces'],
     interpolation: {
       escapeValue: false // React already escapes values
     },
