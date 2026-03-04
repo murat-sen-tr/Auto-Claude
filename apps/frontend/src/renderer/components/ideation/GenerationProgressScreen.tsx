@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Sparkles, FileCode, Square } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Badge } from '../ui/badge';
@@ -49,6 +50,7 @@ export function GenerationProgressScreen({
   onDismiss,
   onStop
 }: GenerationProgressScreenProps) {
+  const { t } = useTranslation('ideation');
   const logsEndRef = useRef<HTMLDivElement>(null);
   const [showLogs, setShowLogs] = useState(false);
   const [isStopping, setIsStopping] = useState(false);
@@ -95,9 +97,9 @@ export function GenerationProgressScreen({
           <div>
             <div className="flex items-center gap-2 mb-1">
               <Sparkles className="h-5 w-5 text-primary animate-pulse" />
-              <h2 className="text-lg font-semibold">Generating Ideas</h2>
+              <h2 className="text-lg font-semibold">{t('generation.title')}</h2>
               <Badge variant="outline">
-                {completedCount}/{enabledTypes.length} complete
+                {completedCount}/{enabledTypes.length} {t('generation.complete')}
               </Badge>
             </div>
             <p className="text-sm text-muted-foreground">{generationStatus.message}</p>
@@ -109,7 +111,7 @@ export function GenerationProgressScreen({
               onClick={() => setShowLogs(!showLogs)}
             >
               <FileCode className="h-4 w-4 mr-1" />
-              {showLogs ? 'Hide' : 'Show'} Logs
+              {showLogs ? t('generation.hideLogs') : t('generation.showLogs')} {t('generation.logs')}
             </Button>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -120,10 +122,10 @@ export function GenerationProgressScreen({
                   disabled={isStopping}
                 >
                   <Square className="h-4 w-4 mr-1" />
-                  {isStopping ? 'Stopping...' : 'Stop'}
+                  {isStopping ? t('generation.stopping') : t('generation.stop')}
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Stop generation</TooltipContent>
+              <TooltipContent>{t('generation.stopTooltip')}</TooltipContent>
             </Tooltip>
           </div>
         </div>
@@ -199,7 +201,7 @@ export function GenerationProgressScreen({
                   <TypeStateIcon state={state} />
                   {ideas.length > 0 && (
                     <Badge variant="outline" className="ml-auto">
-                      {ideas.length} ideas
+                      {ideas.length} {t('generation.ideas')}
                     </Badge>
                   )}
                 </div>
@@ -230,21 +232,21 @@ export function GenerationProgressScreen({
                   {/* Show pending message */}
                   {state === 'pending' && (
                     <div className="text-sm text-muted-foreground py-2">
-                      Waiting to start...
+                      {t('generation.waitingToStart')}
                     </div>
                   )}
 
                   {/* Show failed message */}
                   {state === 'failed' && ideas.length === 0 && (
                     <div className="text-sm text-destructive py-2">
-                      Failed to generate ideas for this category
+                      {t('generation.failedToGenerate')}
                     </div>
                   )}
 
                   {/* Show empty message if completed with no ideas */}
                   {state === 'completed' && ideas.length === 0 && (
                     <div className="text-sm text-muted-foreground py-2">
-                      No ideas generated for this category
+                      {t('generation.noIdeasGenerated')}
                     </div>
                   )}
                 </div>

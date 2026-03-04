@@ -108,6 +108,9 @@
     "delete": "Delete",
     "settings": "Settings"
   },
+  "mcpServers": {
+    "testConnection": "Test Connection"
+  },
   "os": {
     "windows": "Windows",
     "macos": "macOS",
@@ -121,12 +124,49 @@
     "initializing": "Initializing...",
     "saving": "Saving...",
     "creating": "Creating...",
+    "deleting": "Deleting...",
+    "updating": "Updating...",
+    "merging": "Merging...",
+    "publishing": "Publishing...",
+    "validating": "Validating...",
     "noData": "No data",
     "optional": "Optional",
     "required": "Required",
     "dismiss": "Dismiss",
     "important": "Important",
     "orphaned": "(orphaned)"
+  },
+  "status": {
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "online": "Online",
+    "offline": "Offline",
+    "available": "Available",
+    "notAvailable": "Not Available",
+    "pending": "Pending",
+    "inProgress": "In Progress",
+    "complete": "Complete",
+    "completed": "Completed",
+    "failed": "Failed",
+    "cancelled": "Cancelled",
+    "running": "Running",
+    "stopped": "Stopped",
+    "paused": "Paused",
+    "active": "Active",
+    "inactive": "Inactive",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "ready": "Ready",
+    "notReady": "Not Ready",
+    "queued": "Queued",
+    "processing": "Processing",
+    "waiting": "Waiting",
+    "idle": "Idle",
+    "busy": "Busy",
+    "syncing": "Syncing",
+    "synced": "Synced",
+    "outdated": "Outdated",
+    "upToDate": "Up to date"
   },
   "selection": {
     "select": "Select",
@@ -155,7 +195,10 @@
     "taskNotFoundForWorktree": "Task not found for worktree: {{specName}}",
     "failedToDeleteTaskWorktree": "Failed to delete task worktree: {{specName}}",
     "terminalWorktreeNotFound": "Terminal worktree not found: {{name}}",
-    "failedToDeleteTerminalWorktree": "Failed to delete terminal worktree: {{name}}"
+    "failedToDeleteTerminalWorktree": "Failed to delete terminal worktree: {{name}}",
+    "somethingWentWrong": "Something went wrong",
+    "renderError": "An error occurred while rendering this content.",
+    "tryAgain": "Try Again"
   },
   "worktrees": {
     "deleteSuccess": "Worktree '{{branch}}' deleted successfully",
@@ -445,51 +488,6 @@
     "done": "Done",
     "failedLabel": "Failed",
     "starting": "Starting..."
-  },
-  "insights": {
-    "suggestedTask": "Suggested Task",
-    "creating": "Creating...",
-    "taskCreated": "Task Created",
-    "createTask": "Create Task",
-    "chatHistory": "Chat History",
-    "archive": "Archive",
-    "unarchive": "Unarchive",
-    "archiveSelected": "Archive Selected",
-    "showArchived": "Show Archived",
-    "hideArchived": "Hide Archived",
-    "bulkDeleteTitle": "Delete Conversations",
-    "bulkDeleteDescription": "Are you sure you want to delete {{count}} conversation(s)? This action cannot be undone.",
-    "bulkDeleteConfirm": "Delete {{count}} Conversation(s)",
-    "noConversations": "No conversations",
-    "archived": "Archived",
-    "conversationsToDelete": "Conversations to delete",
-    "archiveConfirmDescription": "Are you sure you want to archive the selected conversations?",
-    "archiveConfirmTitle": "Archive Conversations",
-    "archiveConfirmButton": "Archive {{count}} Conversation(s)",
-    "deleteTitle": "Delete Conversation",
-    "deleteDescription": "Are you sure you want to delete this conversation? This action cannot be undone.",
-    "selectMode": "Select",
-    "exitSelectMode": "Done",
-    "today": "Today",
-    "yesterday": "Yesterday",
-    "daysAgo": "{{count}} days ago",
-    "messageCount": "{{count}} message",
-    "messageCount_other": "{{count}} messages",
-    "images": {
-      "pasteHint": "Paste an image or screenshot",
-      "dropHint": "Drop image here",
-      "screenshotButton": "Attach screenshot",
-      "removeImage": "Remove image",
-      "imageCount": "{{count}} image attached",
-      "imageCount_plural": "{{count}} images attached",
-      "maxImagesReached": "Maximum number of images reached",
-      "invalidType": "Invalid file type. Please use PNG, JPEG, GIF, or WebP.",
-      "processFailed": "Failed to process image",
-      "dragOver": "Drop image to attach",
-      "analysisUnsupported": "Note: Image analysis is not yet supported. Images are stored for reference but cannot be analyzed by the model.",
-      "screenshotTooLarge": "Screenshot is too large ({{size}}MB). Maximum size is {{max}}MB. Consider capturing a smaller area.",
-      "notAnalyzed": "Images were stored for reference but not analyzed by the model."
-    }
   },
   "ideation": {
     "converting": "Converting...",
@@ -822,6 +820,25 @@
       "readyTooltip": "This PR is ready to be merged",
       "blockedTooltip": "This PR cannot be merged due to blocking conditions",
       "conflictTooltip": "This PR has merge conflicts that need to be resolved"
+    }
+  },
+  "fileExplorer": {
+    "title": "Project Files",
+    "dragHint": "Drag files into a terminal to insert the path",
+    "noFiles": "No files found",
+    "loading": "Loading files...",
+    "error": "Failed to load files",
+    "autocomplete": {
+      "noFilesFound": "No files found",
+      "navigate": "navigate",
+      "select": "select",
+      "close": "close"
+    },
+    "drawer": {
+      "title": "Project Files",
+      "refresh": "Refresh",
+      "close": "Close",
+      "dragHint": "Drag files to add as references"
     }
   }
 }

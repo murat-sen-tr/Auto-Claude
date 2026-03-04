@@ -66,6 +66,24 @@ const AUDIENCE_INSTRUCTIONS = {
 };
 
 /**
+ * Get language-specific instructions for AI content generation
+ */
+function getLanguageInstructions(language?: string): string {
+  if (!language || language === 'en') {
+    return ''; // English is default, no special instruction needed
+  }
+
+  const languageNames: Record<string, string> = {
+    'fr': 'French (Français)',
+    'tr': 'Turkish (Türkçe)',
+  };
+
+  const languageName = languageNames[language] || language;
+
+  return `\n\nIMPORTANT - LANGUAGE REQUIREMENT: You MUST write the entire changelog in ${languageName}. All headings, descriptions, and text content must be in ${languageName}, not English. This is a critical requirement - the user has selected ${languageName} as their preferred language.`;
+}
+
+/**
  * Get emoji usage instructions based on level and format
  */
 function getEmojiInstructions(emojiLevel?: string, format?: string): string {
@@ -143,6 +161,7 @@ export function buildChangelogPrompt(
   const audienceInstruction = AUDIENCE_INSTRUCTIONS[request.audience];
   const formatInstruction = FORMAT_TEMPLATES[request.format](request.version, request.date);
   const emojiInstruction = getEmojiInstructions(request.emojiLevel, request.format);
+  const languageInstruction = getLanguageInstructions(request.language);
 
   // Build CONCISE task summaries (key to avoiding timeout)
   const taskSummaries = specs.map(spec => {
@@ -184,7 +203,7 @@ RELEASE TITLE (CRITICAL):
 `;
   }
 
-  return `${audienceInstruction}
+  return `${audienceInstruction}${languageInstruction}
 
 Format:
 ${formatInstruction}
@@ -211,6 +230,7 @@ export function buildGitPrompt(
   const audienceInstruction = AUDIENCE_INSTRUCTIONS[request.audience];
   const formatInstruction = FORMAT_TEMPLATES[request.format](request.version, request.date);
   const emojiInstruction = getEmojiInstructions(request.emojiLevel, request.format);
+  const languageInstruction = getLanguageInstructions(request.language);
 
   // Format commits for the prompt
   // Include author info for github-release format
@@ -291,7 +311,7 @@ PART 3 - "Thanks to all contributors" (deduplicated list):
 - This acknowledges everyone who contributed to this release`;
   }
 
-  return `${audienceInstruction}
+  return `${audienceInstruction}${languageInstruction}
 
 ${sourceContext}
 

@@ -230,5 +230,65 @@
     "step3": "Cliquez sur « Réauthentifier » sur votre profil",
     "gotIt": "Compris",
     "goToSettings": "Aller aux paramètres"
+  },
+  "envConfig": {
+    "defaultTitle": "TODO: Claude Authentication Required",
+    "defaultDescription": "TODO: A Claude Code OAuth token is required to use AI features like Ideation and Roadmap generation.",
+    "success": {
+      "title": "TODO: Token configured successfully",
+      "description": "TODO: You can now use AI features like Ideation and Roadmap generation."
+    },
+    "errors": {
+      "checkTokenFailed": "TODO: Failed to check token status",
+      "noValidToken": "TODO: Selected profile does not have a valid token",
+      "saveFailed": "TODO: Failed to save token",
+      "unknownError": "TODO: Unknown error",
+      "noProjectSelected": "TODO: No project selected. Please select a project first.",
+      "authStartFailed": "TODO: Failed to start authentication",
+      "tokenRequired": "TODO: Please enter a token"
+    },
+    "useExisting": {
+      "title": "TODO: Use Existing Account",
+      "description": "TODO: You have {{count}} authenticated Claude account{{plural}}. Select one to use:",
+      "selectLabel": "TODO: Select Account",
+      "defaultBadge": "TODO: (Default)"
+    },
+    "authenticate": {
+      "titleWithExisting": "TODO: Or Authenticate New Account",
+      "titleWithoutExisting": "TODO: Authenticate with Browser",
+      "descriptionWithExisting": "TODO: Add a new Claude account by logging in with your browser.",
+      "descriptionWithoutExisting": "TODO: Click below to open your browser and log in with your Claude account.",
+      "waitingForAuth": "TODO: Waiting for authentication...",
+      "buttonWithExisting": "TODO: Authenticate New Account",
+      "buttonWithoutExisting": "TODO: Authenticate with Browser",
+      "browserPrompt": "TODO: A browser window should open. Complete the authentication there, then return here."
+    },
+    "manualEntry": {
+      "toggleLabel": "TODO: Enter token manually",
+      "stepsTitle": "TODO: Steps:",
+      "step1": "TODO: Install Claude Code CLI if you haven't already",
+      "step2": "TODO: Run",
+      "step2Command": "claude setup-token",
+      "step3": "TODO: Copy the token and paste it below",
+      "viewDocs": "TODO: View documentation",
+      "tokenLabel": "TODO: Claude Code OAuth Token",
+      "tokenPlaceholder": "TODO: Enter your token...",
+      "saveLocation": "TODO: The token will be saved to",
+      "existingTokenInfo": "TODO: A token is already configured.",
+      "replaceWithManual": "TODO: Enter a new token above to replace it.",
+      "replaceWithAuth": "TODO: Authenticate again to replace it."
+    },
+    "buttons": {
+      "saving": "TODO: Saving...",
+      "useAccount": "TODO: Use This Account",
+      "saveToken": "TODO: Save Token",
+      "close": "TODO: Close",
+      "cancel": "TODO: Cancel"
+    },
+    "tooltips": {
+      "showToken": "TODO: Show token",
+      "hideToken": "TODO: Hide token"
+    },
+    "divider": "TODO: or"
   }
 }

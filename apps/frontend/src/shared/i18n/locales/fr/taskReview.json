@@ -5,6 +5,18 @@
     "openExternal": "Ouvrir dans le terminal externe"
   },
   "merge": {
+    "branchDiverged": "Branche divergée - L'IA résoudra",
+    "noConflictsDetected": "Aucun conflit détecté",
+    "conflictsFound": "{{count}} Conflit{{plural}} trouvé",
+    "viewDetails": "Voir les détails",
+    "branchHasDiverged": "Branche divergée - L'IA résoudra",
+    "filesToMerge": "Fichiers à fusionner :",
+    "autoMergeable": "Fusion automatique possible :",
+    "aiResolved": "Résolu par l'IA :",
+    "manualReview": "Révision manuelle :",
+    "aiWillResolveConflicts": "L'IA résoudra les conflits",
+    "readyToMerge": "Prêt à fusionner",
+    "aiWillMergeWhenStaging": "L'IA fusionnera automatiquement ces conflits lorsque vous cliquez sur Préparer les modifications.",
     "branchHasNewCommits": "La branche {{branch}} a {{count}} nouveau commit.",
     "branchHasNewCommits_other": "La branche {{branch}} a {{count}} nouveaux commits.",
     "branchHasNewCommitsSinceWorktree": "La branche {{branch}} a {{count}} nouveau commit depuis la création de ce worktree.",
@@ -132,5 +144,83 @@
     "alreadyExisted": "existait déjà",
     "noWorktree": "Aucun worktree trouvé pour cette tâche",
     "resultsDescriptionWithSkipped": "{{success}} réussies, {{skipped}} ignorées, {{failed}} échouées"
+  },
+  "conflicts": {
+    "title": "Aperçu des conflits de fusion",
+    "description": "{{count}} conflit potentiel détecté.",
+    "description_other": "{{count}} conflits potentiels détectés.",
+    "autoMergeable": "{{count}} peut être fusionné automatiquement.",
+    "noConflicts": "Aucun conflit détecté",
+    "severity": "Sévérité",
+    "autoMerge": "fusion automatique",
+    "location": "Emplacement",
+    "reason": "Raison",
+    "strategy": "Stratégie",
+    "close": "Fermer",
+    "proceedWithMerge": "Procéder à la fusion"
+  },
+  "diff": {
+    "title": "Fichiers modifiés",
+    "summary": "{{count}} fichier modifié",
+    "summary_other": "{{count}} fichiers modifiés",
+    "noChanges": "Aucune modification trouvée",
+    "status": {
+      "added": "ajouté",
+      "deleted": "supprimé",
+      "modified": "modifié",
+      "renamed": "renommé"
+    },
+    "close": "Fermer"
+  },
+  "discard": {
+    "title": "Supprimer le build",
+    "confirmMessage": "Êtes-vous sûr de vouloir supprimer toutes les modifications pour",
+    "warning": "Cela supprimera définitivement l'espace de travail isolé et toutes les modifications non validées. La tâche sera déplacée vers le statut Planification.",
+    "filesChanged": "Fichiers modifiés",
+    "lines": "Lignes",
+    "cancel": "Annuler",
+    "discarding": "Suppression...",
+    "discardBuild": "Supprimer le build"
+  },
+  "staged": {
+    "title": "Modifications préparées avec succès",
+    "description": "{{message}}",
+    "commitMessage": "Message de commit généré par l'IA",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "commitPlaceholder": "Message de commit...",
+    "editHint": "Modifiez si nécessaire, puis copiez et utilisez avec",
+    "nextSteps": "Prochaines étapes :",
+    "step1": "Ouvrez votre projet dans votre IDE ou terminal",
+    "step2": "Vérifiez les modifications préparées avec",
+    "step3": "Validez quand vous êtes prêt :"
+  },
+  "workspace": {
+    "loadingMessage": "Chargement des informations de l'espace de travail...",
+    "noWorkspace": {
+      "title": "Aucun espace de travail trouvé",
+      "description": "Aucun espace de travail isolé n'a été trouvé pour cette tâche. Les modifications ont peut-être été effectuées directement dans votre projet.",
+      "planReviewTitle": "Révision humaine requise",
+      "planReviewDescription": "Révision humaine requise avant le codage. Examinez votre spec.md pour toute modification nécessaire."
+    },
+    "markAsDone": "Marquer comme terminé",
+    "proceedToCoding": "Procéder au codage",
+    "updating": "Mise à jour...",
+    "stagedInProject": {
+      "title": "Modifications préparées dans le projet",
+      "description": "Les modifications de cette tâche ont été préparées dans votre projet principal",
+      "descriptionWithDate": " le {{date}}",
+      "nextSteps": "Prochaines étapes :",
+      "step1": "Vérifiez les modifications préparées avec",
+      "step2": "Validez quand vous êtes prêt :",
+      "step3": "Poussez vers le dépôt distant lorsque vous êtes satisfait",
+      "deleteWorktreeAndMarkDone": "Supprimer le Worktree et marquer comme terminé",
+      "markDoneOnly": "Marquer comme terminé uniquement",
+      "reviewAgain": "Réviser à nouveau",
+      "cleaningUp": "Nettoyage...",
+      "markingDone": "Marquage comme terminé...",
+      "resetting": "Réinitialisation...",
+      "keepWorktreeHint": "\"Supprimer le Worktree et marquer comme terminé\" nettoie l'espace de travail isolé. \"Marquer comme terminé uniquement\" le conserve pour référence."
+    }
   }
 }

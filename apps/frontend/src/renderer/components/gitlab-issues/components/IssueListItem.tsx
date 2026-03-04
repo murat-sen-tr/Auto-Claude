@@ -1,20 +1,17 @@
+import { useTranslation } from 'react-i18next';
 import { User, MessageCircle, Tag, Sparkles } from 'lucide-react';
 import { Badge } from '../../ui/badge';
 import { Button } from '../../ui/button';
 import type { IssueListItemProps } from '../types';
 
-// GitLab issue state colors and labels
+// GitLab issue state colors
 const GITLAB_ISSUE_STATE_COLORS: Record<string, string> = {
   opened: 'bg-green-500/10 text-green-500 border-green-500/20',
   closed: 'bg-purple-500/10 text-purple-500 border-purple-500/20'
 };
 
-const GITLAB_ISSUE_STATE_LABELS: Record<string, string> = {
-  opened: 'Open',
-  closed: 'Closed'
-};
-
 export function IssueListItem({ issue, isSelected, onClick, onInvestigate }: IssueListItemProps) {
+  const { t } = useTranslation('github');
   return (
     <div
       role="button"
@@ -39,7 +36,7 @@ export function IssueListItem({ issue, isSelected, onClick, onInvestigate }: Iss
               variant="outline"
               className={`text-xs ${GITLAB_ISSUE_STATE_COLORS[issue.state] || ''}`}
             >
-              {GITLAB_ISSUE_STATE_LABELS[issue.state] || issue.state}
+              {t(`filters.${issue.state}`, { defaultValue: issue.state })}
             </Badge>
             <span className="text-xs text-muted-foreground">#{issue.iid}</span>
           </div>

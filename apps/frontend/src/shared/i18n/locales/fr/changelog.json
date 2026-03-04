@@ -1,0 +1,124 @@
+{
+  "header": {
+    "title": "Générateur de Changelog",
+    "step1": "Étape 1 : Sélectionner les tâches terminées à inclure",
+    "step2": "Étape 2 : Configurer et générer le changelog",
+    "step3": "Étape 3 : Publier et archiver les tâches",
+    "refresh": "Actualiser"
+  },
+  "steps": {
+    "select": "Sélectionner",
+    "generate": "Générer",
+    "release": "Publier"
+  },
+  "filters": {
+    "sourceLabel": "Source du Changelog",
+    "gitHistoryOptions": "Options de l'Historique Git",
+    "historyType": "Type d'Historique",
+    "sinceVersion": "Depuis la Version",
+    "recentCommits": "Commits Récents",
+    "sinceDate": "Depuis la Date",
+    "tagRange": "Plage de Tags",
+    "numberOfCommits": "Nombre de Commits",
+    "dateLabel": "Date",
+    "fromTag": "Du Tag",
+    "toTag": "Au Tag",
+    "versionLabel": "Version",
+    "includeMergeCommits": "Inclure les commits de fusion",
+    "branchComparison": "Comparaison de Branches",
+    "baseBranch": "Branche de Base",
+    "compareBranch": "Branche de Comparaison",
+    "selectBaseBranch": "Sélectionner la branche de base",
+    "selectCompareBranch": "Sélectionner la branche de comparaison",
+    "loadCommits": "Charger les Commits",
+    "loadingCommits": "Chargement des Commits...",
+    "loadingGitData": "Chargement des données git..."
+  },
+  "list": {
+    "tasksSelected": "{{selected}} sur {{total}} tâches sélectionnées",
+    "selectAll": "Tout Sélectionner",
+    "clear": "Effacer",
+    "noCompletedTasks": "Aucune Tâche Terminée",
+    "noCompletedTasksDescription": "Terminez les tâches dans le tableau Kanban et marquez-les comme \"Terminées\" pour les inclure dans votre changelog.",
+    "commitsFound": "{{count}} commit trouvé",
+    "commitsFound_plural": "{{count}} commits trouvés",
+    "loadingCommits": "Chargement des commits...",
+    "noCommitsFound": "Aucun Commit Trouvé",
+    "noCommitsFoundGitHistory": "Configurez les options d'historique et cliquez sur \"Charger les Commits\" pour prévisualiser.",
+    "noCommitsFoundBranchDiff": "Sélectionnez les deux branches et cliquez sur \"Charger les Commits\" pour voir les changements.",
+    "continue": "Continuer",
+    "task": "tâche",
+    "task_plural": "tâches",
+    "commit": "commit",
+    "commit_plural": "commits",
+    "item": "élément",
+    "item_plural": "éléments",
+    "filesChanged": "{{count}} fichier",
+    "filesChanged_plural": "{{count}} fichiers"
+  },
+  "entry": {
+    "hasSpecs": "A des Spécifications"
+  },
+  "configuration": {
+    "backToSelection": "Retour à la Sélection",
+    "including": "Incluant {{count}} {{label}}",
+    "releaseInfo": "Informations de Version",
+    "version": "Version",
+    "date": "Date",
+    "previous": "Précédent : {{version}}",
+    "outputStyle": "Style de Sortie",
+    "format": "Format",
+    "audience": "Public",
+    "emojis": "Emojis",
+    "advancedOptions": "Options Avancées",
+    "customInstructions": "Instructions Personnalisées",
+    "generateChangelog": "Générer le Changelog",
+    "generationProgress": "Progression de la Génération",
+    "generating": "Génération en cours..."
+  },
+  "preview": {
+    "title": "Aperçu",
+    "markdown": "Markdown",
+    "preview": "Aperçu",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "copyToClipboard": "Copier dans le presse-papiers",
+    "save": "Enregistrer dans CHANGELOG.md",
+    "saved": "Enregistré !",
+    "saveTooltip": "Ajouter au début de CHANGELOG.md dans la racine du projet",
+    "dropImageHere": "Déposez l'image ici pour l'insérer",
+    "failedToInsertImage": "Échec de l'insertion de l'image : {{error}}",
+    "noChangelogGenerated": "Aucun changelog généré",
+    "noChangelogDescription": "Cliquez sur \"Générer le Changelog\" pour créer un changelog à partir des tâches sélectionnées.",
+    "loadingImage": "Chargement de l'image...",
+    "imageNotFound": "Image introuvable",
+    "cannotLoadImage": "Impossible de charger l'image locale : pas de chemin de projet"
+  },
+  "archive": {
+    "title": "Archiver les Tâches Terminées",
+    "tasksArchived": "{{count}} tâche archivée !",
+    "tasksArchived_plural": "{{count}} tâches archivées !",
+    "archiveDescription": "Archiver {{count}} tâche pour nettoyer votre tableau Kanban. Les tâches archivées peuvent être consultées en activant \"Afficher les Archivés\".",
+    "archiveDescription_plural": "Archiver {{count}} tâches pour nettoyer votre tableau Kanban. Les tâches archivées peuvent être consultées en activant \"Afficher les Archivés\".",
+    "archiving": "Archivage...",
+    "archiveButton": "Archiver {{count}} Tâche",
+    "archiveButton_plural": "Archiver {{count}} Tâches"
+  },
+  "github": {
+    "title": "Créer une Release GitHub",
+    "releaseCreated": "Release créée avec succès !",
+    "viewRelease": "Voir la Release sur GitHub",
+    "createDescription": "Créer une nouvelle release {{tag}} sur GitHub avec le changelog comme notes de version.",
+    "creatingRelease": "Création de la Release...",
+    "createButton": "Créer la Release {{tag}}"
+  },
+  "success": {
+    "title": "Changelog Enregistré !",
+    "description": "La version {{tag}} a été ajoutée à CHANGELOG.md",
+    "done": "Terminé"
+  },
+  "empty": {
+    "noProjectSelected": "Aucun Projet Sélectionné",
+    "noProjectDescription": "Sélectionnez un projet dans la barre latérale pour générer des changelogs."
+  }
+}

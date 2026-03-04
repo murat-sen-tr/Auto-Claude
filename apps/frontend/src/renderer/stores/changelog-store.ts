@@ -477,6 +477,9 @@ export async function generateChangelog(projectId: string): Promise<void> {
   });
 
   // Build the generation request based on source mode
+  // Get current language setting for AI-generated content
+  const language = useSettingsStore.getState().settings.language || 'en';
+
   const baseRequest = {
     projectId,
     sourceMode: store.sourceMode,
@@ -485,7 +488,8 @@ export async function generateChangelog(projectId: string): Promise<void> {
     format: store.format,
     audience: store.audience,
     emojiLevel: store.emojiLevel !== 'none' ? store.emojiLevel : undefined,
-    customInstructions: store.customInstructions || undefined
+    customInstructions: store.customInstructions || undefined,
+    language
   };
 
   try {

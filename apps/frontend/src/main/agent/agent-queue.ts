@@ -236,6 +236,11 @@ export class AgentQueueManager {
       args.push('--thinking-level', config.thinkingLevel);
     }
 
+    // Add language from config
+    if (config?.language) {
+      args.push('--language', config.language);
+    }
+
     debugLog('[Agent Queue] Spawning roadmap process with args:', args);
 
     // Use projectId as taskId for roadmap operations
@@ -310,6 +315,11 @@ export class AgentQueueManager {
     }
     if (config.thinkingLevel) {
       args.push('--thinking-level', config.thinkingLevel);
+    }
+
+    // Add language from config
+    if (config.language) {
+      args.push('--language', config.language);
     }
 
     debugLog('[Agent Queue] Spawning ideation process with args:', args);

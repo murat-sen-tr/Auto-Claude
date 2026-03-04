@@ -230,5 +230,65 @@
     "step3": "Click \"Re-authenticate\" on your profile",
     "gotIt": "Got It",
     "goToSettings": "Go to Settings"
+  },
+  "envConfig": {
+    "defaultTitle": "Claude Authentication Required",
+    "defaultDescription": "A Claude Code OAuth token is required to use AI features like Ideation and Roadmap generation.",
+    "success": {
+      "title": "Token configured successfully",
+      "description": "You can now use AI features like Ideation and Roadmap generation."
+    },
+    "errors": {
+      "checkTokenFailed": "Failed to check token status",
+      "noValidToken": "Selected profile does not have a valid token",
+      "saveFailed": "Failed to save token",
+      "unknownError": "Unknown error",
+      "noProjectSelected": "No project selected. Please select a project first.",
+      "authStartFailed": "Failed to start authentication",
+      "tokenRequired": "Please enter a token"
+    },
+    "useExisting": {
+      "title": "Use Existing Account",
+      "description": "You have {{count}} authenticated Claude account{{plural}}. Select one to use:",
+      "selectLabel": "Select Account",
+      "defaultBadge": "(Default)"
+    },
+    "authenticate": {
+      "titleWithExisting": "Or Authenticate New Account",
+      "titleWithoutExisting": "Authenticate with Browser",
+      "descriptionWithExisting": "Add a new Claude account by logging in with your browser.",
+      "descriptionWithoutExisting": "Click below to open your browser and log in with your Claude account.",
+      "waitingForAuth": "Waiting for authentication...",
+      "buttonWithExisting": "Authenticate New Account",
+      "buttonWithoutExisting": "Authenticate with Browser",
+      "browserPrompt": "A browser window should open. Complete the authentication there, then return here."
+    },
+    "manualEntry": {
+      "toggleLabel": "Enter token manually",
+      "stepsTitle": "Steps:",
+      "step1": "Install Claude Code CLI if you haven't already",
+      "step2": "Run",
+      "step2Command": "claude setup-token",
+      "step3": "Copy the token and paste it below",
+      "viewDocs": "View documentation",
+      "tokenLabel": "Claude Code OAuth Token",
+      "tokenPlaceholder": "Enter your token...",
+      "saveLocation": "The token will be saved to",
+      "existingTokenInfo": "A token is already configured.",
+      "replaceWithManual": "Enter a new token above to replace it.",
+      "replaceWithAuth": "Authenticate again to replace it."
+    },
+    "buttons": {
+      "saving": "Saving...",
+      "useAccount": "Use This Account",
+      "saveToken": "Save Token",
+      "close": "Close",
+      "cancel": "Cancel"
+    },
+    "tooltips": {
+      "showToken": "Show token",
+      "hideToken": "Hide token"
+    },
+    "divider": "or"
   }
 }

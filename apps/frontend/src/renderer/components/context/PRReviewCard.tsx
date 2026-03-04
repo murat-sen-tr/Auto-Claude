@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Clock,
   GitPullRequest,
@@ -58,26 +59,28 @@ function parsePRReviewContent(content: string): ParsedPRReview | null {
 }
 
 function VerdictBadge({ verdict }: { verdict: string }) {
+  const { t } = useTranslation(['context', 'common']);
+
   switch (verdict) {
     case 'approve':
       return (
         <Badge className="bg-green-500/10 text-green-400 border-green-500/30 gap-1">
           <CheckCircle className="h-3 w-3" />
-          Approved
+          {t('context:prReview.badge.approved')}
         </Badge>
       );
     case 'request_changes':
       return (
         <Badge className="bg-amber-500/10 text-amber-400 border-amber-500/30 gap-1">
           <XCircle className="h-3 w-3" />
-          Changes Requested
+          {t('context:prReview.badge.changesRequested')}
         </Badge>
       );
     case 'comment':
       return (
         <Badge className="bg-blue-500/10 text-blue-400 border-blue-500/30 gap-1">
           <MessageSquare className="h-3 w-3" />
-          Commented
+          {t('context:prReview.badge.commented')}
         </Badge>
       );
     default:
@@ -90,6 +93,8 @@ function VerdictBadge({ verdict }: { verdict: string }) {
 }
 
 function SeverityBadge({ severity, count }: { severity: string; count: number }) {
+  const { t } = useTranslation(['context', 'common']);
+
   if (count === 0) return null;
 
   const colorMap: Record<string, string> = {
@@ -101,12 +106,13 @@ function SeverityBadge({ severity, count }: { severity: string; count: number })
 
   return (
     <Badge className={`${colorMap[severity] || 'bg-muted'} text-xs font-mono`}>
-      {count} {severity}
+      {count} {t(`context:prReview.severity.${severity}`)}
     </Badge>
   );
 }
 
 export function PRReviewCard({ memory }: PRReviewCardProps) {
+  const { t } = useTranslation(['context', 'common']);
   const [expanded, setExpanded] = useState(false);
   const parsed = useMemo(() => parsePRReviewContent(memory.content), [memory.content]);
 
@@ -156,7 +162,7 @@ export function PRReviewCard({ memory }: PRReviewCardProps) {
                 </span>
                 {parsed.isFollowup && (
                   <Badge variant="secondary" className="text-xs">
-                    Follow-up
+                    {t('context:prReview.followUp')}
                   </Badge>
                 )}
               </div>
@@ -166,7 +172,7 @@ export function PRReviewCard({ memory }: PRReviewCardProps) {
                 <VerdictBadge verdict={parsed.verdict} />
                 {totalFindings > 0 && (
                   <span className="text-xs text-muted-foreground">
-                    {totalFindings} finding{totalFindings !== 1 ? 's' : ''}
+                    {t('context:prReview.details.findings', { count: totalFindings })}
                   </span>
                 )}
               </div>
@@ -200,12 +206,12 @@ export function PRReviewCard({ memory }: PRReviewCardProps) {
               {expanded ? (
                 <>
                   <ChevronUp className="h-4 w-4" />
-                  Collapse
+                  {t('context:prReview.actions.collapse')}
                 </>
               ) : (
                 <>
                   <ChevronDown className="h-4 w-4" />
-                  Details
+                  {t('context:prReview.actions.details')}
                 </>
               )}
             </Button>
@@ -220,7 +226,7 @@ export function PRReviewCard({ memory }: PRReviewCardProps) {
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <Bug className="h-4 w-4 text-orange-400" />
-                  <span className="text-sm font-medium text-foreground">Key Findings</span>
+                  <span className="text-sm font-medium text-foreground">{t('context:prReview.details.keyFindings')}</span>
                   <Badge variant="secondary" className="text-xs px-1.5 py-0">
                     {parsed.keyFindings.length}
                   </Badge>
@@ -250,7 +256,7 @@ export function PRReviewCard({ memory }: PRReviewCardProps) {
                   ))}
                   {parsed.keyFindings.length > 5 && (
                     <p className="text-xs text-muted-foreground">
-                      +{parsed.keyFindings.length - 5} more findings
+                      {t('context:prReview.details.moreFindings', { count: parsed.keyFindings.length - 5 })}
                     </p>
                   )}
                 </div>
@@ -262,7 +268,7 @@ export function PRReviewCard({ memory }: PRReviewCardProps) {
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <AlertTriangle className="h-4 w-4 text-red-400" />
-                  <span className="text-sm font-medium text-foreground">Gotchas Discovered</span>
+                  <span className="text-sm font-medium text-foreground">{t('context:prReview.details.gotchasDiscovered')}</span>
                   <Badge variant="secondary" className="text-xs px-1.5 py-0">
                     {parsed.gotchas.length}
                   </Badge>
@@ -282,7 +288,7 @@ export function PRReviewCard({ memory }: PRReviewCardProps) {
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <Sparkles className="h-4 w-4 text-purple-400" />
-                  <span className="text-sm font-medium text-foreground">Patterns Identified</span>
+                  <span className="text-sm font-medium text-foreground">{t('context:prReview.details.patternsIdentified')}</span>
                   <Badge variant="secondary" className="text-xs px-1.5 py-0">
                     {parsed.patterns.length}
                   </Badge>
@@ -307,7 +313,7 @@ export function PRReviewCard({ memory }: PRReviewCardProps) {
                   onClick={() => window.open(`https://github.com/${parsed.repo}/pull/${parsed.prNumber}`, '_blank')}
                 >
                   <ExternalLink className="h-3 w-3" />
-                  View PR on GitHub
+                  {t('context:prReview.actions.viewOnGitHub')}
                 </Button>
               </div>
             )}

@@ -1,0 +1,9 @@
+{
+  "task": {
+    "parseImplementationPlan": "{{specId}} için implementation_plan.json ayrıştırılamadı: {{error}}",
+    "jsonError": {
+      "titleSuffix": "(JSON Hatası)",
+      "description": "⚠️ JSON Ayrıştırma Hatası: {{error}}\n\nimplementation_plan.json dosyası hatalı biçimlendirilmiş. Backend otomatik düzeltmeyi çalıştırın veya dosyayı manuel olarak onarın."
+    }
+  }
+}

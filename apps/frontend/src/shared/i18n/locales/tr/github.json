@@ -1,0 +1,249 @@
+{
+  "title": "GitHub Sorunları",
+  "states": {
+    "open": "Açık",
+    "closed": "Kapalı"
+  },
+  "header": {
+    "open": "açık",
+    "searchPlaceholder": "Sorun ara...",
+    "analyzeGroup": "Sorunları Analiz Et ve Grupla",
+    "analyzeGroupTooltip": "200'e kadar açık sorunu analiz edin, benzerlerini gruplayın ve görev oluşturmadan önce önerilen grupları inceleyin.",
+    "autoFixNew": "Yeni Sorunları Otomatik Düzelt",
+    "autoFixTooltip": "Yeni sorunlar geldikçe otomatik olarak düzeltin.",
+    "autoFixProcessing": "{{count}} sorun işleniyor...",
+    "autoFixProcessing_other": "{{count}} sorun işleniyor..."
+  },
+  "filters": {
+    "open": "Açık",
+    "opened": "Açık",
+    "closed": "Kapalı",
+    "merged": "Birleştirildi",
+    "all": "Tümü"
+  },
+  "empty": {
+    "noMatch": "Aramanızla eşleşen sorun yok",
+    "selectIssue": "Detayları görmek için bir sorun seçin"
+  },
+  "notConnected": {
+    "title": "GitHub Bağlı Değil",
+    "description": "Sorunları senkronize etmek için proje ayarlarından GitHub token'ınızı ve deponuzu yapılandırın.",
+    "openSettings": "Ayarları Aç"
+  },
+  "detail": {
+    "comments": "yorum",
+    "viewTask": "Görevi Görüntüle",
+    "createTask": "Görev Oluştur",
+    "taskLinked": "Görev Bağlandı",
+    "taskId": "Görev ID",
+    "description": "Açıklama",
+    "noDescription": "Açıklama sağlanmadı.",
+    "assignees": "Atananlar",
+    "milestone": "Kilometre Taşı"
+  },
+  "investigation": {
+    "title": "Sorundan Görev Oluştur",
+    "issuePrefix": "Sorun",
+    "description": "Bu GitHub sorununda bir görev oluşturun. Görev, Kanban panonuzda Backlog sütununa eklenecektir.",
+    "selectComments": "Dahil Edilecek Yorumları Seçin ({{selected}}/{{total}})",
+    "deselectAll": "Tümünü Kaldır",
+    "selectAll": "Tümünü Seç",
+    "willInclude": "Görev şunları içerecek:",
+    "includeTitle": "Sorun başlığı ve açıklaması",
+    "includeLink": "GitHub sorununa geri bağlantı",
+    "includeLabels": "Sorundan etiketler ve meta veriler",
+    "noComments": "Yorum yok (bu sorunun yorumu yok)",
+    "failedToLoadComments": "Yorumlar yüklenemedi",
+    "taskCreated": "Görev oluşturuldu! Kanban panonuzda görüntüleyin.",
+    "creating": "Oluşturuluyor...",
+    "cancel": "İptal",
+    "done": "Bitti"
+  },
+  "autoFix": {
+    "button": "Otomatik Düzelt",
+    "retryButton": "Otomatik Düzeltmeyi Yeniden Dene",
+    "processing": "İşleniyor...",
+    "completed": "Sorundan spesifikasyon oluşturuldu",
+    "failed": "Otomatik düzeltme başarısız oldu"
+  },
+  "batchWizard": {
+    "title": "Sorunları Analiz Et ve Grupla",
+    "intro": {
+      "title": "Sorunları Analiz Et ve Grupla",
+      "description": "Bu, 200'e kadar açık sorunu analiz edecek, benzerlerini gruplayacak ve herhangi bir görev oluşturmadan önce önerilen grupları gözden geçirmenizi sağlayacaktır.",
+      "startButton": "Analizi Başlat"
+    },
+    "analyzing": {
+      "title": "Sorunlar Analiz Ediliyor...",
+      "message": "Benzerlik hesaplanıyor ve gruplar doğrulanıyor...",
+      "complete": "%{{progress}} tamamlandı"
+    },
+    "review": {
+      "description": "Önerilen sorun gruplarını gözden geçirin ve onaylayın.",
+      "stats": {
+        "analyzed": "{{count}} sorun analiz edildi",
+        "batches": "{{count}} grup önerildi",
+        "single": "{{count}} tekil sorun"
+      },
+      "selectAll": "Tümünü Seç",
+      "deselectAll": "Tümünü Kaldır",
+      "singleIssues": "Tekil Sorunlar (gruplanmamış)",
+      "andMore": "...ve {{count}} tane daha",
+      "selectedSummary": "{{batchCount}} grup seçildi ({{issueCount}} sorun)",
+      "selectedSummary_other": "{{batchCount}} grup seçildi ({{issueCount}} sorun)",
+      "withSingleIssues": " + {{count}} tekil sorun",
+      "withSingleIssues_other": " + {{count}} tekil sorun",
+      "issues": "{{count}} sorun",
+      "similar": "%{{percent}} benzer"
+    },
+    "approving": {
+      "title": "Gruplar Oluşturuluyor...",
+      "description": "Onaylanan sorun grupları işleme için hazırlanıyor.",
+      "button": "Oluşturuluyor..."
+    },
+    "done": {
+      "title": "Gruplar Oluşturuldu",
+      "description": "Seçilen sorun gruplarınız işlemeye hazır.",
+      "closeButton": "Kapat"
+    },
+    "footer": {
+      "cancel": "İptal",
+      "approve": "Onayla ve Oluştur ({{count}} grup)",
+      "approve_other": "Onayla ve Oluştur ({{count}} grup)"
+    },
+    "steps": {
+      "intro": "Açık sorunları analiz edin ve benzerleri toplu işlem için gruplayın.",
+      "analyzing": "Sorunların anlamsal benzerliği analiz ediliyor...",
+      "review": "Önerilen sorun gruplarını gözden geçirin ve onaylayın.",
+      "approving": "Onaylanan gruplar oluşturuluyor...",
+      "done": "Gruplar başarıyla oluşturuldu."
+    }
+  },
+  "prLogs": {
+    "followup": "Takip",
+    "live": "Canlı",
+    "phases": {
+      "context": "Bağlam Toplama",
+      "analysis": "AI Analizi",
+      "synthesis": "Sentez"
+    },
+    "entries": "{{count}} giriş",
+    "entries_other": "{{count}} giriş",
+    "orchestratorActivity": "Orkestratör Aktivitesi",
+    "orchestratorActivity_other": "Orkestratör Aktivitesi ({{count}} kayıt)",
+    "agentResults": "{{name}} Sonuçları",
+    "noLogs": "Bu PR için kullanılabilir kayıt yok."
+  },
+  "setup": {
+    "title": "GitHub Entegrasyonunu Kur",
+    "steps": {
+      "githubAuth": "GitHub ile Kimlik Doğrula",
+      "claudeAuth": "Claude ile Kimlik Doğrula",
+      "repoConfirm": "Depoyu Onayla",
+      "repo": "Depoyu Yapılandır",
+      "branch": "Ana Dalı Seç",
+      "complete": "Kurulum Tamamlandı"
+    },
+    "githubAuth": {
+      "title": "GitHub ile Kimlik Doğrula",
+      "description": "Auto Claude, sorunları senkronize etmek ve pull request'leri yönetmek için GitHub hesabınıza erişime ihtiyaç duyar.",
+      "useOAuth": "GitHub ile Kimlik Doğrula",
+      "authenticating": "Kimlik doğrulanıyor...",
+      "usePAT": "Kişisel Erişim Token'ı Kullan",
+      "patPlaceholder": "ghp_...",
+      "patLabel": "Kişisel Erişim Token'ı",
+      "patHint": "GitHub Ayarları → Geliştirici ayarları → Kişisel erişim token'larından 'repo' kapsamına sahip bir token oluşturun",
+      "continue": "Devam Et",
+      "skip": "Şimdilik geç"
+    },
+    "claudeAuth": {
+      "title": "Claude ile Kimlik Doğrula",
+      "description": "Auto Claude, kod analizi ve görev oluşturma için Claude AI kullanır.",
+      "useOAuth": "Claude ile Kimlik Doğrula",
+      "authenticating": "Kimlik doğrulanıyor...",
+      "skip": "Şimdilik geç",
+      "alreadyConfigured": "Claude kimlik doğrulaması zaten yapılandırılmış"
+    },
+    "repoDetect": {
+      "title": "Depo Algılandı",
+      "description": "Bu proje için yapılandırılmış bir GitHub deposu tespit ettik:",
+      "confirm": "Onayla ve Devam Et",
+      "change": "Farklı Bir Depo Yapılandır"
+    },
+    "repoSetup": {
+      "title": "Depoyu Yapılandır",
+      "description": "Bu projenin henüz bir GitHub deposu yok. Yeni bir tane oluşturmak veya mevcut bir depoyu bağlamak ister misiniz?",
+      "createNew": "Yeni Depo Oluştur",
+      "linkExisting": "Mevcut Depoyu Bağla",
+      "create": {
+        "title": "Yeni GitHub Deposu Oluştur",
+        "owner": "Sahip",
+        "selectOwner": "Sahip seçin...",
+        "personal": "Kişisel",
+        "organization": "Organizasyon",
+        "repoName": "Depo Adı",
+        "repoNamePlaceholder": "benim-harika-projem",
+        "visibility": "Görünürlük",
+        "public": "Genel",
+        "publicDesc": "Herkes bu depoyu görebilir",
+        "private": "Özel",
+        "privateDesc": "Yalnızca siz ve işbirlikçiler bu depoyu görebilir",
+        "creating": "Oluşturuluyor...",
+        "create": "Depo Oluştur"
+      },
+      "link": {
+        "title": "Mevcut Depoyu Bağla",
+        "repoName": "Depo Adı",
+        "repoNamePlaceholder": "kullaniciadi/depo",
+        "format": "Format: sahip/depo (örn., octocat/Hello-World)",
+        "linking": "Bağlanıyor...",
+        "link": "Depoyu Bağla"
+      }
+    },
+    "branch": {
+      "title": "Ana Dalı Seç",
+      "description": "Görev worktree'leri oluşturmak için varsayılan dalı seçin. Bu genellikle ana geliştirme dalınızdır.",
+      "recommended": "Önerilen",
+      "branches": "Dallar",
+      "selectBranch": "Bir dal seçin...",
+      "continue": "Devam Et"
+    },
+    "complete": {
+      "title": "Kurulum Tamamlandı!",
+      "description": "GitHub entegrasyonunuz yapılandırıldı ve kullanıma hazır.",
+      "features": {
+        "title": "Artık şunları yapabilirsiniz:",
+        "syncIssues": "GitHub sorunlarını senkronize edin ve yönetin",
+        "createTasks": "Sorunlardan otomatik olarak görev oluşturun",
+        "reviewPRs": "AI destekli PR incelemeleri",
+        "worktrees": "Her görev için izole worktree'ler"
+      },
+      "finish": "Bitir"
+    }
+  },
+  "mergeRequest": {
+    "create": {
+      "title": "Merge Request Oluştur",
+      "description": "GitLab'da yeni bir merge request oluştur",
+      "titleLabel": "Başlık",
+      "titlePlaceholder": "Merge request başlığı",
+      "sourceBranch": "Kaynak Dal",
+      "sourcePlaceholder": "feature/ozelligim",
+      "targetBranch": "Hedef Dal",
+      "targetPlaceholder": "main",
+      "descriptionLabel": "Açıklama (isteğe bağlı)",
+      "descriptionPlaceholder": "Bu merge request'teki değişiklikleri açıklayın...",
+      "error": "Başlık, kaynak dal ve hedef dal gereklidir",
+      "failed": "Merge request oluşturulamadı",
+      "creating": "Oluşturuluyor...",
+      "createButton": "Merge Request Oluştur",
+      "cancel": "İptal"
+    },
+    "list": {
+      "title": "Merge Request'ler",
+      "searchPlaceholder": "Merge request ara...",
+      "noMatch": "Eşleşen merge request yok",
+      "noMRs": "Merge request bulunamadı"
+    }
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "memory": {
+    "title": "Memory",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "enableMemory": "Enable Memory",
+    "enableMemoryDescription": "Persistent cross-session memory using embedded graph database",
+    "fileBasedInfo": "Using file-based memory. Session insights are stored locally in JSON files. Enable Memory for persistent cross-session context with semantic search.",
+    "agentMemoryAccess": "Enable Agent Memory Access",
+    "agentMemoryAccessDescription": "Allow agents to search and add to the knowledge graph via MCP",
+    "mcpServerUrl": "Graphiti MCP Server URL",
+    "mcpServerUrlDescription": "URL of the Graphiti MCP server",
+    "mcpServerUrlPlaceholder": "http://localhost:8000/mcp/",
+    "embeddingProvider": "Embedding Provider",
+    "embeddingProviderDescription": "Provider for semantic search (optional - keyword search works without)",
+    "embeddingProviderPlaceholder": "Select embedding provider",
+    "providers": {
+      "ollama": "Ollama (Local - Free)",
+      "openai": "OpenAI",
+      "voyage": "Voyage AI",
+      "google": "Google AI",
+      "azureOpenai": "Azure OpenAI"
+    },
+    "openai": {
+      "apiKey": "OpenAI API Key",
+      "apiKeyOverride": "OpenAI API Key (Override)",
+      "usingGlobalKey": "Using global key",
+      "globalKeyDescription": "Using key from App Settings. Enter a project-specific key below to override.",
+      "requiredDescription": "Required for OpenAI embeddings",
+      "placeholder": "sk-xxxxxxxx",
+      "overridePlaceholder": "Enter to override global key...",
+      "getKeyLink": "OpenAI",
+      "showKey": "Show OpenAI API key",
+      "hideKey": "Hide OpenAI API key"
+    },
+    "voyage": {
+      "apiKey": "Voyage AI API Key",
+      "requiredDescription": "Required for Voyage AI embeddings",
+      "placeholder": "pa-xxxxxxxx",
+      "embeddingModel": "Embedding Model (optional)",
+      "embeddingModelPlaceholder": "voyage-3",
+      "getKeyLink": "Voyage AI",
+      "showKey": "Show Voyage AI API key",
+      "hideKey": "Hide Voyage AI API key"
+    },
+    "google": {
+      "apiKey": "Google AI API Key",
+      "requiredDescription": "Required for Google AI embeddings",
+      "placeholder": "AIzaSy...",
+      "getKeyLink": "Google AI Studio",
+      "showKey": "Show Google AI API key",
+      "hideKey": "Hide Google AI API key"
+    },
+    "azure": {
+      "configuration": "Azure OpenAI Configuration",
+      "apiKey": "API Key",
+      "apiKeyPlaceholder": "Azure API Key",
+      "baseUrl": "Base URL",
+      "baseUrlPlaceholder": "https://your-resource.openai.azure.com",
+      "embeddingDeployment": "Embedding Deployment Name",
+      "embeddingDeploymentPlaceholder": "text-embedding-ada-002",
+      "showKey": "Show Azure API key",
+      "hideKey": "Hide Azure API key"
+    },
+    "ollama": {
+      "configuration": "Ollama Configuration",
+      "checking": "Checking...",
+      "connected": "Connected",
+      "notRunning": "Not running",
+      "baseUrl": "Base URL",
+      "baseUrlPlaceholder": "http://localhost:11434",
+      "embeddingModel": "Embedding Model",
+      "selectModel": "Select embedding model",
+      "selectEmbeddingModel": "Select Embedding Model",
+      "modelPlaceholder": "nomic-embed-text",
+      "recommendedModels": "Recommended: qwen3-embedding:4b (balanced), :8b (quality), :0.6b (fast)",
+      "embeddingDimension": "Embedding Dimension",
+      "embeddingDimensionPlaceholder": "768",
+      "embeddingDimensionDescription": "Required for Ollama embeddings (e.g., 768 for nomic-embed-text)"
+    },
+    "database": {
+      "name": "Database Name",
+      "nameDescription": "Name for the memory database (stored in ~/.auto-claude/memories/)",
+      "nameDescriptionShort": "Stored in ~/.auto-claude/memories/",
+      "namePlaceholder": "auto_claude_memory",
+      "path": "Database Path (Optional)",
+      "pathDescription": "Custom storage location. Default: ~/.auto-claude/memories/",
+      "pathPlaceholder": "~/.auto-claude/memories"
+    },
+    "getKeyFrom": "Get your key from"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "onTaskComplete": "On Task Complete",
+    "onTaskFailed": "On Task Failed",
+    "onReviewNeeded": "On Review Needed",
+    "sound": "Sound"
+  },
+  "github": {
+    "enableGitHub": "Enable GitHub Issues",
+    "enableGitHubDescription": "Sync tasks with GitHub issues",
+    "authMethod": "Authentication Method",
+    "useManualToken": "Use Manual Token",
+    "useOAuthInstead": "Use OAuth Instead",
+    "manualToken": {
+      "title": "GitHub Token",
+      "description": "Create a personal access token with repo scope",
+      "placeholder": "ghp_xxxxxxxxxxxx",
+      "getTokenLink": "GitHub Settings",
+      "showToken": "Show GitHub token",
+      "hideToken": "Hide GitHub token"
+    },
+    "repository": {
+      "title": "Repository",
+      "description": "GitHub repository to sync with",
+      "placeholder": "owner/repository",
+      "format": "Format: owner/repository (e.g., facebook/react)",
+      "loading": "Loading repositories...",
+      "searchPlaceholder": "Search repositories...",
+      "noResults": "No repositories found",
+      "autoDetect": "Auto-detect from git remote"
+    },
+    "defaultBranch": {
+      "title": "Default Branch",
+      "description": "Branch to use for creating tasks (default: main or master)",
+      "placeholder": "main",
+      "autoDetect": "Auto-detect",
+      "loading": "Loading branches...",
+      "loadError": "Failed to load branches",
+      "localBranches": "Local Branches",
+      "remoteBranches": "Remote Branches",
+      "currentBranch": "(current)"
+    },
+    "connection": {
+      "title": "Connection Status",
+      "checking": "Checking...",
+      "connected": "Connected to {{repoName}}",
+      "connectedDefault": "Connected",
+      "notConnected": "Not connected",
+      "error": "Connection error",
+      "issuesAvailable": "{{count}}+ issues available to import",
+      "issuesAvailableOne": "1 issue available to import"
+    },
+    "oauth": {
+      "cliRequired": "GitHub CLI Required",
+      "cliRequiredDescription": "The GitHub CLI (gh) is required for OAuth authentication. This provides a secure way to authenticate without manually creating tokens.",
+      "installCli": "Install GitHub CLI",
+      "installedIt": "I've Installed It",
+      "installInstructions": "Installation instructions:",
+      "installMacOS": "macOS:",
+      "installWindows": "Windows:",
+      "installLinux": "Linux: Visit",
+      "connectToGitHub": "Connect to GitHub",
+      "connectDescription": "Click the button below to authenticate with GitHub. This will open your browser where you can authorize the application.",
+      "usingCliVersion": "Using GitHub CLI {{version}}",
+      "authenticateButton": "Authenticate with GitHub",
+      "authenticating": "Authenticating...",
+      "waitingForBrowser": "Please complete the authentication in your browser. This window will update automatically.",
+      "waitingForFlow": "Waiting for authentication flow to start...",
+      "deviceCode": "Your one-time code",
+      "copyCode": "Copy",
+      "codeCopied": "Copied",
+      "enterCodeInBrowser": "Enter this code in your browser to complete authentication.",
+      "copyThenOpenLink": "Copy this code, then open the link below to authenticate.",
+      "openUrl": "Open {{url}}",
+      "successTitle": "Successfully Connected",
+      "successDescription": "Connected as {{username}}",
+      "successDescriptionDefault": "Your GitHub account is now connected",
+      "errorTitle": "Authentication Failed",
+      "errorTitleTimeout": "Authentication Timed Out",
+      "completeManually": "Complete Authentication Manually",
+      "completeManuallyDescription": "The browser couldn't be opened automatically. Please visit the URL below to complete authentication:",
+      "copyUrl": "Copy",
+      "urlCopied": "Copied",
+      "openUrlInBrowser": "Open URL in Browser",
+      "deviceCodeReminder": "When prompted, enter this code:",
+      "retry": "Retry",
+      "cancel": "Cancel"
+    }
+  },
+  "linear": {
+    "enableLinear": "Enable Linear Sync",
+    "enableLinearDescription": "Create and update Linear issues automatically",
+    "apiKey": {
+      "title": "API Key",
+      "description": "Get your API key from",
+      "linkText": "Linear Settings",
+      "placeholder": "lin_api_xxxxxxxx",
+      "showKey": "Show Linear API key",
+      "hideKey": "Hide Linear API key"
+    },
+    "connection": {
+      "title": "Connection Status",
+      "checking": "Checking...",
+      "connected": "Connected to {{teamName}}",
+      "connectedDefault": "Connected",
+      "notConnected": "Not connected",
+      "issuesAvailable": "{{count}}+ tasks available to import"
+    },
+    "import": {
+      "title": "Import Existing Tasks",
+      "description": "Select which Linear issues to import into AutoBuild as tasks.",
+      "button": "Import Tasks from Linear"
+    },
+    "realtimeSync": {
+      "title": "Real-time Sync",
+      "description": "Automatically import new tasks created in Linear",
+      "warning": "Real-time sync requires a webhook endpoint. Configure in Linear settings."
+    },
+    "teamId": {
+      "title": "Team ID (Optional)",
+      "description": "Linear team ID for filtering issues",
+      "placeholder": "team_xxx"
+    },
+    "projectId": {
+      "title": "Project ID (Optional)",
+      "description": "Linear project ID for filtering issues",
+      "placeholder": "project_xxx"
+    }
+  },
+  "common": {
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "optional": "Optional",
+    "required": "Required",
+    "checking": "Checking...",
+    "connected": "Connected",
+    "notConnected": "Not connected",
+    "getKeyFrom": "Get your key from",
+    "embeddingModelOptional": "Embedding Model (optional)"
+  }
+}

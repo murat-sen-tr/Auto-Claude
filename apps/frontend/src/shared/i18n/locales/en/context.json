@@ -1,0 +1,138 @@
+{
+  "memories": {
+    "status": {
+      "title": "Graph Memory Status",
+      "connected": "Connected",
+      "notAvailable": "Not Available",
+      "database": "Database",
+      "path": "Path",
+      "defaultDatabase": "auto_claude_memory",
+      "defaultPath": "~/.auto-claude/memories"
+    },
+    "stats": {
+      "total": "Total",
+      "prReviews": "PR Reviews",
+      "sessions": "Sessions",
+      "codebase": "Codebase",
+      "patterns": "Patterns",
+      "gotchas": "Gotchas"
+    },
+    "search": {
+      "title": "Search Memories",
+      "placeholder": "Search for patterns, insights, gotchas...",
+      "resultsFound": "{{count}} result found",
+      "resultsFound_plural": "{{count}} results found",
+      "score": "Score: {{score}}"
+    },
+    "browser": {
+      "title": "Memory Browser",
+      "memoryCount": "{{filtered}} of {{total}} memories"
+    },
+    "filters": {
+      "all": "All",
+      "pr": "PR Reviews",
+      "sessions": "Sessions",
+      "codebase": "Codebase",
+      "patterns": "Patterns",
+      "gotchas": "Gotchas"
+    },
+    "empty": {
+      "noMemories": "No memories recorded yet. Memories are created during AI agent sessions and PR reviews.",
+      "noFilteredMemories": "No memories match the selected filter.",
+      "showAll": "Show all memories"
+    },
+    "unavailable": {
+      "reason": "Graphiti memory is not configured",
+      "instructions": "To enable graph memory, set <code>GRAPHITI_ENABLED=true</code> in project settings."
+    }
+  },
+  "prReview": {
+    "badge": {
+      "approved": "Approved",
+      "changesRequested": "Changes Requested",
+      "commented": "Commented"
+    },
+    "severity": {
+      "critical": "critical",
+      "high": "high",
+      "medium": "medium",
+      "low": "low"
+    },
+    "details": {
+      "findings": "{{count}} finding",
+      "findings_plural": "{{count}} findings",
+      "keyFindings": "Key Findings",
+      "gotchasDiscovered": "Gotchas Discovered",
+      "patternsIdentified": "Patterns Identified",
+      "moreFindings": "+{{count}} more findings"
+    },
+    "actions": {
+      "collapse": "Collapse",
+      "details": "Details",
+      "viewOnGitHub": "View PR on GitHub"
+    },
+    "followUp": "Follow-up"
+  },
+  "projectIndex": {
+    "header": {
+      "title": "Project Structure",
+      "description": "AI-discovered knowledge about your codebase",
+      "refresh": "Refresh",
+      "refreshTooltip": "Re-analyze project structure"
+    },
+    "overview": {
+      "title": "Overview",
+      "services": "{{count}} service",
+      "services_plural": "{{count}} services"
+    },
+    "sections": {
+      "services": "Services",
+      "infrastructure": "Infrastructure",
+      "conventions": "Conventions"
+    },
+    "infrastructure": {
+      "dockerCompose": "Docker Compose",
+      "ci": "CI/CD",
+      "deployment": "Deployment",
+      "dockerServices": "Docker Services"
+    },
+    "conventions": {
+      "pythonLinting": "Python Linting",
+      "jsLinting": "JS Linting",
+      "formatting": "Formatting",
+      "gitHooks": "Git Hooks",
+      "typescript": "TypeScript",
+      "enabled": "Enabled"
+    },
+    "empty": {
+      "title": "No Project Index Found",
+      "description": "Click the Refresh button to analyze your project structure and create an index.",
+      "action": "Analyze Project"
+    },
+    "errors": {
+      "failed": "Failed to load project index"
+    }
+  },
+  "service": {
+    "info": {
+      "entryPoint": "Entry Point",
+      "testing": "Testing: {{framework}}",
+      "orm": "ORM: {{orm}}",
+      "port": "Port: {{port}}",
+      "styling": "Styling: {{framework}}",
+      "state": "State: {{management}}"
+    },
+    "sections": {
+      "appleFrameworks": "Apple Frameworks",
+      "spmDependencies": "SPM Dependencies",
+      "keyDirectories": "Key Directories"
+    },
+    "external": {
+      "title": "External Services",
+      "databases": "Databases",
+      "email": "Email",
+      "payments": "Payments",
+      "cache": "Cache"
+    }
+  }
+}

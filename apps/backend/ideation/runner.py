@@ -47,6 +47,7 @@ class IdeationOrchestrator:
         refresh: bool = False,
         append: bool = False,
         fast_mode: bool = False,
+        language: str = "en",
     ):
         """Initialize the ideation orchestrator.
 
@@ -62,6 +63,7 @@ class IdeationOrchestrator:
             refresh: Force regeneration of existing files
             append: Preserve existing ideas when merging
             fast_mode: Enable Fast Mode for faster Opus 4.6 output
+            language: Language for AI-generated content (e.g., 'en', 'fr', 'tr')
         """
         # Initialize configuration manager
         self.config_manager = IdeationConfigManager(
@@ -76,6 +78,7 @@ class IdeationOrchestrator:
             refresh=refresh,
             append=append,
             fast_mode=fast_mode,
+            language=language,
         )
 
         # Expose configuration for convenience

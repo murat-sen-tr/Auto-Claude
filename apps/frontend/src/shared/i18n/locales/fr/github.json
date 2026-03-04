@@ -1,0 +1,249 @@
+{
+  "title": "Problèmes GitHub",
+  "states": {
+    "open": "Ouvert",
+    "closed": "Fermé"
+  },
+  "header": {
+    "open": "ouvert",
+    "searchPlaceholder": "Rechercher des problèmes...",
+    "analyzeGroup": "Analyser et grouper les problèmes",
+    "analyzeGroupTooltip": "Analyser jusqu'à 200 problèmes ouverts, regrouper les similaires et examiner les lots proposés avant de créer des tâches.",
+    "autoFixNew": "Correction automatique",
+    "autoFixTooltip": "Corriger automatiquement les nouveaux problèmes au fur et à mesure qu'ils arrivent.",
+    "autoFixProcessing": "Traitement de {{count}} problème...",
+    "autoFixProcessing_other": "Traitement de {{count}} problèmes..."
+  },
+  "filters": {
+    "open": "Ouvert",
+    "opened": "Ouvert",
+    "closed": "Fermé",
+    "merged": "Fusionné",
+    "all": "Tous"
+  },
+  "empty": {
+    "noMatch": "Aucun problème ne correspond à votre recherche",
+    "selectIssue": "Sélectionnez un problème pour voir les détails"
+  },
+  "notConnected": {
+    "title": "GitHub non connecté",
+    "description": "Configurez votre jeton GitHub et votre dépôt dans les paramètres du projet pour synchroniser les problèmes.",
+    "openSettings": "Ouvrir les paramètres"
+  },
+  "detail": {
+    "comments": "commentaires",
+    "viewTask": "Voir la tâche",
+    "createTask": "Créer une tâche",
+    "taskLinked": "Tâche liée",
+    "taskId": "ID de tâche",
+    "description": "Description",
+    "noDescription": "Aucune description fournie.",
+    "assignees": "Assignés",
+    "milestone": "Jalon"
+  },
+  "investigation": {
+    "title": "Créer une tâche à partir du problème",
+    "issuePrefix": "Problème",
+    "description": "Créer une tâche à partir de ce problème GitHub. La tâche sera ajoutée à votre tableau Kanban dans la colonne Backlog.",
+    "selectComments": "Sélectionner les commentaires à inclure ({{selected}}/{{total}})",
+    "deselectAll": "Tout désélectionner",
+    "selectAll": "Tout sélectionner",
+    "willInclude": "La tâche inclura :",
+    "includeTitle": "Titre et description du problème",
+    "includeLink": "Lien vers le problème GitHub",
+    "includeLabels": "Étiquettes et métadonnées du problème",
+    "noComments": "Aucun commentaire (ce problème n'a pas de commentaires)",
+    "failedToLoadComments": "Échec du chargement des commentaires",
+    "taskCreated": "Tâche créée ! Consultez-la dans votre tableau Kanban.",
+    "creating": "Création...",
+    "cancel": "Annuler",
+    "done": "Terminé"
+  },
+  "autoFix": {
+    "button": "Correction auto",
+    "retryButton": "Réessayer la correction auto",
+    "processing": "Traitement...",
+    "completed": "Spécification créée à partir du problème",
+    "failed": "Échec de la correction automatique"
+  },
+  "batchWizard": {
+    "title": "Analyser et grouper les problèmes",
+    "intro": {
+      "title": "Analyser et grouper les problèmes",
+      "description": "Cela analysera jusqu'à 200 problèmes ouverts, regroupera les similaires et vous permettra d'examiner les lots proposés avant de créer des tâches.",
+      "startButton": "Démarrer l'analyse"
+    },
+    "analyzing": {
+      "title": "Analyse des problèmes...",
+      "message": "Calcul de la similarité et validation des lots...",
+      "complete": "{{progress}}% terminé"
+    },
+    "review": {
+      "description": "Examinez et approuvez les lots de problèmes proposés.",
+      "stats": {
+        "analyzed": "{{count}} problèmes analysés",
+        "batches": "{{count}} lots proposés",
+        "single": "{{count}} problèmes uniques"
+      },
+      "selectAll": "Tout sélectionner",
+      "deselectAll": "Tout désélectionner",
+      "singleIssues": "Problèmes uniques (non groupés)",
+      "andMore": "...et {{count}} de plus",
+      "selectedSummary": "{{batchCount}} lot sélectionné ({{issueCount}} problèmes)",
+      "selectedSummary_other": "{{batchCount}} lots sélectionnés ({{issueCount}} problèmes)",
+      "withSingleIssues": " + {{count}} problème unique",
+      "withSingleIssues_other": " + {{count}} problèmes uniques",
+      "issues": "{{count}} problèmes",
+      "similar": "{{percent}}% similaire"
+    },
+    "approving": {
+      "title": "Création des lots...",
+      "description": "Configuration des lots de problèmes approuvés pour le traitement.",
+      "button": "Création..."
+    },
+    "done": {
+      "title": "Lots créés",
+      "description": "Vos lots de problèmes sélectionnés sont prêts pour le traitement.",
+      "closeButton": "Fermer"
+    },
+    "footer": {
+      "cancel": "Annuler",
+      "approve": "Approuver et créer ({{count}} lot)",
+      "approve_other": "Approuver et créer ({{count}} lots)"
+    },
+    "steps": {
+      "intro": "Analyser les problèmes ouverts et regrouper les similaires pour le traitement par lots.",
+      "analyzing": "Analyse de la similarité sémantique des problèmes...",
+      "review": "Examiner et approuver les lots de problèmes proposés.",
+      "approving": "Création des lots approuvés...",
+      "done": "Les lots ont été créés avec succès."
+    }
+  },
+  "prLogs": {
+    "followup": "Suivi",
+    "live": "En direct",
+    "phases": {
+      "context": "Collecte du contexte",
+      "analysis": "Analyse IA",
+      "synthesis": "Synthèse"
+    },
+    "entries": "{{count}} entrée",
+    "entries_other": "{{count}} entrées",
+    "orchestratorActivity": "Activité de l'orchestrateur",
+    "orchestratorActivity_other": "Activité de l'orchestrateur ({{count}} journaux)",
+    "agentResults": "Résultats de {{name}}",
+    "noLogs": "Aucun journal disponible pour cette PR."
+  },
+  "setup": {
+    "title": "Configuration de l'intégration GitHub",
+    "steps": {
+      "githubAuth": "S'authentifier avec GitHub",
+      "claudeAuth": "S'authentifier avec Claude",
+      "repoConfirm": "Confirmer le dépôt",
+      "repo": "Configurer le dépôt",
+      "branch": "Sélectionner la branche de base",
+      "complete": "Configuration terminée"
+    },
+    "githubAuth": {
+      "title": "S'authentifier avec GitHub",
+      "description": "Auto Claude a besoin d'accéder à votre compte GitHub pour synchroniser les problèmes et gérer les pull requests.",
+      "useOAuth": "S'authentifier avec GitHub",
+      "authenticating": "Authentification...",
+      "usePAT": "Utiliser un jeton d'accès personnel",
+      "patPlaceholder": "ghp_...",
+      "patLabel": "Jeton d'accès personnel",
+      "patHint": "Créez un jeton avec le scope 'repo' depuis Paramètres GitHub → Paramètres développeur → Jetons d'accès personnels",
+      "continue": "Continuer",
+      "skip": "Passer pour l'instant"
+    },
+    "claudeAuth": {
+      "title": "S'authentifier avec Claude",
+      "description": "Auto Claude utilise Claude AI pour l'analyse de code et la génération de tâches.",
+      "useOAuth": "S'authentifier avec Claude",
+      "authenticating": "Authentification...",
+      "skip": "Passer pour l'instant",
+      "alreadyConfigured": "Authentification Claude déjà configurée"
+    },
+    "repoDetect": {
+      "title": "Dépôt détecté",
+      "description": "Nous avons détecté un dépôt GitHub configuré pour ce projet :",
+      "confirm": "Confirmer et continuer",
+      "change": "Configurer un autre dépôt"
+    },
+    "repoSetup": {
+      "title": "Configurer le dépôt",
+      "description": "Ce projet n'a pas encore de dépôt GitHub. Souhaitez-vous en créer un ou lier un dépôt existant ?",
+      "createNew": "Créer un nouveau dépôt",
+      "linkExisting": "Lier un dépôt existant",
+      "create": {
+        "title": "Créer un nouveau dépôt GitHub",
+        "owner": "Propriétaire",
+        "selectOwner": "Sélectionner le propriétaire...",
+        "personal": "Personnel",
+        "organization": "Organisation",
+        "repoName": "Nom du dépôt",
+        "repoNamePlaceholder": "mon-super-projet",
+        "visibility": "Visibilité",
+        "public": "Public",
+        "publicDesc": "Tout le monde peut voir ce dépôt",
+        "private": "Privé",
+        "privateDesc": "Seuls vous et les collaborateurs pouvez voir ce dépôt",
+        "creating": "Création...",
+        "create": "Créer le dépôt"
+      },
+      "link": {
+        "title": "Lier un dépôt existant",
+        "repoName": "Nom du dépôt",
+        "repoNamePlaceholder": "utilisateur/depot",
+        "format": "Format : propriétaire/dépôt (par ex., octocat/Hello-World)",
+        "linking": "Liaison...",
+        "link": "Lier le dépôt"
+      }
+    },
+    "branch": {
+      "title": "Sélectionner la branche de base",
+      "description": "Choisissez la branche par défaut pour créer des worktrees de tâches. Il s'agit généralement de votre branche de développement principale.",
+      "recommended": "Recommandé",
+      "branches": "Branches",
+      "selectBranch": "Sélectionner une branche...",
+      "continue": "Continuer"
+    },
+    "complete": {
+      "title": "Configuration terminée !",
+      "description": "Votre intégration GitHub est configurée et prête à l'emploi.",
+      "features": {
+        "title": "Vous pouvez maintenant :",
+        "syncIssues": "Synchroniser et gérer les problèmes GitHub",
+        "createTasks": "Créer des tâches à partir des problèmes automatiquement",
+        "reviewPRs": "Examens de PR alimentés par l'IA",
+        "worktrees": "Worktrees isolés pour chaque tâche"
+      },
+      "finish": "Terminer"
+    }
+  },
+  "mergeRequest": {
+    "create": {
+      "title": "Créer une merge request",
+      "description": "Créer une nouvelle merge request dans GitLab",
+      "titleLabel": "Titre",
+      "titlePlaceholder": "Titre de la merge request",
+      "sourceBranch": "Branche source",
+      "sourcePlaceholder": "feature/ma-fonctionnalite",
+      "targetBranch": "Branche cible",
+      "targetPlaceholder": "main",
+      "descriptionLabel": "Description (optionnelle)",
+      "descriptionPlaceholder": "Décrivez les modifications de cette merge request...",
+      "error": "Le titre, la branche source et la branche cible sont requis",
+      "failed": "Échec de la création de la merge request",
+      "creating": "Création...",
+      "createButton": "Créer une merge request",
+      "cancel": "Annuler"
+    },
+    "list": {
+      "title": "Merge Requests",
+      "searchPlaceholder": "Rechercher des merge requests...",
+      "noMatch": "Aucune merge request correspondante",
+      "noMRs": "Aucune merge request trouvée"
+    }
+  }
+}

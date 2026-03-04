@@ -30,6 +30,7 @@ class IdeationConfigManager:
         refresh: bool = False,
         append: bool = False,
         fast_mode: bool = False,
+        language: str = "en",
     ):
         """Initialize configuration manager.
 
@@ -44,6 +45,7 @@ class IdeationConfigManager:
             thinking_level: Thinking level for extended reasoning
             refresh: Force regeneration of existing files
             append: Preserve existing ideas when merging
+            language: Language for AI-generated content (e.g., 'en', 'fr', 'tr')
         """
         self.project_dir = Path(project_dir)
         self.model = model
@@ -54,6 +56,7 @@ class IdeationConfigManager:
         self.include_roadmap_context = include_roadmap_context
         self.include_kanban_context = include_kanban_context
         self.max_ideas_per_type = max_ideas_per_type
+        self.language = language
 
         # Setup output directory
         self.output_dir = self._setup_output_dir(output_dir)
@@ -66,6 +69,7 @@ class IdeationConfigManager:
             self.thinking_level,
             self.max_ideas_per_type,
             fast_mode=fast_mode,
+            language=self.language,
         )
         self.analyzer = ProjectAnalyzer(
             self.project_dir,

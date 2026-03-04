@@ -1272,7 +1272,7 @@ export function AgentTools() {
                                 onClick={() => handleTestConnection(server)}
                                 disabled={isTesting}
                                 className="h-7 px-2 text-xs"
-                                title="Test Connection"
+                                title={t('common:mcpServers.testConnection')}
                               >
                                 {isTesting ? (
                                   <Loader2 className="h-3 w-3 animate-spin" />
@@ -1287,7 +1287,7 @@ export function AgentTools() {
                                   type="button"
                                   onClick={() => { setEditingCustomServer(server); setShowCustomMcpDialog(true); }}
                                   className="p-1.5 text-muted-foreground hover:text-foreground transition-colors"
-                                  title="Edit"
+                                  title={t('common:actions.edit')}
                                 >
                                   <Pencil className="h-3.5 w-3.5" />
                                 </button>
@@ -1295,7 +1295,7 @@ export function AgentTools() {
                                   type="button"
                                   onClick={() => handleDeleteCustomServer(server.id)}
                                   className="p-1.5 text-muted-foreground hover:text-destructive transition-colors"
-                                  title="Delete"
+                                  title={t('common:actions.delete')}
                                 >
                                   <Trash2 className="h-3.5 w-3.5" />
                                 </button>

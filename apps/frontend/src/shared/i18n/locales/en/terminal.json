@@ -54,5 +54,39 @@
     "detached": "(detached)",
     "remotePushFailed": "Remote Tracking Not Set Up",
     "remotePushFailedDescription": "Worktree created but the branch could not be pushed to remote. You may need to run git push -u manually."
+  },
+  "grid": {
+    "title": "Agent Terminals",
+    "description": "Spawn multiple terminals to run Claude agents in parallel.",
+    "keyboardHint": "Use Ctrl+T to create a new terminal.",
+    "newTerminal": "New Terminal",
+    "terminalCount": "{{count}} / 12 terminals",
+    "history": "History",
+    "restoreFrom": "Restore sessions from...",
+    "sessionCount": "{{count}} session",
+    "sessionCount_plural": "{{count}} sessions",
+    "invokeClaudeAll": "Invoke Claude All",
+    "files": "Files",
+    "dropToInsert": "Drop to insert path",
+    "terminal": "Terminal"
+  },
+  "taskSelector": {
+    "currentTask": "Current task",
+    "switchTo": "Switch to...",
+    "clearTask": "Clear task",
+    "selectTask": "Select task...",
+    "availableTasks": "Available tasks",
+    "addNewTask": "Add new task",
+    "noTasksAvailable": "No tasks available",
+    "createTasksHint": "Create tasks in the Kanban board"
+  },
+  "title": {
+    "renameTooltip": "Double-click to rename"
+  },
+  "defaultTitle": "Terminal",
+  "claudeTitle": "Claude",
+  "invokeClaude": "Invoke Claude",
+  "taskContext": {
+    "message": "I'm working on: {{title}}\n\nDescription:\n{{description}}\n\nPlease confirm you're ready by saying: I'm ready to work on {{title}} - Context is loaded."
   }
 }
