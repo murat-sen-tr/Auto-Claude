@@ -1,0 +1,36 @@
+{
+  "addWorkspaceModal": {
+    "title": "Çalışma Alanı Oluştur",
+    "description": "İlgili projeleri çapraz depo spesifikasyonları ve doğrulama için bir araya getirin.",
+    "nameLabel": "İsim",
+    "namePlaceholder": "Uygulama Çalışma Alanım",
+    "descriptionLabel": "Açıklama (isteğe bağlı)",
+    "descriptionPlaceholder": "Uygulamam için backend, frontend ve mobil uygulamalar",
+    "projectsLabel": "Projeler",
+    "addProjectPlaceholder": "Proje ekle...",
+    "allProjectsAdded": "Tüm projeler eklendi",
+    "noProjectsAvailable": "Kullanılabilir proje yok",
+    "nameRequired": "Çalışma alanı adı gerekli",
+    "apiNotAvailable": "Çalışma alanı API'si kullanılamıyor",
+    "createFailed": "Çalışma alanı oluşturulamadı",
+    "cancel": "İptal",
+    "create": "Çalışma Alanı Oluştur",
+    "creating": "Oluşturuluyor..."
+  },
+  "roles": {
+    "backend": "Backend",
+    "backendDescription": "API sunucusu, servisler",
+    "frontend": "Frontend",
+    "frontendDescription": "Web uygulaması",
+    "mobile": "Mobil",
+    "mobileDescription": "Mobil uygulama",
+    "shared": "Paylaşımlı",
+    "sharedDescription": "Paylaşımlı tipler/yardımcılar",
+    "api": "API Gateway",
+    "apiDescription": "Gateway, BFF",
+    "worker": "Worker",
+    "workerDescription": "Arka plan işleri",
+    "other": "Diğer",
+    "otherDescription": "Diğer proje türü"
+  }
+}

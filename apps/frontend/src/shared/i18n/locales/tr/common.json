@@ -108,6 +108,9 @@
     "delete": "Sil",
     "settings": "Ayarlar"
   },
+  "mcpServers": {
+    "testConnection": "Bağlantıyı Test Et"
+  },
   "os": {
     "windows": "Windows",
     "macos": "macOS",
@@ -192,7 +195,10 @@
     "taskNotFoundForWorktree": "Worktree için görev bulunamadı: {{specName}}",
     "failedToDeleteTaskWorktree": "Görev worktree'si silinemedi: {{specName}}",
     "terminalWorktreeNotFound": "Terminal worktree'si bulunamadı: {{name}}",
-    "failedToDeleteTerminalWorktree": "Terminal worktree'si silinemedi: {{name}}"
+    "failedToDeleteTerminalWorktree": "Terminal worktree'si silinemedi: {{name}}",
+    "somethingWentWrong": "Bir şeyler yanlış gitti",
+    "renderError": "Bu içeriği işlerken bir hata oluştu.",
+    "tryAgain": "Tekrar Dene"
   },
   "worktrees": {
     "deleteSuccess": "Worktree '{{branch}}' başarıyla silindi",
@@ -482,51 +488,6 @@
     "done": "Tamam",
     "failedLabel": "Başarısız",
     "starting": "Başlatılıyor..."
-  },
-  "insights": {
-    "suggestedTask": "Önerilen Görev",
-    "creating": "Oluşturuluyor...",
-    "taskCreated": "Görev Oluşturuldu",
-    "createTask": "Görev Oluştur",
-    "chatHistory": "Sohbet Geçmişi",
-    "archive": "Arşivle",
-    "unarchive": "Arşivden Çıkar",
-    "archiveSelected": "Seçilenleri Arşivle",
-    "showArchived": "Arşivlenenleri Göster",
-    "hideArchived": "Arşivlenenleri Gizle",
-    "bulkDeleteTitle": "Konuşmaları Sil",
-    "bulkDeleteDescription": "{{count}} konuşmayı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
-    "bulkDeleteConfirm": "{{count}} Konuşmayı Sil",
-    "noConversations": "Konuşma yok",
-    "archived": "Arşivlendi",
-    "conversationsToDelete": "Silinecek konuşmalar",
-    "archiveConfirmDescription": "Seçili konuşmaları arşivlemek istediğinizden emin misiniz?",
-    "archiveConfirmTitle": "Konuşmaları Arşivle",
-    "archiveConfirmButton": "{{count}} Konuşmayı Arşivle",
-    "deleteTitle": "Konuşmayı Sil",
-    "deleteDescription": "Bu konuşmayı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
-    "selectMode": "Seç",
-    "exitSelectMode": "Tamam",
-    "today": "Bugün",
-    "yesterday": "Dün",
-    "daysAgo": "{{count}} gün önce",
-    "messageCount": "{{count}} mesaj",
-    "messageCount_other": "{{count}} mesaj",
-    "images": {
-      "pasteHint": "Bir görsel veya ekran görüntüsü yapıştırın",
-      "dropHint": "Görseli buraya bırakın",
-      "screenshotButton": "Ekran görüntüsü ekle",
-      "removeImage": "Görseli kaldır",
-      "imageCount": "{{count}} görsel eklendi",
-      "imageCount_plural": "{{count}} görsel eklendi",
-      "maxImagesReached": "Maksimum görsel sayısına ulaşıldı",
-      "invalidType": "Geçersiz dosya türü. Lütfen PNG, JPEG, GIF veya WebP kullanın.",
-      "processFailed": "Görsel işlenemedi",
-      "dragOver": "Eklemek için görseli bırakın",
-      "analysisUnsupported": "Not: Görsel analizi henüz desteklenmiyor. Görseller referans için saklanır ancak model tarafından analiz edilemez.",
-      "screenshotTooLarge": "Ekran görüntüsü çok büyük ({{size}}MB). Maksimum boyut {{max}}MB. Daha küçük bir alan yakalamayı düşünün.",
-      "notAnalyzed": "Görseller referans için saklandı ancak model tarafından analiz edilmedi."
-    }
   },
   "ideation": {
     "converting": "Dönüştürülüyor...",
@@ -859,6 +820,25 @@
       "readyTooltip": "Bu PR birleştirilmeye hazır",
       "blockedTooltip": "Engelleyici koşullar nedeniyle bu PR birleştirilemiyor",
       "conflictTooltip": "Bu PR'ın çözülmesi gereken birleştirme çakışmaları var"
+    }
+  },
+  "fileExplorer": {
+    "title": "Proje Dosyaları",
+    "dragHint": "Yolu eklemek için dosyaları terminale sürükleyin",
+    "noFiles": "Dosya bulunamadı",
+    "loading": "Dosyalar yükleniyor...",
+    "error": "Dosyalar yüklenemedi",
+    "autocomplete": {
+      "noFilesFound": "Dosya bulunamadı",
+      "navigate": "gezin",
+      "select": "seç",
+      "close": "kapat"
+    },
+    "drawer": {
+      "title": "Proje Dosyaları",
+      "refresh": "Yenile",
+      "close": "Kapat",
+      "dragHint": "Referans olarak eklemek için dosyaları sürükleyin"
     }
   }
 }

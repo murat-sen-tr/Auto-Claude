@@ -82,11 +82,12 @@
     }
   },
   "memory": {
-    "title": "Bellek",
+    "title": "TODO: Translate - Memory & Context",
     "description": "Ajanlar için kalıcı oturumlar arası belleği yapılandırın",
+    "subtitle": "TODO: Translate - Enable Graphiti for persistent memory across coding sessions",
     "contextDescription": "Auto Claude Bellek, kodlama oturumlarınız boyunca bağlamı hatırlamaya yardımcı olur",
-    "enableMemory": "Belleği Etkinleştir",
-    "enableMemoryDescription": "LadybugDB (gömülü veritabanı) kullanarak kalıcı oturumlar arası bellek",
+    "enableMemory": "TODO: Translate - Enable Graphiti Memory",
+    "enableMemoryDescription": "TODO: Translate - Uses LadybugDB (embedded) and an LLM/embedding provider",
     "memoryDisabledInfo": "Bellek devre dışı. Oturum içgörüleri yalnızca yerel dosyalarda saklanacak. Anlamsal arama ile kalıcı oturumlar arası bağlam için Belleği etkinleştirin.",
     "enableAgentAccess": "Ajan Bellek Erişimini Etkinleştir",
     "enableAgentAccessDescription": "Ajanların MCP aracılığıyla bilgi grafiğinde arama yapmasına ve ekleme yapmasına izin ver",
@@ -94,7 +95,13 @@
     "mcpServerUrlDescription": "Ajan bellek erişimi için Graphiti MCP sunucusunun URL'si",
     "embeddingProvider": "Embedding Sağlayıcı",
     "embeddingProviderDescription": "Anlamsal arama için sağlayıcı (isteğe bağlı - anahtar kelime araması olmadan çalışır)",
+    "llmProvider": "TODO: Translate - LLM Provider",
     "selectEmbeddingModel": "Embedding Modeli Seçin",
+    "databaseName": "TODO: Translate - Database Name",
+    "databaseNamePlaceholder": "auto_claude_memory",
+    "databaseStorageInfo": "TODO: Translate - Stored in ~/.auto-claude/graphs/",
+    "ready": "TODO: Translate - Ready",
+    "issue": "TODO: Translate - Issue",
     "openaiApiKey": "OpenAI API Anahtarı",
     "openaiApiKeyDescription": "OpenAI embedding'leri için gerekli",
     "openaiGetKey": "Anahtarınızı şuradan alın",
@@ -103,24 +110,129 @@
     "voyageEmbeddingModel": "Embedding Modeli",
     "googleApiKey": "Google AI API Anahtarı",
     "googleApiKeyDescription": "Google AI embedding'leri için gerekli",
+    "groqApiKey": "TODO: Translate - Groq API Key",
+    "groqApiKeyDescription": "TODO: Translate - Required for Groq LLM",
+    "anthropicApiKey": "TODO: Translate - Anthropic API Key",
+    "anthropicApiKeyDescription": "TODO: Translate - Required for Claude models",
+    "openrouterApiKey": "TODO: Translate - OpenRouter API Key",
+    "openrouterApiKeyDescription": "TODO: Translate - Required for OpenRouter",
+    "openrouterBaseUrl": "TODO: Translate - Base URL",
+    "openrouterLlmModel": "TODO: Translate - LLM Model",
+    "openrouterEmbeddingModel": "TODO: Translate - Embedding Model",
     "azureConfig": "Azure OpenAI Yapılandırması",
+    "azureSettings": "TODO: Translate - Azure OpenAI Settings",
     "azureApiKey": "API Anahtarı",
     "azureBaseUrl": "Temel URL",
+    "azureLlmDeployment": "TODO: Translate - LLM Deployment Name",
     "azureEmbeddingDeployment": "Embedding Dağıtım Adı",
+    "ollamaConfig": "Ollama Yapılandırması",
+    "ollamaSettings": "TODO: Translate - Ollama Settings (Local)",
+    "ollamaEnsureRunning": "TODO: Translate - Ensure Ollama is running locally. See",
+    "ollamaLlmModel": "TODO: Translate - LLM Model",
+    "ollamaEmbeddingModel": "TODO: Translate - Embedding Model",
     "memoryInfo": "Bellek, kod tabanınız hakkındaki keşifleri, kalıpları ve içgörüleri saklar, böylece gelecekteki oturumlar bağlam zaten yüklenmiş olarak başlar. Docker gerekmez - gömülü veritabanı kullanır.",
     "learnMore": "Bellek hakkında daha fazla bilgi edinin",
+    "learnMoreGraphiti": "TODO: Translate - Learn more about Graphiti",
+    "whatIsGraphiti": "TODO: Translate - What is Graphiti?",
+    "graphitiDescription": "TODO: Translate - Graphiti is an intelligent memory layer that helps Auto Claude remember context across sessions. It uses a knowledge graph to store discoveries, patterns, and insights about your codebase.",
+    "graphitiBenefits": {
+      "persistent": "TODO: Translate - Persistent memory across coding sessions",
+      "understanding": "TODO: Translate - Better understanding of your codebase over time",
+      "reduces": "TODO: Translate - Reduces repetitive explanations",
+      "noDocker": "TODO: Translate - No Docker required - uses embedded database"
+    },
+    "success": {
+      "title": "TODO: Translate - Graphiti configured successfully",
+      "description": "TODO: Translate - Memory features are enabled. Auto Claude will maintain context across sessions for improved code understanding."
+    },
+    "reconfigure": "TODO: Translate - Reconfigure Graphiti settings",
+    "autoCreateDb": {
+      "title": "TODO: Translate - Database will be created automatically",
+      "description": "TODO: Translate - LadybugDB uses an embedded database - no Docker required. The database will be created when you first use memory features."
+    },
+    "validation": {
+      "testConnection": "TODO: Translate - Test Connection",
+      "testing": "TODO: Translate - Testing connection...",
+      "allSuccess": "TODO: Translate - All connections validated successfully!",
+      "openaiNote": "TODO: Translate - Note: API key validation currently only fully supports OpenAI. Your key will be saved and used at runtime.",
+      "ollamaNote": "TODO: Translate - Note: Ollama connection will be tested by checking if the server is reachable.",
+      "enterKey": "TODO: Translate - Please enter {{key}} to test the connection",
+      "keyRequired": "TODO: Translate - {{key}} is required"
+    },
     "back": "Geri",
     "skip": "Atla",
     "saving": "Kaydediliyor...",
     "saveAndContinue": "Kaydet ve Devam Et",
+    "continue": "Devam Et",
     "providers": {
       "ollama": "Ollama (Yerel - Ücretsiz)",
       "openai": "OpenAI",
       "voyage": "Voyage AI",
       "google": "Google AI",
-      "azure": "Azure OpenAI"
+      "azure": "Azure OpenAI",
+      "anthropic": "Anthropic",
+      "groq": "Groq",
+      "openrouter": "OpenRouter",
+      "labels": {
+        "openaiApiKey": "OpenAI API Anahtarı",
+        "anthropicApiKey": "Anthropic API Anahtarı",
+        "azureSettings": "Azure OpenAI Ayarları",
+        "apiKey": "API Anahtarı",
+        "baseUrl": "Temel URL",
+        "llmDeployment": "LLM Dağıtım Adı",
+        "embeddingDeployment": "Embedding Dağıtım Adı",
+        "voyageApiKey": "Voyage API Anahtarı",
+        "googleApiKey": "Google API Anahtarı",
+        "groqApiKey": "Groq API Anahtarı",
+        "openrouterApiKey": "OpenRouter API Anahtarı",
+        "ollamaSettings": "Ollama Ayarları (Yerel)",
+        "llmModel": "LLM Modeli",
+        "embeddingModel": "Embedding Modeli",
+        "embeddingDimension": "Embedding Boyutu"
+      },
+      "placeholders": {
+        "openaiKey": "sk-...",
+        "anthropicKey": "sk-ant-...",
+        "azureKey": "Azure API key",
+        "azureBaseUrl": "https://your-resource.openai.azure.com",
+        "llmDeployment": "gpt-4",
+        "embeddingDeployment": "text-embedding-ada-002",
+        "voyageKey": "pa-...",
+        "googleKey": "AIza...",
+        "groqKey": "gsk_...",
+        "openrouterKey": "sk-or-...",
+        "ollamaBaseUrl": "http://localhost:11434",
+        "ollamaLlmModel": "llama3.2, deepseek-r1:7b, etc.",
+        "ollamaEmbeddingModel": "nomic-embed-text",
+        "embeddingDimension": "768"
+      },
+      "help": {
+        "getKeyFrom": "Anahtarınızı buradan alın",
+        "openaiLink": "OpenAI",
+        "anthropicLink": "Anthropic Console",
+        "voyageLink": "Voyage AI",
+        "googleLink": "Google AI Studio",
+        "groqLink": "Groq Console",
+        "openrouterLink": "OpenRouter Dashboard",
+        "ollamaRunning": "Ollama'nın yerel olarak çalıştığından emin olun. Bakınız",
+        "ollamaLink": "ollama.ai"
+      }
     },
-    "ollamaConfig": "Ollama Yapılandırması",
+    "providerDescriptions": {
+      "openai": "TODO: Translate - GPT models (recommended)",
+      "anthropic": "TODO: Translate - Claude models",
+      "google": "TODO: Translate - Gemini models",
+      "groq": "TODO: Translate - Llama models (fast inference)",
+      "openrouter": "TODO: Translate - Multi-provider aggregator",
+      "azure": "TODO: Translate - Enterprise Azure deployment",
+      "ollama": "TODO: Translate - Local models (free)",
+      "openaiEmbedding": "TODO: Translate - text-embedding-3-small (recommended)",
+      "voyageEmbedding": "TODO: Translate - voyage-3 (great with Anthropic)",
+      "googleEmbedding": "TODO: Translate - Gemini text-embedding-004",
+      "openrouterEmbedding": "TODO: Translate - OpenAI-compatible embeddings",
+      "azureEmbedding": "TODO: Translate - Enterprise Azure embeddings",
+      "ollamaEmbedding": "TODO: Translate - Local embeddings (free)"
+    },
     "checking": "Kontrol ediliyor...",
     "connected": "Bağlandı",
     "notRunning": "Çalışmıyor",
@@ -128,7 +240,35 @@
     "embeddingModel": "Embedding Modeli",
     "embeddingDim": "Embedding Boyutu",
     "embeddingDimDescription": "Ollama embedding'leri için gerekli (örn., nomic-embed-text için 768)",
-    "modelRecommendation": "Önerilen: qwen3-embedding:4b (dengeli), :8b (kalite), :0.6b (hızlı)"
+    "modelRecommendation": "Önerilen: qwen3-embedding:4b (dengeli), :8b (kalite), :0.6b (hızlı)",
+    "showApiKey": "API Anahtarını Göster",
+    "hideApiKey": "API Anahtarını Gizle",
+    "validation": {
+      "keys": {
+        "openai": "OpenAI API anahtarı",
+        "anthropic": "Anthropic API anahtarı",
+        "azureOpenai": "Azure OpenAI API anahtarı",
+        "azureBaseUrl": "Azure OpenAI Temel URL",
+        "azureLlmDeployment": "Azure OpenAI LLM dağıtım adı",
+        "azureEmbeddingDeployment": "Azure OpenAI embedding dağıtım adı",
+        "voyage": "Voyage API anahtarı",
+        "google": "Google API anahtarı",
+        "groq": "Groq API anahtarı",
+        "openrouter": "OpenRouter API anahtarı",
+        "ollamaLlmModel": "Ollama LLM model adı",
+        "ollamaEmbeddingModel": "Ollama embedding model adı"
+      },
+      "providersConfigured": "{{llmProvider}} / {{embeddingProvider}} sağlayıcıları yapılandırıldı",
+      "errors": {
+        "databasePrefix": "Veritabanı",
+        "providerPrefix": "Sağlayıcı",
+        "testConnectionFailed": "Bağlantı testi başarısız oldu"
+      }
+    },
+    "errors": {
+      "unknownError": "Bilinmeyen bir hata oluştu",
+      "saveConfigFailed": "Graphiti yapılandırması kaydedilemedi"
+    }
   },
   "completion": {
     "title": "Her Şey Hazır!",
@@ -220,17 +360,70 @@
     "ide": {
       "label": "Tercih Edilen IDE",
       "description": "Auto Claude çalışma ağaçlarını bu düzenleyicide açacak",
-      "customPath": "Özel IDE Yolu"
+      "customPath": "Özel IDE Yolu",
+      "placeholder": "IDE seçin...",
+      "names": {
+        "androidstudio": "Android Studio",
+        "clion": "CLion",
+        "cursor": "Cursor",
+        "emacs": "Emacs",
+        "goland": "GoLand",
+        "intellij": "IntelliJ IDEA",
+        "neovim": "Neovim",
+        "nova": "Nova",
+        "phpstorm": "PhpStorm",
+        "pycharm": "PyCharm",
+        "rider": "Rider",
+        "rubymine": "RubyMine",
+        "sublime": "Sublime Text",
+        "vim": "Vim",
+        "vscode": "Visual Studio Code",
+        "vscodium": "VSCodium",
+        "webstorm": "WebStorm",
+        "windsurf": "Windsurf",
+        "xcode": "Xcode",
+        "zed": "Zed",
+        "custom": "Özel..."
+      }
     },
     "terminal": {
       "label": "Tercih Edilen Terminal",
       "description": "Auto Claude terminal oturumlarını burada açacak",
-      "customPath": "Özel Terminal Yolu"
+      "customPath": "Özel Terminal Yolu",
+      "placeholder": "Terminal seçin...",
+      "names": {
+        "alacritty": "Alacritty",
+        "ghostty": "Ghostty",
+        "gnometerminal": "GNOME Terminal",
+        "hyper": "Hyper",
+        "iterm2": "iTerm2",
+        "kitty": "Kitty",
+        "konsole": "Konsole",
+        "powershell": "PowerShell",
+        "system": "System Terminal",
+        "tabby": "Tabby",
+        "terminal": "Terminal.app",
+        "terminator": "Terminator",
+        "tilix": "Tilix",
+        "tmux": "tmux",
+        "warp": "Warp",
+        "wezterm": "WezTerm",
+        "windowsterminal": "Windows Terminal",
+        "zellij": "Zellij",
+        "custom": "Özel..."
+      }
     },
     "detectedSummary": "Sisteminizde algılanan:",
     "noToolsDetected": "Ek araç algılanmadı (VS Code ve sistem terminali kullanılacak)",
     "custom": "Özel...",
-    "saveAndContinue": "Kaydet ve Devam Et"
+    "customPathPlaceholder": "/yol/to/sizin/",
+    "back": "Geri",
+    "saving": "Kaydediliyor...",
+    "saveAndContinue": "Kaydet ve Devam Et",
+    "errors": {
+      "saveSettingsFailed": "Ayarlar kaydedilemedi",
+      "unknownError": "Bilinmeyen bir hata oluştu"
+    }
   },
   "ollama": {
     "notInstalled": {
@@ -249,5 +442,58 @@
       "retry": "Tekrar Dene",
       "fallbackNote": "Bellek, embedding'ler olmadan bile anahtar kelime aramasıyla çalışmaya devam edecek."
     }
+  },
+  "authChoice": {
+    "title": "TODO: Translate - Choose Your Authentication Method",
+    "subtitle": "TODO: Translate - Select how you want to authenticate with Claude. You can change this later in Settings.",
+    "oauth": {
+      "title": "TODO: Translate - Sign in with Anthropic",
+      "description": "TODO: Translate - Use your Anthropic account to authenticate. Simple and secure OAuth flow."
+    },
+    "apiKey": {
+      "title": "TODO: Translate - Use Custom API Key",
+      "description": "TODO: Translate - Bring your own API key from Anthropic or a compatible API provider. ⚠️ Highly experimental — may incur significant costs."
+    },
+    "infoText": "TODO: Translate - Both options provide full access to Claude Code features. Choose based on your preference.",
+    "skipForNow": "TODO: Translate - Skip for now"
+  },
+  "firstSpec": {
+    "title": "TODO: Translate - Create Your First Task",
+    "subtitle": "TODO: Translate - Describe what you want to build and let Auto Claude handle the rest",
+    "tips": {
+      "title": "TODO: Translate - Tips for Great Tasks",
+      "beDescriptive": {
+        "title": "TODO: Translate - Be Descriptive",
+        "description": "TODO: Translate - Clearly describe what you want to build. Include requirements, constraints, and expected behavior."
+      },
+      "startSmall": {
+        "title": "TODO: Translate - Start Small",
+        "description": "TODO: Translate - Begin with a focused task like adding a feature or fixing a bug. Smaller tasks are easier to verify."
+      },
+      "includeContext": {
+        "title": "TODO: Translate - Include Context",
+        "description": "TODO: Translate - Mention relevant files, APIs, or patterns. The more context you provide, the better the results."
+      },
+      "letAiHelp": {
+        "title": "TODO: Translate - Let AI Help",
+        "description": "TODO: Translate - The AI can generate titles and classify tasks. Focus on describing what you want, not the details."
+      }
+    },
+    "example": {
+      "title": "TODO: Translate - Example Task Description:",
+      "text": "TODO: Translate - \"Add a dark mode toggle to the settings page. It should persist the user's preference in localStorage and apply the theme immediately without page reload. Use the existing color variables in styles/theme.css.\""
+    },
+    "openTaskCreator": "TODO: Translate - Open Task Creator",
+    "taskCreatorOpened": {
+      "title": "TODO: Translate - Task Creator Opened",
+      "description": "TODO: Translate - Great! You can create your first task now or continue with the wizard. You can always create tasks later from the main dashboard."
+    },
+    "skipInfo": {
+      "withCreator": "TODO: Translate - You can continue with the wizard now or create more tasks.",
+      "withoutCreator": "TODO: Translate - You can skip this step and create tasks later from the dashboard."
+    },
+    "back": "TODO: Translate - Back",
+    "skip": "TODO: Translate - Skip",
+    "continue": "TODO: Translate - Continue"
   }
 }

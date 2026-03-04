@@ -387,6 +387,12 @@
       "syncDescription": "Configure persistent memory"
     }
   },
+  "agentProfiles": {
+    "title": "Agent Profiles",
+    "subtitle": "Select a preset configuration for model and thinking level",
+    "description": "Agent profiles provide preset configurations for Claude model and thinking level. When you create a new task, these settings will be used as defaults. You can always override them in the task creation wizard.",
+    "thinkingSuffix": "Thinking"
+  },
   "agentProfile": {
     "label": "Agent Profile",
     "title": "Default Agent Profile",

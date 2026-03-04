@@ -128,7 +128,80 @@
     "embeddingModel": "Embedding Model",
     "embeddingDim": "Embedding Dimension",
     "embeddingDimDescription": "Required for Ollama embeddings (e.g., 768 for nomic-embed-text)",
-    "modelRecommendation": "Recommended: qwen3-embedding:4b (balanced), :8b (quality), :0.6b (fast)"
+    "modelRecommendation": "Recommended: qwen3-embedding:4b (balanced), :8b (quality), :0.6b (fast)",
+    "continue": "Continue",
+    "validation": {
+      "keys": {
+        "openai": "OpenAI API key",
+        "anthropic": "Anthropic API key",
+        "azureOpenai": "Azure OpenAI API key",
+        "azureBaseUrl": "Azure OpenAI Base URL",
+        "azureLlmDeployment": "Azure OpenAI LLM deployment name",
+        "azureEmbeddingDeployment": "Azure OpenAI embedding deployment name",
+        "voyage": "Voyage API key",
+        "google": "Google API key",
+        "groq": "Groq API key",
+        "openrouter": "OpenRouter API key",
+        "ollamaLlmModel": "Ollama LLM model name",
+        "ollamaEmbeddingModel": "Ollama embedding model name"
+      },
+      "providersConfigured": "{{llmProvider}} / {{embeddingProvider}} providers configured",
+      "errors": {
+        "databasePrefix": "Database",
+        "providerPrefix": "Provider",
+        "testConnectionFailed": "Failed to test connection"
+      }
+    },
+    "errors": {
+      "unknownError": "Unknown error occurred",
+      "saveConfigFailed": "Failed to save Graphiti configuration"
+    },
+    "providers": {
+      "labels": {
+        "openaiApiKey": "OpenAI API Key",
+        "anthropicApiKey": "Anthropic API Key",
+        "azureSettings": "Azure OpenAI Settings",
+        "apiKey": "API Key",
+        "baseUrl": "Base URL",
+        "llmDeployment": "LLM Deployment Name",
+        "embeddingDeployment": "Embedding Deployment Name",
+        "voyageApiKey": "Voyage API Key",
+        "googleApiKey": "Google API Key",
+        "groqApiKey": "Groq API Key",
+        "openrouterApiKey": "OpenRouter API Key",
+        "ollamaSettings": "Ollama Settings (Local)",
+        "llmModel": "LLM Model",
+        "embeddingModel": "Embedding Model",
+        "embeddingDimension": "Embedding Dimension"
+      },
+      "placeholders": {
+        "openaiKey": "sk-...",
+        "anthropicKey": "sk-ant-...",
+        "azureKey": "Azure API key",
+        "azureBaseUrl": "https://your-resource.openai.azure.com",
+        "llmDeployment": "gpt-4",
+        "embeddingDeployment": "text-embedding-ada-002",
+        "voyageKey": "pa-...",
+        "googleKey": "AIza...",
+        "groqKey": "gsk_...",
+        "openrouterKey": "sk-or-...",
+        "ollamaBaseUrl": "http://localhost:11434",
+        "ollamaLlmModel": "llama3.2, deepseek-r1:7b, etc.",
+        "ollamaEmbeddingModel": "nomic-embed-text",
+        "embeddingDimension": "768"
+      },
+      "help": {
+        "getKeyFrom": "Get your key from",
+        "openaiLink": "OpenAI",
+        "anthropicLink": "Anthropic Console",
+        "voyageLink": "Voyage AI",
+        "googleLink": "Google AI Studio",
+        "groqLink": "Groq Console",
+        "openrouterLink": "OpenRouter Dashboard",
+        "ollamaRunning": "Ensure Ollama is running locally. See",
+        "ollamaLink": "ollama.ai"
+      }
+    }
   },
   "completion": {
     "title": "You're All Set!",
@@ -220,17 +293,65 @@
     "ide": {
       "label": "Preferred IDE",
       "description": "Auto Claude will open worktrees in this editor",
-      "customPath": "Custom IDE Path"
+      "customPath": "Custom IDE Path",
+      "names": {
+        "androidstudio": "Android Studio",
+        "clion": "CLion",
+        "cursor": "Cursor",
+        "emacs": "Emacs",
+        "goland": "GoLand",
+        "intellij": "IntelliJ IDEA",
+        "neovim": "Neovim",
+        "nova": "Nova",
+        "phpstorm": "PhpStorm",
+        "pycharm": "PyCharm",
+        "rider": "Rider",
+        "rubymine": "RubyMine",
+        "sublime": "Sublime Text",
+        "vim": "Vim",
+        "vscode": "Visual Studio Code",
+        "vscodium": "VSCodium",
+        "webstorm": "WebStorm",
+        "windsurf": "Windsurf",
+        "xcode": "Xcode",
+        "zed": "Zed",
+        "custom": "Custom..."
+      }
     },
     "terminal": {
       "label": "Preferred Terminal",
       "description": "Auto Claude will open terminal sessions here",
-      "customPath": "Custom Terminal Path"
+      "customPath": "Custom Terminal Path",
+      "names": {
+        "alacritty": "Alacritty",
+        "ghostty": "Ghostty",
+        "gnometerminal": "GNOME Terminal",
+        "hyper": "Hyper",
+        "iterm2": "iTerm2",
+        "kitty": "Kitty",
+        "konsole": "Konsole",
+        "powershell": "PowerShell",
+        "system": "System Terminal",
+        "tabby": "Tabby",
+        "terminal": "Terminal.app",
+        "terminator": "Terminator",
+        "tilix": "Tilix",
+        "tmux": "tmux",
+        "warp": "Warp",
+        "wezterm": "WezTerm",
+        "windowsterminal": "Windows Terminal",
+        "zellij": "Zellij",
+        "custom": "Custom..."
+      }
     },
     "detectedSummary": "Detected on your system:",
     "noToolsDetected": "No additional tools detected (VS Code and system terminal will be used)",
     "custom": "Custom...",
-    "saveAndContinue": "Save & Continue"
+    "saveAndContinue": "Save & Continue",
+    "errors": {
+      "saveSettingsFailed": "Failed to save settings",
+      "unknownError": "Unknown error occurred"
+    }
   },
   "ollama": {
     "notInstalled": {

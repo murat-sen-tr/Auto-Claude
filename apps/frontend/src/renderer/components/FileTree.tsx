@@ -1,5 +1,6 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
+import { useTranslation } from 'react-i18next';
 import { FileTreeItem } from './FileTreeItem';
 import { useFileExplorerStore } from '../stores/file-explorer-store';
 import { useVirtualizedTree } from '../hooks/useVirtualizedTree';
@@ -15,6 +16,7 @@ const ITEM_HEIGHT = 28;
 const OVERSCAN = 10;
 
 export function FileTree({ rootPath }: FileTreeProps) {
+  const { t } = useTranslation();
   const parentRef = useRef<HTMLDivElement>(null);
 
   const {
@@ -82,7 +84,7 @@ export function FileTree({ rootPath }: FileTreeProps) {
     return (
       <div className="flex flex-col items-center justify-center py-8 px-4 text-center">
         <FolderOpen className="h-6 w-6 text-muted-foreground mb-2" />
-        <p className="text-xs text-muted-foreground">No files found</p>
+        <p className="text-xs text-muted-foreground">{t('common:fileExplorer.noFiles')}</p>
       </div>
     );
   }

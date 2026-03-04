@@ -387,6 +387,12 @@
       "syncDescription": "Kalıcı belleği yapılandırın"
     }
   },
+  "agentProfiles": {
+    "title": "Agent Profilleri",
+    "subtitle": "Model ve düşünme seviyesi için önceden ayarlanmış bir yapılandırma seçin",
+    "description": "Agent profilleri, Claude modeli ve düşünme seviyesi için önceden ayarlanmış yapılandırmalar sağlar. Yeni bir görev oluşturduğunuzda, bu ayarlar varsayılan olarak kullanılacaktır. Görev oluşturma sihirbazında bunları her zaman geçersiz kılabilirsiniz.",
+    "thinkingSuffix": "Düşünme"
+  },
   "agentProfile": {
     "label": "Agent Profili",
     "title": "Varsayılan Agent Profili",
