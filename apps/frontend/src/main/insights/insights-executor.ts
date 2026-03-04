@@ -392,7 +392,7 @@ export class InsightsExecutor extends EventEmitter {
       this.emit('permission-request', projectId, {
         id: data.id,
         tool: data.tool,
-        input: data.input,
+        input: typeof data.input === 'string' ? data.input : JSON.stringify(data.input),
         description: data.description
       });
 

@@ -227,12 +227,16 @@ export const useInsightsStore = create<InsightsState>((set, get) => ({
   respondToPermission: (requestId, allowed) => {
     const permission = get().pendingPermission;
     const projectId = permission?.projectId ?? get().session?.projectId ?? '';
-    window.electronAPI.respondToInsightsPermission(
-      projectId,
-      requestId,
-      allowed
-    );
     set({ pendingPermission: null });
+    try {
+      window.electronAPI.respondToInsightsPermission(
+        projectId,
+        requestId,
+        allowed
+      );
+    } catch (err) {
+      console.error('[Insights Store] Failed to respond to permission:', err);
+    }
   }
 }));
 
